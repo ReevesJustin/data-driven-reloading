@@ -1,16 +1,16 @@
-Stop chasing ghosts. Learn to test handloads the way that actually reveals truth—even if you hated math in school.
+**Stop chasing ghosts.** Learn to test handloads the way that actually reveals truth—even if you hated math in school.
 
-**Start Here: [00_Welcome_and_Why_This_Matters.ipynb](notebooks/00_Welcome_and_Why_This_Matters.ipynb)** - Hook emotionally, validate frustration.
+**Start Here: [00_Welcome_and_Why_This_Matters.ipynb](notebooks/00_Welcome_and_Why_This_Matters.ipynb)** - *Hook emotionally, validate frustration.*
 
 Notebook Sequence (Designed for Non-Technical Adults)
 
 00_Welcome_and_Why_This_Matters.ipynb
-Goal: Hook the learner emotionally, validate frustration.
+**Goal:** *Hook the learner emotionally, validate frustration.*
 Content:
-"You've probably seen it: One guy shoots three 5-shot groups and declares a charge weight 'perfect.' Another gets 8 fps SD over 10 shots and calls it 'the node.' A third adds a tuner and his groups shrink—proof, right?"
-Show screenshots (anonymized) of common forum claims.
-Explain: Most of this is just random luck in tiny samples. You can do better without a stats degree.
-Adult hook: "This course saves you time, money, components, and disappointment by teaching you to separate signal from noise."
+* "You've probably seen it: One guy shoots three 5-shot groups and declares a charge weight 'perfect.' Another gets 8 fps SD over 10 shots and calls it 'the node.' A third adds a tuner and his groups shrink—proof, right?" *
+*Show screenshots (anonymized) of common forum claims.*
+*Explain:* Most of this is just random luck in tiny samples. You can do better without a stats degree.
+*Adult hook:* "*This course saves you time, money, components, and disappointment by teaching you to separate signal from noise.*"
 
 
 01_The_Biggest_Lie_in_Reloading_Testing.ipynb
