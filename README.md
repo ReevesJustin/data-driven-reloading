@@ -1,5 +1,7 @@
 Stop chasing ghosts. Learn to test handloads the way that actually reveals truth—even if you hated math in school.
 
+**Start Here: [00_Welcome_and_Why_This_Matters.ipynb](notebooks/00_Welcome_and_Why_This_Matters.ipynb)** - Hook emotionally, validate frustration.
+
 Notebook Sequence (Designed for Non-Technical Adults)
 
 00_Welcome_and_Why_This_Matters.ipynb
