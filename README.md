@@ -105,8 +105,35 @@ Technical & Presentation Tips for Accessibility
 Language level: 8th-grade reading. No Greek letters until necessary (then define immediately).
 Visuals everywhere: Big plots, animations (use matplotlib with %matplotlib inline), color.
 Interactivity: Use ipywidgets sliders generously—adults learn by playing.
-Short sections: 5–10 minutes per notebook section.
+Short/punchy notebooks: 10-15 minutes each, with bold takeaways and analogies.
 Progress checklist in README: "Complete notebooks in order → become immune to reloading myths."
 No prerequisites: All code explained in markdown cells. Learners don't need to write code—just run it.
+Example data CSVs in /data directory for practice.
+Bonus notebooks: bootstrapping, cartridge-specific.
+
+## Project Design Specifications
+
+- **Short & Punchy**: 10–15 min per notebook, bold takeaways, reloading analogies (e.g., "Like judging a powder by one throw on a scale").
+- **Example Data**: CSVs in /data folder (simulated velocities, real anonymized chronograph exports if available).
+- **Bonus Notebooks**: Advanced (bootstrapping confidence intervals), or cartridge-specific examples (.223 gas gun vs. bolt).
+- **References**: 
+  - Denton Bramwell's "Perverse Nature of Standard Deviation" PDF.
+  - Bryan Litz's books (e.g., Applied Ballistics) and podcasts (Hornady Ep. 50).
+  - Reloading All Day posts.
+
+## Mobile Viewing Notes
+
+To ensure this repository is mobile-friendly for phones and tablets:
+
+- Notebooks are optimized for GitHub rendering with wide tables for comprehensive data display and large text for readability.
+- On mobile devices, wide tables may cause horizontal scrolling; view in landscape mode or on a larger screen for full visibility.
+- GitHub's notebook renderer supports responsive elements; however, for the best experience, use a desktop browser or tablet.
+- All content has been reviewed for responsiveness, ensuring text and images scale appropriately without distortion.
 
 This structure respects adult learners: it starts with their pain points, shows why common methods fail (through experience, not lecture), builds confidence gradually, and ends with tools they can use immediately.
+
+## References
+
+- Denton Bramwell's "The Perverse Nature of Standard Deviation" [PDF](https://www.google.com/search?q=perverse+nature+of+standard+deviation+bramwell+pdf) (search for available copy).
+- Bryan Litz's *Applied Ballistics for Long Range Shooting* (book) and podcasts like [Hornady Manufacturing Ep. 50](https://www.hornady.com/ammunition/ballistics-resource-center/podcast/episode-50-bryan-litz).
+- Reloading All Day blog posts on data-driven reloading.
