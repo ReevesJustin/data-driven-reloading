@@ -1,6 +1,38 @@
-**Stop chasing ghosts.** Learn to test handloads the way that actually reveals truth—even if you hated math in school.
+  **Stop chasing ghosts.** Learn to test handloads the way that actually reveals truth—even if you hated math in school.
 
-**Start Here: [00_Welcome_and_Why_This_Matters.ipynb](notebooks/00_Welcome_and_Why_This_Matters.ipynb)** - *Hook emotionally, validate frustration.*
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main)
+
+## Local Installation
+
+To run these notebooks locally:
+
+```bash
+git clone https://github.com/ReevesJustin/data-driven-reloading.git
+cd data-driven-reloading
+pip install -r requirements.txt
+pip install jupyterlab  # if not already installed
+jupyter lab
+```
+
+## Who This Is For
+
+- **Perfect for**: Reloaders frustrated with inconsistent results and myths that waste time and ammo.
+- **Not required**: Advanced math or statistics background—everything is explained step-by-step.
+- **Expected outcomes**: Learn to run experiments that reveal real truths, save money on components, and achieve more reliable loads.
+
+## What About the Pros?
+
+Professional shooters and reloaders don't rely on small samples or lucky breaks. They use:
+
+- **Large round counts**: Hundreds of shots to detect real effects and avoid false positives from random variation.
+- **Environmental controls**: Consistent temperature, humidity, and conditions to minimize external factors.
+- **Survivorship bias awareness**: They know that only successful stories get shared, so they rigorously test their own data.
+
+This course bridges the gap, teaching you their disciplined approach without needing pro-level resources.
+
+  **Start Here: [00_Welcome_and_Why_This_Matters.ipynb](notebooks/00_Welcome_and_Why_This_Matters.ipynb)** - *Hook emotionally, validate frustration.*
+
+For static HTML exports, see [notebooks/html/](notebooks/html/) directory.
 
 Notebook Sequence (Designed for Non-Technical Adults)
 
@@ -76,6 +108,9 @@ Content (neutral, evidence-based, no personal attacks):
 OCW: Show how small samples make multiple charge weights look "forgiving."
 Velocity nodes/flat spots: Simulate charge ladders—random data creates apparent flats.
 Barrel tuners: Simulate dispersion—random tight groups appear with any setting.
+Atterlee 10-shot method: Explain why 10 shots aren't enough to detect real differences reliably.
+Seating depth sweet spots: Show how random variation creates fake optimal depths in seating depth tests.
+Brass sorting by weight: Demonstrate that sorting by weight doesn't consistently improve precision beyond measurement error.
 Each with interactive sims so learners see the illusion themselves.
 
 
@@ -99,6 +134,23 @@ Section 4: WEZ thinking for hit probability; interactive plots.
 Conclusion: Focus on achievable goals and progress.
 
 
+10_When_IS_a_Result_Real.ipynb
+Goal: Introduce power analysis and confidence intervals for real data validation.
+Content:
+Explain statistical power: Probability of detecting a real effect.
+Confidence intervals: Ranges where true value likely lies.
+Interactive sims: Adjust sample size, effect size → see power curves.
+Practical: "How many shots to be 80% sure your 5 fps difference is real?"
+
+
+11_Peer_Review_Your_Own_Data.ipynb
+Goal: Teach self-skepticism checklist to avoid confirmation bias.
+Content:
+Checklist: Did I test enough? Control variables? Random variation?
+Examples: Common self-deceptions (ignoring outliers, cherry-picking data).
+Interactive: Upload data → checklist prompts with red flags.
+Conclusion: Be your own skeptic to build reliable knowledge.
+
 
 Technical & Presentation Tips for Accessibility
 
@@ -114,9 +166,19 @@ Bonus notebooks: bootstrapping, cartridge-specific.
 ## Project Design Specifications
 
 - **Short & Punchy**: 10–15 min per notebook, bold takeaways, reloading analogies (e.g., "Like judging a powder by one throw on a scale").
-- **Example Data**: CSVs in /data folder (simulated velocities, real anonymized chronograph exports if available).
+- **Example Data**: CSVs in /data folder (simulated velocities, real anonymized chronograph exports if available). Expanded with realistic/messy datasets and "Bad Data Zoo" for learning from flawed examples.
 - **Bonus Notebooks**: Advanced (bootstrapping confidence intervals), or cartridge-specific examples (.223 gas gun vs. bolt).
-- **References**: 
+- **Static HTML Exports**: Notebooks exported to HTML for offline viewing in [notebooks/html/](notebooks/html/).
+- **Streamlit App Plan**: See [streamlit_plan.md](streamlit_plan.md) for interactive web app ideas.
+- **Creative Implementations**:
+  - Myth Buster Calculator: [myth_buster_calculator.py](myth_buster_calculator.py) - Simulate common myths and debunk with data.
+  - Forum Screenshot Analyzer: [forum_analyzer.py](forum_analyzer.py) - Analyze uploaded screenshots for statistical validity.
+  - Reloading Casino Game: [reloading_casino.py](reloading_casino.py) - Gamified simulation of testing risks.
+  - Mobile App Planning: See [mobile_app_plan.md](mobile_app_plan.md).
+  - Hall of Shame/Fame: [hall_of_fame.md](hall_of_fame.md) - Community examples.
+  - Collaborative Data Repo: [collaborative_repo.md](collaborative_repo.md) - Guidelines for sharing data.
+  - Myth Origin Stories: [myth_origins.md](myth_origins.md) - Historical context for common beliefs.
+- **References**:
   - Denton Bramwell's "Perverse Nature of Standard Deviation" PDF.
   - Bryan Litz's books (e.g., Applied Ballistics) and podcasts (Hornady Ep. 50).
   - Reloading All Day posts.
