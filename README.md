@@ -86,6 +86,17 @@ Simple statistical checks (confidence intervals in plain English).
 Instructions: "Copy this notebook, paste your chronograph CSV, change titles, and see the truth."
 
 
+09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.ipynb
+Goal: Shift from debunking myths to setting realistic goals and understanding real-world performance.
+Content:
+Introduction: Address pain of unrealistic expectations from small samples.
+Section 1: Three contributors to dispersion (rifle/ammo, shooter, recoil).
+Section 2: Benchmarks for precision with large samples; interactive sims.
+Section 3: Why large samples matter (pro protocols).
+Section 4: WEZ thinking for hit probability; interactive plots.
+Conclusion: Focus on achievable goals and progress.
+
+
 
 Technical & Presentation Tips for Accessibility
 
