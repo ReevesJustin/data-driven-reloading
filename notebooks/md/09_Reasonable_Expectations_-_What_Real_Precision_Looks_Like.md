@@ -107,10 +107,12 @@ This is why 3-shot groups lie so effectively about precision. You can minimize r
 
 **Let that sink in for a moment.** The vast majority of your precision potential isn't your powder choice, primer brand, seating depth, or brass preparation. It's how your rifle behaves during the milliseconds while the bullet is still in the barrel.
 
-**The breakdown (approximate):**
-- **~70%: Recoil/mass interaction** - How the rifle moves during firing, influenced by cartridge recoil, rifle weight, stock design, and shooter-rifle interaction
-- **~30%: Rifle + ammunition** - Barrel quality, ammunition consistency, action rigidity, optics
-- **Additional: Shooter fundamentals** - Position, trigger control, technique (can significantly degrade the system or optimize it)
+**The breakdown (approximate and assumes near perfect rifle mechanicals and expert shooter):**
+- **~70%: Recoil/mass interaction** - How the mass of the rifle interacts with the shooter in relation to cartridge recoil
+- **~30%: ammunition + ammunition** -  Ammunition optimization
+- **Additional: Shooter fundamentals** - Position, trigger control, technique, the shooter subtracts precision from the rifle + ammo
+
+Intuitively, this makes sense.  A 22lb .223Rem bolt action is much easier to shoot than a sporter (~8lb) weight .300WM.
 
 **Why this matters for small sample testing:**
 
@@ -562,7 +564,7 @@ You now understand:
 - That limit is probably higher (worse) than you thought
 - Different equipment levels have different realistic capabilities
 - Whether precision matters depends entirely on your target size and distance
-- Recoil is probably limiting you more than your ammunition
+- Recoil is probably limiting you more than your loading bench technique or method
 - Ladder tests mostly measure recoil management, not load quality
 
 **This is liberating.**
