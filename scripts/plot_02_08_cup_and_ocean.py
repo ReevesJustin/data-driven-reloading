@@ -46,7 +46,7 @@ ax1.set_xlim(1, N_SHOTS)
 
 # Add annotation
 ax1.annotate('Within ±5 fps\nby shot 15',
-             xy=(15, running_mean[14]), xytext=(30, TRUE_MEAN + 15),
+             xy=(15, running_mean[14]), xytext=(30, TRUE_MEAN + 7),
              arrowprops=dict(arrowstyle='->', color='darkgreen', lw=2),
              fontsize=10, color='darkgreen', fontweight='bold',
              bbox=dict(boxstyle='round', facecolor='lightgreen', alpha=0.7))
