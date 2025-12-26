@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.md)
 
 Time to complete: 10-15 minutes
 
@@ -540,4 +540,4 @@ Velocity gets you to the target. Precision determines if you hit it. Let's learn
 
 You understand velocity now. Next, you'll learn what happens when those bullets hit paper.
 
-[Previous: 04_Testing_One_Thing_at_a_Time](04_Testing_One_Thing_at_a_Time.ipynb) | [Next: 06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group](06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb)
+[Previous: 04_Testing_One_Thing_at_a_Time](04_Testing_One_Thing_at_a_Time.md) | [Next: 06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group](06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.md)

@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/11_Peer_Review_Your_Own_Data.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/11_Peer_Review_Your_Own_Data.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/11_Peer_Review_Your_Own_Data.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/11_Peer_Review_Your_Own_Data.md)
 
 Time to complete: 10-15 minutes
 
@@ -631,4 +631,4 @@ You've learned to test honestly, interpret correctly, and audit rigorously. Ther
 
 The final lesson: Know when to stop optimizing and start shooting.
 
-[Previous: 10_When_Is_A_Result_Real](10_When_Is_A_Result_Real.ipynb) | [Next: 12_What_About_The_Pros](12_What_About_The_Pros.ipynb)
+[Previous: 10_When_Is_A_Result_Real](10_When_Is_A_Result_Real.md) | [Next: 12_What_About_The_Pros](12_What_About_The_Pros.md)

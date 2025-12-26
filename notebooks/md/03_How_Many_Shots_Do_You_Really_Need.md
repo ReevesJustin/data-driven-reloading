@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/03_How_Many_Shots_Do_You_Really_Need.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/03_How_Many_Shots_Do_You_Really_Need.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/03_How_Many_Shots_Do_You_Really_Need.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/03_How_Many_Shots_Do_You_Really_Need.md)
 
 Time to complete: 10-15 minutes
 
@@ -570,4 +570,4 @@ In the next notebook, we'll apply these sample size principles to systematic tes
 
 You now know HOW MANY shots you need. Next, you'll learn how to organize those shots into useful, efficient testing protocols.
 
-[Previous: 02_What_We_Actually_Mean_by_Consistency](02_What_We_Actually_Mean_by_Consistency.ipynb) | [Next: 04_Testing_One_Thing_at_a_Time](04_Testing_One_Thing_at_a_Time.ipynb)
+[Previous: 02_What_We_Actually_Mean_by_Consistency](02_What_We_Actually_Mean_by_Consistency.md) | [Next: 04_Testing_One_Thing_at_a_Time](04_Testing_One_Thing_at_a_Time.md)

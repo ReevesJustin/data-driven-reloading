@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/12_What_About_The_Pros.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/12_What_About_The_Pros.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/blob/main/notebooks/12_What_About_The_Pros.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/blob/main/notebooks/12_What_About_The_Pros.md)
 
 Time to complete: 10-15 minutes
 
@@ -502,4 +502,4 @@ If you want to go deeper:
 
 **Thank you for completing this course. Now go be the most statistically literate shooter at your range.**
 
-[Previous: 11_Peer_Review_Your_Own_Data](11_Peer_Review_Your_Own_Data.ipynb) | **End of Course**
+[Previous: 11_Peer_Review_Your_Own_Data](11_Peer_Review_Your_Own_Data.md) | **End of Course**

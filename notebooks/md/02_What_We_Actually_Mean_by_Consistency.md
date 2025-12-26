@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/02_What_We_Actually_Mean_by_Consistency.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/02_What_We_Actually_Mean_by_Consistency.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/02_What_We_Actually_Mean_by_Consistency.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/02_What_We_Actually_Mean_by_Consistency.md)
 
 Time to complete: 10-15 minutes
 
@@ -339,4 +339,4 @@ In the next notebook, we'll tackle the question everyone asks: "Okay, so how man
 
 The foundation you just built will make the next notebook click instantly. You understand the ocean and the cup. Now you'll learn how big your cup needs to be.
 
-[Previous: 01_The_Biggest_Lie_in_Reloading_Testing](01_The_Biggest_Lie_in_Reloading_Testing.ipynb) | [Next: 03_How_Many_Shots_Do_You_Really_Need](03_How_Many_Shots_Do_You_Really_Need.ipynb)
+[Previous: 01_The_Biggest_Lie_in_Reloading_Testing](01_The_Biggest_Lie_in_Reloading_Testing.md) | [Next: 03_How_Many_Shots_Do_You_Really_Need](03_How_Many_Shots_Do_You_Really_Need.md)

@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.md)
 
 Time to complete: 10-15 minutes
 
@@ -530,4 +530,4 @@ You've learned how to measure velocity honestly (Notebook 05) and precision hone
 
 You now have the tools to measure honestly. Next, you'll learn to apply those tools to evaluate what you see online—and separate signal from noise.
 
-[Previous: 05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It](05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.ipynb) | [Next: 07_Real_Examples_-_Dissecting_Common_Myths](07_Real_Examples_-_Dissecting_Common_Myths.ipynb)
+[Previous: 05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It](05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.md) | [Next: 07_Real_Examples_-_Dissecting_Common_Myths](07_Real_Examples_-_Dissecting_Common_Myths.md)

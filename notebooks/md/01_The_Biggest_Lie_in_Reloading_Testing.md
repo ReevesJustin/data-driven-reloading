@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/01_The_Biggest_Lie_in_Reloading_Testing.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/blob/main/notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/blob/main/notebooks/01_The_Biggest_Lie_in_Reloading_Testing.md)
 
 Time to complete: 10-15 minutes
 
@@ -333,4 +333,4 @@ You'll learn:
 
 This is the foundation for everything else. Get this right, and the rest of the course will make perfect sense.
 
-[Previous: 00_Welcome_and_Why_This_Matters](00_Welcome_and_Why_This_Matters.ipynb) | [Next: 02_What_We_Actually_Mean_by_Consistency](02_What_We_Actually_Mean_by_Consistency.ipynb)
+[Previous: 00_Welcome_and_Why_This_Matters](00_Welcome_and_Why_This_Matters.md) | [Next: 02_What_We_Actually_Mean_by_Consistency](02_What_We_Actually_Mean_by_Consistency.md)

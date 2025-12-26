@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/04_Testing_One_Thing_at_a_Time.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/04_Testing_One_Thing_at_a_Time.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/04_Testing_One_Thing_at_a_Time.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/04_Testing_One_Thing_at_a_Time.md)
 
 Time to complete: 10-15 minutes
 
@@ -537,4 +537,4 @@ Write it down. The next notebook will give you the tools to analyze velocity dat
 
 You now know HOW to test (one variable at a time). Next, you'll learn how to analyze VELOCITY data properly so you can make good decisions from your testing.
 
-[Previous: 03_How_Many_Shots_Do_You_Really_Need](03_How_Many_Shots_Do_You_Really_Need.ipynb) | [Next: 05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It](05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.ipynb)
+[Previous: 03_How_Many_Shots_Do_You_Really_Need](03_How_Many_Shots_Do_You_Really_Need.md) | [Next: 05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It](05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.md)

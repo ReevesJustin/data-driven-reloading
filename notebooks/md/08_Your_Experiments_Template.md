@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/08_Your_Experiments_Template.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/08_Your_Experiments_Template.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/08_Your_Experiments_Template.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/08_Your_Experiments_Template.md)
 
 Time to complete: 15-20 minutes (one-time setup, then reuse forever)
 
@@ -951,4 +951,4 @@ The next notebook will help you set realistic expectations so you don't chase pe
 
 Now that you can test properly and analyze rigorously, we need to make sure you're chasing realistic goals. No more thinking you "should" shoot 0.25 MOA because someone on the internet said so.
 
-[Previous: 07_Real_Examples_-_Dissecting_Common_Myths](07_Real_Examples_-_Dissecting_Common_Myths.ipynb) | [Next: 09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like](09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.ipynb)
+[Previous: 07_Real_Examples_-_Dissecting_Common_Myths](07_Real_Examples_-_Dissecting_Common_Myths.md) | [Next: 09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like](09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.md)

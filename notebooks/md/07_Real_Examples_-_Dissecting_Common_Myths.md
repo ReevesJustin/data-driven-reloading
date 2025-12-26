@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/07_Real_Examples_-_Dissecting_Common_Myths.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/07_Real_Examples_-_Dissecting_Common_Myths.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/07_Real_Examples_-_Dissecting_Common_Myths.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/07_Real_Examples_-_Dissecting_Common_Myths.md)
 
 Time to complete: 10-15 minutes
 
@@ -692,4 +692,4 @@ This is where everything you've learned becomes immediately useful.
 > - All these methods fail for the same reason: mistaking random noise for real signal
 > - Evidence-based approach: fewer variables tested properly beats many variables tested inadequately
 
-[Previous: 06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group](06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb) | [Next: 08_Your_Experiments_Template](08_Your_Experiments_Template.ipynb)
+[Previous: 06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group](06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.md) | [Next: 08_Your_Experiments_Template](08_Your_Experiments_Template.md)

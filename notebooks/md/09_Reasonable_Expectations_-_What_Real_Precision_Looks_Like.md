@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.md)
 
 Time to complete: 10-15 minutes
 
@@ -619,4 +619,4 @@ And that will save you more time, money, and frustration than any miracle load c
 
 You now know what your system can deliver. Next, you'll learn to tell when you've actually improved it vs. when you just got lucky.
 
-[Previous: 08_Your_Experiments_Template](08_Your_Experiments_Template.ipynb) | [Next: 10_When_IS_a_Result_Real](10_When_IS_a_Result_Real.ipynb)
+[Previous: 08_Your_Experiments_Template](08_Your_Experiments_Template.md) | [Next: 10_When_Is_A_Result_Real](10_When_Is_A_Result_Real.md)

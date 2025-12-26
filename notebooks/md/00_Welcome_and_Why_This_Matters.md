@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/00_Welcome_and_Why_This_Matters.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/00_Welcome_and_Why_This_Matters.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/00_Welcome_and_Why_This_Matters.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/00_Welcome_and_Why_This_Matters.md)
 
 Time to complete: 10-15 minutes
 
@@ -460,4 +460,4 @@ Ready? Let's go expose the biggest lie in reloading testing.
 
 **Let's stop chasing ghosts. The truth is more interesting anyway.**
 
-[Next: 01_The_Biggest_Lie_in_Reloading_Testing](01_The_Biggest_Lie_in_Reloading_Testing.ipynb)
+[Next: 01_The_Biggest_Lie_in_Reloading_Testing](01_The_Biggest_Lie_in_Reloading_Testing.md)

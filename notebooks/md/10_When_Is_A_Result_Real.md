@@ -1,6 +1,6 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/10_When_Is_A_Result_Real.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/10_When_Is_A_Result_Real.md)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/10_When_Is_A_Result_Real.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/10_When_Is_A_Result_Real.md)
 
 Time to complete: 10-15 minutes
 
@@ -77,6 +77,10 @@ That depends on your statistical power (1 - β). With small samples, power is lo
 ![Statistical Power Demonstration](../static/nb10_plot11_statistical_power_demo.png)
 
 **Figure 1:** Visual demonstration of statistical errors using accessible language. The four panels show: (1) False alarms - when you think you found a difference but it's just luck (Type I error, controlled by alpha at 5%), (2) Missed opportunities - when a real difference is hidden by noise (Type II error, depends on sample size), (3) Statistical power - your ability to correctly detect real differences (1-beta, increases with sample size), and (4) How increasing sample size reduces overlap between distributions, making real differences easier to detect. Understanding these concepts helps you design tests that reliably find real effects without being fooled by noise.
+
+![Type I and Type II Errors Explained](../static/TypeI_II_Error_meme.jpg)
+
+**The most concise way to remember Type I and Type II errors.** This humorous visualization makes the distinction crystal clear: Type I error is convicting an innocent person (false positive - you said there's a difference when there isn't), while Type II error is letting a guilty person go free (false negative - you failed to detect a real difference). In reloading terms: Type I is thinking your new primer improved SD when it didn't (false alarm), Type II is missing that your new bullet actually does shoot better (missed opportunity).
 
 **Interactive Element Placeholder:**
 ```python
@@ -634,4 +638,4 @@ You now know how to tell when results are real. But there's one more critical sk
 
 Think of it as your internal quality control system. Because the hardest person to be objective with is yourself.
 
-[Previous: 09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like](09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.ipynb) | [Next: 11_Peer_Review_Your_Own_Data](11_Peer_Review_Your_Own_Data.ipynb)
+[Previous: 09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like](09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.md) | [Next: 11_Peer_Review_Your_Own_Data](11_Peer_Review_Your_Own_Data.md)
