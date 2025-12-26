@@ -1,0 +1,104 @@
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.nbconvert.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/00_Welcome_and_Why_This_Matters.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.nbconvert.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Writing 7899 bytes to notebooks/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Writing 7899 bytes to notebooks/executed/00_Welcome_and_Why_This_Matters.ipynb
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] Converting notebook notebooks/01_The_Biggest_Lie_in_Reloading_Testing.ipynb to notebook
+[NbConvertApp] ERROR | Error occurred while starting new kernel client for kernel 8c82ee23-b141-4d41-86d9-dfd5f06b2ec9: Kernel didn't respond in 60 seconds
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/ipykernel_launcher.py", line 16, in <module>
+    from ipykernel import kernelapp as app
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/ipykernel/__init__.py", line 7, in <module>
+    from .connect import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/ipykernel/connect.py", line 12, in <module>
+    import jupyter_client
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/jupyter_client/__init__.py", line 4, in <module>
+    from .asynchronous import AsyncKernelClient
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/jupyter_client/asynchronous/__init__.py", line 1, in <module>
+    from .client import AsyncKernelClient  # noqa
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/jupyter_client/asynchronous/client.py", line 12, in <module>
+    from ..channels import AsyncZMQSocketChannel, HBChannel
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/jupyter_client/channels.py", line 17, in <module>
+    from .session import Session
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/jupyter_client/session.py", line 54, in <module>
+    from .jsonutil import extract_dates, json_clean, json_default, squash_dates
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/jupyter_client/jsonutil.py", line 15, in <module>
+    from dateutil.parser import isoparse as _dateutil_parse
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/dateutil/parser/__init__.py", line 2, in <module>
+    from ._parser import parse, parser, parserinfo, ParserError
+  File "/home/justin/projects/.venv/lib/python3.12/site-packages/dateutil/parser/_parser.py", line 45, in <module>
+    from decimal import Decimal
+  File "/usr/lib/python3.12/decimal.py", line 3, in <module>
+    from _decimal import *
+  File "/usr/lib/python3.12/collections/__init__.py", line 426, in namedtuple
+    arg_list = ', '.join(field_names)
+               ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
