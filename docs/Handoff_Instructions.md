@@ -43,7 +43,7 @@ All scripts go in scripts/ folder, outputs to notebooks/static/
 Follow naming convention: plot_XX_YY_description.py
 Random seed 42, 300 DPI, steelblue colors, professional styling
 Update markdown files to embed plots as created
-
+reference scripts/plot_*.py for example plot scripts
 docs/Ideas.md has complete plot specifications
 Batch creation with agents is efficient
 ```

@@ -46,5 +46,5 @@
 ##  References
 - Denton Bramwell's "The Perverse Nature of Standard Deviation" [PDF](https://www.google.com/search?q=perverse+nature+of+standard+deviation+bramwell+pdf) (search for available copy).
 - Bryan Litz's *Applied Ballistics for Long Range Shooting* (book) and podcasts like [Hornady Manufacturing Ep. 50](https://www.hornady.com/ammunition/ballistics-resource-center/podcast/episode-50-bryan-litz).
-- Reloading All Day blog posts on data-driven reloading.
-- Reloading All Day's blog posts: https://www.reloadingallday.com/blog
+- Reloading All Day's blog posts on data-driven reloading: https://www.reloadingallday.com/blog
+- Preston Moore's YouTube Channel - See statistically valid dispersion tests https://www.youtube.com/@PrestonJMoore/videos

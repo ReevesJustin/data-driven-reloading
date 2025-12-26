@@ -28,9 +28,9 @@ Let's fix that. By the end of this notebook, you'll have crystal-clear definitio
 
 **Consistency means predictable.**
 
-Think about a metronome. Tick... tick... tick... Perfectly consistent, right? But it's not "perfect" in some absolute sense—it's just reliably predictable. You know what it's going to do next because it does the same thing over and over.
+Think about a metronome. Tick... tick... tick... Perfectly consistent, right? But it's not "perfect" in some absolute sense.  It's just reliably predictable. You know what it's going to do next because it does the same thing over and over.
 
-Now think about a drummer keeping time. Even a great drummer isn't a metronome. There's variation—some beats come a hair early, some a hair late. But a **consistent** drummer has a predictable average tempo with small, random variation around it. You can dance to that. You can play music with that.
+Now think about a drummer keeping time. Even a great drummer isn't a metronome, there's some variation.  Over the course of a song, some beats come a hair early, some a hair late. But a **consistent** drummer has a predictable average tempo with small, random variation around it. You can dance to that. You can play music with that.
 
 An **inconsistent** drummer? The tempo wanders. Big jumps. You can't predict the next beat. That's chaos, not music.
 
@@ -148,11 +148,11 @@ You've already seen this in Notebook 01. Remember those simulations showing how 
 
 ![The Cup and the Ocean Analogy](../static/nb02_plot08_cup_and_ocean.png)
 
-**Figure 1:** Visual demonstration of the cup and ocean analogy - showing how random samples (cups) from a true population (ocean with mean 2,850 fps and SD 15 fps) vary in their measurements. Small samples produce highly variable results that bounce around the true values, while larger samples converge closer to the truth. This fundamental concept explains why you never measure the population directly - you always work with samples, and small samples are unreliable cups that mislead you about the ocean.
+**Figure 1:** Visual demonstration of the cup and ocean analogy - showing how random samples (cups) from a true population (ocean with mean 2,850 fps and SD 15 fps) vary in their measurements. Small samples produce highly variable results that bounce around the true values, while larger samples converge closer to the truth. This fundamental concept explains why you never measure the population directly. You always work with samples, and small samples are unreliable cups that mislead you about the ocean.
 
 > **Critical Takeaway**
 >
-> You never measure the population (the ocean) directly. You always work with samples (cups of water). Small samples are unreliable cups—they mislead you about the ocean. Larger samples are more trustworthy, but even they aren't perfect. This is why sample size matters so much.
+> You never measure the population (the ocean) directly. You always work with samples (cups of water). Small samples are unreliable cups, as they mislead you about the ocean. Larger samples are more trustworthy, but even they aren't perfect. This is why sample size matters so much.
 
 ---
 
@@ -203,7 +203,7 @@ I know, I know. That's a lot of shooting. But would you rather:
 - Waste 30 rounds testing once and guessing, or
 - Invest 60-90 rounds testing properly and actually knowing?
 
-The second option saves you money long-term because you stop chasing ghosts.
+The second option saves you money long term because you stop chasing ghosts.
 
 ---
 
@@ -213,7 +213,7 @@ Now that we've defined what consistency actually means, let's talk briefly about
 
 Your ammunition's consistency comes from a combination of factors. Not all factors matter equally. Here's the hierarchy from most important to least:
 
-### 1. Bullet Quality (40% of variation)
+### 1. Bullet Quality (~40% of variation)
 
 The projectile itself is the biggest driver of consistency. A bullet that's:
 - Concentric (balanced around its axis)
@@ -226,27 +226,28 @@ The projectile itself is the biggest driver of consistency. A bullet that's:
 
 **What this means for you:** Buy quality bullets from known manufacturers. Don't cheap out here. Sorting by weight or measuring ogive length on budget bullets is lipstick on a pig.
 
-### 2. Powder Metering (30% of variation)
+### 2. Powder Metering (~30% of variation)
 
-Consistent powder charges matter, but not as much as people think. The difference between 42.0 grains and 42.1 grains is usually smaller than bullet-to-bullet variation.
+Consistent powder charges matter, but not as much as people think. The difference between 42.0 grains and 42.1 grains is usually smaller than bullet-to-bullet variation.  If you have very tight velocity spread needs, you will be able to calculate charge weight variation on velocity by the end of this course.
 
-**Why:** Small variations in powder charge do create velocity variation, but good powders are remarkably forgiving within 0.1-0.2 grain variation.
+**Why:** Small variations in powder charge do create velocity variation, but a roperly chosen powders is remarkably forgiving. 
 
-**What this means for you:** A good powder measure or scale that's consistent to ±0.1 grain is plenty. Trickling every charge to the exact kernel is usually overkill unless you're shooting extreme long range.
+**What this means for you:** A good powder measure or scale that's consistent to ±0.1 grain is plenty. Trickling every charge to the exact kernel is usually overkill unless you're shooting extreme long range. This statement will ruffle some feathers:  Your charge weight variation isn't effecting your group size nearly as much as you may think.
 
-### 3. Brass Quality and Prep (20% of variation)
+### 3. Brass Quality and Prep (~20% of variation)
 
-Using the same brand and lot of brass matters. Weight sorting, volume measuring, and neck turning matter **much less** than people claim, especially with premium brass.
+Using the same brand and lot of brass matters. Weight sorting, volume measuring, and neck turning matter **much less** than people claim, especially with premium brass.  This is NOT advice to mix lots, brands, or use brass of otherwise unknown origin.  The lipstick on a pig analogy very much applies to "fixing" poor quality brass.
 
-**Why:** Modern premium brass (Lapua, Alpha, Peterson) is already remarkably consistent. Weight variations come mostly from differences in case head thickness, which doesn't affect internal volume much.
+**Why:** Modern premium brass (Alpha, Lapua) is already remarkably consistent. Weight variations come mostly from differences in case head thickness, which doesn't affect internal volume much.
 
-**What this means for you:** Buy good brass, use the same lot, and don't obsess over sorting it. The time spent weight-sorting would be better spent practicing shooting fundamentals.
+**What this means for you:** Buy good brass, use the same lot, and don't obsess over sorting it. The time spent weight-sorting would be better spent practicing shooting fundamentals.  If you want to sort brass, measure water volume to a statistically significant degree.  
 
-### 4. Primers (10% of variation)
+### 4. Primers (~10% of variation)
 
-Primer choice matters, but primer-to-primer variation within the same lot is minimal with quality products. The internet is full of claims about switching primers and seeing dramatic SD drops. Most of those are small-sample artifacts (remember the cup and the ocean?).
+Primer choice matters, but primer-to-primer variation within the same lot is minimal with quality products. The internet is full of claims about switching primers and seeing dramatic SD drops. Most of those are small sample artifacts (remember the cup and the ocean?).
 
 **Why:** Primers do affect velocity (different brisance, different energy), but modern primers are remarkably consistent within a lot.
+    NOTE: This is not to imply some primers may produce a different velocity mean due to brisance.
 
 **What this means for you:** Find a primer that works in your rifle and stick with it. Don't chase "better" primers based on someone's 10-shot test.
 
@@ -286,11 +287,11 @@ Based on this hierarchy, here's the smart approach:
 - Stick with proven primers
 
 **Low-Priority (Don't Obsess):**
-- Weight-sorting brass
-- Measuring case neck thickness
+- Weight-sorting brass - If you are concerned, sort by internal volume.
+- Measuring case neck thickness - Good to know for other reasons, but not for our current purposes.
 - Turning case necks (unless obvious issues)
-- Primer pocket uniforming
-- Trickling to exact kernel count
+- Primer pocket uniforming - Sometimes "uniforming" does more harm than good.  Start with brass suitable for your needs.
+- Trickling to exact kernel count - If you "need" this step, you'll know by the time we are finished.
 
 The internet is full of people doing low-priority tasks and attributing success to them. Remember: small samples create illusions. They sorted brass, shot one good group, and declared victory. Correlation isn't causation.
 
@@ -323,7 +324,7 @@ In the next notebook, we'll tackle the question everyone asks: "Okay, so how man
 > - You measure samples (cups) but want to understand the population (ocean)
 > - Small samples (small cups) are unreliable indicators of true performance
 > - Consistency requires multiple testing sessions, not just one lucky day
-> - Component quality drives results: bullets matter most, brass sorting matters least
+> - Component quality drives results: bullets matter most, brass weight sorting matters least
 > - Focus your effort on high-impact factors, not internet mythology
 
 ---
@@ -331,7 +332,7 @@ In the next notebook, we'll tackle the question everyone asks: "Okay, so how man
 ## Coming Up Next
 
 **In Notebook 03**, we'll answer the practical question: How many shots do you actually need to test a load reliably? You'll learn:
-- Why 30 shots is the magic minimum for spread measurements
+- Why 30 shots is the magic **minimum** for spread measurements
 - Why 10 shots can work for velocity averages but not for consistency
 - How to calculate sample sizes for your specific testing goals
 - The cost-benefit analysis of "good enough" vs. "really sure"

@@ -32,7 +32,7 @@ This isn't a character flaw. It's not bad technique. It's not even bad luck.
 
 ## The Problem We All Face
 
-Reloading is expensive. Not just in components—though that matters—but in:
+Reloading is expensive. Not just in components, though that matters, but in:
 
 **Time:** How many hours have you spent at the range chasing results that vanished?
 
@@ -78,7 +78,7 @@ You spend $100 and 8 hours testing 10 different powder charges. You "find a node
 
 Multiply that across every variable you test—primer, bullet, seating depth, brass prep method, powder type—and you've wasted thousands of dollars and hundreds of hours over your shooting career.
 
-**This course stops the bleeding.** You'll learn to test efficiently, interpret honestly, and make decisions based on real data instead of lucky samples.
+**This curriculum stops the bleeding.** You'll learn to test efficiently, interpret honestly, and make decisions based on real data instead of lucky samples.
 
 ---
 
@@ -93,11 +93,11 @@ You need three things:
 
 The statistics concepts you'll learn are simpler than you think. Most can be explained with everyday analogies. We'll use:
 
-- **Ocean and cup** (not population and sample)
-- **Spread** (not standard deviation—at first)
-- **How many shots you actually need** (not confidence intervals and power analysis—though we'll get there)
+- **Ocean and cup** - Not population and sample.
+- **Spread** - Not standard deviation, at least at first.
+- **How many shots you actually need** - Not confidence intervals and power analysis, allthough we'll get there.
 
-By the end, you'll understand the statistics **well enough to use them**. You won't need to derive formulas or understand proofs. You just need to know when 10 shots is enough (rare) and when you need 30+ (usually).
+By the end, you'll understand the statistics **well enough to use them**. You won't need to derive formulas or understand proofs. You just need to know when 10 shots is enough (very rarely) and when you need 30+ (most of the time).
 
 **Think of it like driving a car.** You don't need to understand thermodynamics and internal combustion. You just need to know: gas makes it go, brake makes it stop, and certain sounds mean "take it to a mechanic."
 
@@ -135,7 +135,7 @@ And once you have it, you'll start seeing the same patterns everywhere:
 - Political polls with huge margins of error
 - Marketing claims that sound amazing until you check the sample size
 
-**You'll become much harder to fool. In reloading and in life.**
+**My goal is that you'll become much harder to fool. In reloading and in life.**
 
 ---
 
@@ -147,7 +147,7 @@ And once you have it, you'll start seeing the same patterns everywhere:
 
 ✅ **Hunters** who need confidence their ammunition will perform when it matters
 
-✅ **Competitors** (PRS, NRL, F-Class, Benchrest) who need every edge but can't afford false leads
+✅ **Competitors** who need every edge but can't afford false leads
 
 ✅ **Anyone tired of conflicting online advice** and wanting to evaluate claims critically
 
@@ -159,15 +159,15 @@ And once you have it, you'll start seeing the same patterns everywhere:
 
 **This course is NOT for:**
 
-❌ **People looking for load recipes** (we don't provide specific loads—just testing methodology)
+❌ **People looking for load recipes** (I don't provide specific loads.  ONLY TESTING METHODOLOGY)
 
-❌ **Those who want confirmation their current approach is perfect** (we're going to challenge a lot of conventional wisdom)
+❌ **Those who want confirmation their current approach is perfect** (I'm going to challenge a lot of conventional wisdom)
 
-❌ **Anyone unwilling to shoot 30+ rounds to test a load** (if you're only willing to shoot 5 shots and call it done, this won't help)
+❌ **Anyone unwilling to shoot 30+ rounds to test a load** (If you're only willing to shoot 5 shots and call it done, this won't help)
 
-❌ **People looking for shortcuts** (proper testing takes components, but it saves you from wasting MORE components on false leads)
+❌ **People looking for shortcuts** (Proper testing takes components, but it saves you from wasting MORE components on false leads)
 
-If you're in the first group, let's go. If you're in the second group, that's okay—this might not be your path. No hard feelings.
+If you're in the first group, let's go. If you're in the second group, that's okay, this might not be your path. No hard feelings.
 
 ---
 
@@ -176,7 +176,7 @@ If you're in the first group, let's go. If you're in the second group, that's ok
 **12 interactive notebooks, each 10-15 minutes:**
 
 **Phase 1: The Problem (Notebooks 00-03)**
-- You'll see how small samples lie (not just told—you'll experience it through simulation)
+- You'll see how small samples lie (Not just told. you'll experience it through simulation.)
 - You'll understand why your results don't repeat
 - You'll learn what "consistency" actually means
 - You'll calculate how many shots you really need
@@ -184,9 +184,9 @@ If you're in the first group, let's go. If you're in the second group, that's ok
 **Emotional journey:** Frustration → Recognition → Hope → Understanding
 
 **Phase 2: The Solution (Notebooks 04-08)**
-- You'll learn systematic testing (one variable at a time)
-- You'll understand velocity data properly (when SD matters, when it doesn't)
-- You'll measure group size honestly (mean radius vs extreme spread)
+- You'll learn systematic testing (One variable at a time)
+- You'll understand velocity data properly (When SD matters, when it doesn't)
+- You'll measure group size honestly (Mean radius vs Extreme Spread)
 - You'll get templates to analyze your own data
 
 **Emotional journey:** Learning → Application → Critical thinking → Empowerment
@@ -194,7 +194,7 @@ If you're in the first group, let's go. If you're in the second group, that's ok
 **Phase 3: Mastery (Notebooks 09-12)**
 - You'll understand realistic precision expectations for your equipment
 - You'll learn when results are real vs random noise
-- You'll develop self-peer-review skills (spot your own biases)
+- You'll develop self-peer-review skills (Spot your own biases)
 - You'll understand why "pro" methods might not apply to you
 
 **Emotional journey:** Confidence → Expertise → Independence → Resilience
@@ -212,14 +212,14 @@ If you're in the first group, let's go. If you're in the second group, that's ok
 ## What Makes This Different
 
 **Other reloading resources:**
-- Give you load recipes (which may or may not work in your rifle)
+- Give you load recipes (Which may or may not work in your rifle)
 - Teach specific methods (OCW, ladder testing, Audette, etc.)
-- Focus on components and equipment
+- Focus on components and equipment (But, by nature of the topic have to be discussed in general terms)
 - Assume small samples are fine
 
 **This course:**
 - Teaches you HOW to test, not WHAT to load
-- Shows you WHY common methods fail (with simulations proving it)
+- Shows you WHY common methods fail (With simulations proving it)
 - Focuses on methodology and interpretation
 - Requires proper sample sizes for valid conclusions
 
@@ -233,7 +233,7 @@ If you're in the first group, let's go. If you're in the second group, that's ok
 
 ## Interactive Elements: Learning by Doing
 
-Throughout this course, you'll find **interactive simulations** (placeholders in markdown, full implementations in .ipynb files). These let you:
+Throughout this course, you'll find **interactive simulations** (Placeholders in markdown, full implementations in .ipynb files). These let you:
 
 **Experiment risk-free:** Change sample sizes, see what happens. No components wasted.
 
@@ -412,17 +412,17 @@ Survivorship bias. Equipment divide. Why pro methods might not work for hobbyist
 
 ## A Word About Tone
 
-This course is going to challenge some strongly-held beliefs. We'll debunk methods that many people swear by. We'll show data contradicting claims from respected sources.
+This course is going to challenge some strongly-held beliefs. I'll debunk methods that many people swear by. I'll show data contradicting claims from respected sources.
 
-**Our approach:**
-- **Respectful but honest:** We'll critique methods, not people
-- **Evidence-based:** Every claim backed by simulation or data
-- **Humble:** We acknowledge we've all made these mistakes
-- **Practical:** We won't just tear down—we'll show what works instead
+**My approach:**
+- **Respectful but honest:** I critique methods, not people
+- **Evidence-based:** Every claim backed by simulation or data, I have personally tested all of the methods described.
+- **Humble:** I acknowledge we've all made these mistakes
+- **Practical:** I won't just tear down.  I'll show what works instead
 
 **"We've all fallen for a lucky 8 fps SD string and declared we found 'the node.' Here's exactly why that happens, how the statistics create the illusion, and how to avoid chasing that particular ghost in the future."**
 
-That's the voice of this course. Not superior, not condescending. Fellow travelers who learned the hard way and want to save you the same journey.
+That's the voice of this course. Not superior, not condescending. I'm a fellow traveler who learned the hard way and want to save you the same journey.
 
 If you see your own mistakes reflected in these notebooks, good. That means you're learning. We all start somewhere.
 

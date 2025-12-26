@@ -13,9 +13,9 @@ Picture this scenario. It's a common one:
 You're developing a new load. Your current setup shoots okay—about 1.2 MOA with factory ammo—but you know you can do better. You've been reading forums, watching videos, and you have a plan:
 
 **Your New Load:**
-- Switch from H4350 to Varget (you heard it's more temperature stable)
+- Switch from H4350 to Varget (you heard it's better suited for your component selection)
 - Change from CCI BR2 primers to Federal 210M (everyone says they're better)
-- Adjust seating depth from 0.020" off the lands to 0.040" (you read that works better with VLD bullets)
+- Adjust seating depth from 0.020" off the lands to 0.005 off the lands" (you read that works better with VLD bullets)
 - Use your new brass instead of once-fired (it's finally ready)
 
 You load up 20 rounds with all these changes. You head to the range. You shoot five 5-shot groups.
@@ -66,7 +66,7 @@ If you want to make them again and only have regular chocolate, do you:
 Same principle with ammunition:
 
 **Current load:** H4350, CCI primers, 0.020" jump - shoots 1.2 MOA
-**New load:** Varget, Federal primers, 0.040" jump - shoots 0.7 MOA
+**New load:** Varget, Federal primers, 0.005" jump - shoots 0.7 MOA
 
 **Question:** What actually improved your groups?
 
@@ -126,7 +126,7 @@ Now, remember from Notebook 03: you need at least 30 shots per load to measure a
 **At 100 rounds per hour of shooting:** 21.6 hours of range time
 **Barrel life consumed:** 2,160 rounds (potentially 20%+ of a barrel's accurate life)
 
-**Reality check:** Nobody is doing this. And if you try, you'll spend so long testing that your barrel will have changed, your primers will be from different lots, and your powder will have aged.
+**Reality check:** Nobody is doing this. And if you try, you'll spend so long testing that your barrel will have changed, your primers will be from different lots, and your powder moisture content will have changed or maybe even aged.
 
 ### The Smart Alternative: Sequential Testing
 
@@ -144,7 +144,7 @@ Instead, test one variable at a time:
 **You just saved $3,600 and 18 hours** while actually learning which variables matter and which don't.
 
 Plus, you now KNOW:
-- Federal primers gave you 3 fps lower spread than CCI (real difference)
+- Federal primers gave you 5 fps lower spread than CCI (real difference)
 - H4350 and Varget performed identically (no difference, so use cheaper one)
 - Charge weight 41.5gr was best (0.2 MOA better than others)
 - Seating depth made no measurable difference (stop worrying about it)
@@ -249,7 +249,7 @@ Plot the data. Calculate statistics. Look for real differences.
 
 **Example results:**
 - CCI BR2: Average 2,850 fps, SD 15 fps, average group 1.1 MOA
-- Federal 210M: Average 2,853 fps, SD 14 fps, average group 1.0 MOA
+- Federal 210M: Average 2,863 fps, SD 14 fps, average group 1.0 MOA
 
 **Honest interpretation:** Tiny differences. Probably not real. Both primers work fine. Save money, use whichever is cheaper or more available.
 
@@ -271,7 +271,7 @@ Based on data, choose:
 Write down what you learned. Update your load recipe notes. Now you have a new baseline:
 - **Baseline Load v2:** Factory powder charge, CCI BR2 (tested, works fine), factory bullet, factory seating depth
 
-**Next test:** Maybe try a different powder (H4350 vs Varget). Everything else stays the same, including the CCI primers you just validated.
+**Next test:** Maybe try a different powder (H4350 vs RL16). Everything else stays the same, including the CCI primers you just validated.
 
 Repeat this process for each variable you care about. After 4-5 testing cycles, you have a fully optimized load where you KNOW what each component does and why you chose it.
 
@@ -286,9 +286,9 @@ Let's walk through a complete test from start to finish. This is exactly what yo
 **Baseline Load:**
 - Cartridge: .308 Winchester
 - Bullet: 168gr Sierra MatchKing
-- Powder: 43.5gr Varget
+- Powder: 42.5gr N140
 - Brass: Lapua, same lot, 2x fired
-- Seating depth: 2.800" COAL (0.020" off lands)
+- Seating depth: 2.800" COAL (0.050" off lands)
 - Current primer: CCI BR2
 
 **Current performance:** ~1.0 MOA, SD around 12 fps
@@ -464,7 +464,7 @@ Once you've tested variables individually and created your final recipe, you loa
 
 ### Situation 3: The Variables Are Not Independent
 
-Some variables genuinely interact. Example: Seating depth affects pressure, which affects optimal charge weight. In this case, you might test "charge weight at 0.020" off" vs "charge weight at 0.040" off" as two separate complete tests.
+Some variables genuinely interact. Example: Seating depth affects pressure, which may affects charge weight. In this case, you might test "charge weight at 0.020" off" vs "charge weight at 0.040" off" as two separate complete tests.
 
 **But:** This is advanced. Start with one-at-a-time testing until you understand your system.
 
@@ -476,10 +476,10 @@ After six months of one-variable-at-a-time testing, here's what you'll have:
 
 **Your load notebook:**
 - "CCI vs Federal primers: No difference. Use CCI (cheaper)."
-- "H4350 vs Varget: Varget gave 2 fps lower SD and is more temp stable. Worth switching."
+- "H4350 vs RL16: RL16 gave 5 fps lower SD and is temp stable. Worth switching."
 - "Charge weight test: 41.5gr best accuracy. 42.0gr faster but groups opened up."
 - "Seating depth test: No measurable difference from 0.020" to 0.060" off. Using 0.040" for magazine feed."
-- "Sierra 168gr vs Berger 168gr: Berger gave 0.15 MOA improvement. Worth the extra cost for competition."
+- "Sierra 168gr vs Berger 168gr Hybrid: Berger gave 0.15 MOA improvement. Worth the extra cost for competition."
 
 **What this knowledge does:**
 

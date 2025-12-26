@@ -16,16 +16,16 @@ Maybe your rifle really does shoot 0.6 MOA. Or maybe it's a 1.2 MOA rifle that g
 
 This isn't opinion. It's not pessimism. It's mathematics.
 
-And once you see it—really see it through simulation—you'll never look at small groups the same way again.
+And once you see it, and I mean REALLY see it through simulation, you'll never look at small groups the same way again.
 
 ---
 
 ## The Setup: A Perfect Rifle
 
-Let's create a perfect rifle in a computer. Not a real rifle—a simulated one where we control everything and know the exact truth.
+Let's create a perfect rifle in a computer. Not a real rifle, but a simulated one where we control everything and know the exact truth.  If you are already skeptacle, bare with me.
 
 **Our test rifle:**
-- True precision: **1.5 MOA** (this is fixed, it never changes)
+- True precision: **1.5 MOA** (This is fixed, it never changes)
 - Perfectly consistent ammunition
 - No shooter error
 - No wind
@@ -67,7 +67,7 @@ We're going to fire 1,000 three-shot groups from our true 1.5 MOA rifle. That's 
 
 If you shot just ONE three-shot group and it measured 0.6 MOA, you'd think: "This rifle/load shoots 0.6 MOA!"
 
-But there's a very good chance it's actually a 1.2 MOA or even 1.5 MOA rifle that got lucky.
+But there's a very good chance it's actually a 1.2 MOA or even a 1.5 MOA rifle that got lucky.
 
 **And you'd make load development decisions based on that luck.**
 
@@ -104,7 +104,7 @@ Here's where it gets personal. Let's see if you can tell the difference between 
 
 **The emotional impact:**
 
-When you're fooled by your own eyes—when you KNOW the answer and still get tricked—the lesson sticks.
+When you're fooled by your own eyes, when you KNOW the answer and still get tricked, the lesson sticks.
 
 This is what happens at the range. You don't KNOW all your groups came from the same rifle/load. So you believe the variation means something. It doesn't.
 
@@ -206,6 +206,7 @@ Two approaches work:
 - 30-50 shots for measuring SD (velocity consistency)
 - 30-50 shots for measuring precision (group size via mean radius)
 - Aggregate all shots, measure once, trust the result
+- Depending on the chronograph you have, you can do both at the same time!
 
 **Advantages:**
 - Most accurate
@@ -220,6 +221,7 @@ Two approaches work:
 - 5-10 groups of 5-10 shots each
 - Calculate average group size (not best group!)
 - Use that average as your result
+- There is an exception, called a "Composite group" where all of the groups are overlaid with the same aiming reference centered.  But, that's not what I'm describing here.
 
 **Advantages:**
 - Familiar to most shooters
@@ -227,7 +229,7 @@ Two approaches work:
 - Can compare to historical data
 
 **Disadvantages:**
-- Temptation to cherry-pick best groups
+- Temptation to cherry pick best groups
 - More work to measure
 - Less accurate than Option A
 

@@ -44,7 +44,7 @@ Not because I say so. Not because of some arbitrary rule. Because of math that's
 
 These methods feel efficient. They're actually wasteful because they lead to wrong conclusions, which means retesting, which means wasted components and time.
 
-**The better approach costs more ammo upfront but saves money long-term** because you get real answers the first time.
+**The better approach costs more ammo upfront but saves money long term** because you get real answers the first time.
 
 Let me show you exactly why.
 
@@ -92,7 +92,7 @@ Imagine you're trying to measure the temperature of the ocean:
 **100 shots:**
 - Very reliable measurements
 - Can detect small differences confidently
-- Needed for making big claims or publishing data
+- Needed for making big claims or publishing data (in many cases, 100+)
 
 ### The Mathematical Reason (Explained Simply)
 
