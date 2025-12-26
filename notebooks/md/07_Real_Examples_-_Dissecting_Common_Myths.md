@@ -187,6 +187,8 @@ Velocity nodes persist because:
 3. Test each properly with 30+ shots for precision and SD
 4. Choose based on real data, not imaginary nodes
 
+**Apply the amplification principle:** Instead of testing tiny 0.1 grain increments hoping to find a "node," use larger steps (0.5 grain or more). If charge weight truly affects your system's precision, the difference between 42.0gr and 42.5gr should be obvious with proper sample sizes. If 0.5gr steps show no meaningful difference in precision (they often don't), you've learned that charge weight doesn't significantly affect accuracy for your setup—and you've learned it efficiently by testing fewer charge weights. **Safety critical:** Always verify larger charge weight increments stay within published safe maximums. Pressure increases directly with charge weight.
+
 **Temperature sensitivity testing** is FAR more important than node hunting. Test your chosen load at different temperatures—that variation matters way more than 0.1-grain charge differences.
 
 ---
@@ -270,6 +272,13 @@ Seating depth testing persists because:
 4. Calculate mean radius for each
 5. Use statistical comparison to see if differences are real
 6. Only if one depth is clearly and consistently better (across multiple sessions), commit to it
+
+**The amplification principle:** This testing strategy applies a fundamental engineering concept—**amplify the variable to see if the effect scales**. If changing seating depth by 0.040" shows no measurable difference in 30-shot tests, you can be confident that 0.005" changes won't matter either. The same principle applies to charge weight testing: if 0.5 grain steps show no difference, 0.1 grain increments certainly won't. By testing larger increments, you:
+- Test fewer conditions (saves components and time)
+- Make any real effects more obvious (easier to detect)
+- Quickly learn whether the variable matters for your system
+
+If large changes reveal an effect, you can then refine within the winning range with smaller steps. If large changes show nothing, you've learned that variable doesn't matter—and you learned it efficiently.
 
 **If you're shooting VLD or secant ogive bullets at long range:** Seating depth might matter. Test properly with large increments (0.020"-0.040" steps).
 
@@ -629,6 +638,35 @@ They fail for the same statistical reasons:
 5. Results aren't replicated to check consistency
 
 **These aren't bad methods because the people who developed them were ignorant.** They're bad methods because proper statistical testing requires more rounds than most hobbyists want to shoot, and these methods emerged from anecdotal experience without rigorous verification.
+
+### Why Myths Persist: The Cherry-Picked Success Story
+
+**Here's what keeps these methods alive despite their statistical flaws:**
+
+When you test with small samples, sometimes you get lucky. And when you get lucky, you remember it. You post it online. You tell your friends. You write forum posts about your "breakthrough."
+
+**The survivor bias cycle:**
+1. **100 shooters try OCW testing** with 15 rounds total
+2. **Random variation means ~20 of them get a "clear winner"** that performs well in their small sample
+3. **Those 20 shooters believe OCW works** and enthusiastically share their success online
+4. **The 80 who got inconclusive results** quietly move on without posting, or assume they "did it wrong"
+5. **New shooters see only the 20 success stories** and think "OCW has a 100% success rate!"
+
+**The truth about real interactions:** Yes, there ARE real interactions between ammunition components and your specific firearm that can optimize performance. Seating depth CAN matter for some bullets. Charge weight CAN affect precision for some powder/bullet combinations. Load development is real.
+
+**But the only way to find genuine improvements is through proper testing with adequate sample sizes.** The cherry-picked success stories circulating online represent lucky draws from random variation, not reproducible methods. When someone posts exceptional results from 15 shots, they've encountered statistical noise in their favor—not discovered a breakthrough.
+
+**What gets shared online:**
+- "OCW found my perfect charge! Groups shrank 40%!"
+- "Seating depth made a HUGE difference at 0.020" off!"
+- "This primer dropped my SD from 15 to 8 fps!"
+
+**What doesn't get shared:**
+- "Tried OCW three times, got different 'winners' each time"
+- "Tested seating depth properly with 30 shots each—all depths performed identically"
+- "Retested the primer with larger samples—no real difference"
+
+The methods persist because **successes are published and failures are private**. This creates a distorted record that makes lucky results look like proven methods.
 
 ---
 

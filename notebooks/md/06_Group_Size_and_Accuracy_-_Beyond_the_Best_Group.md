@@ -459,7 +459,9 @@ A smart variation of the aggregate approach is called **"composite groups"** - s
 - Bullet holes remain clearly defined (easier to measure accurately)
 - Collects large sample data in one range session
 - Barrel has time to cool between groups if needed
-- Software like **OnTarget TDS** ([OnTarget Precision Calculator](https://ontargetshooting.com/)) automates the convergence and statistical analysis
+- Software tools automate the convergence and statistical analysis:
+  - **OnTarget TDS** ([OnTarget Precision Calculator](https://ontargetshooting.com/)) - Comprehensive tool for composite groups, mean radius calculations, and statistical analysis
+  - **Ballistic-X** ([Ballistic-X Export](https://ballisticxexport.com/)) - Alternative tool offering digital group measurement, target analysis, and data export capabilities
 
 **Best practice:** See **Preston Moore's testing strategy** ([Preston Moore YouTube](https://www.youtube.com/@PrestonJMoore/videos)) as a practical example - he commonly tests with 3 × 10-shot groups with chronograph data, combining them for statistically valid precision measurement. This approach balances practical data collection with statistical rigor.
 

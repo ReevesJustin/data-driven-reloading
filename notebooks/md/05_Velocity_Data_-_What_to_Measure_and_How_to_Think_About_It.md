@@ -211,6 +211,69 @@ Before we get too excited (or depressed) about our velocity measurements, we nee
 
 **The practical lesson:** If you're chasing single-digit SDs, make sure your chronograph is accurate enough to actually measure them. A $100 chronograph with ±10 fps error cannot reliably distinguish between a 10 fps load and a 15 fps load.
 
+### The Hidden Factor #2: Powder Scale Tolerance and Charge Weight Variability
+
+Just as your chronograph adds measurement error, **your powder scale's tolerance adds charge weight variability** that directly contributes to velocity SD. Understanding this relationship helps you know when investing in a better scale actually matters.
+
+**The calculation (with example):**
+
+Let's say you're loading 6.5 Creedmoor with 41.5 grains of powder, and your chronograph shows an average of 2,720 fps over a significant sample (30+ shots).
+
+**Step 1: Calculate velocity per grain of powder**
+```
+Velocity / Charge weight = fps per grain
+2,720 fps / 41.5 gr = 65.5 fps/gr
+```
+
+This means each 1.0 grain of powder adds approximately 65.5 fps.
+
+**Step 2: Scale down to your scale's precision**
+
+If your scale is accurate to ±0.1 grain (common for beam scales and lower-end digital scales):
+```
+65.5 fps/gr × 0.1 gr = ±6.55 fps per 0.1 grain variation
+```
+
+**Step 3: Calculate total charge weight contribution to SD**
+
+If your scale can vary by ±0.1 grain, some rounds might be 41.4gr and others 41.6gr. The total range is 0.2 grains, which creates:
+```
+65.5 fps/gr × 0.2 gr = ~13 fps total velocity spread from charge weight alone
+```
+
+**The practical lesson:**
+
+If your powder charge tolerance is ±0.1 grain and you're seeing 13+ fps SD, a significant portion of that SD is coming from inconsistent powder charges. In this example, charge weight variability could account for most or all of your measured SD.
+
+**What this means for scale selection:**
+
+- **±0.1 grain scale** (beam scale, basic digital): Contributes ~10-15 fps to SD for typical rifle cartridges
+- **±0.02 grain scale** (quality digital): Contributes ~2-3 fps to SD
+- **±0.01 grain scale** (high-end analytical): Contributes ~1 fps to SD
+
+**Decision guide:**
+
+**If your measured SD is 15-20 fps:**
+- Upgrading from ±0.1gr to ±0.02gr scale could reduce SD by 8-12 fps
+- This is a significant improvement worth considering
+
+**If your measured SD is already 8-10 fps:**
+- Your powder charges are probably already very consistent (good scale)
+- OR other factors (bullets, primers, brass) dominate your SD
+- Upgrading scale further has diminishing returns
+
+**Safety note:** This relationship (charge weight to velocity) also means pressure increases directly with charge weight. Always stay within published safe load data, and be especially careful when using a less precise scale—that ±0.1 grain tolerance could put some rounds over maximum pressure.
+
+**Example for other cartridges:**
+
+The same calculation applies to any cartridge. For a .223 Remington with 23.0 grains producing 2,800 fps:
+```
+2,800 fps / 23.0 gr = 121.7 fps/gr
+±0.1 gr scale tolerance × 121.7 = ±12.2 fps from charge weight alone
+```
+
+Smaller capacity cartridges are MORE sensitive to charge weight variations (higher fps/gr ratio), making scale precision even more important.
+
 ---
 
 ## The Great Velocity Node Myth: Your Brain Playing Tricks

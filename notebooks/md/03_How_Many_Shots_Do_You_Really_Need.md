@@ -504,7 +504,42 @@ Don't test everything at once. Test one variable at a time (Notebook 04).
 
 **Total: 370 rounds spread over 4 months**
 
-Much more manageable than 370 rounds in one weekend.  I've already provided hints that some components may not be worth comparing depending on your goals.  Other component changes (bullets?) could provide bigger improvements. 
+Much more manageable than 370 rounds in one weekend.  I've already provided hints that some components may not be worth comparing depending on your goals.  Other component changes (bullets?) could provide bigger improvements.
+
+### The Engineering Principle: Amplify the Variable
+
+Here's a testing strategy borrowed from engineering that saves both time and components: **if you want to detect whether a variable matters, amplify it.**
+
+**The concept:** If a small change produces an effect, a larger change should produce a more obvious effect. If you can't detect the effect with a large change, you definitely won't detect it with a small one.
+
+**Practical applications:**
+
+**For charge weight testing:**
+- Instead of testing 0.1 or 0.2 grain increments, try 0.5 grain steps
+- If the difference between 42.0gr and 42.5gr is invisible with 30 shots, the difference between 42.0gr and 42.1gr certainly won't matter
+- You can test fewer charge weights with larger gaps and still learn what matters
+- **Safety critical:** Always check published load data to ensure larger increments don't exceed maximum pressure. Pressure increases directly with charge weight.
+
+**For seating depth testing:**
+- Instead of 0.005" increments, try 0.020" or 0.040" jumps
+- If seating depth truly affects accuracy for your bullet, large jumps should reveal it
+- If 0.040" differences show nothing, you can confidently skip testing tiny 0.005" adjustments
+
+**For component testing:**
+- Compare significantly different options rather than nearly-identical ones
+- Example: Test a match-grade bullet vs your current hunting bullet, not two match bullets with 0.5 grain weight difference
+
+**Why this works:**
+1. **Fewer test conditions** = Fewer total rounds needed = Lower cost
+2. **Larger signals** = Easier to detect with same sample sizes = Higher confidence
+3. **Faster answers** = Less analysis paralysis, more shooting
+
+**Example:**
+- **Old approach:** Test 10 charge weights from 41.0gr to 42.0gr in 0.1gr steps. Need 30 shots × 10 charges = 300 rounds
+- **New approach:** Test 4 charge weights at 41.0gr, 41.5gr, 42.0gr, 42.5gr. Need 30 shots × 4 charges = 120 rounds
+- **Result:** If 0.5gr steps show no meaningful difference, you saved 180 rounds and learned that charge weight doesn't matter much for your system. If they DO show a difference, you can refine within the winning range.
+
+This principle applies throughout your testing. When in doubt, make bigger changes to the variable you're testing. Real effects will show up clearly. Imaginary effects won't appear no matter how much you amplify them. 
 
 ---
 

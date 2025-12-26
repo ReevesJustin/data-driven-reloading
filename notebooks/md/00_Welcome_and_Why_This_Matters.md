@@ -74,6 +74,28 @@ I'm not judging. **I've done all of these.** So have thousands of other shooters
 
 Here's the problem: All of these approaches use sample sizes way too small to distinguish real effects from random variation. You're making decisions based on noise, not signal.
 
+### The Cherry-Picked Internet Problem
+
+**Here's a truth that needs saying:** Yes, there ARE real interactions between ammunition components and your specific rifle that can optimize the characteristics you're seeking. Load development isn't fake. Proper testing can reveal genuine improvements.
+
+**BUT—and this is critical—** what you see posted online has left most shooters thinking exceptional results are normal goals. In reality, the vast majority of published results are **cherry-picked tests that represent statistical outliers, not typical performance.**
+
+**What gets posted online:**
+- The single 0.4 MOA three-shot group from a 1.2 MOA rifle
+- The amazing 6 fps SD from a lucky 10-shot string
+- The "perfect" ladder test where a node is obvious
+- The seating depth test where one depth is dramatically better
+
+**What doesn't get posted:**
+- The four 1.3 MOA groups shot before that 0.4 MOA group
+- The next five 10-shot strings that showed 15 fps SD
+- The three other ladder tests that showed completely different "nodes"
+- The five seating depth retests that showed all depths performing identically
+
+**The result:** You're comparing your honest, representative results to other people's **best-case outliers**. Of course you feel like you're failing. You're competing against statistical luck that's been filtered through confirmation bias.
+
+The only real metric we have for finding genuine improvements is **properly testing with adequate sample sizes to make informed decisions instead of guesses**. When someone posts exceptional results from small samples, they've likely encountered random variation in their favor—not discovered a breakthrough method.
+
 **The practical cost:**
 
 You spend $100 and 8 hours testing 10 different powder charges. You "find a node" at 42.3 grains. You load 100 rounds at that charge. When you test them properly (30+ shots), the performance is identical to 42.0 grains and 42.6 grains.

@@ -434,6 +434,45 @@ Extreme spread: 38 fps
 
 **The fix:** Test both options in the same session, same day, same conditions. Alternate between them (5 shots CCI, 5 shots Federal, 5 shots CCI, etc.) to average out any barrel heating or condition changes.
 
+**Advanced environmental control:**
+
+For more precise testing, especially when developing loads you'll use across varying conditions, consider using proper environmental measurement tools:
+
+**Kestrel weather meters** ([Kestrel Meters](https://kestrelmeters.com/)) provide accurate real-time measurements of:
+- Temperature (air and density altitude)
+- Barometric pressure
+- Humidity
+- Wind speed and direction
+- Some models include ballistic solvers for immediate firing solutions
+
+While a weather phone app is better than nothing, dedicated meters are far more accurate for serious load development and building accurate DOPE (Data On Previous Engagements) across conditions.
+
+**Laser rangefinders** address distance-to-target uncertainties. If you're testing precision at what you think is "600 yards" but it's actually 580 yards or 620 yards, your ballistic data will be skewed. Accurate ranging ensures your trajectory calculations and load data are referenced to true distances.
+
+**Critical consideration - Propellant temperature acclimation:**
+
+Physicist Denton Bramwell conducted experiments involving thermocouples embedded in cartridge cases to measure propellant temperature using Newton cooling coefficients. **The key finding: It takes approximately one hour or more for propellant temperature to approximate ambient conditions.**
+
+**What this means for testing:**
+
+When temperature testing ammunition, you can isolate ammo temperature effects using controlled heating or freezing (heater, freezer, hot car, cooler, etc.) to understand how the ammunition responds. However, for building usable DOPE and understanding how your complete system performs, **you must test the rifle, ammunition, and all components when acclimated to the actual environmental temperature you'll encounter.**
+
+**Practical implications:**
+
+- Don't pull ammunition from your climate-controlled vehicle and immediately shoot for "cold weather" testing—the powder is still warm
+- When testing across temperature extremes, allow 60+ minutes for ammunition to reach thermal equilibrium with ambient conditions
+- If testing in summer heat, ammunition sitting in a hot chamber or magazine will be warmer than ambient after just a few shots
+- "Real world" temperature testing requires the entire system (rifle, ammo, shooter) to acclimate to conditions
+
+**Example of proper temperature testing:**
+1. Store ammunition at target temperature for 2+ hours (in freezer for winter, in hot vehicle for summer)
+2. Bring rifle to ambient temperature (leave outside, in vehicle, etc.)
+3. Shoot test within 15-20 minutes before ammunition temperature changes significantly
+4. Record actual environmental conditions with Kestrel or similar
+5. Reference all data to measured temperature, not assumed temperature
+
+This level of environmental control separates guesswork from genuine understanding of how your loads perform across the conditions you'll actually encounter.
+
 ### Mistake 4: "I Know CCI Works, So I'll Test Federal with Less Shots"
 
 **The problem:** Unequal sample sizes bias your comparison. You might see Federal "win" just because you got lucky in a small sample.

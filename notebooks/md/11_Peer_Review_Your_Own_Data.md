@@ -120,24 +120,24 @@ Conclusion valid: Yes
 **The question:** Could something other than my variable explain the difference?
 
 **Environmental factors that matter:**
-- **Barrel temperature:** Affects velocity and potentially precision
+- **Temperature:** Affects velocity and pressure
 - **Wind:** Affects group centers and can enlarge groups
 - **Mirage:** Affects shooter's ability to hold consistently
-- **Time of day:** Affects shooter fatigue
-- **Fouling:** Precision can change from shot 1-10 vs shot 40-50
-- **Ammunition temperature:** Affects pressure and velocity
-- **Chronograph issues:** Battery dying, sensor alignment changes
+- **Time of day:** Affects shooter fatigue, optical effects from different sun position
+- **Fouling:** Precision could change from shot 1-10 vs shot 10-50 (clean vs fouled bore)
+- **Chronograph issues:** Battery dying, sensor alignment changes, inherent chronograph error
 
 **Common failures:**
 - Testing Load A in morning (cool, calm), Load B in afternoon (hot, windy)
 - Testing before cleaning vs after cleaning
 - Testing with fresh shooter vs fatigued shooter
-- Barrel cold for first load, hot for second load
+- Barrel condition, is there a "carbon ring" in the throat/freebore?
 
 **Pass criteria:**
 - Tested conditions alternated (ABBAABBA pattern, not AAAABBBB)
 - Environmental factors recorded and similar
 - Or, acknowledged as limitation: "Tested sequentially, so can't rule out barrel heating effect"
+- Keep track of barrel temperature during your shooting session over many sessions.  You may discover some suprising information that may change with each rifle!
 
 **Red flag:** "I tested my new load and it shot way better than my old load did six months ago!" (Too many variables changed)
 
@@ -358,7 +358,8 @@ Here are patterns in data that should trigger skepticism:
 
 ### Red Flag #2: Perfect Linearity in Charge Ladders
 
-**The claim:** "Every 0.1 grain of powder increased velocity exactly 2 fps!"
+**The claim:** "Every 0.1 grain of powder increased velocity exactly 2 fps!" 
+Note: I'm not talking about linear relationship of charge weight to velocity.
 
 **Why it's suspicious:** Real data has noise. Perfect patterns usually indicate:
 - Fabricated data (intentional or unintentional fudging)
@@ -393,6 +394,38 @@ Here are patterns in data that should trigger skepticism:
 - Experimental conditions not controlled
 
 **What to do:** Need much larger samples, or accept that differences are too small to reliably detect.
+
+### Red Flag #6: Cherry-Picked Results and Selective Reporting
+
+**The claim:** "I found the perfect seating depth! Here's my best group showing 0.5 MOA!"
+
+**What's missing:** How many groups did you shoot? What were the other group sizes? How many seating depths did you test? How many times did you retest the "winner"?
+
+**Why it's suspicious:** Real interactions between components and firearms DO exist—but the only way to find them is through proper testing. When someone posts exceptional results without:
+- Showing all the data (best, average, and worst groups)
+- Reporting the full testing procedure (how many trials, sample sizes)
+- Demonstrating replication (did it repeat across sessions?)
+
+...they're likely sharing a lucky statistical outlier, not a reproducible result.
+
+**The cherry-picking pattern:**
+- Test 5 seating depths with 3-shot groups each (15 shots total)
+- One depth produces a lucky 0.5 MOA group
+- Post that group online as proof
+- Don't mention the other four depths or the full range of group sizes
+- When retested, that "perfect" depth performs like all the others
+
+**What proper reporting looks like:**
+- "Tested 4 seating depths with 30 shots each (120 shots total)"
+- "Seating at 0.020" averaged 0.92 MOA (range: 0.7-1.2 MOA)"
+- "Seating at 0.040" averaged 0.89 MOA (range: 0.7-1.1 MOA)"
+- "Retested the 0.040" depth in three separate sessions—consistently averaged 0.9 MOA"
+- "Statistical comparison shows no significant difference (p = 0.31)"
+- "Conclusion: Seating depth doesn't meaningfully affect precision for this bullet/rifle combo"
+
+**Self-audit question:** "Am I posting my best result, or my representative result? Would I be comfortable sharing ALL the data I collected, including the parts that don't support my conclusion?"
+
+**Remember:** The reason exceptional results get shared online is survivorship bias. Out of 100 shooters testing with small samples, ~20 will get lucky and see dramatic "improvements" that won't replicate. Those 20 enthusiastically share their success. The 80 who got inconclusive results stay quiet. This creates a distorted record where lucky outliers look like proven methods.
 
 **Interactive Element Placeholder:**
 ```python
