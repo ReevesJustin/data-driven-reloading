@@ -74,6 +74,10 @@ That depends on your statistical power (1 - β). With small samples, power is lo
 
 **The solution:** Use adequate sample sizes. Large samples give you high power (catch real effects) without increasing false alarms.
 
+![Statistical Power Demonstration](../static/nb10_plot11_statistical_power_demo.png)
+
+**Figure 1:** Visual demonstration of statistical errors using accessible language. The four panels show: (1) False alarms - when you think you found a difference but it's just luck (Type I error, controlled by alpha at 5%), (2) Missed opportunities - when a real difference is hidden by noise (Type II error, depends on sample size), (3) Statistical power - your ability to correctly detect real differences (1-beta, increases with sample size), and (4) How increasing sample size reduces overlap between distributions, making real differences easier to detect. Understanding these concepts helps you design tests that reliably find real effects without being fooled by noise.
+
 **Interactive Element Placeholder:**
 ```python
 # Interactive: "The Error Tradeoff"
@@ -261,6 +265,10 @@ You want to detect a 5 fps SD difference if it exists.
 **Required sample size:** ~45 shots per primer
 
 If you only shoot 10 shots per primer, your power is about 20%—you'll miss the real difference 80% of the time!
+
+![Detection Calculator - Power Analysis](../static/nb10_plot24_power_analysis_curves.png)
+
+**Figure 2:** Detection calculator showing sample size requirements for different effect sizes. Three curves represent detecting small (5 fps), medium (10 fps), and large (20 fps) SD differences from a baseline of 12 fps. The horizontal line at 80% power represents the standard goal - you want at least 80% probability of detecting a real difference if it exists. Notice that detecting small effects requires dramatically larger sample sizes (100+ shots per load), while large effects can be detected reliably with 30-40 shots. This explains why tests with 10-15 shots frequently "find no difference" - they lack the power to detect anything but huge effects.
 
 **Interactive Element Placeholder:**
 ```python

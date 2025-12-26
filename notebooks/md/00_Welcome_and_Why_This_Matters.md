@@ -28,6 +28,10 @@ This isn't a character flaw. It's not bad technique. It's not even bad luck.
 
 **It's statistics. And nobody taught you how they work.**
 
+![The Disappointment Cycle](../static/nb00_plot01_disappointment_cycle.png)
+
+**Figure 1:** The emotional cycle of chasing false leads created by small sample sizes. This cycle is familiar to every handloader: initial excitement from a lucky group or low SD, confidence and investment in the "breakthrough," confusion when it doesn't repeat, frustration as you try to recover the magic, and eventually burnout. The cycle repeats because without proper sample sizes, random variation continuously creates new "discoveries" that seem real but won't replicate. Breaking this cycle requires understanding that your best results are often statistical outliers, not true capability.
+
 ---
 
 ## The Problem We All Face

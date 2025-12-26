@@ -201,6 +201,16 @@ Does this mean your load got worse as you tested more? No. It means ES is a bad 
 >
 > SD from small samples (under 30 shots) systematically underestimates true consistency. That 6 fps SD from a 10-shot string is almost certainly optimistic. The true SD is probably 10-15 fps. This is why amazing results from small samples don't repeat—they were statistical flukes, not real performance.
 
+### The Hidden Factor: Chronograph Measurement Error
+
+Before we get too excited (or depressed) about our velocity measurements, we need to acknowledge an uncomfortable truth: **your chronograph adds measurement error to your ammunition's true variation.**
+
+![Chronograph Precision Limits](../static/nb05_plot17_chronograph_precision_limits.png)
+
+**Figure 3:** How chronograph measurement error contributes to total measured SD. A truly consistent load with 10 fps true SD will measure differently depending on your chronograph quality. With a high-end chronograph (±2 fps error), you'll measure close to the true 10 fps. With a budget chronograph (±10 fps error), that same load will measure as 14 fps SD - the measurement noise is larger than the ammunition signal! This is why upgrading from a cheap chronograph can make your "SD drop" - you didn't improve your load, you just reduced measurement error. For serious load development with low-SD goals, you need a chronograph with ±2-3 fps precision.
+
+**The practical lesson:** If you're chasing single-digit SDs, make sure your chronograph is accurate enough to actually measure them. A $100 chronograph with ±10 fps error cannot reliably distinguish between a 10 fps load and a 15 fps load.
+
 ---
 
 ## The Great Velocity Node Myth: Your Brain Playing Tricks

@@ -116,6 +116,10 @@ What this means in practice:
 
 This is why you see "30 shots minimum" repeated everywhere. It's not arbitrary. It's the point where spread measurements become reasonably reliable.
 
+![Confidence Interval Shrinkage](../static/nb03_plot07_confidence_interval_shrinkage.png)
+
+**Figure 3:** How confidence interval width shrinks with sample size, following the mathematical law of √n. With just 5 shots, your 95% confidence interval is huge (±6 fps), meaning your "measured" SD of 12 fps could easily represent a true SD anywhere from 6 to 18 fps. At 30 shots, the interval shrinks to ±3 fps - much more useful for making decisions. At 100 shots, you're down to ±1.5 fps. This visualizes why larger samples give you more certainty: they narrow the range of plausible values, letting you distinguish real differences from noise.
+
 **Interactive Element Placeholder:**
 ```python
 # Interactive widget: "Sample Size and Reliability"
@@ -151,6 +155,10 @@ This is why you see "30 shots minimum" repeated everywhere. It's not arbitrary. 
 
 Here's the practical guide. Follow the decision tree based on WHAT you're trying to accomplish.
 
+![Sample Size Decision Tree](../static/nb03_plot10_sample_size_decision_tree.png)
+
+**Figure 1:** Sample size decision tree - a visual flowchart to help you choose the appropriate number of shots based on your testing goal and expected effect size. The tree considers both what you're testing (zeroing vs. comparing loads vs. making claims) and the magnitude of difference you expect to detect. Cost estimates assume $1.50 per round. Use this as your quick reference guide at the range.
+
 ### Scenario 1: Zeroing Your Rifle / Getting Average Velocity
 
 **Goal:** Find the average point of impact or average velocity
@@ -178,12 +186,12 @@ Here's the practical guide. Follow the decision tree based on WHAT you're trying
 
 **Goal:** Quickly eliminate obviously bad options
 
-**Minimum shots:** **20-30 shots per option**
+**Minimum shots:** **30 shots per option**
 
 **Why:** This is the bare minimum to get a rough idea of spread. Not perfect, but better than 5-shot groups.
 
 **Process:**
-1. Load 25-30 rounds of each option you're screening
+1. Load 30 rounds of each option you're screening
 2. Shoot them all in same session
 3. Calculate mean and SD for each
 4. Eliminate options that are clearly worse
@@ -208,7 +216,7 @@ Here's the practical guide. Follow the decision tree based on WHAT you're trying
 
 **Process:**
 1. Load 30 rounds of Load A and 30 rounds of Load B
-2. Shoot them in same session, alternating (to control for barrel heating, conditions)
+2. Shoot them in same session, alternating (to control for barrel heating, environmental conditions, shooter fatigue, etc.)
 3. Use Template A from Notebook 08 to analyze
 4. Trust the verdict
 
@@ -278,6 +286,10 @@ Here's the practical guide. Follow the decision tree based on WHAT you're trying
 I know what you're thinking: "30-50 shots per test? That's expensive!"
 
 Let's do the math on what's actually expensive.
+
+![Cost-Benefit Tradeoff](../static/nb03_plot22_cost_benefit_tradeoff.png)
+
+**Figure 2:** Cost-benefit analysis showing why proper testing actually saves money. The left panel demonstrates that while initial cost increases with sample size, confidence improves dramatically—the "sweet spot" is 30-50 shots where you get high confidence without excessive cost. The right panel shows expected total cost including retests: small samples often require multiple retesting sessions, making them more expensive overall than doing it right the first time with adequate sample sizes.
 
 ### The "Cheap" Approach That Costs More
 
@@ -370,7 +382,7 @@ The hidden costs of inadequate sample sizes:
 **Recommendation:**
 - 20-30 shots to verify load is safe and adequate
 - Focus on accuracy at your maximum hunting distance
-- Don't obsess over single-digit SD (it doesn't matter at 300 yards)
+- Don't obsess over single-digit SD (it doesn't matter at 300 yards in this application)
 
 ### Exception 2: You're Using Factory Ammo
 
@@ -391,7 +403,8 @@ The hidden costs of inadequate sample sizes:
 
 **Recommendation:**
 - Do velocity testing at 100 yards (30+ shots)
-- Do limited group testing at distance (understand it's mostly about you, not the ammo)
+- Do group testing at 100 yards (30+ shots)
+- Do limited group testing at distance (understand it's mostly about you and the firing solution, not the ammo)
 - Don't assume long-range groups tell you about ammo quality
 
 ### Exception 4: Component Availability
@@ -435,7 +448,7 @@ Here's the quick reference card:
 ✓ **For comparing:** Equal shots for each option, minimum 30 each
 
 ❌ **Never:**
-- Make SD claims based on < 20 shots
+- Make SD claims based on < 30 shots
 - Declare precision based on single groups
 - Assume one good session represents normal performance
 
@@ -471,6 +484,7 @@ Sounds like a lot? Consider:
 - 250 rounds is 5-8% of barrel life
 - You'll shoot that barrel for years with the load you develop
 - Spending 5% of barrel life to optimize the other 95% is smart
+- There's benefit to shooting the same cartridge over time to explore performance
 
 ### Sequential Testing
 
@@ -483,7 +497,7 @@ Don't test everything at once. Test one variable at a time (Notebook 04).
 
 **Total: 370 rounds spread over 4 months**
 
-Much more manageable than 370 rounds in one weekend.
+Much more manageable than 370 rounds in one weekend.  I've already provided hints that some components may not be worth comparing depending on your goals.  Other component changes (bullets?) could provide bigger improvements. 
 
 ---
 

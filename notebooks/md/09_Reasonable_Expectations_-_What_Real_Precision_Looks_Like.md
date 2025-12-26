@@ -144,6 +144,10 @@ Improve ammunition from 0.5 to 0.3 MOA:
 
 The message: **Fix your biggest problem first.** If recoil or technique is your limiting factor, obsessing over ammunition consistency is a waste of time and money.
 
+![Component Quality vs Precision - Diminishing Returns](../static/nb09_plot21_component_quality_vs_precision.png)
+
+**Figure 2:** The law of diminishing returns for component upgrades. The curve shows precision improvement (vertical axis) versus cumulative investment (horizontal axis). Upgrading from bulk components to quality components provides massive gains - switching from bulk bullets to match bullets might improve precision by 0.5 MOA for just $0.20/round more. But chasing perfection shows steep diminishing returns: going from match bullets ($0.50 each) to custom bullets ($1.30 each) gains only 0.1 MOA for $0.80 more per round. Similarly, upgrading from a factory barrel ($300) to a quality custom ($700) yields 0.4 MOA improvement, while going to a premium benchrest barrel ($1,200) adds only 0.1 MOA more. The biggest precision gains come from fixing your worst components, not perfecting your best ones.
+
 **Interactive Element Placeholder:**
 ```python
 # Interactive widget: "Your Dispersion Budget Calculator"
@@ -179,6 +183,10 @@ The message: **Fix your biggest problem first.** If recoil or technique is your 
 Let's get brutally honest about what different equipment levels can actually deliver. These numbers come from extensive testing with proper sample sizes (50+ shot aggregates), not cherry-picked best groups.
 
 **These are AVERAGE capabilities—what you should expect most of the time with good technique.**
+
+![Real-World Precision Distribution by Equipment Class](../static/nb09_plot20_real_world_precision_distribution.png)
+
+**Figure 1:** Distribution of real-world rifle precision across different equipment classes, based on aggregated data from proper 50+ shot testing (not cherry-picked best groups). Factory rifles with factory ammo average 1.5 MOA with most falling between 1.0-2.5 MOA. Factory rifles with quality handloads improve to ~1.0 MOA (0.6-1.5 MOA range). Semi-custom setups with premium components average 0.6 MOA (0.4-1.0 MOA range). Full custom benchrest rifles achieve 0.25 MOA average (0.15-0.4 MOA range). Notice the distributions overlap - a good factory rifle can occasionally match a poor custom rifle, but averages matter. Know your equipment class and set realistic expectations accordingly.
 
 ### Entry-Level Factory Rifle + Factory Ammunition
 

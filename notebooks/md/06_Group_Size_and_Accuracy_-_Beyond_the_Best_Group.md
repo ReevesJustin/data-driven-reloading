@@ -69,6 +69,10 @@ A true 1.0 MOA rifle (that's its real average capability):
 
 **Does this mean the rifle got worse as you shot more?** No. It means extreme spread is a terrible metric for comparing loads unless sample sizes are identical.
 
+![Mean Radius vs Extreme Spread Stability](../static/nb01_plot02_mean_radius_vs_extreme_spread.png)
+
+**Figure 1:** Demonstration of why mean radius (MR) is superior to extreme spread (ES) for measuring rifle precision. This plot shows 20 simulations of a true 1.5 MOA rifle, tracking both metrics as shots accumulate. While extreme spread continues growing with each shot (unreliable for comparison), mean radius quickly stabilizes around the true capability after 10-15 shots. The dark lines show averages across all simulations, proving this is a consistent pattern, not a fluke. This is why experienced shooters and researchers prefer mean radius - it converges to truth.
+
 ### The Flyer Problem
 
 Every shooter has experienced this: Four shots in a tiny cluster, one shot way out. "It's a flyer! I pulled it!"
@@ -145,7 +149,7 @@ So a 1.0 MOA group (extreme spread) has a mean radius of about 0.3 MOA.
 
 ![Extreme Spread vs Mean Radius Comparison](../static/nb06_plot18_es_vs_mr_comparison.png)
 
-**Figure 1:** Comparison of extreme spread (ES) versus mean radius (MR) as shots are added to a group from a true 1.0 MOA rifle. While extreme spread continues climbing with each additional shot (reaching 1.6+ MOA by 50 shots), mean radius quickly stabilizes around 0.36 MOA after just 10-15 shots and remains consistent. This demonstrates why mean radius is the superior metric - it converges to truth and allows meaningful comparison across different sample sizes, unlike extreme spread which grows forever.
+**Figure 2:** Comparison of extreme spread (ES) versus mean radius (MR) as shots are added to a group from a true 1.0 MOA rifle. While extreme spread continues climbing with each additional shot (reaching 1.6+ MOA by 50 shots), mean radius quickly stabilizes around 0.36 MOA after just 10-15 shots and remains consistent. This demonstrates why mean radius is the superior metric - it converges to truth and allows meaningful comparison across different sample sizes, unlike extreme spread which grows forever.
 
 > **Critical Takeaway**
 >
@@ -222,7 +226,7 @@ Look at the **average** of all groups for each load:
 
 ![The Best Group Bias](../static/nb06_plot19_best_group_bias.png)
 
-**Figure 2:** Distribution of "best groups" from 100 simulated trials, each shooting 10 five-shot groups from a true 1.5 MOA rifle. The best groups average 1.0 MOA - a systematic 33% underestimate of true capability. This proves that selecting your smallest group from a set of attempts will consistently mislead you by 30-40%. If you judge loads by best groups rather than averages, you're cherry-picking lucky samples and making decisions based on statistical artifacts, not real performance differences.
+**Figure 3:** Distribution of "best groups" from 100 simulated trials, each shooting 10 five-shot groups from a true 1.5 MOA rifle. The best groups average 1.0 MOA - a systematic 33% underestimate of true capability. This proves that selecting your smallest group from a set of attempts will consistently mislead you by 30-40%. If you judge loads by best groups rather than averages, you're cherry-picking lucky samples and making decisions based on statistical artifacts, not real performance differences.
 
 ### Real-World Impact
 

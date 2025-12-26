@@ -344,6 +344,10 @@ Conclusion: No reliable difference, loads are probably similar
 
 Here are patterns in data that should trigger skepticism:
 
+![Red Flag Gallery - Good Data vs Questionable Claims](../static/nb11_plot23_red_flag_gallery.png)
+
+**Figure 1:** Side-by-side comparison of trustworthy data presentations versus red flags that should trigger skepticism. The left column shows good scientific practice: realistic variance in groups, scatter in ladder tests, reasonable SD measurements with sample sizes, average groups reported with ranges, proper sample sizes declared, and error bars showing uncertainty. The right column shows red flags: suspiciously perfect sub-0.5 MOA groups every time, perfectly linear charge ladders with no scatter, too-good-to-be-true single-digit SDs from small samples, "best group" posted as capability, bold claims from inadequate 5-shot tests, and point estimates without uncertainty. Learning to recognize these patterns helps you spot questionable claims online and audit your own data for honest reporting.
+
 ### Red Flag #1: Too-Good-To-Be-True Standard Deviations
 
 **The claim:** "After 10 shots, I got 4 fps SD!"

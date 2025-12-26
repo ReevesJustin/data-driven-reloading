@@ -76,6 +76,10 @@ Let's simulate this with a rifle that has NO optimal charge weight—just random
 # optimal charge—it's just random scatter making patterns my brain wants to see."
 ```
 
+![OCW Round-Robin Convergence Illusion](../static/nb07_plot12_ocw_round_robin_illusion.png)
+
+**Figure 1:** The OCW convergence illusion demonstrated through simulation. Six independent trials of the same OCW test protocol (same rifle, same charges, different random samples) show "convergence" happening at different charges each time - proving these patterns are random artifacts, not real nodes. In trials 1-6, different charges appear to be "optimal" based on apparent convergence, yet they all came from identical underlying reality with no true optimal charge. This is why OCW results don't replicate: you're chasing patterns created by small samples and random variation, not discovering real load characteristics.
+
 **What we observe:**
 - Every simulation finds an "optimal" charge
 - Which charge is "optimal" changes with each simulation
@@ -154,6 +158,10 @@ We covered this in Notebook 05, but it bears repeating with visuals:
 # random scatter, not real features!"
 ```
 
+![Ladder Test False Patterns](../static/nb07_plot09_anonymized_ladder_test.png)
+
+**Figure 2:** Velocity ladder tests showing false "nodes" from random variation. Six different ladder tests (panels 1-6) using the same rifle and charge range show completely different "flat spots" and "nodes" each time. The truth (shown in panel 7) is a perfectly linear velocity progression - there are no real nodes. Random shot-to-shot variation creates apparent flat spots that shift location with each test. When 100 ladder tests are overlaid (panel 8), the scatter cloud reveals the true smooth linear relationship. Your pattern-seeking brain highlights the "nodes" in each individual test, but they're statistical noise, not repeatable phenomena.
+
 **What we observe:**
 - "Nodes" appear randomly in different locations each time
 - When tested properly, "node" charges perform no better than neighbors
@@ -225,6 +233,10 @@ Test different seating depths (e.g., 0.010", 0.020", 0.030", 0.040" off lands) b
 # Aha moment: "The 'sweet spot' is whichever depth got lucky in
 # that particular small sample!"
 ```
+
+![Seating Depth Sweet Spot Illusion](../static/nb07_plot13_seating_depth_scatter.png)
+
+**Figure 3:** Seating depth "sweet spots" from small samples versus reality. The left panel shows four different trials testing the same seating depths with 5-shot groups - each trial identifies a different "best" seating depth (0.020", 0.040", 0.030", 0.010" respectively) based on which happened to produce the lucky small group. The right panel shows the truth: when tested properly with 30 shots per depth, all depths produce identical 1.0 MOA performance. Small samples create false "sweet spots" through random variation - whichever depth gets lucky in your particular test appears optimal, but it won't replicate. This is why your carefully-found seating depth often doesn't perform as well when you load 100 rounds.
 
 **What we observe:**
 - With small samples, some depth always looks best
@@ -571,6 +583,10 @@ Ten shots is better than 5, but still insufficient for reliable SD measurements.
 # Aha moment: "With 10 shots, I'm only slightly better than guessing!
 # I need 30+ to reliably detect real differences."
 ```
+
+![Primer Swap Illusion - Small vs Large Samples](../static/nb07_plot14_primer_swap_illusion.png)
+
+**Figure 4:** The primer swap illusion showing how sample size affects conclusions. Both primers (CCI and Federal) have identical true SD of 15 fps, but small 10-shot samples frequently show dramatic apparent differences. The left panel shows distribution of measured SDs from many 10-shot trials - they range from 8 to 22 fps, with ~20% showing "amazing" sub-10 fps results purely by luck. The center panel compares one lucky 10-shot trial (CCI looks amazing!) to another trial where Federal looks better - same primers, different random samples, opposite conclusions. The right panel shows proper 50-shot testing revealing both primers converge to their true identical 15 fps SD. This is why your "breakthrough" primer discovery often fails to repeat - you saw statistical luck, not real improvement.
 
 **What we observe:**
 - 10 shots provides poor statistical power for detecting differences
