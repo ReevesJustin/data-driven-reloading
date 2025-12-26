@@ -73,8 +73,10 @@ __pypackages__/
 .vscode/
 *.swp
 *.swo
- docs/
- 
+
+# Personal Documents
+docs/
+
 # OS
 .DS_Store
 Thumbs.db
