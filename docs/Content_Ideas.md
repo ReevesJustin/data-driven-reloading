@@ -1,12 +1,38 @@
-research, rephrase and add to appropriate notebook: one common proceedure in engineering is to amplify the variable you are testing to see the effect scale.  For example, if you are going to adjust powder charges, 0.5gr (or larger) might be more enlightening - contrast to 0.1gr or 0.2gr increments.  similar to seating depth tests.   *Safety note: check published load data to ensure you aren't massively over pressure.  pressure IS directly related to velocity as per charge weight / velocity ladders.
+# Content Ideas and Additions
 
-research, rephrase and add to appropriate notebook: the real truth is, there are very real interactions between ammunition components and firearm that can optimize the characteristics we seek.  The only real metric we have for finding them is properly testing to make informed decisions instead of guesses.  The take away is that wide spread internet posts have left most people thinking public results are "normal" goals.  In reality, the vast majority are cherry picked tests that  
+## Status: All Previous Items Implemented ✅
 
-research and rephrase: need to add the way to calculate charge weight variability calculation:  for a significant sample average: divide average velocity by the charge weight to give ft/s per grain of powder.  divide that by the tolerance of the scale to give propellant sensitivity.  For example:  6.5 Creedmoor 41.5gr of propellant gives 2720 ft/sec.  Therefore, 2720/41.5 = 65.54 ft/s / gr  Each 0.1gr adds ~6.55 ft/s.  If the scale is capable of +/- 0.1gr of precision and accuracy, the charge weight variance creates approximately 13 ft/s.  add to appropriate section(s)
+All content items have been successfully integrated into the appropriate notebooks:
 
+1. ✅ Engineering principle: amplify variables (Notebooks 03, 07)
+2. ✅ Real interactions + cherry-picked posts concept (Notebooks 00, 07, 11)
+3. ✅ Charge weight variability calculation (Notebook 05)
+4. ✅ Ballistic-X tool reference (Notebook 06)
+5. ✅ Kestrel meters and rangefinders (Notebook 04)
+6. ✅ Propellant temperature / Bramwell research (Notebook 04)
+7. ✅ Glossary of technical terms (Appendix A created)
 
-research and integrate OnTarget TDS and Ballistic-X, tools to more easily incorporate group size measuring into your data collection.  add to appropriate section.  
+---
 
-Research, rephrase, and integrate into the advanced lesson(s):  use of Kestrel weather meters (some have built-in ballistic solvers) and alternatives (weather phone app better than nothing?) to more precisely measure environmental conditions.  Similarly, laser range finders to address distance to target uncertainties.  
+## Future Content Ideas
 
-Research, rephrase, and integrate into the advanced lesson(s):  propellant temperatures, denton bramwell also carried out an experiement involving a thermocouple in a cartridge case to see newton cooling coffecients for various cases.  Take away- it takes about an hour or more for the propellant temperature to approximate ambient.  When temperature testing the ammo, you can get some insights as to what ammo temp does when isolated (heater, freezer, etc), but holistically you want to know how the whole system reacts to temperature effects.  When building dope, you MUST test rifle, ammo, etc when aclimated to temperature.
+Use this space to track new ideas for content additions or improvements to the curriculum.
+
+Format:
+```
+Topic: [Brief description]
+Notebooks affected: [XX, YY]
+Priority: [Low/Medium/High]
+Details: [Detailed explanation of what to add and why]
+```
+
+---
+
+### Example Template:
+
+Topic: [Your idea here]
+Notebooks affected: [Which notebooks would this enhance?]
+Priority: [How important is this?]
+Details: [Full explanation of the concept and how it should be integrated]
+
+Safety note: [If applicable, any safety considerations]

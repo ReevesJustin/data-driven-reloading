@@ -31,7 +31,12 @@
 |---|----------|
 | 10 | [When Is A Result Real](notebooks/md/10_When_Is_A_Result_Real.md) |
 | 11 | [Peer Review Your Own Data](notebooks/md/11_Peer_Review_Your_Own_Data.md) |
-| 12 | [What About The Pros](notebooks/md/12_What_About_The_Pros.md) | 
+| 12 | [What About The Pros](notebooks/md/12_What_About_The_Pros.md) |
+
+### Reference Materials
+| Appendix | Resource |
+|----------|----------|
+| A | [Glossary of Technical Terms](notebooks/md/Appendix_A_Glossary.md) |
 
 ##  Interactive Tools
 
