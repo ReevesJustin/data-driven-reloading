@@ -95,6 +95,8 @@ OCW is appealing because:
 4. Confirmation bias: When it "works," people remember; when it doesn't, they think they executed it wrong
 5. Small sample sizes mean you never test the result properly to discover it doesn't repeat
 
+**The recoil connection:** The "convergence" patterns people see in OCW tests are primarily driven by **recoil management inconsistency**, not charge weight harmonics. As you'll learn in Notebook 09, recoil-induced dispersion typically contributes 0.3 to 0.8+ MOA to your total system precision—far more than the tiny charge weight differences (0.3 grains) being tested. When you see charges "converging" on target, you're mostly seeing which shots happened to have similar recoil characteristics, not which charges have optimal barrel harmonics. This is the same fundamental problem that plagues ladder tests at distance: **you're measuring your recoil management, not your load quality.**
+
 ### What to Do Instead
 
 **Better approach:**
@@ -257,16 +259,23 @@ Seating depth testing persists because:
 
 **Better approach:**
 
+**Understanding seating depth physics:** While seating depth does affect chamber pressure (longer seating = less case volume = higher pressure), it takes a relatively large change to produce noticeable effects. Small adjustments like 0.005" are often undetectable until sample sizes are larger than commonly tested (30+ shots minimum). The pressure effect is predictable and measurable; the claimed "sweet spot" accuracy improvements are not.
+
+**The bullet ogive factor (Bryan Litz research):** Seating depth sensitivity depends heavily on bullet design. **Secant ogive bullets** (common in VLDs) can be more sensitive to seating depth because the ogive-to-leade (throat) transition is abrupt. **Tangent ogive bullets** (traditional hunting designs) are generally more forgiving because they have a gradual transition. **Hybrid ogive bullets** (Bryan Litz's design combining both profiles) retain the ballistic coefficient benefits of secant designs while reducing seating depth sensitivity—this is the problem they were specifically designed to solve. If you're chasing tiny seating depth windows, consider whether switching to hybrid bullets would be more effective than endless testing.
+
 **If you have reason to suspect seating depth matters for your bullet/rifle combo:**
-1. Test 3-4 depths spanning a reasonable range (e.g., 0.010" to 0.040" off)
-2. Shoot 20-30 rounds at EACH depth
-3. Calculate mean radius for each
-4. Use statistical comparison to see if differences are real
-5. Only if one depth is clearly and consistently better (across multiple sessions), commit to it
+1. Test 3-4 depths spanning a **large range** (e.g., 0.020" to 0.080" off, in 0.020"-0.040" increments)
+2. Don't waste time on tiny 0.005" adjustments—if the effect is real, it should be visible with larger jumps
+3. Shoot 20-30 rounds at EACH depth
+4. Calculate mean radius for each
+5. Use statistical comparison to see if differences are real
+6. Only if one depth is clearly and consistently better (across multiple sessions), commit to it
 
-**If you're shooting VLD or hybrid bullets at long range:** Seating depth might matter. Test properly.
+**If you're shooting VLD or secant ogive bullets at long range:** Seating depth might matter. Test properly with large increments (0.020"-0.040" steps).
 
-**If you're shooting standard bullets for hunting inside 400 yards:** Seating depth probably matters very little. Pick a depth that feeds reliably and fits your magazine, test it once with 30+ shots, and move on.
+**If you're shooting hybrid or tangent ogive bullets:** Seating depth likely has minimal effect. Pick a depth that feeds reliably and fits your magazine, test it once with 30+ shots, and move on.
+
+**If you're shooting standard hunting bullets inside 400 yards:** Seating depth almost certainly doesn't matter enough to test. Focus on components that actually drive precision (bullet quality, powder consistency, rifle bedding).
 
 ---
 

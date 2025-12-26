@@ -228,26 +228,25 @@ The projectile itself is the biggest driver of consistency. A bullet that's:
 
 ### 2. Powder Metering (~30% of variation)
 
-Consistent powder charges matter, but not as much as people think. The difference between 42.0 grains and 42.1 grains is usually smaller than bullet-to-bullet variation.  If you have very tight velocity spread needs, you will be able to calculate charge weight variation on velocity by the end of this course.
+Consistent powder charges matter, but not as much as people think. Within normal operating pressures, charge weight variation has VERY LITTLE effect on precision for a given propellant.  However, there is a direct relationship to charge weight and velocity.  The difference between 42.0 grains and 42.1 grains is often smaller than bullet-to-bullet variation.  If you have very tight velocity spread needs, you will be able to calculate charge weight variation effect on velocity by the end of this course.
 
-**Why:** Small variations in powder charge do create velocity variation, but a roperly chosen powders is remarkably forgiving. 
+**Why:** Small variations in powder charge do create velocity variation, but other metrics have a more profound effect on group size.
 
-**What this means for you:** A good powder measure or scale that's consistent to ±0.1 grain is plenty. Trickling every charge to the exact kernel is usually overkill unless you're shooting extreme long range. This statement will ruffle some feathers:  Your charge weight variation isn't effecting your group size nearly as much as you may think.
+**What this means for you:** A good powder measure or scale that's consistent to ±0.1 grain is plenty for most purposes. Trickling every charge to the exact kernel is usually overkill unless you're shooting long range.  If you need this level of velocity consistency, then improving velocity spread will improve your velocity SD.
 
 ### 3. Brass Quality and Prep (~20% of variation)
 
 Using the same brand and lot of brass matters. Weight sorting, volume measuring, and neck turning matter **much less** than people claim, especially with premium brass.  This is NOT advice to mix lots, brands, or use brass of otherwise unknown origin.  The lipstick on a pig analogy very much applies to "fixing" poor quality brass.
 
-**Why:** Modern premium brass (Alpha, Lapua) is already remarkably consistent. Weight variations come mostly from differences in case head thickness, which doesn't affect internal volume much.
+**Why:** Modern premium brass (Alpha, Lapua, possibly others) is already remarkably consistent. Weight variations come mostly from differences in case head thickness, which doesn't affect internal volume much.
 
-**What this means for you:** Buy good brass, use the same lot, and don't obsess over sorting it. The time spent weight-sorting would be better spent practicing shooting fundamentals.  If you want to sort brass, measure water volume to a statistically significant degree.  
+**What this means for you:** Buy good brass, use the same lot, and don't obsess over sorting it. The time spent weight-sorting would be better spent practicing shooting fundamentals.  If you want to sort brass, measure fired water volume to a statistically significant degree.  
 
 ### 4. Primers (~10% of variation)
 
 Primer choice matters, but primer-to-primer variation within the same lot is minimal with quality products. The internet is full of claims about switching primers and seeing dramatic SD drops. Most of those are small sample artifacts (remember the cup and the ocean?).
 
-**Why:** Primers do affect velocity (different brisance, different energy), but modern primers are remarkably consistent within a lot.
-    NOTE: This is not to imply some primers may produce a different velocity mean due to brisance.
+**Why:** Primers do affect velocity (different brisance, different energy), but modern primers are remarkably consistent within a lot.  I do not say this to imply primers are directly interchangeable.  Different "strength" of primers or brisance can and do cause average velocity changes.  If your system (rifle, ammo, shooter) is capable, you'll learn how to properly test the differences between primers later.
 
 **What this means for you:** Find a primer that works in your rifle and stick with it. Don't chase "better" primers based on someone's 10-shot test.
 
@@ -281,15 +280,15 @@ Primer choice matters, but primer-to-primer variation within the same lot is min
 Based on this hierarchy, here's the smart approach:
 
 **High-Priority (Do This):**
-- Buy quality bullets from reputable manufacturers
+- Buy quality bullets from manufacturer's with a reputation of consistent quality 
 - Use a consistent powder measuring method (±0.1 grain)
 - Buy premium brass and use same lot
-- Stick with proven primers
+- Stick with proven primers until you properly test alternatives
 
 **Low-Priority (Don't Obsess):**
-- Weight-sorting brass - If you are concerned, sort by internal volume.
-- Measuring case neck thickness - Good to know for other reasons, but not for our current purposes.
-- Turning case necks (unless obvious issues)
+- Weight-sorting brass - If you are concerned, sort by internal volume
+- Measuring case neck thickness - Good to know for other reasons, but not for our current purposes
+- Turning case necks (unless there are obvious issues or addressing a specific problem)
 - Primer pocket uniforming - Sometimes "uniforming" does more harm than good.  Start with brass suitable for your needs.
 - Trickling to exact kernel count - If you "need" this step, you'll know by the time we are finished.
 

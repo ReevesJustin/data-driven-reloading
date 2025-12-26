@@ -104,15 +104,15 @@ es_at_100 = es_values[-1]
 
 ax.annotate(f'ES at 5 shots:\n{es_at_5:.2f} MOA',
             xy=(5, es_at_5),
-            xytext=(15, es_at_5 - 0.3),
-            fontsize=9, color='darkred',
+            xytext=(15, es_at_5 + 0.4),
+            fontsize=8.5, color='darkred',
             bbox=dict(boxstyle='round', facecolor='mistyrose', alpha=0.8),
             arrowprops=dict(arrowstyle='->', color='darkred', linewidth=1.5))
 
 ax.annotate(f'ES at 100 shots:\n{es_at_100:.2f} MOA\n(still growing!)',
             xy=(100, es_at_100),
-            xytext=(75, es_at_100 + 0.5),
-            fontsize=9, color='darkred',
+            xytext=(70, es_at_100 + 0.3),
+            fontsize=8.5, color='darkred',
             bbox=dict(boxstyle='round', facecolor='mistyrose', alpha=0.8),
             arrowprops=dict(arrowstyle='->', color='darkred', linewidth=1.5))
 
@@ -122,8 +122,8 @@ mr_at_100 = mr_values[-1]
 
 ax.annotate(f'MR stabilizes\n{mr_at_100:.2f} MOA',
             xy=(50, mr_at_100),
-            xytext=(30, mr_at_100 - 0.6),
-            fontsize=9, color='darkblue',
+            xytext=(50, mr_at_100 - 0.5),
+            fontsize=8.5, color='darkblue',
             bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8),
             arrowprops=dict(arrowstyle='->', color='darkblue', linewidth=1.5))
 
@@ -139,8 +139,8 @@ explanation_text = (
     f'Use MR, not ES, for reliable precision measurement'
 )
 
-ax.text(0.02, 0.97, explanation_text, transform=ax.transAxes,
-        fontsize=10, verticalalignment='top', horizontalalignment='left',
+ax.text(0.02, 0.70, explanation_text, transform=ax.transAxes,
+        fontsize=9, verticalalignment='top', horizontalalignment='left',
         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8),
         family='monospace')
 

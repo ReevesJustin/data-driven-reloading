@@ -126,7 +126,7 @@ Now, remember from Notebook 03: you need at least 30 shots per load to measure a
 **At 100 rounds per hour of shooting:** 21.6 hours of range time
 **Barrel life consumed:** 2,160 rounds (potentially 20%+ of a barrel's accurate life)
 
-**Reality check:** Nobody is doing this. And if you try, you'll spend so long testing that your barrel will have changed, your primers will be from different lots, and your powder moisture content will have changed or maybe even aged.
+**Reality check:** Nobody is doing this (in the hobby sector). And if you try, you'll spend so long testing that your barrel will have changed, your primers will be from different lots, and your powder moisture content will have changed depending on how it's stored.
 
 ### The Smart Alternative: Sequential Testing
 

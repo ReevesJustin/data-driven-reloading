@@ -115,14 +115,14 @@ ax.legend(loc='upper left', fontsize=9, framealpha=0.9)
 
 # Add annotations
 ax.annotate('ES keeps growing\nwith more shots',
-           xy=(40, mean_es[39]), xytext=(30, mean_es[39] + 1.5),
-           fontsize=10, ha='center',
+           xy=(40, mean_es[39]), xytext=(25, mean_es[39] + 0.8),
+           fontsize=9, ha='center',
            arrowprops=dict(arrowstyle='->', color='coral', lw=2),
            bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
 
 ax.annotate('MR converges to\ntrue capability',
-           xy=(40, mean_mr[39]), xytext=(30, mean_mr[39] - 0.8),
-           fontsize=10, ha='center',
+           xy=(40, mean_mr[39]), xytext=(25, mean_mr[39] - 0.5),
+           fontsize=9, ha='center',
            arrowprops=dict(arrowstyle='->', color='steelblue', lw=2),
            bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
 
@@ -146,8 +146,8 @@ stats_text = (
     f'comparing loads or rifles.'
 )
 
-ax.text(0.98, 0.55, stats_text, transform=ax.transAxes,
-        fontsize=9, verticalalignment='top', horizontalalignment='right',
+ax.text(0.98, 0.35, stats_text, transform=ax.transAxes,
+        fontsize=8.5, verticalalignment='top', horizontalalignment='right',
         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
 
 # Add note at bottom

@@ -69,16 +69,15 @@ ax.set_title('Velocity "Nodes" Are an Illusion Created by Random Scatter\n'
              f'100 Ladder Tests Overlaid (gray) | Measurement SD = {VELOCITY_SD} fps',
              fontsize=14, fontweight='bold', pad=20)
 
-# Add annotation pointing to apparent "flat spot" in your ladder test
-# Find a spot where consecutive velocities are similar (looks like a node)
-velocity_changes = np.diff(your_velocities)
-# Find smallest change (apparent flat spot)
-min_change_idx = np.argmin(np.abs(velocity_changes))
+# Add annotation pointing to the 42.0gr region (commonly identified as a "node")
+# Find the index for 42.0gr charge weight
+target_charge = 42.0
+target_idx = np.argmin(np.abs(charge_weights - target_charge))
 
-# Annotate apparent node
+# Annotate apparent node at 42.0gr
 ax.annotate('Apparent "Node"\n(actually random)',
-            xy=(charge_weights[min_change_idx + 1], your_velocities[min_change_idx + 1]),
-            xytext=(charge_weights[min_change_idx + 1] + 0.8, your_velocities[min_change_idx + 1] - 30),
+            xy=(charge_weights[target_idx], your_velocities[target_idx]),
+            xytext=(charge_weights[target_idx] + 0.8, your_velocities[target_idx] - 30),
             fontsize=10, fontweight='bold', color='darkred',
             bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.7),
             arrowprops=dict(arrowstyle='->', color='darkred', linewidth=2))

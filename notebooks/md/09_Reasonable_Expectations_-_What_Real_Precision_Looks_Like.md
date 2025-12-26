@@ -199,6 +199,8 @@ Let's get brutally honest about what different equipment levels can actually del
 
 At 100 yards, this is 1.5 to 2.0 inch groups (aggregated, not best-of-five).
 
+**A note on "Sub-MOA Guarantees":** By now, your eyebrows should raise concerning factory claims of sub-MOA guarantees with no qualifiers. Statistically, if you shoot enough 3-5 shot groups, you'll eventually get one that's sub-MOA—even from a rifle that averages 1.5-2.0 MOA. This practice has created unrealistic expectations across the industry. When manufacturers say "sub-MOA guarantee," they typically mean "we'll shoot groups until we get one sub-MOA" or "3-shot groups with match ammo under ideal conditions." This isn't dishonest per se, but it's not the same as "this rifle averages sub-MOA with 30+ shot aggregates using hunting ammunition." Understanding sample size bias makes you immune to this marketing strategy.
+
 **What limits you:**
 - Factory barrel quality (button rifled, standard chamber)
 - Mixed ammunition lots

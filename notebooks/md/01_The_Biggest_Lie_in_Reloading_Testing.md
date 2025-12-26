@@ -22,7 +22,7 @@ And once you see it, and I mean REALLY see it through simulation, you'll never l
 
 ## The Setup: A Perfect Rifle
 
-Let's create a perfect rifle in a computer. Not a real rifle, but a simulated one where we control everything and know the exact truth.  If you are already skeptacle, bare with me.
+Let's create a perfect rifle in a computer. Not a real rifle, but a simulated one where we control everything and know the exact truth.  If you are already sceptical, bare with me.
 
 **Our test rifle:**
 - True precision: **1.5 MOA** (This is fixed, it never changes)

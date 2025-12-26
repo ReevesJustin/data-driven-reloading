@@ -382,7 +382,7 @@ The hidden costs of inadequate sample sizes:
 **Recommendation:**
 - 20-30 shots to verify load is safe and adequate
 - Focus on accuracy at your maximum hunting distance
-- Don't obsess over single-digit SD (it doesn't matter at 300 yards in this application)
+- Don't obsess over single-digit SD (it doesn't matter at 300 yards for this application)
 
 ### Exception 2: You're Using Factory Ammo
 
@@ -413,11 +413,18 @@ The hidden costs of inadequate sample sizes:
 
 **Reality:** 15 shots is better than nothing, but don't over-interpret results.
 
+**The wonderful thing statistics reveal:** With a 15-shot test, the result is **biased toward appearing better than it actually is.** Small samples systematically underestimate SD and show tighter groups than the true capability. This creates a useful asymmetry:
+
+- **If your 15-shot result looks amazing:** Don't trust it yet. It's probably optimistic. You need more shots to verify.
+- **If your 15-shot result looks terrible for your standards:** It's more likely than not to actually be that bad (or worse). You can confidently stop wasting components on that option.
+
+This bias means small samples are better at ruling things OUT than ruling them IN. A bad result from limited testing is trustworthy; a good result is not.
+
 **Recommendation:**
 - Test with what you have
 - Note in your records: "Based on 15 shots - needs validation"
-- If it looks promising, get more and test properly
-- If it looks terrible, you saved yourself buying more
+- If it looks promising, get more and test properly (the result is likely optimistic)
+- If it looks terrible, you saved yourself buying more (the result is likely accurate or pessimistic)
 
 ---
 

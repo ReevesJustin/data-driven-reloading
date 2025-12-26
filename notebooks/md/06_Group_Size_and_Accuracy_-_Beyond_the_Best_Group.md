@@ -445,6 +445,24 @@ Based on everything we've learned, here's the correct process:
 - Requires large target
 - Can't easily compare to traditional group size claims (but that's actually good—stops the comparison trap)
 
+**Practical Variant: Composite Groups**
+
+A smart variation of the aggregate approach is called **"composite groups"** - shooting multiple smaller groups with deliberate aim point offsets, then combining them for analysis with all shots referenced to the same point of aim. This gives you the statistical benefits of large sample aggregation while making data collection easier.
+
+**How it works:**
+1. Shoot multiple groups (e.g., three 10-shot groups) on the same target
+2. Intentionally dial a known offset for each group (e.g., 2 MOA up, 2 MOA right, 2 MOA down) so bullet holes don't overlap
+3. Use software to digitally converge all groups back to the same aiming point
+4. Calculate aggregate statistics (mean radius, etc.) from the combined 30+ shots
+
+**Benefits:**
+- Bullet holes remain clearly defined (easier to measure accurately)
+- Collects large sample data in one range session
+- Barrel has time to cool between groups if needed
+- Software like **OnTarget TDS** ([OnTarget Precision Calculator](https://ontargetshooting.com/)) automates the convergence and statistical analysis
+
+**Best practice:** See **Preston Moore's testing strategy** ([Preston Moore YouTube](https://www.youtube.com/@PrestonJMoore/videos)) as a practical example - he commonly tests with 3 × 10-shot groups with chronograph data, combining them for statistically valid precision measurement. This approach balances practical data collection with statistical rigor.
+
 ### Option B: Multiple Groups, Honestly Averaged (Second Best)
 
 1. **Set up:** Multiple targets or marked aim points

@@ -51,7 +51,7 @@ Your bullet's velocity determines:
 3. **Time of flight**: How long it's in the air (and accumulating errors)
 4. **Energy on target**: For hunters, this affects terminal performance
 
-If you're shooting at 600 yards, a 50 fps difference in velocity creates about 6 inches of vertical difference. That's significant. So knowing your true average velocity actually matters.
+If you're shooting at 600 yards, a 50 fps difference in velocity creates about 6 inches of vertical difference. That's significant. So knowing your true average velocity actually matters.  *Trajectory examples are arbitary but relevant examples.  Use a quality external ballistics calculator to check your ammunition.
 
 ### The Good News: 10-15 Shots Is Usually Enough
 
@@ -135,7 +135,7 @@ The first string is more consistent. The second varies more shot-to-shot.
 
 ### The Perverse Nature of Standard Deviation (Bramwell's Warning)
 
-Ballistician Denton Bramwell wrote about the "perverse nature of standard deviation" in small samples. Here's what he meant:
+Physicist and statistician Denton Bramwell wrote about the "perverse nature of standard deviation" in small samples. Here's what he meant:
 
 **SD calculated from small samples is biased low.** It systematically underestimates the true population SD.
 
@@ -292,20 +292,22 @@ Researchers who tested this properly:
 
 Here's something that actually DOES create velocity variation: temperature.
 
-Powder burn rate changes with temperature. Some powders are more sensitive than others.
+Powder burn rate changes with temperature. Some powders and component combinations are more sensitive than others.  I would caution readers to take marketing claims of temperature insensitivity with a grain of salt.  If you want to know for sure, properly test this interaction.
 
 **Typical temperature sensitivity:**
-- Temp-stable powders (H4350, Varget, etc.): ~0.5 fps per degree F
-- Standard powders: ~1.5 to 2.0 fps per degree F
-- Temp-sensitive powders: ~3+ fps per degree F
+- Temp-stable combinations: ~0.5 fps per degree F
+- Less-stable combinations: ~1.5 to 3.0+ fps per degree F
+
 
 **Practical impact:**
 
 You develop a load on a 70°F day: Average velocity 2,850 fps
 
-Same load on a 40°F winter hunt: Could be 2,820 fps (30 fps slower with sensitive powder)
+Same load on a 28°F winter hunt: Could be 2,810 fps (40 fps slower)
 
 Same load on a 95°F summer day: Could be 2,900 fps (50 fps faster)
+
+I would also caution you to test at least 3 different temperatures with a wide spread and not assume temperature and velocity has a constant relationship (linear).
 
 **That's WAY more velocity variation than "nodes" supposedly control.**
 
@@ -327,9 +329,9 @@ Yet very few reloaders test temperature sensitivity. They chase 0.1-grain charge
 
 **For temperature testing:**
 
-1. Test your chosen load at different temperatures (cold winter day, hot summer day)
+1. Test your chosen load at different temperatures (cold winter day, mild spring day, hot summer day)
 2. See how much velocity shifts
-3. If it matters for your application, consider temp-stable powder
+3. If it matters for your application, there are tools available to correct for environmental changes in your firing solution
 
 This approach uses the same number of components as a ladder test but gives you actually useful information.
 
@@ -383,9 +385,9 @@ Target sizes vary from 8 inches to 20 inches.
 
 **Scenario 3: ELR (extreme long range) at 1,500+ yards**
 
-Tiny targets at massive distances.
+Targets at massive distances.
 
-15 fps SD at 1,500 yards creates 20+ inches of vertical uncertainty.
+15 fps SD at 1,500 yards creates 20+ inches of vertical uncertainty.  SD and accuracy of the firing solution are primary drivers of hit percentage.
 
 **Does SD matter?** Absolutely. Every fps of SD reduction helps. This is where single-digit SD actually matters.
 
@@ -393,7 +395,7 @@ Tiny targets at massive distances.
 
 Velocity SD creates minimal vertical at these distances. Precision is limited by other factors (bullet quality, rifle mechanics, wind).
 
-**Does SD matter?** Not really. These guys chase low SD anyway, but it's not the limiting factor for group size.
+**Does SD matter?** Not really. The reality is, it takes a massive relative velocity shift to create an impact equal to average dispersion.
 
 ### The Honest Assessment
 
@@ -402,14 +404,14 @@ Velocity SD creates minimal vertical at these distances. Precision is limited by
 Going from 15 fps SD to 8 fps SD:
 - Sounds impressive
 - Feels like an accomplishment
-- Makes almost zero practical difference if you're not shooting ELR
+- Makes almost zero practical difference if you're not shooting at targets sufficiently small at sufficiently long distances.
 
 **Where your effort should go:**
 
 1. **Bullet quality**: Bigger impact on precision than SD
-2. **Rifle accuracy**: Most factory rifles can't shoot well enough for SD to matter
+2. **Rifle accuracy**: Most low tier factory rifles don't shoot well enough for SD to matter
 3. **Fundamentals**: Shooter error dwarfs velocity variation effects
-4. **Wind reading**: Misreading wind by 2 mph matters more than 10 fps SD
+4. **Wind reading**: Misreading wind by 2 mph matters more than 10 fps SD at extended distances
 
 Once you've optimized those, THEN chase lower SD if you're shooting far enough for it to matter.
 
