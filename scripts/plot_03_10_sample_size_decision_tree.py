@@ -127,29 +127,29 @@ ax.text(5, 9.5, 'Sample Size Decision Guide',
 # Main question box
 create_box(ax, 3.25, 8.1, 3.5, 0.7, 'What are you testing?', box_color, fontsize=12, fontweight='bold')
 
-# Branch arrows
-create_arrow(ax, 4.2, 8.1, 1.5, 7.3)
-create_arrow(ax, 5, 8.1, 3.5, 7.3)
-create_arrow(ax, 5.8, 8.1, 5.5, 7.3)
-create_arrow(ax, 6.3, 8.1, 8.5, 7.3)
+# Branch arrows (updated to point to new box centers)
+create_arrow(ax, 4.2, 8.1, 1.3, 7.3)
+create_arrow(ax, 5, 8.1, 3.6, 7.3)
+create_arrow(ax, 5.8, 8.1, 5.8, 7.3)
+create_arrow(ax, 6.3, 8.1, 8.1, 7.3)
 
-# Goal boxes
-create_box(ax, 0.2, 6.5, 2.6, 0.7, 'Just want average\nvelocity/zero', box_color, fontsize=10)
-create_box(ax, 2.5, 6.5, 2.0, 0.7, 'Comparing\ntwo loads', box_color, fontsize=10)
-create_box(ax, 4.75, 6.5, 2.0, 0.7, 'Claiming one\nis better', box_color, fontsize=10)
-create_box(ax, 7.2, 6.5, 2.6, 0.7, 'Publishing or\nsharing results', box_color, fontsize=10)
+# Goal boxes (reduced width to prevent overlap)
+create_box(ax, 0.2, 6.5, 2.2, 0.7, 'Just want average\nvelocity/zero', box_color, fontsize=10)
+create_box(ax, 2.6, 6.5, 2.0, 0.7, 'Comparing\ntwo loads', box_color, fontsize=10)
+create_box(ax, 4.8, 6.5, 2.0, 0.7, 'Claiming one\nis better', box_color, fontsize=10)
+create_box(ax, 7.0, 6.5, 2.2, 0.7, 'Publishing or\nsharing results', box_color, fontsize=10)
 
-# Arrows to recommendations
-create_arrow(ax, 1.5, 6.5, 1.5, 5.8)
-create_arrow(ax, 3.5, 6.5, 3.5, 5.8)
-create_arrow(ax, 5.75, 6.5, 5.75, 5.8)
-create_arrow(ax, 8.5, 6.5, 8.5, 5.8)
+# Arrows to recommendations (aligned with box centers)
+create_arrow(ax, 1.3, 6.5, 1.3, 5.8)
+create_arrow(ax, 3.6, 6.5, 3.6, 5.8)
+create_arrow(ax, 5.8, 6.5, 5.8, 5.8)
+create_arrow(ax, 8.1, 6.5, 8.1, 5.8)
 
-# Recommendation boxes (first row)
-create_box(ax, 0.2, 4.9, 2.6, 0.8, '10 shots\n$15-20', endpoint_color, fontsize=11, fontweight='bold')
-create_box(ax, 2.5, 4.9, 2.0, 0.8, '30+ shots\nper load\n$45-60', endpoint_color, fontsize=10, fontweight='bold')
-create_box(ax, 4.75, 4.9, 2.0, 0.8, '50+ shots\nper load\n$75-100', endpoint_color, fontsize=10, fontweight='bold')
-create_box(ax, 7.2, 4.9, 2.6, 0.8, '100+ shots\nper load\n$150-200', endpoint_color, fontsize=11, fontweight='bold')
+# Recommendation boxes (first row, aligned with goal boxes above)
+create_box(ax, 0.2, 4.9, 2.2, 0.8, '10 shots\n$15-20', endpoint_color, fontsize=11, fontweight='bold')
+create_box(ax, 2.6, 4.9, 2.0, 0.8, '30+ shots\nper load\n$45-60', endpoint_color, fontsize=10, fontweight='bold')
+create_box(ax, 4.8, 4.9, 2.0, 0.8, '50+ shots\nper load\n$75-100', endpoint_color, fontsize=10, fontweight='bold')
+create_box(ax, 7.0, 4.9, 2.2, 0.8, '100+ shots\nper load\n$150-200', endpoint_color, fontsize=11, fontweight='bold')
 
 # Second decision branch - Effect size
 ax.text(5, 4.2, 'How big is the difference you expect to detect?',
