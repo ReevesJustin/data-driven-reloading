@@ -143,29 +143,9 @@ So a 1.0 MOA group (extreme spread) has a mean radius of about 0.3 MOA.
 
 **Why this matters:** When you report MR, the numbers seem "smaller" but they're more honest and more comparable.
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "Group Builder - ES vs MR"
-#
-# User controls:
-# - Click on target to place shots (up to 50)
-# - Button: "Add random shot" (adds shot from true distribution)
-# - Button: "Clear and restart"
-# - Slider: True rifle precision (0.5 to 2.0 MOA)
-#
-# Display (updates with each shot):
-# - Current extreme spread (grows as shots added)
-# - Current mean radius (stabilizes as shots added)
-# - Plot: ES vs shot count (climbing line)
-# - Plot: MR vs shot count (stabilizing line)
-# - True rifle MR shown as horizontal line on MR plot
-#
-# User can watch ES climb and climb
-# But MR quickly settles near the truth
-#
-# Aha moment: "After 10 shots, ES is still growing but MR has already
-# stabilized! Mean radius gives me a stable answer way faster."
-```
+![Extreme Spread vs Mean Radius Comparison](../static/nb06_plot18_es_vs_mr_comparison.png)
+
+**Figure 1:** Comparison of extreme spread (ES) versus mean radius (MR) as shots are added to a group from a true 1.0 MOA rifle. While extreme spread continues climbing with each additional shot (reaching 1.6+ MOA by 50 shots), mean radius quickly stabilizes around 0.36 MOA after just 10-15 shots and remains consistent. This demonstrates why mean radius is the superior metric - it converges to truth and allows meaningful comparison across different sample sizes, unlike extreme spread which grows forever.
 
 > **Critical Takeaway**
 >
@@ -240,32 +220,9 @@ Look at the **average** of all groups for each load:
 
 **New conclusion:** Load C is actually the best! Load A's amazing 0.7 MOA group was a lucky outlier.
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "Best Group Bias Demonstration"
-#
-# Setup: True rifle capability = 1.5 MOA (user can adjust with slider)
-#
-# Simulation:
-# - Generate 10 five-shot groups from this rifle
-# - Display all 10 groups with sizes
-# - Highlight the best group in green
-# - Highlight the worst group in red
-# - Show average of all 10
-#
-# User controls:
-# - Button: "Shoot 10 more groups" (runs new simulation)
-# - Button: "Run 100 trials" (shows distribution of "best groups")
-#
-# Display for 100 trials:
-# - Histogram of "best group" sizes from 100 sets of 10 groups
-# - True rifle capability marked as vertical line
-# - Mean of all "best groups" shown (will be ~1.0 MOA when true is 1.5)
-# - Percentage difference highlighted
-#
-# Aha moment: "Holy crap. My 'best groups' average 1.0 MOA but the rifle
-# is actually 1.5 MOA. I've been fooling myself by cherry-picking!"
-```
+![The Best Group Bias](../static/nb06_plot19_best_group_bias.png)
+
+**Figure 2:** Distribution of "best groups" from 100 simulated trials, each shooting 10 five-shot groups from a true 1.5 MOA rifle. The best groups average 1.0 MOA - a systematic 33% underestimate of true capability. This proves that selecting your smallest group from a set of attempts will consistently mislead you by 30-40%. If you judge loads by best groups rather than averages, you're cherry-picking lucky samples and making decisions based on statistical artifacts, not real performance differences.
 
 ### Real-World Impact
 

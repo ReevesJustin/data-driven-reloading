@@ -2,141 +2,358 @@
 
 ## Current Status
 
-**Progress:** 4 of 13 notebooks transformed to world-class resources (31% complete)
+**Progress:** All 13 notebooks transformed to world-class resources + Phase 1 static visualizations complete (9/24 plots)
 
-**Completed Notebooks:**
-- ✅ 02 - What We Actually Mean by Consistency
-- ✅ 03 - How Many Shots Do You Really Need
-- ✅ 04 - Testing One Thing at a Time
-- ✅ 08 - Your Experiments Template
+**Completed Work:**
+- ✅ All 13 notebooks transformed to world-class quality
+- ✅ Phase 1 static plots created and embedded (9 plots)
+- ✅ Python plotting scripts in scripts/ folder
+- ✅ PNG outputs in notebooks/static/ folder
+- 📋 Phases 2 & 3 plots documented (15 remaining)
 
-**Remaining Notebooks:** 00, 01, 05, 06, 07, 09, 10, 11, 12
+---
+
+## Architecture Decision (Critical Context)
+
+**Two-Part Structure:**
+1. **Static markdown curriculum** (current focus) - .md files with static plots, linked in separate but parallel track
+2. **Interactive curriculum** (future work) - 1:1 correspondence with static, platform TBD
+
+**Current Phase:** Creating world-class static content with professional visualizations. Interactive widgets will be addressed later.
 
 ---
 
 ## Quick Resume Command
 
-**Copy/paste this to resume work:**
+**Copy/paste this to continue plot generation:**
 
 ```
-Continue transforming notebooks to world-class resources:
+Continue creating static plots for notebooks (Phase 2 & 3):
 
-Check TodoList - 4 notebooks complete (02, 03, 04, 08), 9 remaining.
+Phase 1 COMPLETE (9/24 plots embedded in notebooks 01, 02, 05, 06)
 
-Read /docs/Ideas.md for:
-- Core philosophy (never deviate)
-- Detailed recommendations for each notebook
-- Standards and approach
+Next: Phase 2 - High-Priority Decision-Making Plots (5 plots):
+- Plot 10: Sample size decision tree (nb03)
+- Plot 22: Cost-benefit tradeoff curves (nb03)
+- Plot 24: Power analysis curves (nb10)
+- Plot 2: Mean radius vs extreme spread stability (nb01 or nb06)
+- Plot 11: Statistical power demonstration (nb10)
 
-Use completed notebooks as quality examples:
-- notebooks/md/02_What_We_Actually_Mean_by_Consistency.md
-- notebooks/md/03_How_Many_Shots_Do_You_Really_Need.md
-- notebooks/md/04_Testing_One_Thing_at_a_Time.md
-- notebooks/md/08_Your_Experiments_Template.md
+All scripts go in scripts/ folder, outputs to notebooks/static/
+Follow naming convention: plot_XX_YY_description.py
+Random seed 42, 300 DPI, steelblue colors, professional styling
+Update markdown files to embed plots as created
 
-Specialized agents in docs/agents/ if needed.
-
-Transform remaining notebooks in this order (worst first):
-09, 05, 06, 00, 01, 07, 10, 11, 12
-
-Each notebook must be world-class - the finest online resource of its kind.
-Update TodoList as you complete each one.
+docs/Ideas.md has complete plot specifications
+Batch creation with agents is efficient
 ```
 
 ---
 
-## Context Files to Reference
+## Completed Transformations (All 13 Notebooks)
 
-### Essential Reading
-1. **docs/Ideas.md** - Complete curriculum analysis with:
-   - Core philosophy (NEVER deviate from this)
-   - Detailed notebook-by-notebook recommendations
-   - Standards for world-class quality
-   - Pedagogical principles
-   - Vocabulary progression strategy
+### Phase 1 - Foundation (100% Complete)
+- ✅ 00 - Welcome and Why This Matters
+- ✅ 01 - The Biggest Lie in Reloading Testing
+- ✅ 02 - What We Actually Mean by Consistency
 
-2. **docs/Rules.md** - Technical and presentation guidelines:
-   - 8th-grade reading level
-   - Interactivity requirements
-   - No Greek letters without immediate definition
-   - Short, punchy notebooks (10-15 min each)
+### Phase 2 - Core Skills (100% Complete)
+- ✅ 03 - How Many Shots Do You Really Need
+- ✅ 04 - Testing One Thing at a Time
+- ✅ 05 - Velocity Data - What to Measure and How to Think About It
 
-3. **docs/Structure.md** - Project organization
+### Phase 3 - Advanced Concepts (100% Complete)
+- ✅ 06 - Group Size and Accuracy - Beyond the Best Group
+- ✅ 07 - Real Examples - Dissecting Common Myths
+- ✅ 08 - Your Experiments Template
 
-### Quality Benchmarks (Completed Notebooks)
-- **Notebook 02:** Best example of foundational concept teaching (ocean/cup analogy)
-- **Notebook 03:** Best example of practical decision trees and cost-benefit analysis
-- **Notebook 04:** Best example of systematic methodology with real code examples
-- **Notebook 08:** Best example of production-ready tools with complete templates
+### Phase 4 - Application (100% Complete)
+- ✅ 09 - Reasonable Expectations - What Real Precision Looks Like
+- ✅ 10 - When IS a Result Real
+- ✅ 11 - Peer Review Your Own Data
+- ✅ 12 - What About The Pros
 
-### Agent Resources
-Located in `docs/agents/`:
-- `myth_buster_agent.md` - For creating simulations that debunk myths
-- `stats_translator_agent.md` - For translating technical concepts to plain English
-- `widget_builder_agent.md` - For creating interactive ipywidgets
-- `analogy_generator_agent.md` - For generating everyday analogies
-- `curriculum_flow_agent.md` - For ensuring logical progression
-- `claim_researcher_agent.md` - For finding anonymized internet examples (on-demand only)
+**Quality Standard:** Each notebook is world-class - THE definitive online resource for its topic.
 
 ---
 
-## Transformation Priority Order
+## Static Plot Generation Status
 
-**Work through notebooks in this sequence (worst/thinnest first):**
+### Phase 1: Core Concepts (9/9 Complete) ✅
 
-1. **09 - Reasonable Expectations** (Currently very thin, critical topic)
-2. **05 - Velocity Data** (Needs velocity node myth destruction)
-3. **06 - Group Size and Accuracy** (Needs mean radius emphasis)
-4. **00 - Welcome** (Strong foundation, needs interactive enhancements)
-5. **01 - The Biggest Lie** (Strong simulations, needs polish)
-6. **07 - Real Examples** (Good myth coverage, needs anonymized examples)
-7. **10 - When Is A Result Real** (Good stats content, needs simplification)
-8. **11 - Peer Review** (Excellent framework, needs red flag gallery)
-9. **12 - What About The Pros** (Strong survivorship bias, needs equipment divide section)
+**Notebook 01 - The Biggest Lie:**
+- ✅ Plot 3: Three-shot group distribution (`nb01_plot03_three_shot_distribution.png`)
+- ✅ Plot 4: Five-shot vs three-shot comparison (`nb01_plot04_five_shot_comparison.png`)
+- ✅ Plot 5: Which load is better challenge (`nb01_plot05_which_load_better.png`)
+- ✅ Plot 6: SD illusion by sample size (`nb01_plot06_sd_illusion_sample_size.png`)
+
+**Notebook 02 - What We Actually Mean:**
+- ✅ Plot 8: Cup and ocean convergence (`nb02_plot08_cup_and_ocean.png`)
+
+**Notebook 05 - Velocity Data:**
+- ✅ Plot 15: SD illusion detailed (`nb05_plot15_sd_illusion.png`)
+- ✅ Plot 16: Velocity node illusion (`nb05_plot16_velocity_node_illusion.png`)
+
+**Notebook 06 - Group Size:**
+- ✅ Plot 18: ES vs MR comparison (`nb06_plot18_es_vs_mr_comparison.png`)
+- ✅ Plot 19: Best group bias (`nb06_plot19_best_group_bias.png`)
+
+### Phase 2: High-Priority Decision-Making (0/5 Remaining)
+
+**Notebook 03 - How Many Shots:**
+- ⬜ Plot 10: Sample size decision tree - Visual flowchart helping choose N based on goal
+- ⬜ Plot 22: Cost-benefit tradeoff - Curves showing accuracy improvement vs component cost
+
+**Notebook 10 - When IS a Result Real:**
+- ⬜ Plot 24: Power analysis curves - Sample size needed to detect various effect sizes
+- ⬜ Plot 11: Statistical power demonstration - Type I vs Type II error visualization
+
+**Notebook 01 or 06:**
+- ⬜ Plot 2: Mean radius vs extreme spread stability - Show MR stabilizes, ES grows
+
+### Phase 3: Supporting Visualizations (0/10 Remaining)
+
+**Notebook 03:**
+- ⬜ Plot 7: Confidence interval shrinkage - Show CI width vs sample size
+
+**Notebook 07 - Real Examples:**
+- ⬜ Plot 9: Anonymized ladder test - Real example showing false patterns
+- ⬜ Plot 12: OCW round-robin illusion - Simulation showing random convergence
+- ⬜ Plot 13: Seating depth scatter - Small samples creating false sweet spots
+- ⬜ Plot 14: Primer swap illusion - Same load, different primers, no real difference
+
+**Notebook 05:**
+- ⬜ Plot 17: Chronograph precision limits - Measurement error contribution
+
+**Notebook 09 - Reasonable Expectations:**
+- ⬜ Plot 20: Real-world precision distribution - Survey data from actual rifles
+- ⬜ Plot 21: Component quality vs precision - Diminishing returns curve
+
+**Notebook 11 - Peer Review:**
+- ⬜ Plot 23: Red flag gallery - Side-by-side comparison of good vs questionable claims
+
+**Notebook 00 - Welcome:**
+- ⬜ Plot 1: The disappointment cycle - Emotional journey of chasing false leads
 
 ---
 
-## Quality Standards (Non-Negotiable)
+## Technical Specifications (Established Standards)
 
-Each completed notebook MUST have:
+### Python Plotting Scripts
 
-### Content Requirements
-- **Opening hook** - Emotional connection in first 2 paragraphs
-- **Clear narrative** - Logical flow, smooth transitions
-- **Relatable analogies** - Everyday examples (not shooting-specific)
-- **Interactive elements** - Placeholders for ipywidgets with clear specifications
-- **Aha moments** - Designed insights that make concepts click
-- **Practical application** - "What this means for you" sections
-- **Plain English** - 8th-grade level, no jargon without definition
-- **Key takeaways box** - 5-7 bullet points at end
-- **Forward reference** - Sets up next notebook
+**Location:** `scripts/`
 
-### Writing Style
-- Use "you/your" extensively (reader as protagonist)
-- Short sentences for impact. Vary length for rhythm.
-- No emojis unless user explicitly requests
-- Tone: Friendly, encouraging, slightly skeptical of hype, never condescending
-- "We've all been there" approach - inclusive, not superior
+**Naming Convention:** `plot_XX_YY_description.py`
+- XX = notebook number (01-12)
+- YY = plot number (01-24)
+- description = brief_snake_case
 
-### Specific Prohibitions
-- ❌ Never name individuals negatively (no "Dan Newberry's method is wrong")
-- ❌ Can critique methods ("Common flaws in OCW methodology")
-- ✅ Always credit published research by name (Bramwell, Litz, Anderson)
-- ❌ No Greek letters without immediate definition
-- ❌ No "Central Limit Theorem" - say "averages stabilize faster than spread"
-- ❌ No passive voice or hedging ("sort of", "kind of", "basically")
+**Example:** `scripts/plot_01_03_three_shot_distribution.py`
 
-### Vocabulary Progression (Remember from Ideas.md)
-- **Phase 1 (Notebooks 00-02):** Plain English only
-- **Phase 2 (Notebooks 03-05):** Introduce terms with definitions
-- **Phase 3 (Notebooks 06-08):** Use terms with occasional reminders
-- **Phase 4 (Notebooks 09-12):** Fluent technical use
+**Required Elements:**
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+# Set random seed for reproducibility
+np.random.seed(42)
+
+# ... simulation code ...
+
+# Save with consistent settings
+output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nbXX_plotYY_description.png'
+output_path.parent.mkdir(parents=True, exist_ok=True)
+plt.savefig(output_path, dpi=300, bbox_inches='tight')
+print(f"Saved: {output_path}")
+```
+
+**Styling Standards:**
+- Color: `steelblue` for main data, `red` for truth lines, `orange` for measured/calculated
+- DPI: 300 (publication quality)
+- Figure size: Typically (10, 6) for single, (14, 10) for 2x2 grids
+- Fonts: Bold for titles/labels, size 11-14
+- Grid: `alpha=0.3, linestyle=':', linewidth=0.5`
+- Legends: Clear, positioned appropriately
+- Annotations: Stats boxes with wheat background, alpha 0.5-0.8
+
+### Output Images
+
+**Location:** `notebooks/static/`
+
+**Naming Convention:** `nbXX_plotYY_description.png`
+- Must match script naming for clarity
+
+### Markdown Integration
+
+**Format for embedding plots:**
+```markdown
+![Description](../static/nbXX_plotYY_description.png)
+
+**Figure N:** Detailed caption explaining what the plot shows, the key insight, and why it matters for the reader's understanding.
+```
+
+**Example from Notebook 01:**
+```markdown
+![Distribution of 1,000 Three-Shot Groups](../static/nb01_plot03_three_shot_distribution.png)
+
+**Figure 1:** Distribution of 1,000 three-shot groups from a simulated rifle with true 1.5 MOA capability. The histogram shows groups ranging from 0.4 MOA to over 3.0 MOA, with the average systematically underestimating the true capability at 1.2 MOA. This demonstrates how small samples create massive variation in measured results even from a perfectly consistent system - your best groups are luck, not capability.
+```
+
+---
+
+## Plot Specifications Reference
+
+**Full details in docs/Ideas.md under "Static Plot Generation Plan"**
+
+### Key Plot Types Needed:
+
+**Histograms/Distributions:**
+- Plots 3, 4, 6, 15, 19, 20 (group size and SD distributions)
+
+**Line/Scatter Plots:**
+- Plots 8, 16, 17, 18 (convergence, ladders, comparisons)
+
+**Comparison Grids:**
+- Plots 5, 13, 23 (side-by-side visual challenges)
+
+**Conceptual Diagrams:**
+- Plots 1, 10, 12, 22, 24 (decision trees, flowcharts, curves)
+
+**Simulations:**
+- Plots 9, 11, 14, 21 (myth-busting demonstrations)
+
+---
+
+## Agent Usage Recommendations
+
+### Efficient Batch Creation
+
+**For similar plot types, use general-purpose agent:**
+
+Example from completed Phase 1:
+```
+Task: Create 6 plot scripts in scripts/ folder
+- plot_01_04_five_shot_comparison.py
+- plot_01_05_which_load_better.py
+- plot_01_06_sd_illusion_sample_size.py
+- plot_05_15_sd_illusion_detailed.py
+- plot_05_16_velocity_node_illusion.py
+- plot_06_18_es_vs_mr_comparison.py
+
+Specifications: [detailed requirements]
+Execute all scripts after creation
+```
+
+**Agent successfully created and executed all 6 in one task.**
+
+### When to Use Agents
+
+- ✅ Batch creation of similar plot types (3-6 at once)
+- ✅ Complex simulations requiring multiple iterations
+- ✅ Markdown updates across multiple files
+- ❌ Single simple plots (direct creation is faster)
+- ❌ Plots requiring extensive user design input
+
+---
+
+## Work Process for Next Session
+
+### Recommended Approach:
+
+**1. Phase 2 Plots (High Priority)**
+- Focus on decision-making visualizations (Plots 10, 22, 24, 2, 11)
+- These directly support practical application
+- Batch create with agent if specifications are clear
+
+**2. Phase 3 Plots (Supporting)**
+- Create myth-busting visualizations (Plots 9, 12, 13, 14)
+- Create supporting technical plots (Plots 7, 17, 20, 21, 23, 1)
+- Can be batched by notebook or by type
+
+**3. Markdown Integration**
+- Update notebooks as plots are completed
+- Maintain consistent figure numbering and captions
+- Test relative image paths work correctly
+
+**4. Quality Check**
+- All plots render correctly
+- Captions are informative and engaging
+- Figures enhance understanding (not just decoration)
+- Consistent professional appearance
+
+---
+
+## File Locations Quick Reference
+
+### Notebooks
+- Source: `notebooks/md/*.md`
+- Quality benchmark: `notebooks/md/02_What_We_Actually_Mean_by_Consistency.md`
+
+### Documentation
+- Philosophy: `docs/Ideas.md` (complete plot specs here)
+- Rules: `docs/Rules.md`
+- Structure: `docs/Structure.md`
+
+### Code
+- Plot scripts: `scripts/plot_XX_YY_*.py`
+- Generated images: `notebooks/static/nbXX_plotYY_*.png`
+
+### Agents (if needed)
+- Available in: `docs/agents/`
+- Most relevant: `myth_buster_agent.md`, `stats_translator_agent.md`
+
+---
+
+## Known Issues and Fixes
+
+### Fixed During This Session:
+
+**1. TypeError in group size calculations:**
+- Issue: List operations with floats
+- Fix: Convert to numpy array before statistical calculations
+- Pattern: Always use `array = np.array(list)` after appending to lists
+
+**2. NumPy warnings for small samples:**
+- Issue: `ddof=1` with n=1 causes divide by zero warnings
+- Impact: Minimal - only affects first data point in convergence plots
+- Status: Acceptable for educational visualizations
+
+### No Outstanding Issues
+
+All Phase 1 plots generate correctly and embed properly in markdown.
+
+---
+
+## Success Criteria
+
+### Plot Quality Standards:
+
+**Technical:**
+- ✅ Reproducible (random seed 42)
+- ✅ High resolution (300 DPI)
+- ✅ Professional appearance
+- ✅ Clear labels and legends
+- ✅ Appropriate statistical rigor
+
+**Educational:**
+- ✅ Supports key learning objective
+- ✅ Visual insight is immediate
+- ✅ Caption explains the "so what"
+- ✅ Accessible to non-technical audience
+- ✅ Emotionally engaging (when appropriate)
+
+**Integration:**
+- ✅ Flows naturally in notebook narrative
+- ✅ Referenced in surrounding text
+- ✅ Properly numbered and captioned
+- ✅ Renders correctly in markdown
 
 ---
 
 ## Core Philosophy (Never Deviate)
 
-From docs/Ideas.md - this is the foundation of everything:
+From docs/Ideas.md - this remains the foundation:
 
 **The Truth:**
 The overwhelming majority of popular reloading "methods" and strong claims circulating online are artifacts of insufficient sample sizes combined with random variation. This doesn't mean ALL claims are false—just that proper sample sizes are needed to distinguish real effects from statistical noise.
@@ -147,103 +364,73 @@ We teach honesty, humility, and practical statistical thinking—not to gatekeep
 **Accessibility Above All:**
 Everything must be accessible to someone who "hated math in school." Plain English at 8th-grade level, relatable examples, compelling stories, everyday analogies, heavy visual demonstrations.
 
-**Tone:**
-"We've all fallen for a lucky 8 fps SD string and declared we found 'the node.' Here's exactly why that happens, how the statistics create the illusion, and how to avoid chasing that particular ghost in the future."
+**For Visualizations:**
+Plots must tell the story instantly. A reader should get the key insight from the visual alone, with the caption reinforcing and the text providing context.
 
 ---
 
-## Common Myths to Debunk (Throughout Curriculum)
+## Expected Remaining Work
 
-From Ideas.md, systematically debunk these:
+**Phase 2 Plots:** ~3-5 hours
+- 5 plots requiring design and implementation
+- Some may need user input on design choices
+- Can be batched for efficiency
 
-1. Velocity nodes and "flat spots" in charge ladders
-2. OCW "round-robin" convergence patterns
-3. 3-shot or 5-shot group-based load development
-4. Seating depth "sweet spots" from small samples
-5. Primer swaps yielding dramatic SD reductions
-6. Barrel tuners creating one-hole groups overnight
-7. Brass weight sorting significantly improving precision
-8. Neck turning on factory chambers mattering
-9. Ladder tests revealing pressure nodes
-10. Single "perfect" sessions proving load quality
+**Phase 3 Plots:** ~5-8 hours
+- 10 plots, several complex simulations
+- Myth-busting visuals require careful design
+- Gallery-style plots need consistent styling
 
-**For each myth:**
-- Show the claim (anonymized)
-- Explain why it's appealing
-- Demonstrate the mechanism (simulation)
-- Provide the truth
-- Offer the alternative
+**Total Remaining:** ~8-13 hours to complete all 24 plots
+
+**Current Status:** 9/24 complete (37.5%)
 
 ---
 
-## Work Process
+## Interactive Curriculum (Future Work)
 
-For each notebook:
+**Status:** Deferred to future session
 
-1. **Read current version** from `notebooks/md/`
-2. **Review recommendations** in `docs/Ideas.md` for that specific notebook
-3. **Check completed examples** for quality standards
-4. **Build world-class replacement** following all guidelines
-5. **Update TodoList** marking notebook complete
-6. **Move to next notebook** in priority order
+**Plan:**
+- 1:1 correspondence with static curriculum
+- Platform TBD
+- Will replace "Interactive Element Placeholder" sections
+- Preston Moore dispersion testing examples to integrate
+- May use ipywidgets or web-based platform
 
----
-
-## Expected Completion
-
-At current pace:
-- ~1-1.5 hours per notebook transformation
-- 9 notebooks remaining
-- Estimate: 9-14 hours total work
-
-**Goal:** Every notebook should be THE definitive online resource for its topic. Not just "good enough" - the best available anywhere, free or paid.
-
----
-
-## Progress Tracking
-
-Use TodoWrite tool to update progress after each notebook completion.
-
-**Current state:**
-```
-02 - Consistency: ✅ COMPLETED
-03 - Sample Size: ✅ COMPLETED
-04 - One Variable: ✅ COMPLETED
-08 - Templates: ✅ COMPLETED
-09 - Expectations: 🔄 IN PROGRESS (next up)
-```
+**Action:** Continue with static plot completion. User will provide direction on interactive implementation when ready.
 
 ---
 
 ## Questions or Clarifications Needed
 
 If anything is unclear:
-- Reference completed notebooks as examples
-- Check Ideas.md for detailed guidance
-- Ask user for clarification on core philosophy points
-- When in doubt: prioritize accessibility over technical perfection
+- All plot specifications are in `docs/Ideas.md` (search for "Static Plot Generation Plan")
+- Completed Phase 1 scripts are reference examples in `scripts/`
+- Completed notebooks show integration patterns
+- Ask user for design input on complex visualizations
+- When in doubt: prioritize clarity and emotional impact over technical sophistication
 
 ---
 
 ## Final Notes
 
+**Current Achievement:**
+- 13/13 notebooks transformed to world-class quality
+- 9/24 plots complete with professional execution
+- Established technical patterns and standards
+- Clear path forward for completion
+
+**Next Session Goal:**
+Complete Phase 2 high-priority plots (5 plots), begin Phase 3 supporting visualizations.
+
 **Remember:**
-- This is building THE definitive public resource for evidence-based reloading
-- Users are non-technical adults who "hated math in school"
-- Every sentence should be clear, every concept should have an analogy
-- Interactive elements make learning fun (adults learn by playing)
-- The secret: they're learning statistics while thinking they're learning reloading
+- Each plot must enhance understanding, not just decorate
+- Visual insight should be immediate and emotional
+- Captions explain the "so what" clearly
+- Maintain consistent professional appearance
+- Reproducibility and quality are non-negotiable
 
-**Success Criteria:**
-After this curriculum, learners should:
-1. Recognize misleading claims based on small samples
-2. Explain why common methods fail
-3. Calculate appropriate sample sizes
-4. Design controlled experiments
-5. Interpret statistical outputs practically
-6. Evaluate their own data critically
-7. Defend their methodology against objections
+**You're creating THE definitive visual curriculum for evidence-based reloading testing.**
 
-**You're building something that will genuinely change how people approach reloading testing.**
-
-Make every notebook exceptional.
+Make every plot exceptional.

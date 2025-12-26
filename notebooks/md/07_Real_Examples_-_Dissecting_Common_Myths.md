@@ -4,82 +4,676 @@
 
 Time to complete: 10-15 minutes
 
-# Real Examples - Dissecting Common Myths
+# Popular Methods Under the Microscope
 
-## Goal: Apply lessons to popular methods
+## Testing Common Approaches With Honest Data
 
-OCW: Show how small samples make multiple charge weights look "forgiving."
-**Velocity nodes/flat spots:** Simulate charge ladders: random data creates apparent flats.
-**Barrel tuners:** Simulate dispersion: random tight groups appear with any setting.
-**Atterlee 10-shot method:** Explain why 10 shots aren't enough to detect real differences reliably.
-**Seating depth sweet spots:** Show how random variation creates fake optimal depths in seating depth tests.
-**Brass sorting by weight:** Demonstrate that sorting by weight doesn't consistently improve precision beyond measurement error.
-Each with **interactive sims** so learners see the illusion themselves.
+You've learned the fundamentals: small samples lie, you need 30+ shots for reliable measurements, and your best groups don't represent true capability.
 
-## Tuner Test
+Now let's apply those lessons to the specific methods circulating in reloading communities. Methods that thousands of shooters use. Methods that seem logical. Methods that sometimes appear to work.
 
-A simple test for a "tuner" is to shoot a minimum of 10 rounds per setting (average or mean radius).
+**The question:** Do these methods actually deliver what they promise, or are people seeing patterns in random noise?
 
-## 10 Shot Load Development
+We're not here to attack anyone. Many of these methods were developed by smart, experienced shooters who were genuinely trying to help. The problem isn't bad intentions—it's **insufficient understanding of statistics combined with human pattern-seeking instincts**.
 
-### Theory
-The method of testing 10 shots per load over a range involves shooting 10 rounds for each powder charge increment to find the "sweet spot" where velocity is consistent or group size is small. This is often used in load development to identify optimal charges quickly.
+In this notebook, we'll examine popular methods with the statistical lens you've developed. For each, we'll:
+1. Explain the theory and why it's appealing
+2. Show what the data actually reveals
+3. Explain why people think it works (even when it doesn't)
+4. Provide practical alternatives that do work
 
-### What the data actually shows
-With small samples of 10 shots, random variation can create apparent "sweet spots" where SD appears lower or velocity stable, even if there's no real effect. The plots show how noise leads to artifacts in both mean velocity and SD across charges.
+By the end, you'll understand not just which methods are flawed, but **why** they fail—and what to do instead.
 
-### Practical recommendation
-Use larger sample sizes (e.g., 20-30 shots per load) and statistical analysis to confirm trends. Don't rely on small sample "sweet spots" as they may be illusory.
+---
 
-## Seating Depth Testing Critique
+## Method 1: OCW (Optimal Charge Weight) Testing
 
-### Theory
-The common practice of testing different seating depths for "optimal" bullet jump involves adjusting how far the bullet is seated into the case to find the depth that gives the smallest group size or most consistent velocity.
+### The Theory
 
-### What the data actually shows
-Small samples lead to false precision in seating depth effects, where random variation makes one depth appear optimal. The plot shows how noise creates an apparent minimum group size at a particular depth.
+OCW testing involves shooting "round-robin" groups at three different targets with incrementally increasing powder charges. The theory is that charges will "converge" on one target when you're near optimal, showing that the barrel harmonics are minimized.
 
-### Practical recommendation
-Focus on larger samples (20+ shots per depth) and consider that seating depth effects are often minimal. Use statistical tests to determine if differences are real.
+**Typical process:**
+1. Load 3 rounds each at charges like 42.0, 42.3, 42.6, 42.9, 43.2 grains
+2. Fire one round from each charge at Target 1, then one from each at Target 2, then Target 3
+3. Look for charges that impact close together across all three targets
+4. This is supposedly your "optimal charge weight" with forgiving harmonics
 
-## Barrel Break-in Myths
+**Why it's appealing:**
+- Uses few rounds (15 total for 5 charges)
+- Seems to account for barrel heating (round-robin)
+- Gives a clear answer (charges converge or they don't)
+- Backed by theoretical understanding of barrel harmonics
 
-### Theory
-Beliefs about needing extensive break-in for accuracy suggest that barrels require hundreds of shots to "settle in" and achieve optimal performance, with accuracy improving over time.
+### What the Data Actually Shows
 
-### What the data actually shows
-Much of the "improvement" is just settling from initial inconsistency, not true break-in. The plot illustrates how SD decreases naturally with more shots due to statistical averaging.
+Let's simulate this with a rifle that has NO optimal charge weight—just random variation:
 
-### Practical recommendation
-Use consistent loading and focus on other variables; break-in is overrated. Shoot enough to stabilize, but don't expect dramatic improvements beyond initial shots.
+**Interactive Element Placeholder:**
+```python
+# Simulation: OCW Test with Pure Random Data
+#
+# Setup:
+# - Five charges: 42.0 to 43.2 grains
+# - NO real difference between them (all same true precision)
+# - Random scatter on target from each shot
+# - Shoot 3 rounds per charge in round-robin fashion
+#
+# Display:
+# Three targets showing impact points
+# - Color-coded by charge weight
+# - User can see which charges "converge"
+#
+# Button: "Run test again"
+# - Shows completely different convergence pattern
+# - Same charges, different random scatter
+#
+# Run 100 OCW tests automatically:
+# - Show which charges were "optimal" in each test
+# - Result: All charges appear optimal in roughly equal proportions
+# - No consistent winner despite identical underlying reality
+#
+# Aha moment: "The convergence pattern changes every time! There IS no
+# optimal charge—it's just random scatter making patterns my brain wants to see."
+```
 
-## Velocity Nodes in Charge Ladders
+**What we observe:**
+- Every simulation finds an "optimal" charge
+- Which charge is "optimal" changes with each simulation
+- When testing the "winner" with proper sample sizes (30+ shots), it performs identically to other charges
+- The round-robin pattern creates no real benefit over shooting all at once
 
-### Theory
-The idea of velocity "nodes" where SD magically drops suggests that at certain powder charges, the load becomes unusually consistent, creating flat areas in velocity ladders.
+### Why This Persists
 
-### What the data actually shows
-Random subsets can appear as nodes. The plot highlights how a single low SD point can look like a node, but it's often noise.
+OCW is appealing because:
+1. It uses few components (economical)
+2. It always gives an answer (even if the answer is random)
+3. The theoretical justification (barrel harmonics) sounds plausible
+4. Confirmation bias: When it "works," people remember; when it doesn't, they think they executed it wrong
+5. Small sample sizes mean you never test the result properly to discover it doesn't repeat
 
-### Practical recommendation
-Look for consistent trends, not single points; use statistical tests. Nodes are rarely real and often illusory from small samples.
+### What to Do Instead
 
-## Brass Sorting by Weight
+**Better approach:**
+1. Pick 2-3 charge weights based on safe pressure and desired velocity
+2. Test each with 30+ shots for real precision measurement
+3. Compare mean radius and velocity SD
+4. Choose based on actual data, not apparent convergence patterns
+5. If charges perform identically (they often do), pick mid-range for safety margin
 
-### Theory
-The belief that sorting brass by weight reduces SD assumes that heavier brass leads to more consistent velocities, improving precision.
+**Components used:** More upfront, but you get real answers instead of random patterns
 
-### What the data actually shows
-Weight sorting rarely reduces SD significantly beyond what random variation explains. The scatter plot shows weak correlation, and sorting doesn't drastically improve consistency.
+---
 
-### Practical recommendation
-Sorting may help marginally, but don't expect miracles; focus on better load development. Other factors like powder uniformity are more important.
+## Method 2: Velocity Nodes and "Flat Spots" in Charge Ladders
+
+### The Theory
+
+Load incrementally increasing charges (e.g., 41.0 to 42.0 grains in 0.1-grain steps). Shoot one round of each. Plot velocity vs charge. Look for "flat spots" where velocity doesn't increase much—these are supposed "nodes" where barrel harmonics are optimal and accuracy is best.
+
+**Why it's appealing:**
+- Scientifically sounds reasonable (harmonic theory)
+- Uses few rounds (10-11 rounds total)
+- Gives visual, seemingly objective data
+- Widely discussed in reloading literature
+
+### What the Data Actually Shows
+
+We covered this in Notebook 05, but it bears repeating with visuals:
+
+**Interactive Element Placeholder:**
+```python
+# Simulation: Ladder Test with NO Real Nodes
+#
+# Setup:
+# True velocity progression: perfectly linear (no nodes exist)
+# - 42.0gr → 2820 fps
+# - 42.5gr → 2830 fps
+# - 43.0gr → 2840 fps (etc.)
+# Random variation: ±10 fps per shot
+#
+# User controls:
+# Button: "Run ladder test" (one shot per charge)
+# Display: Plot of charge vs velocity with connecting line
+#
+# What user sees:
+# - Some charges show velocity "drops" or "flats"
+# - User circles these as "potential nodes"
+#
+# Button: "Test that node" (shoot 30 rounds at identified node charge)
+# Result: SD and precision identical to adjacent charges
+#
+# Button: "Repeat ladder"
+# - Different "nodes" appear in different locations
+# - No consistency across trials
+#
+# Run 100 ladders, overlay all data points:
+# - Cloud of points reveals true linear progression
+# - No consistent nodes anywhere
+#
+# Aha moment: "Every ladder shows different 'nodes' because they're
+# random scatter, not real features!"
+```
+
+**What we observe:**
+- "Nodes" appear randomly in different locations each time
+- When tested properly, "node" charges perform no better than neighbors
+- The flat spots are just random variations that happen to go low-high-low by chance
+- Your brain sees the pattern because brains are wired to find patterns
+
+### Why This Persists
+
+Velocity nodes persist because:
+1. The harmonic theory sounds sophisticated and scientific
+2. Pattern-seeking brains find structure in random scatter
+3. Single-shot-per-charge testing prevents proper verification
+4. When you test a "node" with 5 shots and it works, you attribute it to the node (not to sample size luck)
+5. Confirmation bias: successes remembered, failures attributed to user error
+
+### What to Do Instead
+
+**Better approach:**
+1. Do a rough ladder (5 shots per charge) to check velocity progression and pressure signs
+2. Pick 2-3 charges that give desired velocity and stay below pressure limits
+3. Test each properly with 30+ shots for precision and SD
+4. Choose based on real data, not imaginary nodes
+
+**Temperature sensitivity testing** is FAR more important than node hunting. Test your chosen load at different temperatures—that variation matters way more than 0.1-grain charge differences.
+
+---
+
+## Method 3: Seating Depth "Sweet Spots"
+
+### The Theory
+
+Test different seating depths (e.g., 0.010", 0.020", 0.030", 0.040" off lands) by shooting 3-5 shot groups at each depth. The depth that produces the smallest group is the "sweet spot" for that bullet in your rifle.
+
+**Why it's appealing:**
+- Addresses a real variable (seating depth does affect some things)
+- Gives concrete, measurable results
+- Quick to test (15-25 rounds total for 5 depths)
+- Widely recommended in reloading manuals
+
+### What the Data Actually Shows
+
+**Interactive Element Placeholder:**
+```python
+# Simulation: Seating Depth Test with NO Real Sweet Spot
+#
+# Setup:
+# Five seating depths tested
+# TRUE effect: All depths produce 1.0 MOA (identical performance)
+# Test method: 5-shot groups at each depth
+#
+# Run simulation:
+# Display: Bar chart of group sizes by depth
+# - User sees one depth appears "best" (e.g., 0.6 MOA at 0.020")
+# - Other depths: 0.9, 1.1, 0.8, 1.3 MOA
+# - Conclusion seems clear: 0.020" is the sweet spot!
+#
+# Button: "Repeat test"
+# - Shows different "winner" each time
+# - 0.040" is now "best" at 0.7 MOA
+# - Previous "winner" now shows 1.2 MOA
+#
+# Button: "Test winner properly" (50 shots at identified sweet spot)
+# Result: Mean radius 0.95 MOA (no better than any other depth)
+#
+# Run 100 seating tests, track which depth "wins" each time:
+# - Each depth wins about 20% of tests (roughly equal)
+# - No consistent pattern
+#
+# Aha moment: "The 'sweet spot' is whichever depth got lucky in
+# that particular small sample!"
+```
+
+**What we observe:**
+- With small samples, some depth always looks best
+- Which depth looks best is random (changes each test)
+- When tested properly, all reasonable depths often perform similarly
+- Real seating depth effects (when they exist) are usually smaller than measurement noise from small samples
+
+### Why This Persists
+
+Seating depth testing persists because:
+1. Seating depth IS a real variable (so the theory isn't completely wrong)
+2. Small samples always find a "winner" (random variation)
+3. Once you "find" the sweet spot and load 100 rounds, you don't re-test to verify
+4. If accuracy is acceptable, you assume it's because of the sweet spot
+5. Published results showing sweet spots are usually based on small samples
+
+### What to Do Instead
+
+**Better approach:**
+
+**If you have reason to suspect seating depth matters for your bullet/rifle combo:**
+1. Test 3-4 depths spanning a reasonable range (e.g., 0.010" to 0.040" off)
+2. Shoot 20-30 rounds at EACH depth
+3. Calculate mean radius for each
+4. Use statistical comparison to see if differences are real
+5. Only if one depth is clearly and consistently better (across multiple sessions), commit to it
+
+**If you're shooting VLD or hybrid bullets at long range:** Seating depth might matter. Test properly.
+
+**If you're shooting standard bullets for hunting inside 400 yards:** Seating depth probably matters very little. Pick a depth that feeds reliably and fits your magazine, test it once with 30+ shots, and move on.
+
+---
+
+## Method 4: Brass Sorting by Weight
+
+### The Theory
+
+Weigh all brass, sort into batches by weight (e.g., ±0.5 grain tolerance). Use the most uniform batch for precision ammunition. The theory is that weight correlates with internal volume, and consistent volume produces consistent pressure and velocity.
+
+**Why it's appealing:**
+- Measurable, objective process
+- Feels scientific and precise
+- Common recommendation from precision shooters
+- Relatively easy to do
+
+### What the Data Actually Shows
+
+**The reality about brass weight variation:**
+
+Most weight variation in quality brass (Lapua, Peterson, Alpha) comes from **case head thickness variation**, NOT internal volume variation. The case head is where manufacturers vary thickness to achieve consistent weight ranges during production.
+
+**Interactive Element Placeholder:**
+```python
+# Simulation: Brass Weight vs Velocity SD
+#
+# Setup:
+# Generate 100 cases with weight variation (realistic distribution)
+# Internal volume variation: WEAK correlation with weight
+# True SD of load: 12 fps (with unsorted brass)
+#
+# Scenario A: Unsorted brass (all 100 cases)
+# - Shoot 50 rounds
+# - Measure SD: ~12 fps
+#
+# Scenario B: Weight-sorted brass (narrowest 50 cases, ±0.3gr)
+# - Shoot 50 rounds
+# - Measure SD: ~11.5 fps
+#
+# Difference: 0.5 fps (within measurement noise)
+#
+# Display correlation plot:
+# - X-axis: Case weight
+# - Y-axis: Velocity
+# - Correlation coefficient: r² ≈ 0.03-0.08 (very weak)
+# - Conclusion: Weight explains 3-8% of velocity variation
+#
+# User controls:
+# Toggle: Show internal volume instead of weight
+# - Correlation improves slightly (r² ≈ 0.12)
+# - But volume is hard to measure accurately
+#
+# Aha moment: "I've been spending hours sorting brass by weight
+# when it barely affects velocity! Other factors matter way more."
+```
+
+**What we observe:**
+- Weight sorting reduces SD by 0.3-0.7 fps on average (tiny effect)
+- The correlation between weight and velocity is weak (r² typically < 0.10)
+- The effort-to-benefit ratio is poor
+- Bullet-to-bullet variation and powder metering contribute FAR more to SD than brass weight
+
+### Why This Persists
+
+Brass sorting persists because:
+1. It's a visible, controllable variable (unlike bullet variations you can't measure)
+2. Confirmation bias: "I sorted my brass and shot well" (ignoring other factors)
+3. Small sample testing: If you test 10 sorted vs 10 unsorted rounds, random variation dominates any real effect
+4. Feels like "doing everything possible" for precision
+5. Published anecdotes from shooters who sort (survivorship bias—failures don't get published)
+
+### What to Do Instead
+
+**Practical recommendations:**
+
+**If you're shooting ELR (1500+ yards):**
+- Sort by weight might be worth it (marginal gains matter)
+- But test it properly: 50 sorted vs 50 unsorted, measure actual difference
+- Even then, **measuring actual internal volume (by water weighing) is better than sorting by case weight**
+
+**If you're shooting competition at 600-1000 yards:**
+- Use same-lot, quality brass (Lapua, Peterson, Alpha)
+- Skip weight sorting
+- Focus on consistent powder charges and quality bullets
+
+**If you're hunting or shooting < 600 yards:**
+- Brass sorting is complete overkill
+- Spend that time practicing wind calls or positional shooting
+
+**What DOES matter for brass:**
+- Using same brand and lot (different brands/lots have different case hardness and capacity)
+- Consistent case prep (trimming, annealing if reloading many times)
+- Proper sizing (consistent neck tension)
+
+---
+
+## Method 5: Three-Shot Ladder Tests at Distance
+
+### The Theory
+
+Load a powder ladder (10-15 incrementing charges). Shoot one round of each at a target at 300-400+ yards. Look for vertical groups (charges that impact at similar heights). These grouped charges supposedly represent a "node" where the load is forgiving.
+
+**Why it's appealing:**
+- Faster than shooting groups at each charge
+- Long distance amplifies differences
+- Visual result (you can see vertical grouping)
+- Often recommended for magnum cartridges
+
+### What the Data Actually Shows
+
+**The problem:** What you're seeing is mostly **recoil-induced POI variation**, not load characteristics.
+
+At 300-400 yards, small differences in how the rifle recoils change the bullet's exit angle. This creates vertical variation that's LARGER than actual charge weight effects.
+
+**Interactive Element Placeholder:**
+```python
+# Simulation: Ladder Test at 400 Yards
+#
+# Setup:
+# Ten charges from 42.0 to 43.0 grains (0.1gr increments)
+# TRUE velocity effect: Linear increase (no nodes)
+# TRUE effect on vertical POI at 400yds: ~1-2 inches per 0.1gr
+# RECOIL-induced variation: ±6 inches (dominates the signal)
+#
+# Run ladder test:
+# Display: Target at 400 yards with impact points
+# - Vertical spread: 14 inches total
+# - Some charges appear "grouped" vertically
+# - User circles "node" charges that grouped
+#
+# Button: "Run ladder again" (same charges, different recoil variation)
+# - Completely different vertical pattern
+# - Different charges now appear grouped
+# - Previous "node" charges now scattered
+#
+# Test identified "node":
+# - Shoot 30 rounds at that charge
+# - Precision: 1.2 MOA (identical to other charges when tested properly)
+#
+# Aha moment: "The vertical grouping was just recoil variation!
+# My 'node' changes every time I shoot the ladder!"
+```
+
+**What we observe:**
+- Vertical "grouping" appears random across trials
+- The same charges don't group consistently
+- Recoil variation exceeds charge weight effects by 3-5x
+- This method mistakes recoil management inconsistency for load characteristics
+
+### Why This Persists
+
+Ladder tests at distance persist because:
+1. They seem to use physics (longer distance = bigger differences visible)
+2. They always show a pattern (recoil variation creates visual grouping)
+3. The theoretical justification (barrel harmonics, nodes) sounds plausible
+4. Single-shot testing prevents verification
+5. When you commit to a "node" and it shoots okay, you attribute success to the node
+
+### What to Do Instead
+
+**If you want velocity vs charge data:**
+- Shoot 5 rounds per charge at 100 yards
+- Chronograph all shots
+- Look for AVERAGE velocity progression and pressure signs
+- Ignore single-shot "flat spots"
+
+**If you want to test precision across charges:**
+- Pick 2-3 promising charges
+- Shoot 30+ rounds of each
+- Measure mean radius
+- Compare with proper statistical tests
+
+**The ladder test at distance is measuring your recoil management, not your load quality.**
+
+---
+
+## Method 6: Barrel Tuner Quick Testing
+
+### The Theory
+
+Adjust a muzzle tuner weight position in small increments. Shoot 3-5 shot groups at each setting. The setting that produces the smallest group is "in tune" with your barrel's harmonics.
+
+**Why it's appealing:**
+- Tuners can have real effects (this isn't entirely myth)
+- Gives immediate feedback (small group = success!)
+- Doesn't require changing ammunition
+- Backed by harmonic theory
+
+### What the Data Actually Shows
+
+**The problem:** With 3-5 shot groups, random variation is larger than most tuner effects. You'll always find a setting that "works" in a small sample, but it won't repeat.
+
+**Interactive Element Placeholder:**
+```python
+# Simulation: Tuner Testing with Small Samples
+#
+# Setup:
+# Ten tuner settings (arbitrary positions)
+# TRUE effect of tuner: ZERO (all settings produce 1.0 MOA)
+# Test method: 5-shot groups at each setting
+#
+# Run test:
+# Display: Bar chart of group sizes by tuner setting
+# - One setting shows 0.6 MOA (Amazing! This is the sweet spot!)
+# - Others: 0.9, 1.1, 0.8, 1.3, 1.0, 1.2, 0.9, 1.1, 1.3 MOA
+# - Conclusion: Setting #3 is optimal!
+#
+# Button: "Retest winning setting"
+# - Shoot another 5-shot group
+# - Result: 1.2 MOA (wait, what?)
+# - Shoot another: 0.9 MOA
+# - Another: 1.1 MOA
+# - Average: 1.05 MOA (back to truth)
+#
+# Button: "Run full test again"
+# - Different setting "wins" this time
+# - No consistency
+#
+# Proper test method shown:
+# - Shoot 20-30 rounds at each of 3-4 settings
+# - Calculate mean radius for each
+# - Compare with statistical test
+# - Only if one setting is consistently better across sessions, trust it
+#
+# Aha moment: "With small groups, a 'winner' appears every time,
+# but it's random which setting wins!"
+```
+
+**What we observe:**
+- Small samples always find an "optimal" setting
+- Which setting is optimal changes with each test
+- When tested properly, many settings perform identically (if tuner effect is small)
+- Real tuner effects DO exist for some rifles, but they're often smaller than small-sample noise
+
+### Why This Persists
+
+Tuner testing with small samples persists because:
+1. Tuners can have real effects (so the theory isn't wrong)
+2. Small groups always produce a "winner"
+3. Once you "find" the setting, you stop testing and assume success
+4. Variability in future groups is attributed to other factors, not the tuner setting
+5. Tuner adjustments are reversible, so you can always "retune" if results degrade
+
+### What to Do Instead
+
+**Better approach to tuner testing:**
+
+**Step 1:** Establish baseline without tuner
+- Shoot 30+ rounds
+- Calculate mean radius
+- This is your baseline
+
+**Step 2:** Add tuner at mid-range setting
+- Shoot 30+ rounds
+- Compare to baseline
+- If no improvement, tuner may not help your rifle
+
+**Step 3:** If tuner shows promise, test 3-4 settings
+- Shoot 20-30 rounds at each setting
+- Compare mean radius across settings
+- Use statistical tests to see if differences are real
+
+**Step 4:** Validate winner across sessions
+- Best setting from Step 3 gets tested again on different day
+- If it repeats, you've found a real tuner effect
+- If it doesn't, the "improvement" was noise
+
+**Reality check:** Many rifles show minimal tuner effects. If you can't measure a clear, repeatable improvement with proper sample sizes, the tuner isn't helping.
+
+---
+
+## Method 7: "10-Shot Load Development"
+
+### The Theory
+
+Shoot 10 rounds of each load you're testing. Ten shots is "enough" to see differences while being economical. Compare SD and group size across loads.
+
+**Why it's appealing:**
+- More shots than 3 or 5 (feels more rigorous)
+- Economical (not as many as 30+)
+- Commonly recommended as "good enough"
+
+### What the Data Actually Shows
+
+Ten shots is better than 5, but still insufficient for reliable SD measurements.
+
+**Interactive Element Placeholder:**
+```python
+# Simulation: "10-Shot Load Comparison"
+#
+# Setup:
+# Two loads: Load A and Load B
+# TRUTH: Both have 15 fps SD (identical)
+# Test: 10 shots of each, compare SDs
+#
+# Run 1000 comparisons:
+# Track how often each load appears "better"
+#
+# Results:
+# - Load A appears better: ~45% of trials (SD 11-14 fps)
+# - Load B appears better: ~45% of trials (SD 11-14 fps)
+# - Appear equal (within 1 fps): ~10% of trials
+# - You'd make WRONG decision 90% of the time!
+#
+# Now increase to 30 shots each:
+# - Load A appears better: ~30% of trials
+# - Load B appears better: ~30% of trials
+# - Appear equal: ~40% of trials
+# - Much better! (Though still imperfect)
+#
+# Display shows:
+# For 10-shot samples detecting 3 fps SD difference: ~35% power
+# For 30-shot samples detecting 3 fps SD difference: ~75% power
+#
+# Aha moment: "With 10 shots, I'm only slightly better than guessing!
+# I need 30+ to reliably detect real differences."
+```
+
+**What we observe:**
+- 10 shots provides poor statistical power for detecting differences
+- You'll frequently conclude loads are different when they're not
+- Or conclude they're the same when one is actually better
+- 30+ shots per load are needed for reliable comparisons
+
+### Practical Recommendation
+
+**If you must use 10 shots** (budget or barrel life constraints):
+- Accept high uncertainty
+- Only trust large differences (5+ fps SD, 0.3+ MOA precision)
+- Verify "winners" with another 20 shots before committing
+- Don't make firm conclusions from single 10-shot sessions
+
+**Better:** Budget for 30 shots per load tested. Fewer loads tested thoroughly beats many loads tested inadequately.
+
+---
+
+## The Pattern: Why These Methods Fail
+
+Notice the common thread?
+
+**All these methods use sample sizes too small to distinguish signal from noise.**
+
+They fail for the same statistical reasons:
+1. Random variation in small samples exceeds real effects
+2. Pattern-seeking brains find structure in randomness
+3. Confirmation bias makes successes memorable, failures forgettable
+4. Lack of proper verification testing
+5. Results aren't replicated to check consistency
+
+**These aren't bad methods because the people who developed them were ignorant.** They're bad methods because proper statistical testing requires more rounds than most hobbyists want to shoot, and these methods emerged from anecdotal experience without rigorous verification.
+
+---
+
+## What Actually Works: The Evidence-Based Approach
+
+**For load development:**
+1. Pick 2-3 charge weights based on desired velocity and safe pressure
+2. Test each with 30-50 rounds (yes, this uses components)
+3. Measure velocity SD and precision (mean radius) for each
+4. Use statistical tests to compare (we'll cover this in Notebook 10)
+5. Choose the best performer, or pick the middle charge if they're statistically identical
+6. Verify across 2-3 sessions before committing to large batches
+
+**For component comparisons (primers, bullets, brass):**
+1. Change ONE variable at a time
+2. Test old and new with 30+ rounds each, same session
+3. Measure both velocity and precision
+4. Statistical comparison to see if difference is real and large enough to matter
+5. If marginal difference, probably not worth the switch
+
+**For tuners, seating depth, or other adjustments:**
+1. Test fewer settings, but test them properly (20-30 rounds each)
+2. Include a "baseline" setting for comparison
+3. Replicate the winner on a different day
+4. Only commit if the effect is repeatable and meaningful
+
+**The cost:** More components upfront
+**The benefit:** Actual answers instead of chasing random patterns
+
+---
+
+## A Note About Respect
+
+We've critiqued methods that many skilled, experienced shooters use and recommend. That's not a personal attack.
+
+These methods persist because:
+- They're taught in good faith by people trying to help
+- They sometimes seem to work (confirmation bias)
+- The statistical problems aren't obvious without training
+- Everyone (including us) has limited components and wants economical testing
+
+**The goal isn't to call people wrong—it's to improve the methodology.**
+
+If someone gets great results with a method we've critiqued, that's fine! But without proper sample sizes and verification, they can't know if their success is due to the method or to luck.
+
+**Science progresses by questioning methods, not people.**
+
+---
+
+## Coming Up Next
+
+Now that you understand which popular methods fail and why, you need tools to test properly.
+
+**In Notebook 08**, we'll provide production-ready templates for:
+- Two-load comparison (primer swap, bullet change, etc.)
+- Charge weight testing (proper sample sizes)
+- Before/after modification testing
+
+You'll paste your data, run the analysis, get plain-English interpretation, and have sharable results. The templates do the statistics for you—you just collect the data properly.
+
+This is where everything you've learned becomes immediately useful.
 
 > **Key Takeaways**
-> - Common reloading myths often stem from poor statistical practices
-> - Real data analysis debunks many popular claims
-> - Case studies show how proper analysis changes conclusions
-> - Forum advice frequently lacks statistical rigor
-> - Evidence-based approach replaces anecdotal wisdom
+> - Popular methods (OCW, ladder tests, seating depth testing, brass sorting) often fail because they use insufficient sample sizes
+> - Pattern-seeking brains find "nodes," "sweet spots," and "optimal settings" in random variation
+> - Three-shot groups, 5-shot strings, and 10-shot tests lack statistical power to detect real differences
+> - Recoil variation often exceeds the variables being tested, creating false patterns
+> - Brass weight sorting has minimal impact (0.3-0.7 fps SD improvement) for the effort involved
+> - Tuners and seating depth CAN matter, but require 20-30 rounds per setting to test properly
+> - All these methods fail for the same reason: mistaking random noise for real signal
+> - Evidence-based approach: fewer variables tested properly beats many variables tested inadequately
 
-[Previous: 06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb](06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb) | [Next: 08_Your_Experiments_Template.ipynb](08_Your_Experiments_Template.ipynb)
+[Previous: 06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group](06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb) | [Next: 08_Your_Experiments_Template](08_Your_Experiments_Template.ipynb)

@@ -169,35 +169,9 @@ Notice how SD climbs as sample size increases? That's not your load getting wors
 
 **The early numbers are optimistic lies. The later numbers are closer to truth.**
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "The SD Illusion"
-#
-# Setup: True population SD = 15 fps (fixed, known answer)
-#
-# User controls:
-# - Slider: Sample size (3 to 50 shots)
-# - Button: "Take a sample" (generate random sample of that size)
-# - Button: "Take 100 samples" (run Monte Carlo simulation)
-#
-# Display after single sample:
-# - Calculated SD from this sample
-# - True population SD (the answer)
-# - Difference: "You're off by X fps!"
-#
-# Display after 100 samples:
-# - Histogram of all 100 calculated SDs
-# - True SD marked as vertical line
-# - Show that most samples underestimate true SD
-# - Show that variation decreases with larger sample sizes
-#
-# User can adjust sample size slider and watch the histogram change
-# Small samples: wide distribution, often underestimating
-# Large samples: narrow distribution, centered on truth
-#
-# Aha moment: "With 5-shot samples, I could get ANYTHING from 5 to 25 fps!
-# No wonder my results never repeat. I need 30+ shots to get close to truth."
-```
+![The Standard Deviation Illusion](../static/nb05_plot15_sd_illusion.png)
+
+**Figure 1:** Monte Carlo simulation showing distributions of calculated SD values from different sample sizes, with true population SD of 15 fps. With 5-shot samples, calculated SDs range wildly from 5 to 25 fps, mostly underestimating the truth. Even 10-shot samples show substantial variation. Only at 30+ shots does the distribution narrow and center on the true value. This visualization proves why your amazing single-digit SD from a 10-shot string is almost certainly optimistic luck, not real performance.
 
 ### Extreme Spread (ES): Even More Misleading
 
@@ -278,35 +252,9 @@ Let me say that again: **It's random scatter, not a real phenomenon.**
 
 Here's the smoking gun. We can simulate a perfectly smooth velocity progression with NO nodes programmed in—just realistic random variation shot-to-shot—and still get "flat spots."
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "The Velocity Node Illusion"
-#
-# Setup:
-# - True velocity progression: perfectly linear (2 fps per 0.1gr increase)
-# - No nodes, no flat spots, just smooth physics
-# - Random variation: ±10 fps per shot (realistic)
-#
-# User controls:
-# - Button: "Run ladder test" (generate 10 charges, one shot each)
-# - Button: "Repeat test" (generate new random sample)
-# - Checkbox: "Show true average line" (perfect linear progression)
-#
-# Display:
-# - Plot of charge weight vs. velocity
-# - User can visually identify "flat spots" or "nodes"
-# - Click "Repeat test" shows different flat spots appear
-# - Enable "Show true average line" reveals there ARE no real nodes
-#
-# Additional feature:
-# - "Run 100 ladder tests" button
-# - Overlay all 100 on one plot
-# - Watch the cloud of points reveal the true linear progression
-# - No consistent nodes—they appear randomly everywhere
-#
-# Aha moment: "Holy crap. The nodes move every time! They're not real.
-# My brain is finding patterns in random scatter. I've been chasing ghosts."
-```
+![The Velocity Node Illusion](../static/nb05_plot16_velocity_node_illusion.png)
+
+**Figure 2:** Demonstration of the velocity node myth using a perfectly linear true velocity progression (2 fps per 0.1 grain) with realistic random shot-to-shot variation. Multiple simulated ladder tests show "flat spots" and "nodes" appearing in different locations each time - proving these are artifacts of random scatter, not real phenomena. When 100 ladder tests are overlaid, the cloud of points reveals the true smooth linear progression with no consistent nodes. Your pattern-seeking brain finds structure in noise, leading you to chase ghosts instead of real data.
 
 ### Why Your Brain Falls for This
 

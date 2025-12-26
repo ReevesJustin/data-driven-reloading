@@ -146,26 +146,9 @@ Almost always, it's the cup. They dipped once, got lucky, and declared they know
 
 You've already seen this in Notebook 01. Remember those simulations showing how a true 15 fps load can give you 8 fps in a 10-shot sample just by luck? That's the cup lying about the ocean.
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "The Cup and the Ocean"
-#
-# Setup:
-# - Define "ocean" (true population): Mean = 2850, SD = 15 fps
-# - User sets sample size (5, 10, 20, 30 shots)
-# - Button: "Dip a cup" (take a random sample)
-#
-# Display:
-# - Sample mean and SD shown
-# - True population mean and SD shown (the answer)
-# - How far off the sample is from truth
-#
-# User can click "Dip a cup" repeatedly
-# Watch the sample statistics bounce around
-# See that larger samples bounce less
-#
-# Aha moment: "The cup keeps changing! Only with bigger samples does it stabilize."
-```
+![The Cup and the Ocean Analogy](../static/nb02_plot08_cup_and_ocean.png)
+
+**Figure 1:** Visual demonstration of the cup and ocean analogy - showing how random samples (cups) from a true population (ocean with mean 2,850 fps and SD 15 fps) vary in their measurements. Small samples produce highly variable results that bounce around the true values, while larger samples converge closer to the truth. This fundamental concept explains why you never measure the population directly - you always work with samples, and small samples are unreliable cups that mislead you about the ocean.
 
 > **Critical Takeaway**
 >
