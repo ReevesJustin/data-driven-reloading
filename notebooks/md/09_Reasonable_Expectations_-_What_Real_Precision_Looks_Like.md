@@ -40,10 +40,11 @@ Every single shot you fire lands where it does because of the combined influence
 This is the precision your rifle and ammunition can deliver when everything else is perfect. Imagine clamping your rifle in a massive vise and firing it remotely—what you'd get is the mechanical limit.
 
 **What drives it:**
-- Barrel quality (straightness, chamber concentricity, throat uniformity)
+- Barrel quality (straightness, chamber concentricity, throat uniformity, crown)
 - Ammunition consistency (bullet quality, powder metering, brass uniformity)
-- Action rigidity and bedding
-- Trigger consistency
+- Optic and optic mount quality (generally speaking, accuracy of sighting system)
+- Action rigidity and bedding (action doesn't shift in the stock under recoil, or have stress points when bolted in)
+
 
 **Realistic ranges based on equipment:**
 - Custom match rifle + exceptional handloads: **0.3 to 0.5 MOA**
@@ -65,12 +66,12 @@ Even with the rifle in a rest, you're still holding it, pressing the trigger, ma
 - Follow-through
 
 **Realistic ranges based on technique:**
-- Competition benchrest technique (front rest, rear bag, perfect setup): **+0.2 MOA**
-- Good prone position with bipod and rear bag: **+0.3 to 0.4 MOA**
+- Competition benchrest technique (front rest, rear bag, perfect setup): **+0.1 MOA**
+- Good prone position with bipod and rear bag: **+0.2 to 0.4 MOA**
 - Field prone position without ideal support: **+0.5 to 0.7 MOA**
 - Sitting or kneeling field positions: **+0.8 to 1.5 MOA**
 
-Here's the tough pill to swallow: **If your fundamentals are adding 0.8 MOA of dispersion, improving your ammunition from 0.7 to 0.5 MOA is almost meaningless.** The math doesn't work that way (we'll get to that in a moment).
+Here's the tough pill to swallow: **If your fundamentals are adding 0.8 MOA of dispersion, improving your ammunition from 0.7 to 0.5 MOA is almost meaningless.** The math doesn't work that way (we'll get to that in a moment).  The above examples are generalizations to illustrate their impact on precision, not hard numbers to follow.  I encourage you to test and find out YOUR precision capabilities obtained from each technique.
 
 ### 3. Recoil Management: The Biggest Disruptor
 
@@ -80,17 +81,17 @@ This deserves its own section because it's both the largest contributor for most
 
 Your bullet is still in the barrel for 1 to 2 milliseconds after the firing pin strikes. During that time:
 - The rifle starts moving backward
-- The muzzle starts rising
+- The muzzle starts rising (shoulder interaction combined with the center of gravity for the rifle)
 - Your body and the bags/bipod interact
 - Any inconsistency in how you're holding the rifle creates variation in muzzle position
 
 The bullet exits the barrel while all this is happening. Small differences in how the rifle recoils create significant differences in where the bullet goes.
 
 **Realistic recoil-induced dispersion:**
-- Light-recoiling cartridge (223 Rem, 6mm Creedmoor) with good technique: **+0.2 to 0.3 MOA**
+- Light-recoiling cartridge (223 Rem, 6mm Creedmoor) with good technique: **+0.1 to 0.2 MOA**
 - Medium cartridge (308 Win, 6.5 Creedmoor) with good technique: **+0.3 to 0.5 MOA**
 - Magnum cartridge (300 Win Mag, 7mm Rem Mag) with good technique: **+0.5 to 0.8 MOA**
-- Any cartridge with poor recoil management: **+1.0 to 2.0 MOA** or worse
+- Any cartridge with poor recoil management: **+1.0 to 2.0 MOA** or much, much worse!
 
 **Why most people underestimate recoil:**
 
@@ -99,6 +100,30 @@ You can "cheat" recoil for a few shots. Muscle through it. Hold extra tight. Per
 But over 30 or 50 shots? Your muscles fatigue. Your form degrades. Your concentration wavers. The recoil-induced variation shows up in the data.
 
 This is why 3-shot groups lie so effectively about precision. You can minimize recoil effects for three shots. You can't for thirty.
+
+### The Research: Bryan Litz's TOP Gun Theory
+
+**The data backs up what we've been saying:** Bryan Litz's research (TOP Gun methodology and testing) suggests that approximately **70% of your rifle system's precision capability is determined by recoil management and rifle mass**, with the remaining ~30% coming from rifle + ammunition mechanical consistency, and shooter fundamentals as an additional contributor.
+
+**Let that sink in for a moment.** The vast majority of your precision potential isn't your powder choice, primer brand, seating depth, or brass preparation. It's how your rifle behaves during the milliseconds while the bullet is still in the barrel.
+
+**The breakdown (approximate):**
+- **~70%: Recoil/mass interaction** - How the rifle moves during firing, influenced by cartridge recoil, rifle weight, stock design, and shooter-rifle interaction
+- **~30%: Rifle + ammunition** - Barrel quality, ammunition consistency, action rigidity, optics
+- **Additional: Shooter fundamentals** - Position, trigger control, technique (can significantly degrade the system or optimize it)
+
+**Why this matters for small sample testing:**
+
+When you shoot a 3-5 shot group, you're seeing the **combined** effect of all three factors, but you're getting a sample that's:
+1. Too small to reliably measure the rifle+ammunition contribution (~30% of the total)
+2. Dominated by recoil variation that you can temporarily minimize through concentration and fresh muscles
+3. Extremely susceptible to luck (one good recoil or one bad recoil can swing the group dramatically)
+
+This is why your amazing 0.5 MOA three-shot group doesn't predict your 30-shot performance. Over 30 shots, the **70% recoil component** reveals itself through muscle fatigue, position shifts, and the statistical reality that you can't "cheat" recoil management for that many rounds.
+
+**The practical insight:** If recoil dominates precision (70%), then improving ammunition consistency (part of the 30%) has limited impact **unless you first control recoil**. This is exactly why muzzle brakes, suppressors, and added rifle mass often produce bigger precision improvements than endless load development.
+
+**Perspective check:** The confidence interval on a 3-shot SD measurement is enormous (as we learned in earlier notebooks). Similarly, the confidence interval on a 3-5 shot group is huge because recoil variation dominates. You're trying to measure a 30% contributor (rifle+ammo) while ignoring the 70% contributor (recoil) and using a sample size that can't separate them. This is why proper testing requires 30+ shots - you need enough data to average out the recoil variation and actually see the ammunition signal.
 
 ### The Combined Effect: Root Sum Square (RSS)
 
@@ -202,7 +227,7 @@ At 100 yards, this is 1.5 to 2.0 inch groups (aggregated, not best-of-five).
 **A note on "Sub-MOA Guarantees":** By now, your eyebrows should raise concerning factory claims of sub-MOA guarantees with no qualifiers. Statistically, if you shoot enough 3-5 shot groups, you'll eventually get one that's sub-MOA—even from a rifle that averages 1.5-2.0 MOA. This practice has created unrealistic expectations across the industry. When manufacturers say "sub-MOA guarantee," they typically mean "we'll shoot groups until we get one sub-MOA" or "3-shot groups with match ammo under ideal conditions." This isn't dishonest per se, but it's not the same as "this rifle averages sub-MOA with 30+ shot aggregates using hunting ammunition." Understanding sample size bias makes you immune to this marketing strategy.
 
 **What limits you:**
-- Factory barrel quality (button rifled, standard chamber)
+- Factory barrel quality (standard chamber, less uniformity than custom)
 - Mixed ammunition lots
 - Basic stock bedding
 - Trigger usually acceptable but not great
@@ -210,8 +235,8 @@ At 100 yards, this is 1.5 to 2.0 inch groups (aggregated, not best-of-five).
 **Is this good enough?**
 - Deer-sized game to 300 yards: Absolutely
 - Steel targets at 600 yards: Yes, with good fundamentals
-- Precision competition: Competitive in some divisions
-- 1,000 yard targets: Challenging but doable
+- Precision competition: Competitive in **some** divisions
+- 1,000 yard targets: Challenging but occasionally doable
 
 ### Quality Factory Rifle + Good Handloads
 
@@ -231,10 +256,10 @@ At 100 yards, this is 0.8 to 1.2 inch groups (aggregated).
 - Your ability to load consistently
 
 **Is this good enough?**
-- All hunting applications: More than enough
-- PRS/NRL competition: Competitive
-- F-Class at 600 yards: Entry level
-- 1,000+ yard precision: Capable with skill
+- All hunting traditional applications: More than enough
+- PRS/NRL competition: Competitive in more divisions
+- F-Class at 600 yards: Entry level, good enough to work on shooter fundamentals
+- 1,000+ yard precision: Capable with expert skill
 
 **This is where most serious shooters live.** If this describes your equipment, chasing 0.5 MOA is probably fighting your barrel and chamber, not your loading technique.
 
@@ -264,28 +289,7 @@ At 100 yards, this is 0.5 to 0.8 inch groups (aggregated).
 - ELR (extreme long range): Good foundation
 - Anything closer than 1,000 yards: Overkill for most applications
 
-### True Benchrest Competition Setup
 
-**Equipment:**
-- Custom benchrest action
-- Premium benchrest barrel replaced every 800-1,500 rounds
-- Return-to-battery rests
-- Custom-fitted everything
-- Bullets sorted and tested to extreme levels
-- **Total investment: $5,000 to $15,000+**
-
-**Realistic precision: 0.2 to 0.3 MOA**
-
-At 100 yards, this is groups in the 0.2 to 0.3 inch range.
-
-**What limits you:**
-- Environmental conditions (these competitors wait for perfect conditions)
-- Ammunition component variations at the microscopic level
-- Barrel condition (fouling, temperature, throat erosion)
-- Human factors (even for the best shooters)
-
-**Real talk:**
-If you're not competing in benchrest, you don't need this level of precision. And if you ARE competing in benchrest, you already know all of this.
 
 **Interactive Element Placeholder:**
 ```python
@@ -426,7 +430,7 @@ Let's talk about the elephant in the room. You've done everything right with you
 When you shoot a group, look at the shape. Is it:
 - Roughly circular: Ammunition and rifle mechanical variation
 - Vertical elongation: Recoil management issues
-- Horizontal elongation: Wind or bedding problems
+- Horizontal elongation: Wind or bedding problems, also recoil management issues
 
 Most groups show some vertical elongation. That's recoil.
 
@@ -439,27 +443,10 @@ Shot 30: You're working to maintain form through muscle fatigue.
 
 Each shot recoils slightly differently because your body and setup aren't perfectly consistent. The rifle muzzle is in a slightly different position when each bullet exits.
 
-### Free Recoil vs. Hard Hold
-
-**Hard hold approach:**
-- Pull rifle firmly into shoulder
-- Grip pistol grip tightly
-- Try to "muscle" the recoil
-
-**Result:** High muscle tension, fatigue quickly, inconsistent shot-to-shot because you can't maintain exact same pressure
-
-**Free recoil approach:**
-- Rest the rifle in bags/bipod with minimal contact
-- Light contact on grip and trigger
-- Let rifle recoil naturally in the bags/rest
-
-**Result:** More consistent because there's less human variation shot-to-shot
-
-For precision testing, free recoil (or as close as you can get) produces more consistent results. Your groups will shrink.
 
 ### Muzzle Brakes and Suppressors
 
-This is where these devices earn their money—not just in reducing felt recoil for comfort, but in **reducing recoil-induced dispersion**.
+This is where these devices earn their money—not just in reducing felt recoil for comfort, but in **reducing shooter-induced dispersion**.
 
 **Unbraked 300 Win Mag:**
 - Recoil impulse: ~25 ft-lbs
@@ -469,7 +456,7 @@ This is where these devices earn their money—not just in reducing felt recoil 
 - Recoil impulse: ~8 ft-lbs (70% reduction)
 - Typical recoil-induced dispersion: +0.3 to 0.4 MOA
 
-**The improvement: 0.3 to 0.5 MOA tighter groups**, with the same ammunition, just by managing recoil better.
+**The improvement: 0.3 to 0.5 MOA tighter groups**, with the same ammunition, just by managing recoil better - your shooting stamina instantly increases.
 
 That's bigger than most load development gains. And it costs $150 and a gunsmith trip, not endless testing.
 
@@ -492,8 +479,8 @@ If your groups are consistently vertically elongated by 1.5x to 2x (taller than 
 **What to do about it:**
 
 1. **Consider a muzzle brake or suppressor** - Single biggest improvement for magnum cartridges
-2. **Practice free recoil technique** - Minimize muscle tension, let rifle recoil naturally in rest
-3. **Add weight to rifle** - Heavier rifles recoil less (physics)
+2. **Seek instruction from an expert for recoil control technique** - Minimize muscle tension, let rifle recoil naturally in rest
+3. **Add weight to rifle** - Heavier rifles recoil less (physics), literally - Bolt or rigidly attach weights to the rifle.
 4. **Reduce charge weight** - Yes, you'll lose velocity, but if you're not using it, why pay the recoil cost?
 5. **Switch cartridges** - Sometimes the honest answer is "this cartridge recoils too much for me to shoot well"
 
@@ -580,7 +567,7 @@ You now understand:
 
 **This is liberating.**
 
-Stop feeling inadequate because your groups don't match internet claims. Stop chasing 0.5 MOA with a factory rifle and good handloads—**you're already at or near the limit of what that system can deliver.**
+Stop feeling inadequate because your groups don't match internet claims. Stop chasing 0.5 MOA with a factory rifle and good handloads—**you're already at or near the limit of what that system can deliver.**  On the other hand, if you're not at the level the system can deliver, you have the knowledge to make real changes to your setup.
 
 Stop wasting money on diminishing returns. If you've got a 0.9 MOA system and you're hunting deer inside 400 yards, **you're done**. Your hit probability is 99%+. Spending $1,000 to get to 0.6 MOA improves that by maybe 0.5%. That's not worth it.
 

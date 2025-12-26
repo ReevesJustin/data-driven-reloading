@@ -261,7 +261,7 @@ Seating depth testing persists because:
 
 **Understanding seating depth physics:** While seating depth does affect chamber pressure (longer seating = less case volume = higher pressure), it takes a relatively large change to produce noticeable effects. Small adjustments like 0.005" are often undetectable until sample sizes are larger than commonly tested (30+ shots minimum). The pressure effect is predictable and measurable; the claimed "sweet spot" accuracy improvements are not.
 
-**The bullet ogive factor (Bryan Litz research):** Seating depth sensitivity depends heavily on bullet design. **Secant ogive bullets** (common in VLDs) can be more sensitive to seating depth because the ogive-to-leade (throat) transition is abrupt. **Tangent ogive bullets** (traditional hunting designs) are generally more forgiving because they have a gradual transition. **Hybrid ogive bullets** (Bryan Litz's design combining both profiles) retain the ballistic coefficient benefits of secant designs while reducing seating depth sensitivity—this is the problem they were specifically designed to solve. If you're chasing tiny seating depth windows, consider whether switching to hybrid bullets would be more effective than endless testing.
+**The bullet ogive factor (Bryan Litz research):** Seating depth sensitivity depends heavily on bullet design. **Secant ogive bullets** (common in VLDs) can be more sensitive to seating depth because the ogive-to-leade (throat) transition is abrupt. **Tangent ogive bullets** (traditional hunting designs) are generally more forgiving because they have a gradual transition. **Hybrid ogive bullets** (Bryan Litz's design combining both profiles) retain the ballistic coefficient benefits of secant designs while reducing seating depth sensitivity—this is the problem they were specifically designed to solve. If you're chasing tiny seating depth windows, consider whether switching to hybrid or very tangent ogive bullets would be more effective than endless testing.
 
 **If you have reason to suspect seating depth matters for your bullet/rifle combo:**
 1. Test 3-4 depths spanning a **large range** (e.g., 0.020" to 0.080" off, in 0.020"-0.040" increments)
@@ -275,7 +275,7 @@ Seating depth testing persists because:
 
 **If you're shooting hybrid or tangent ogive bullets:** Seating depth likely has minimal effect. Pick a depth that feeds reliably and fits your magazine, test it once with 30+ shots, and move on.
 
-**If you're shooting standard hunting bullets inside 400 yards:** Seating depth almost certainly doesn't matter enough to test. Focus on components that actually drive precision (bullet quality, powder consistency, rifle bedding).
+**If you're shooting standard hunting bullets inside 400 yards:** Seating depth almost certainly doesn't matter enough to test. Focus on components that actually drive precision and accuracy (bullet quality, powder consistency, rifle mechanicals such as bedding or optics).
 
 ---
 
@@ -295,7 +295,7 @@ Weigh all brass, sort into batches by weight (e.g., ±0.5 grain tolerance). Use 
 
 **The reality about brass weight variation:**
 
-Most weight variation in quality brass (Lapua, Peterson, Alpha) comes from **case head thickness variation**, NOT internal volume variation. The case head is where manufacturers vary thickness to achieve consistent weight ranges during production.
+Most weight variation in quality brass (Alpha, Lapua, possibly others) comes from **case head thickness variation**, NOT internal volume variation. The case head is where manufacturers vary thickness to achieve consistent weight ranges during production.
 
 **Interactive Element Placeholder:**
 ```python
