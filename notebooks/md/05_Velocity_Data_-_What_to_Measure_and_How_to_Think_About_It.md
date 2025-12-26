@@ -6,18 +6,580 @@ Time to complete: 10-15 minutes
 
 # Velocity Data - What to Measure and How to Think About It
 
-## Goal: Demystify chronograph numbers
+## Chronograph Numbers: What They Tell You and What They Don't
 
-**Average velocity** matters (for trajectory).
-Standard deviation from small samples is misleading (revisit Bramwell's "perverse nature" in plain language).
-Better: Plot all velocities in order, look for trends; calculate extreme spread over large n; use running SD.
-Debunk "flat spots" in velocity: Show how random variation creates fake "nodes" in small charge ladders.
+You're standing at the range, chronograph set up, first shot fired. The display shows: **2,847 fps**.
+
+What does that number mean?
+
+You fire nine more shots. Now you've got ten numbers dancing across your chronograph screen. The display helpfully shows you:
+- Average velocity: 2,851 fps
+- Extreme spread (ES): 23 fps
+- Standard deviation (SD): 8 fps
+
+You pack up, head home, post your results online: "Found a great load! 2,851 fps with 8 fps SD!"
+
+Here's the uncomfortable question: **Do you actually know what those numbers mean? And more importantly, do they mean what you think they mean?**
+
+Most reloaders treat chronograph data like magic oracle wisdom. Low SD? That's the holy grail. Tight ES? Load development success. "Flat spot" in a velocity ladder? You've found the mythical node.
+
+The truth is more nuanced, more interesting, and way more useful once you understand it.
+
+In this notebook, you'll learn:
+- What average velocity actually tells you (and why it's more reliable than you think)
+- Why SD and ES from small samples are misleading (the "perverse nature" Denton Bramwell warned about)
+- How to spot when velocity data is trustworthy vs. when it's lying to you
+- The great velocity node myth—and why your brain keeps finding patterns in random noise
+- When velocity consistency actually matters vs. when it's just bragging rights
+- Temperature sensitivity: the variable that matters more than most reloaders realize
+
+By the end, you'll understand not just what your chronograph says, but what it actually means—and how to use that information to make better decisions instead of chasing ghosts.
+
+---
+
+## Average Velocity: The Number You Can Trust
+
+Let's start with good news: **Average velocity is reliable, even with small samples.**
+
+Remember from Notebook 03 how we discussed that averages stabilize faster than spread? This is where that matters most.
+
+### Why Average Velocity Matters
+
+Your bullet's velocity determines:
+1. **Trajectory**: How much it drops at distance
+2. **Wind drift**: How much crosswind pushes it
+3. **Time of flight**: How long it's in the air (and accumulating errors)
+4. **Energy on target**: For hunters, this affects terminal performance
+
+If you're shooting at 600 yards, a 50 fps difference in velocity creates about 6 inches of vertical difference. That's significant. So knowing your true average velocity actually matters.
+
+### The Good News: 10-15 Shots Is Usually Enough
+
+Unlike measuring spread (SD or ES), which requires 30+ shots to be reliable, measuring average velocity is reasonably accurate with just 10-15 shots.
+
+**Why the difference?**
+
+Think about it this way:
+- Random variation tends to cancel out when you're averaging (some shots high, some low, they balance)
+- But random variation ADDS to your spread measurement (every shot that's different from average increases it)
+
+**Practical example:**
+
+You shoot 10 rounds and get an average of 2,851 fps. The true population average (if you shot 1,000 rounds) is probably between 2,845 and 2,857 fps. That's close enough for practical trajectory calculations.
+
+But that same 10-shot sample might show 8 fps SD when the true SD is actually 15 fps. Big difference.
+
+### Using Average Velocity Properly
+
+**Good uses:**
+- Calculating trajectory and drops for your ballistic solver
+- Comparing velocity between different powders or charges (with proper sample sizes)
+- Verifying you're in a safe pressure range
+- Matching factory ammunition ballistics
+
+**Bad uses:**
+- Claiming extreme precision ("My average is exactly 2,851.3 fps!")
+- Using it as a proxy for consistency (that's what SD measures, not average)
+- Comparing single-session averages from different days (environmentals change)
+
+**Interactive Element Placeholder:**
+```python
+# Interactive widget: "Average Velocity Convergence"
+#
+# Setup: True population mean = 2850 fps, SD = 15 fps
+#
+# User controls:
+# - Button: "Fire a shot" (adds one random shot from population)
+# - Running display: Current sample average
+# - Plot: Running average vs. shot number
+# - True population average shown as horizontal line
+#
+# Display:
+# - Watch average bounce around early (shots 1-5)
+# - See it settle down quickly (shots 6-15)
+# - After 10 shots, usually within 5-10 fps of truth
+# - Compare to SD convergence (much slower)
+#
+# Aha moment: "Average gets reliable fast! SD takes forever to stabilize."
+```
+
+> **Key Insight**
+>
+> Average velocity is the most reliable number your chronograph gives you. With 10-15 shots, you can trust it for trajectory calculations. It's the spread measurements (SD, ES) that require large samples to be trustworthy.
+
+---
+
+## Standard Deviation: The Number Everyone Wants, Nobody Understands
+
+Standard deviation (SD) is the reloading community's obsession. Everyone wants single-digit SD. People post their 6 fps SD strings like trophies. Load development often focuses entirely on minimizing SD.
+
+Here's the problem: **Most of those SD numbers are lies. Not intentional lies—statistical lies.**
+
+### What SD Actually Measures
+
+Standard deviation quantifies how spread out your velocities are around the average. Think of it as the typical distance a shot varies from the mean.
+
+**Simple example:**
+
+Five shots: 2,845, 2,850, 2,852, 2,849, 2,854 fps
+- Average: 2,850 fps
+- SD: ~3 fps (very tight!)
+
+Five different shots: 2,830, 2,855, 2,845, 2,865, 2,835 fps
+- Average: 2,846 fps (similar average)
+- SD: ~14 fps (much more spread)
+
+The first string is more consistent. The second varies more shot-to-shot.
+
+**In theory, SD is exactly what we want to measure.** In practice, small samples make it nearly useless.
+
+### The Perverse Nature of Standard Deviation (Bramwell's Warning)
+
+Ballistician Denton Bramwell wrote about the "perverse nature of standard deviation" in small samples. Here's what he meant:
+
+**SD calculated from small samples is biased low.** It systematically underestimates the true population SD.
+
+**The math reason** (skip if you don't care):
+When you calculate SD from a sample, you're using the sample mean, which is itself uncertain. This creates a statistical quirk where small samples tend to look tighter than they really are.
+
+**The practical impact:**
+
+If your load's true SD is 15 fps (the real number if you shot 1,000 rounds):
+- A 5-shot sample might show: 8 fps (looks amazing!)
+- Another 5-shot sample might show: 19 fps (looks terrible!)
+- A 10-shot sample might show: 11 fps (still optimistic)
+- A 30-shot sample would show: 14-16 fps (now we're getting close to truth)
+
+**This is why people constantly "find" loads with single-digit SDs that don't repeat.** They got lucky with a small sample that happened to be tighter than the true population.
+
+### The Running SD Visualization
+
+Want to see this in action? Track SD as you add shots:
+
+```
+After 5 shots:   SD = 7 fps
+After 10 shots:  SD = 12 fps
+After 15 shots:  SD = 14 fps
+After 20 shots:  SD = 15 fps
+After 25 shots:  SD = 14 fps
+After 30 shots:  SD = 15 fps
+```
+
+Notice how SD climbs as sample size increases? That's not your load getting worse—that's the measurement getting more accurate.
+
+**The early numbers are optimistic lies. The later numbers are closer to truth.**
+
+**Interactive Element Placeholder:**
+```python
+# Interactive widget: "The SD Illusion"
+#
+# Setup: True population SD = 15 fps (fixed, known answer)
+#
+# User controls:
+# - Slider: Sample size (3 to 50 shots)
+# - Button: "Take a sample" (generate random sample of that size)
+# - Button: "Take 100 samples" (run Monte Carlo simulation)
+#
+# Display after single sample:
+# - Calculated SD from this sample
+# - True population SD (the answer)
+# - Difference: "You're off by X fps!"
+#
+# Display after 100 samples:
+# - Histogram of all 100 calculated SDs
+# - True SD marked as vertical line
+# - Show that most samples underestimate true SD
+# - Show that variation decreases with larger sample sizes
+#
+# User can adjust sample size slider and watch the histogram change
+# Small samples: wide distribution, often underestimating
+# Large samples: narrow distribution, centered on truth
+#
+# Aha moment: "With 5-shot samples, I could get ANYTHING from 5 to 25 fps!
+# No wonder my results never repeat. I need 30+ shots to get close to truth."
+```
+
+### Extreme Spread (ES): Even More Misleading
+
+If SD is unreliable with small samples, ES is worse.
+
+**Extreme spread** is just the difference between your fastest and slowest shot:
+```
+Shots: 2,835, 2,848, 2,851, 2,846, 2,863 fps
+ES = 2,863 - 2,835 = 28 fps
+```
+
+**The problem:** ES grows forever as you add shots. It can never shrink (unless you get lucky), only stay the same or increase.
+
+**Expected behavior:**
+
+If your true population has 15 fps SD:
+- 5 shots: ES probably around 20-25 fps
+- 10 shots: ES probably around 30-40 fps
+- 30 shots: ES probably around 50-60 fps
+- 100 shots: ES could be 70+ fps
+
+Does this mean your load got worse as you tested more? No. It means ES is a bad metric for anything except "what was the range I saw in THIS sample."
+
+**ES tells you about your sample, not your population.** Don't use it to compare loads unless sample sizes are identical.
+
+> **Critical Takeaway**
+>
+> SD from small samples (under 30 shots) systematically underestimates true consistency. That 6 fps SD from a 10-shot string is almost certainly optimistic. The true SD is probably 10-15 fps. This is why amazing results from small samples don't repeat—they were statistical flukes, not real performance.
+
+---
+
+## The Great Velocity Node Myth: Your Brain Playing Tricks
+
+This is the big one. The myth that won't die. The claim that keeps spreading despite being thoroughly debunked.
+
+**The claim:** "If you load incrementally increasing powder charges and shoot them over a chronograph, you'll find 'flat spots' in the velocity curve. These are harmonic nodes where the barrel vibration is minimized, creating superior accuracy."
+
+**The reality:** You're seeing random variation and your pattern-seeking brain is finding structure in noise.
+
+Let's break down why this myth is so persistent and so wrong.
+
+### What You See vs. What's Really Happening
+
+Imagine you load 10 rounds with powder charges from 41.0 to 42.0 grains in 0.1-grain increments. You shoot them over a chronograph and plot velocity:
+
+```
+41.0gr → 2,820 fps
+41.1gr → 2,825 fps
+41.2gr → 2,830 fps ← "Wow, linear so far"
+41.3gr → 2,828 fps ← "Whoa, velocity dropped! Flat spot!"
+41.4gr → 2,831 fps
+41.5gr → 2,835 fps
+41.6gr → 2,833 fps ← "Another flat spot!"
+41.7gr → 2,840 fps
+41.8gr → 2,845 fps
+41.9gr → 2,842 fps ← "And another!"
+42.0gr → 2,850 fps
+```
+
+You circle the "flat spots" at 41.3gr, 41.6gr, and 41.9gr. You've found three nodes! Time to test those for accuracy, right?
+
+**Wrong.**
+
+### What's Actually Happening: Random Variation
+
+Each shot has natural variation around the average for that charge. Even if you loaded ten rounds at exactly 41.3 grains, you'd see variation—from bullet-to-bullet differences, case volume variation, primer differences, barrel fouling, etc.
+
+When you shoot ONE round per charge, that single shot could be:
+- High (above the average for that charge)
+- Low (below the average)
+- Right at the average (lucky!)
+
+**A "flat spot" is just a charge that happened to shoot on the low side, followed by a charge that shot on the high side, creating an illusion of no velocity increase.**
+
+Let me say that again: **It's random scatter, not a real phenomenon.**
+
+### The Proof: Simulation
+
+Here's the smoking gun. We can simulate a perfectly smooth velocity progression with NO nodes programmed in—just realistic random variation shot-to-shot—and still get "flat spots."
+
+**Interactive Element Placeholder:**
+```python
+# Interactive widget: "The Velocity Node Illusion"
+#
+# Setup:
+# - True velocity progression: perfectly linear (2 fps per 0.1gr increase)
+# - No nodes, no flat spots, just smooth physics
+# - Random variation: ±10 fps per shot (realistic)
+#
+# User controls:
+# - Button: "Run ladder test" (generate 10 charges, one shot each)
+# - Button: "Repeat test" (generate new random sample)
+# - Checkbox: "Show true average line" (perfect linear progression)
+#
+# Display:
+# - Plot of charge weight vs. velocity
+# - User can visually identify "flat spots" or "nodes"
+# - Click "Repeat test" shows different flat spots appear
+# - Enable "Show true average line" reveals there ARE no real nodes
+#
+# Additional feature:
+# - "Run 100 ladder tests" button
+# - Overlay all 100 on one plot
+# - Watch the cloud of points reveal the true linear progression
+# - No consistent nodes—they appear randomly everywhere
+#
+# Aha moment: "Holy crap. The nodes move every time! They're not real.
+# My brain is finding patterns in random scatter. I've been chasing ghosts."
+```
+
+### Why Your Brain Falls for This
+
+Humans evolved to find patterns. It kept us alive. When you see random data, your brain automatically looks for structure, meaning, connections.
+
+**You literally cannot help it.** Your visual system is wired to find patterns even when they don't exist.
+
+**Famous example:** People see faces in clouds, in toast, in random textures. Same mechanism. Your brain completes patterns from incomplete information.
+
+When you look at a velocity ladder with scatter, your brain highlights the "flat spots" and ignores the overall trend. It's not your fault. It's just how we're built.
+
+**The fix:** Large sample sizes average out the noise, revealing the true signal.
+
+### What Controlled Studies Show
+
+Researchers who tested this properly:
+1. Had shooters do ladder tests and identify "nodes"
+2. Then tested those specific charge weights with 30+ shots for accuracy
+3. Found that "node" charges performed no better than adjacent charges
+4. Concluded nodes are measurement artifacts, not real phenomena
+
+**The mechanism is real** (velocity increases with powder charge). **The nodes are not.**
+
+### Temperature Sensitivity: The Real Variable
+
+Here's something that actually DOES create velocity variation: temperature.
+
+Powder burn rate changes with temperature. Some powders are more sensitive than others.
+
+**Typical temperature sensitivity:**
+- Temp-stable powders (H4350, Varget, etc.): ~0.5 fps per degree F
+- Standard powders: ~1.5 to 2.0 fps per degree F
+- Temp-sensitive powders: ~3+ fps per degree F
+
+**Practical impact:**
+
+You develop a load on a 70°F day: Average velocity 2,850 fps
+
+Same load on a 40°F winter hunt: Could be 2,820 fps (30 fps slower with sensitive powder)
+
+Same load on a 95°F summer day: Could be 2,900 fps (50 fps faster)
+
+**That's WAY more velocity variation than "nodes" supposedly control.**
+
+Yet very few reloaders test temperature sensitivity. They chase 0.1-grain charge increments for imaginary nodes instead.
+
+### What to Do Instead
+
+**For velocity development:**
+
+1. **Start with safe minimum, work up to safe maximum in 0.5 to 1.0 grain increments** (not 0.1 grain)
+2. **Shoot 5 rounds per charge** to see average velocity and rough SD
+3. **Watch for pressure signs**, not "flat spots"
+4. **Pick 2-3 promising charges** based on:
+   - Safe pressure
+   - Desired velocity for your ballistics
+   - No obvious issues (erratic SDs, sticky extraction)
+5. **Test those charges properly** with 30+ shots each for real SD and accuracy
+6. **Make a decision** based on data, not patterns in noise
+
+**For temperature testing:**
+
+1. Test your chosen load at different temperatures (cold winter day, hot summer day)
+2. See how much velocity shifts
+3. If it matters for your application, consider temp-stable powder
+
+This approach uses the same number of components as a ladder test but gives you actually useful information.
+
+> **Critical Takeaway**
+>
+> Velocity "nodes" or "flat spots" in charge ladders are random scatter, not real phenomena. Your pattern-seeking brain finds structure in noise. Controlled tests show node charges perform no better than adjacent charges. Don't waste time chasing ghosts—use proper sample sizes and test the variables that actually matter.
+
+---
+
+## When Does Velocity Consistency Actually Matter?
+
+You've heard it a thousand times: "Low SD is the key to accuracy."
+
+Is it though?
+
+**The answer:** It depends entirely on what you're shooting and how far.
+
+### The Physics: How Velocity Affects Hits
+
+Velocity variation creates vertical dispersion at distance because faster bullets drop less and slower bullets drop more.
+
+**The math (approximate):**
+
+At 100 yards: 15 fps velocity variation ≈ 0.1 inch vertical spread (negligible)
+
+At 300 yards: 15 fps variation ≈ 1.0 inch vertical spread (still small)
+
+At 600 yards: 15 fps variation ≈ 4 inches vertical spread (starting to matter)
+
+At 1,000 yards: 15 fps variation ≈ 12 inches vertical spread (definitely matters)
+
+Notice the pattern? **Velocity SD matters more as distance increases.**
+
+### Practical Decision Guide: When to Care About SD
+
+**Scenario 1: Hunting deer inside 400 yards**
+
+Your load shows 15 fps SD (measured properly with 30 shots).
+
+At 400 yards, this creates about 2 inches of vertical uncertainty. Your deer's vital zone is 10+ inches.
+
+**Does SD matter?** No. You're already way more accurate than needed. Chasing lower SD is pointless.
+
+**Scenario 2: PRS/NRL competition, targets at 600-800 yards**
+
+Target sizes vary from 8 inches to 20 inches.
+
+15 fps SD at 700 yards creates about 6 inches of vertical uncertainty. On an 8-inch target, that's significant.
+
+**Does SD matter?** Yes, moderately. Getting SD down to 10 fps or less provides a real advantage.
+
+**Scenario 3: ELR (extreme long range) at 1,500+ yards**
+
+Tiny targets at massive distances.
+
+15 fps SD at 1,500 yards creates 20+ inches of vertical uncertainty.
+
+**Does SD matter?** Absolutely. Every fps of SD reduction helps. This is where single-digit SD actually matters.
+
+**Scenario 4: Benchrest at 100-200 yards**
+
+Velocity SD creates minimal vertical at these distances. Precision is limited by other factors (bullet quality, rifle mechanics, wind).
+
+**Does SD matter?** Not really. These guys chase low SD anyway, but it's not the limiting factor for group size.
+
+### The Honest Assessment
+
+**For most reloaders shooting most applications, velocity SD between 10 and 20 fps is perfectly adequate.**
+
+Going from 15 fps SD to 8 fps SD:
+- Sounds impressive
+- Feels like an accomplishment
+- Makes almost zero practical difference if you're not shooting ELR
+
+**Where your effort should go:**
+
+1. **Bullet quality**: Bigger impact on precision than SD
+2. **Rifle accuracy**: Most factory rifles can't shoot well enough for SD to matter
+3. **Fundamentals**: Shooter error dwarfs velocity variation effects
+4. **Wind reading**: Misreading wind by 2 mph matters more than 10 fps SD
+
+Once you've optimized those, THEN chase lower SD if you're shooting far enough for it to matter.
+
+**Interactive Element Placeholder:**
+```python
+# Interactive widget: "Does SD Actually Matter for Your Shooting?"
+#
+# User inputs:
+# Slider 1: Typical shooting distance (100 to 1,500 yards)
+# Slider 2: Typical target size (4 to 20 inches)
+# Slider 3: Your current SD (5 to 25 fps)
+#
+# Calculations:
+# - Vertical dispersion from SD at that distance
+# - Hit probability on target given SD-induced spread
+# - Compare to improved SD (reduce by 50%)
+#
+# Display:
+# - Visualization: target with velocity-induced vertical spread overlay
+# - Current hit probability: XX%
+# - With 50% better SD: XX% (difference highlighted)
+# - Verdict: "This SD improvement would increase hits by X%"
+# - Recommendation: "Negligible - focus elsewhere" or "Moderate benefit" or "Significant - worth pursuing"
+#
+# Aha moment: "For my 300-yard deer hunting, improving from 15 to 8 fps SD
+# increases hit probability by 0.3%. I've been obsessing over nothing!"
+```
+
+---
+
+## What to Actually Track: Better Metrics
+
+Instead of obsessing over single-session SD from small samples, here's what to track:
+
+### 1. Average Velocity (Most Important)
+
+Track this across multiple sessions:
+```
+Session 1: 2,851 fps (10 shots)
+Session 2: 2,848 fps (10 shots)
+Session 3: 2,853 fps (10 shots)
+```
+
+If averages are consistent (within 10 fps across sessions), you've got a stable load. Use the overall average for ballistics.
+
+### 2. Session-to-Session SD (Tells You About Repeatability)
+
+Don't trust SD from one session. Track it across multiple:
+```
+Session 1: 14 fps SD (30 shots)
+Session 2: 16 fps SD (30 shots)
+Session 3: 13 fps SD (30 shots)
+```
+
+If SDs are similar across sessions, you've got a genuinely consistent load. If they jump around wildly (8 fps one day, 22 fps another), your load is inconsistent or your sample sizes are too small.
+
+### 3. Velocity Trend Over Time (Spot Problems Early)
+
+Plot velocity in the order you shot it:
+```
+Shots 1-10: averaging 2,850 fps
+Shots 11-20: averaging 2,855 fps
+Shots 21-30: averaging 2,865 fps
+```
+
+If velocity creeps up or down as you shoot, that's a problem:
+- Upward trend: Possible pressure increase from barrel heating
+- Downward trend: Possible fouling buildup or brass issues
+
+A good load shows no trend—just random scatter around a stable average.
+
+### 4. Temperature-Adjusted Velocity
+
+If you test in different conditions, normalize to a standard temperature:
+
+```
+Measured: 2,820 fps at 45°F
+Temperature coefficient: 0.8 fps per degree (from testing)
+Normalized to 70°F: 2,820 + (25°F × 0.8) = 2,840 fps
+```
+
+This lets you compare across sessions without environmental factors confusing the data.
+
+---
+
+## The Foundation for What Comes Next
+
+You now understand:
+- Average velocity is reliable with small samples, SD is not
+- SD from small samples systematically underestimates true consistency
+- Velocity "nodes" are pattern-seeking illusions, not real phenomena
+- Whether SD matters depends entirely on your target distance
+- Temperature sensitivity affects velocity more than most variables you're testing
+
+**This changes how you approach load development:**
+
+Instead of: "I'll shoot 5 shots per charge and look for the lowest SD"
+
+You'll do: "I'll test charges with adequate samples, measure real consistency across sessions, and focus on SD only if my shooting distances justify it"
+
+Instead of: "I'll find the node by looking for flat spots in velocity"
+
+You'll do: "I'll test promising charges properly and let data drive decisions, not patterns in noise"
+
+In the next notebook, we'll shift from velocity to what happens on target: group size, precision measurement, and how to evaluate accuracy honestly.
+
+Velocity gets you to the target. Precision determines if you hit it. Let's learn to measure both correctly.
 
 > **Key Takeaways**
-> - Multiple velocity metrics provide comprehensive performance picture
-> - Extreme spread and standard deviation have different meanings
-> - Velocity stability affects precision more than absolute values
-> - Temperature sensitivity impacts real-world performance
-> - Proper data collection methods ensure meaningful results
+> - Average velocity is reliable with 10-15 shots; use it confidently for trajectory calculations
+> - Standard deviation from small samples (under 30 shots) underestimates true SD—don't trust single-digit SDs from 5-10 shot strings
+> - Extreme spread (ES) grows with sample size and is a poor metric for load comparison
+> - Velocity "nodes" and "flat spots" are random variation, not real phenomena—your brain finds patterns in noise
+> - Whether SD matters depends on shooting distance: negligible at 300 yards, critical at 1,000+ yards
+> - Temperature sensitivity affects velocity more than small charge weight changes
+> - Track velocity across multiple sessions to assess true consistency, not single lucky samples
 
-[Previous: 04_Testing_One_Thing_at_a_Time.ipynb](04_Testing_One_Thing_at_a_Time.ipynb) | [Next: 06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb](06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb)
+---
+
+## Coming Up Next
+
+**In Notebook 06**, we'll tackle precision on target: group size, accuracy metrics, and how to measure what really matters. You'll learn:
+- Why extreme spread (group size) is misleading
+- Mean radius: a better way to measure precision
+- The "best group bias" and why your smallest groups lie
+- How to aggregate data properly for honest assessment
+- Precision vs. accuracy: understanding the difference
+
+You understand velocity now. Next, you'll learn what happens when those bullets hit paper.
+
+[Previous: 04_Testing_One_Thing_at_a_Time](04_Testing_One_Thing_at_a_Time.ipynb) | [Next: 06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group](06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.ipynb)
