@@ -403,31 +403,7 @@ Survivorship bias. Equipment divide. Why pro methods might not work for hobbyist
 
 ---
 
-## How to Use These Notebooks
 
-**Reading on GitHub (free, no install required):**
-- All notebooks are readable as markdown files
-- Great for overview and reference
-- No interactivity, just content
-
-**Running interactively (recommended):**
-- Click "Open in Colab" badge at top of each notebook
-- Runs in Google's cloud (free, no install)
-- Full interactivity: run simulations, adjust parameters, see results
-- Or click "Binder" badge for alternative cloud environment
-
-**Running locally (advanced):**
-- Clone this repository
-- Install Jupyter and dependencies (instructions in README)
-- Full control, can modify for your specific data
-
-**Recommended path:**
-1. Read Notebook 01 on GitHub to see if this resonates
-2. If interested, run Notebook 01 interactively in Colab
-3. If hooked, work through all 12 interactively
-4. Keep Notebook 08 templates for ongoing use
-
----
 
 ## A Word About Tone
 
