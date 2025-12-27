@@ -2,7 +2,7 @@
 
 ## How to Use This Glossary
 
-This reference guide defines all technical terms used throughout the curriculum. 
+This reference guide defines all technical terms used throughout the curriculum. 1`
 
 **Organization:** Alphabetical order
 **Cross-references:** Terms reference the lessons where they're discussed in detail
@@ -50,7 +50,7 @@ Commonly: α = 0.05 (5% false positive rate)
 
 **The claim:** Some powder charges create "nodes" where harmonics minimize dispersion.
 
-**The reality:** While barrel movement (whip, harmonics) exist, the claimed "nodes" from ladder tests are usually just random variation. A bit of fancy math tells me that the bullet has left the barrel before any significant muzzle displacement has occured.  For further investigation, research 'cantilevered Euler-Bernoulli beam'.  The barrel is fixed at the reciever and free at the muzzle end. Couple that physics model with the natural frequency of your average match barrel (~60Hz for a 24" full contour 1.25" 416SS) and you get very little, if any muzzle displacement during the 1-2ms the bullet is in the bore.  If I am wrong, once other 1st order effects are accounted for - I haven't seen anyone that can shoot the difference.  In other words, the barrel movement is so small in comparison to other effects, it's not been observed to be above the noise floor (yet). There are other fundamental challenges regarding this theory.  Primarily, the assumption that barrel "harmonics" are consistent and uniform.  See Lesson 07 for the debunking.
+**The reality:** While barrel movement (whip, harmonics) exist, the claimed "nodes" from ladder tests are usually just random variation. A bit of fancy math tells me that the bullet has left the barrel before any significant muzzle displacement has occured.  For further investigation, research 'cantilevered Euler-Bernoulli beam'.  The barrel is fixed at the reciever and free at the muzzle end. The natural frequency of your average match barrel (~60Hz for a 24" full contour 1.25" 416SS) prand you get very little, if any muzzle displacement during the 1-2ms the bullet is in the bore.  If I am wrong, once other 1st order effects are accounted for - I haven't seen anyone that can shoot the difference.  In other words, the barrel movement is so small in comparison to other effects, it's not been observed to be above the noise floor (yet). There are other fundamental challenges regarding this theory.  Primarily, the assumption that barrel "harmonics" are consistent and uniform.  See Lesson 07 for the debunking.
 
 **See:** Lesson 07 - Real Examples (Velocity Nodes section)
 
