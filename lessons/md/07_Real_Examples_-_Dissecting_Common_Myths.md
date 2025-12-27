@@ -371,8 +371,8 @@ Brass sorting persists because:
 
 **What DOES matter for brass:**
 - Using same brand and lot (different brands/lots have different case hardness and capacity)
-- Consistent case prep (trimming, annealing if reloading many times)
-- Proper sizing (consistent neck tension)
+- Generally speaking - you get what you pay for, but not more.
+- Proper sizing and preparation
 
 ---
 
@@ -463,7 +463,7 @@ Ladder tests at distance persist because:
 Adjust a muzzle tuner weight position in small increments. Shoot 3-5 shot groups at each setting. The setting that produces the smallest group is "in tune" with your barrel's harmonics.
 
 **Why it's appealing:**
-- Tuners can have real effects (this isn't entirely myth)
+- Tuners with a muzzle brake can have real effects on the shooter
 - Gives immediate feedback (small group = success!)
 - Doesn't require changing ammunition
 - Backed by harmonic theory
@@ -512,12 +512,11 @@ Adjust a muzzle tuner weight position in small increments. Shoot 3-5 shot groups
 - Small samples always find an "optimal" setting
 - Which setting is optimal changes with each test
 - When tested properly, many settings perform identically (if tuner effect is small)
-- Real tuner effects DO exist for some rifles, but they're often smaller than small-sample noise
 
 ### Why This Persists
 
 Tuner testing with small samples persists because:
-1. Tuners can have real effects (so the theory isn't wrong)
+1. Tuners with muzzle brakes can have real effects on the shooter
 2. Small groups always produce a "winner"
 3. Once you "find" the setting, you stop testing and assume success
 4. Variability in future groups is attributed to other factors, not the tuner setting
@@ -547,7 +546,7 @@ Tuner testing with small samples persists because:
 - If it repeats, you've found a real tuner effect
 - If it doesn't, the "improvement" was noise
 
-**Reality check:** Many rifles show minimal tuner effects. If you can't measure a clear, repeatable improvement with proper sample sizes, the tuner isn't helping.
+**Reality check:** Many rifles show minimal tuner effects (often versions that incorporate a muzzle brake). If you can't measure a clear, repeatable improvement with proper sample sizes, the tuner isn't helping.
 
 ---
 
