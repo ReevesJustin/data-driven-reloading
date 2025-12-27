@@ -12,7 +12,7 @@ You've just finished Lesson 02. You understand the ocean and the cup. You know t
 
 This is THE practical question. And the answer isn't simple, because it depends on what you're trying to learn and how confident you need to be.
 
-But here's the good news: by the end of this notebook, you'll have clear, practical guidelines. Not vague "it depends" answers, but actual decision trees you can use this weekend at the range.
+But here's the good news: by the end of this lesson, you'll have clear, practical guidelines. Not vague "it depends" answers, but actual decision trees you can use this weekend at the range.
 
 Fair warning: you're not going to like some of these answers. The number of shots required for reliable testing is higher than what you see on forums. But I'll also show you exactly why those numbers matter, and what happens when you shortcut them.
 
@@ -584,7 +584,7 @@ Be honest with yourself. If you're going to shortcut sample size, at least know 
 
 If you commit to proper testing, you'll start building real knowledge. Knowledge that compounds over time. Knowledge that makes you better.
 
-In the next notebook, we'll apply these sample size principles to systematic testing. You'll learn the one-variable-at-a-time method that lets you test efficiently while still being rigorous.
+In the next lesson, we'll apply these sample size principles to systematic testing. You'll learn the one-variable-at-a-time method that lets you test efficiently while still being rigorous.
 
 > **Key Takeaways**
 > - Averages stabilize quickly (10 shots), spread measurements stabilize slowly (30+ shots)

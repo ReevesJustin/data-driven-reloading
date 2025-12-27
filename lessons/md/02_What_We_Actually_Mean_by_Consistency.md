@@ -11,7 +11,7 @@ Here's what usually happens: Someone shoots three tight groups and declares thei
 
 They're all talking about different things.
 
-Let's fix that. By the end of this notebook, you'll have crystal-clear definitions that make sense, and you'll understand the single most important concept in statistical testing: the difference between what you tested and what you think you know.
+Let's fix that. By the end of this lesson, you'll have crystal-clear definitions that make sense, and you'll understand the single most important concept in statistical testing: the difference between what you tested and what you think you know.
 
 ---
 
@@ -296,7 +296,7 @@ This foundation changes everything. You now have a framework for evaluating any 
 - How many shots are they basing that on?
 - Are they confusing velocity consistency with precision?
 
-In the next notebook, we'll tackle the question everyone asks: "Okay, so how many shots DO I need?" You already know the answer is more than 3, but now you'll understand exactly why and learn to calculate it yourself.
+In the next lesson, we'll tackle the question everyone asks: "Okay, so how many shots DO I need?" You already know the answer is more than 3, but now you'll understand exactly why and learn to calculate it yourself.
 
 > **Key Takeaways**
 > - Consistency means predictable, not perfect
@@ -317,6 +317,6 @@ In the next notebook, we'll tackle the question everyone asks: "Okay, so how man
 - How to calculate sample sizes for your specific testing goals
 - The cost-benefit analysis of "good enough" vs. "really sure"
 
-The foundation you just built will make the next notebook click instantly. You understand the ocean and the cup. Now you'll learn how big your cup needs to be.
+The foundation you just built will make the next lesson click instantly. You understand the ocean and the cup. Now you'll learn how big your cup needs to be.
 
 [Previous: 01_The_Biggest_Lie_in_Reloading_Testing](01_The_Biggest_Lie_in_Reloading_Testing.md) | [Next: 03_How_Many_Shots_Do_You_Really_Need](03_How_Many_Shots_Do_You_Really_Need.md)

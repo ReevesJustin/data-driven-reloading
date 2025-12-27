@@ -14,7 +14,7 @@ Then you browse a reloading forum or watch a YouTube video. A successful competi
 
 This is a fair question. And the answer is more interesting—and more useful—than you might expect.
 
-By the end of this notebook, you'll understand:
+By the end of this lesson, you'll understand:
 - Survivorship bias (why you only hear from the lucky ones)
 - The equipment divide (why their rifles aren't yours)
 - Round count differences (volume changes everything)

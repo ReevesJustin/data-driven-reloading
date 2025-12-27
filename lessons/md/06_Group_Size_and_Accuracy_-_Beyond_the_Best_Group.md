@@ -18,7 +18,7 @@ What happened? Did your rifle forget how to shoot? Did the ammo go bad? Did you 
 
 This is the single most common mistake in reloading: judging a load by its best group instead of its average behavior. It feels intuitive. "This load CAN shoot 0.4 MOA—I've seen it!" But that logic is backwards.
 
-In this notebook, you'll learn:
+In this lesson, you'll learn:
 - Why extreme spread (traditional group size) grows forever and misleads you
 - Mean radius: a better metric that actually stabilizes
 - The "best group bias" and why your smallest groups are 30-40% better than your rifle's true capability
@@ -495,9 +495,9 @@ Instead of: "This load shoots terribly—groups were all over the place!"
 
 You'll ask: "Was that precision (large groups) or accuracy (groups off-center)? What was the average group size, not just the worst one?"
 
-In the next notebook, we'll apply this honest thinking to real-world examples—dissecting common myths and claims you see online, and learning to spot the red flags of bad testing.
+In the next lesson, we'll apply this honest thinking to real-world examples—dissecting common myths and claims you see online, and learning to spot the red flags of bad testing.
 
-You've learned how to measure velocity honestly (Lesson 05) and precision honestly (this notebook). Now let's use those skills to evaluate claims critically.
+You've learned how to measure velocity honestly (Lesson 05) and precision honestly (this lesson). Now let's use those skills to evaluate claims critically.
 
 > **Key Takeaways**
 > - Extreme spread (traditional group size) grows with sample size; mean radius stabilizes—use MR for honest measurement

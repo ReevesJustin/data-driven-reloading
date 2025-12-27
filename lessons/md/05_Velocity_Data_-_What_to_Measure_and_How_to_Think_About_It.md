@@ -21,7 +21,7 @@ Most reloaders treat chronograph data like magic oracle wisdom. Low SD? That's t
 
 The truth is more nuanced, more interesting, and way more useful once you understand it.
 
-In this notebook, you'll learn:
+In this lesson, you'll learn:
 - What average velocity actually tells you (and why it's more reliable than you think)
 - Why SD and ES from small samples are misleading (the "perverse nature" Denton Bramwell warned about)
 - How to spot when velocity data is trustworthy vs. when it's lying to you
@@ -372,24 +372,43 @@ I would also caution you to test at least 3 different temperatures with a wide s
 
 Yet very few reloaders test temperature sensitivity. They chase 0.1-grain charge increments for imaginary nodes instead.
 
+### ! SAFETY ALERT !
+
+**Pressure and Velocity: A Critical Warning**
+
+Reloading involves real danger. After reviewing thousands of forum posts and social media load recommendations, I'm alarmed by how many unsafe, overpressure loads are being shared and repeated.
+
+**Critical fact you must understand:** Pressure increases exponentially relative to velocity—not linearly. You cannot judge pressure by traditional "pressure signs" alone. By the time you see traditional overpressure signs (cratered primers, ejector marks, sticky bolt), you're already well past safe limits and risking possible catastrophic failure.
+
+This isn't folklore or "Fudd lore." This is physics, backed by countless documented injuries. I've personally seen the aftermath of some mistakes or neglegence. In some cases, rifles were ruined. In other cases, people were permanently injured. These injuries are 100% preventable.  Many modern components (brass, actions) can take tremendous pressure. If you can only get a handful of reloads out of your brass, I strongly urge you to stop racing the chronograph.
+
+For example:  If published load data shows 2680fps using Varget in a 24" barrel, but you are getting 2680 fps in a 20" - you aren't proving the ballisticians wrong, you are over SAAMI pressure limits.
+
+**Please:** Start low, work up carefully, respect published maximums, and never blindly trust load data from internet strangers. Your safety—and your face—are worth more than an extra 50 fps.
+
+Test smart. Shoot safe.
+
 ### What to Do Instead
 
 **For velocity development:**
 
 1. **Start with safe minimum, work up to safe maximum in 0.5 to 1.0 grain increments** (not 0.1 grain)
-2. **Shoot 5 rounds per charge** to see average velocity and rough SD
-3. **Watch for pressure signs**, not "flat spots"
+2. **Shoot 5 rounds per charge** to see average velocity and very rough SD
+3. **Watch for pressure signs and maximum safe velocity**, not "flat spots", compare velocity and barrel length to published load data
+   - If you do get traditional pressure signs - STOP!
 4. **Pick 2-3 promising charges** based on:
-   - Safe pressure
+   - "Safe" pressure
    - Desired velocity for your ballistics
    - No obvious issues (erratic SDs, sticky extraction)
+
 5. **Test those charges properly** with 30+ shots each for real SD and accuracy
 6. **Make a decision** based on data, not patterns in noise
 
 **For temperature testing:**
 
 1. Test your chosen load at different temperatures (cold winter day, mild spring day, hot summer day)
-2. See how much velocity shifts
+2. Record your 10-15 shot average velocity
+2. Compare how much velocity shifts between temperatures
 3. If it matters for your application, there are tools available to correct for environmental changes in your firing solution
 
 This approach uses the same number of components as a ladder test but gives you actually useful information.
@@ -430,9 +449,9 @@ Notice the pattern? **Velocity SD matters more as distance increases.**
 
 Your load shows 15 fps SD (measured properly with 30 shots).
 
-At 400 yards, this creates about 2 inches of vertical uncertainty. Your deer's vital zone is 10+ inches.
+At 400 yards, this creates about 2 inches of vertical uncertainty. Your deer's vital zone is 8+ inches.
 
-**Does SD matter?** No. You're already way more accurate than needed. Chasing lower SD is pointless.
+**Does SD matter?** No. You're already more precise than needed. Chasing lower SD is pointless.
 
 **Scenario 2: PRS/NRL competition, targets at 600-800 yards**
 
@@ -514,7 +533,7 @@ Session 2: 2,848 fps (10 shots)
 Session 3: 2,853 fps (10 shots)
 ```
 
-If averages are consistent (within 10 fps across sessions), you've got a stable load. Use the overall average for ballistics.
+If averages are consistent (within 10 fps across sessions), you've got a stable load. Use the overall average for ballistics.  
 
 ### 2. Session-to-Session SD (Tells You About Repeatability)
 
@@ -536,11 +555,7 @@ Shots 11-20: averaging 2,855 fps
 Shots 21-30: averaging 2,865 fps
 ```
 
-If velocity creeps up or down as you shoot, that's a problem:
-- Upward trend: Possible pressure increase from barrel heating
-- Downward trend: Possible fouling buildup or brass issues
-
-A good load shows no trend—just random scatter around a stable average.
+A good load shows no trend—just random scatter around a stable average when accounting for temperature.
 
 ### 4. Temperature-Adjusted Velocity
 
@@ -575,7 +590,7 @@ Instead of: "I'll find the node by looking for flat spots in velocity"
 
 You'll do: "I'll test promising charges properly and let data drive decisions, not patterns in noise"
 
-In the next notebook, we'll shift from velocity to what happens on target: group size, precision measurement, and how to evaluate accuracy honestly.
+In the next lesson, we'll shift from velocity to what happens on target: group size, precision measurement, and how to evaluate accuracy honestly.
 
 Velocity gets you to the target. Precision determines if you hit it. Let's learn to measure both correctly.
 

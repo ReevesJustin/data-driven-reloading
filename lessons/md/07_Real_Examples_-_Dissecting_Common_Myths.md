@@ -12,7 +12,7 @@ Now let's apply those lessons to the specific methods circulating in reloading c
 
 We're not here to attack anyone. Many of these methods were developed by smart, experienced shooters who were genuinely trying to help. The problem isn't bad intentions—it's **insufficient understanding of statistics combined with human pattern-seeking instincts**.
 
-In this notebook, we'll examine popular methods with the statistical lens you've developed. For each, we'll:
+In this lesson, we'll examine popular methods with the statistical lens you've developed. For each, we'll:
 1. Explain the theory and why it's appealing
 2. Show what the data actually reveals
 3. Explain why people think it works (even when it doesn't)

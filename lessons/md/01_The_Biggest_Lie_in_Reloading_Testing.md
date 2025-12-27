@@ -299,7 +299,7 @@ And for your own testing: Accept that small samples will mislead you. Plan for i
 
 **The components you "waste" doing proper testing will save you from wasting far more on false leads.**
 
-In the next notebook, we'll define exactly what "consistency" means and introduce the most important concept in this entire curriculum: the difference between the ocean (what's real) and the cup (what you measured).
+In the next lesson, we'll define exactly what "consistency" means and introduce the most important concept in this entire curriculum: the difference between the ocean (what's real) and the cup (what you measured).
 
 > **Key Takeaways**
 > - Small samples (3-5 shots) produce wildly varying results even from perfectly consistent rifles/loads

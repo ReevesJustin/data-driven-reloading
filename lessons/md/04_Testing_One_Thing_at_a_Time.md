@@ -434,7 +434,7 @@ While a weather phone app is better than nothing, dedicated meters are far more 
 
 **Critical consideration - Propellant temperature acclimation:**
 
-Physicist Denton Bramwell conducted experiments involving thermocouples embedded in cartridge cases to measure propellant temperature using Newton cooling coefficients. **The key finding: It takes approximately one hour or more for propellant temperature to approximate ambient conditions.**
+Physicist Denton Bramwell conducted experiments involving thermocouples embedded in cartridge cases to measure propellant temperatures to obtain heating and cooling rates.  **The key finding: SAAMI's practice is to aclimate ammunition for 24 hours prior to testing.  However, for our purposes, the rifle and ammunition should acclimate for at least an hour or two for propellant temperature to approximate ambient conditions.**
 
 **What this means for testing:**
 
@@ -443,16 +443,17 @@ When temperature testing ammunition, you can isolate ammo temperature effects us
 **Practical implications:**
 
 - Don't pull ammunition from your climate-controlled vehicle and immediately shoot for "cold weather" testing—the powder is still warm
-- When testing across temperature extremes, allow 60+ minutes for ammunition to reach thermal equilibrium with ambient conditions
-- If testing in summer heat, ammunition sitting in a hot chamber or magazine will be warmer than ambient after just a few shots
+- When testing across temperature extremes, allow at least 60+ minutes for ammunition to reach ambient conditions
+- If testing in summer heat, ammunition sitting in direct sunlight will be warmer than ambient - increasing pressure!
 - "Real world" temperature testing requires the entire system (rifle, ammo, shooter) to acclimate to conditions
 
 **Example of proper temperature testing:**
-1. Store ammunition at target temperature for 2+ hours (in freezer for winter, in hot vehicle for summer)
-2. Bring rifle to ambient temperature (leave outside, in vehicle, etc.)
-3. Shoot test within 15-20 minutes before ammunition temperature changes significantly
-4. Record actual environmental conditions with Kestrel or similar
-5. Reference all data to measured temperature, not assumed temperature
+1. Acclimate firearm and ammunition completely before testing, allowing ample time for them to reach ambient
+2. Record actual environmental conditions with Kestrel or similar device
+3. Use a non-contact thermometer to track external ammunition and firearm temps
+4. Remember, once the cartridge case hits ambient temps, the propellant and primer take more time to acclimate
+5. Record actual environmental conditions with Kestrel or similar
+6. Reference all data to measured temperature, not assumed temperature
 
 This level of environmental control separates guesswork from genuine understanding of how your loads perform across the conditions you'll actually encounter.
 
@@ -486,7 +487,7 @@ Once you've tested variables individually and created your final recipe, you loa
 
 ### Situation 3: The Variables Are Not Independent
 
-Some variables genuinely interact. Example: Seating depth affects pressure, which may affects charge weight. In this case, you might test "charge weight at 0.020" off" vs "charge weight at 0.040" off" as two separate complete tests.
+Some variables genuinely interact. Example: Seating depth affects pressure, which may affect charge weight. In this case, you might test "charge weight at 0.020" off" vs "charge weight at 0.040" off" as two separate complete tests.  Critical safety:  Velocity and Pressure are directly related.  If you are exceeding SAAMI pressure, you are shortening the lifespan of the cartridge case at best.  Worst case, you could have a catastrophic event!
 
 **But:** This is advanced. Start with one-at-a-time testing until you understand your system.
 
@@ -499,7 +500,7 @@ After six months of one-variable-at-a-time testing, here's what you'll have:
 **Your load notebook:**
 - "CCI vs Federal primers: No difference. Use CCI (cheaper)."
 - "H4350 vs RL16: RL16 gave 5 fps lower SD and is temp stable. Worth switching."
-- "Charge weight test: 41.5gr best accuracy. 42.0gr faster but groups opened up."
+- "Charge weight test: 41.5gr best accuracy at X MOA. 42.0gr faster but groups opened up to Y MOA"
 - "Seating depth test: No measurable difference from 0.020" to 0.060" off. Using 0.040" for magazine feed."
 - "Sierra 168gr vs Berger 168gr Hybrid: Berger gave 0.15 MOA improvement. Worth the extra cost for competition."
 
@@ -534,7 +535,7 @@ Pick one. Just one. Plan a test:
 3. What will you measure? (Velocity SD? Group size? Both?)
 4. How will you know if there's a real difference?
 
-Write it down. The next notebook will give you the tools to analyze velocity data properly. Then Lesson 06 will handle group size analysis. But the experimental design—testing one thing at a time—starts here.
+Write it down. The next lesson will give you the tools to analyze velocity data properly. Then Lesson 06 will handle group size analysis. But the experimental design—testing one thing at a time—starts here.
 
 > **Key Takeaways**
 > - Changing multiple variables at once creates unsolvable puzzles

@@ -16,7 +16,7 @@ This might sound discouraging. It's not. It's liberating.
 
 Once you understand what your system can actually deliver, you stop chasing ghosts. You stop wasting money on miracle fixes. You stop feeling inadequate because your groups don't match internet claims. You focus your effort where it actually matters.
 
-By the end of this notebook, you'll understand:
+By the end of this lesson, you'll understand:
 - The three factors that combine to create your system's precision limit
 - Realistic benchmarks for different equipment levels
 - Why recoil is probably your biggest problem (and what to do about it)

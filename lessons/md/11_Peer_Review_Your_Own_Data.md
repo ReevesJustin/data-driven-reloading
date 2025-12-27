@@ -14,7 +14,7 @@ If your immediate reaction is **"Well... maybe I should test it one more time ju
 
 If your reaction is **"Absolutely! The data clearly shows it!"** you might be falling into the most dangerous trap in data analysis: **seeing what you want to see instead of what's actually there.**
 
-This notebook is your defense against yourself. By the end, you'll have:
+This lesson is your defense against yourself. By the end, you'll have:
 - A 10-question checklist to audit any reloading result
 - A gallery of red flags that indicate self-deception
 - A pre-registration template to prevent p-hacking

@@ -15,9 +15,9 @@ You've made it this far. You understand:
 
 **Now it's time to put that knowledge to work.**
 
-This notebook is different. This isn't theory. This isn't examples of what someone else did. This is YOUR toolkit—production-ready templates you'll copy, customize with your data, and use to analyze every test you run from now on.
+This lesson is different. This isn't theory. This isn't examples of what someone else did. This is YOUR toolkit—production-ready templates you'll copy, customize with your data, and use to analyze every test you run from now on.
 
-By the end of this notebook, you'll have three complete templates saved and ready to use:
+By the end of this lesson, you'll have three complete templates saved and ready to use:
 
 1. **Template A: Two-Load Comparison** - Compare any two loads (primers, powders, bullets, etc.)
 2. **Template B: Charge Weight Ladder** - Test multiple powder charges systematically
@@ -33,6 +33,68 @@ Each template includes:
 **This is the payoff.** Everything you've learned becomes immediately actionable.
 
 Let's get started.
+
+---
+
+## Choose Your Format: Python or Excel
+
+These templates are available in **two formats** - choose the one that works best for you:
+
+### Option 1: Excel Templates (Recommended for Most Users)
+
+**Best for:** Anyone comfortable with Excel, users who want zero programming
+
+**Download:**
+- [Blank Templates (Start Here)](../templates/Reloading_Analysis_Templates.xlsx) - Empty templates ready for your data
+- [Example Templates](../templates/Reloading_Analysis_Templates_Examples.xlsx) - Pre-filled with sample data to see how they work
+
+**Advantages:**
+- ✓ No programming knowledge required
+- ✓ Works offline in Microsoft Excel (2016+) or Google Sheets
+- ✓ Familiar spreadsheet interface
+- ✓ Easy to save and share completed analyses
+- ✓ Protected formulas (hard to break accidentally)
+- ✓ All calculations automatic
+- ✓ Plain-English interpretations
+- ✓ Password to modify formulas: `reloading`
+
+**How to Use:**
+1. Download the blank templates file
+2. Open in Excel (Windows/Mac) or Google Sheets
+3. Choose your template sheet (Template_A, Template_B, or Template_C)
+4. Paste your data in columns A-C
+5. Read the auto-generated analysis
+6. Save with a descriptive name (e.g., "2024-03-15_Primer_Test.xlsx")
+
+**See:** [Templates README](../templates/README.md) for complete documentation
+
+### Option 2: Python/Jupyter Notebooks (Original)
+
+**Best for:** Python users, researchers who need full customization, those running many analyses
+
+**Advantages:**
+- ✓ Full control over all code and calculations
+- ✓ Easy to modify and extend
+- ✓ Publication-quality charts (4 per template)
+- ✓ Can automate batch processing
+- ✓ Reproducible research workflows
+
+**Requirements:**
+- Python 3.x
+- Jupyter notebook or Google Colab
+- Libraries: pandas, matplotlib, numpy, scipy
+
+**How to Use:**
+- See the Python code blocks below
+- Copy into Jupyter or Colab
+- Run the cells
+- Modify as needed
+
+---
+
+**For the rest of this lesson, we'll show both formats side-by-side where applicable.**
+
+**Most users should start with the Excel templates and only use Python if they have specific needs for customization.**
 
 ---
 
@@ -923,7 +985,7 @@ From now on, when you test something, you'll:
 
 This is the culmination of everything you've learned. You understand the theory, you recognize the traps, and now you have the tools to test properly.
 
-The next notebook will help you set realistic expectations so you don't chase perfection that doesn't exist. But first, spend some time with these templates. Copy them. Test something this weekend. See how empowering it is to actually KNOW instead of guess.
+The next lesson will help you set realistic expectations so you don't chase perfection that doesn't exist. But first, spend some time with these templates. Copy them. Test something this weekend. See how empowering it is to actually KNOW instead of guess.
 
 > **Key Takeaways**
 > - Three production-ready templates cover most testing needs

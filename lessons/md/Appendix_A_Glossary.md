@@ -1019,6 +1019,6 @@ Where: σ = standard deviation, d = difference to detect
 
 ---
 
-**Need more detail?** Each term references the notebook(s) where it's discussed in depth. Use this glossary as a quick reference, then dive into the specific lessons for complete explanations and examples.
+**Need more detail?** Each term references the lesson(s) where it's discussed in depth. Use this glossary as a quick reference, then dive into the specific lessons for complete explanations and examples.
 
 [Back to Curriculum](../../README.md)

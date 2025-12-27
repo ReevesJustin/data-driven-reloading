@@ -12,7 +12,7 @@ If your gut answer is "No, that's too risky," **you're demonstrating good statis
 
 If your answer is "Yes, absolutely," either you're very confident in your result (good sample size, large difference, consistent across sessions) or you're overconfident.
 
-This notebook teaches you to tell the difference. By the end, you'll know:
+This lesson teaches you to tell the difference. By the end, you'll know:
 - When results are reliably real vs probably noise
 - The two types of mistakes you can make (and why both matter)
 - How to calculate if your testing had enough power to detect real differences
