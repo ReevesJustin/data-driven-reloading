@@ -26,7 +26,9 @@ N_LARGE_SAMPLE = 30  # Large sample to show truth
 # Function to simulate group size (Rayleigh distribution approximation)
 def simulate_group_size(true_moa, n_shots):
     """Simulate extreme spread group size from circular normal distribution."""
-    sigma = true_moa * 0.5
+    # TRUE_MOA represents expected 5-shot group size
+    # For 2D normal, E[5-shot ES] ≈ 3.0 * sigma
+    sigma = true_moa / 3.0
     x = np.random.normal(0, sigma, n_shots)
     y = np.random.normal(0, sigma, n_shots)
 

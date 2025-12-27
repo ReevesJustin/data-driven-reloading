@@ -25,9 +25,10 @@ group_sizes = []
 
 for _ in range(N_GROUPS):
     # Generate shots from a 2D normal distribution
-    # Convert MOA to inches at 100 yards (1 MOA ≈ 1 inch at 100 yards)
-    # For circular error, sigma_xy = MOA * 0.5 (rough approximation)
-    sigma = TRUE_MOA * 0.5
+    # Convert MOA to standard deviation for 2D normal distribution
+    # TRUE_MOA represents expected 5-shot group size
+    # For 2D normal, E[5-shot ES] ≈ 3.0 * sigma, so sigma ≈ TRUE_MOA / 3.0
+    sigma = TRUE_MOA / 3.0
 
     x = np.random.normal(0, sigma, SHOTS_PER_GROUP)
     y = np.random.normal(0, sigma, SHOTS_PER_GROUP)

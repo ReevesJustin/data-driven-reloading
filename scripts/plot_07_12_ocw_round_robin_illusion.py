@@ -39,8 +39,9 @@ for trial_idx in range(N_TRIALS):
     np.random.seed(42 + trial_idx * 10)
 
     # Simulate shooting - all charges have same true precision
-    # Convert MOA to inches at 100 yards
-    sigma = TRUE_MOA * 0.5
+    # TRUE_MOA represents expected 5-shot group size
+    # For 2D normal, E[5-shot ES] ≈ 3.0 * sigma
+    sigma = TRUE_MOA / 3.0
 
     all_shots_x = []
     all_shots_y = []

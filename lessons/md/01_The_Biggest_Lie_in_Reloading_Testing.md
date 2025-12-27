@@ -44,13 +44,13 @@ We're going to fire 1,000 three-shot groups from our true 1.5 MOA rifle. That's 
 
 ![Distribution of 1,000 Three-Shot Groups](../static/nb01_plot03_three_shot_distribution.png)
 
-**Figure 1:** Distribution of 1,000 three-shot groups from a simulated rifle with true 1.5 MOA capability. The histogram shows groups ranging from 0.4 MOA to over 3.0 MOA, with the average systematically underestimating the true capability at 1.2 MOA. This demonstrates how small samples create massive variation in measured results even from a perfectly consistent system - your best groups are luck, not capability.
+**Figure 1:** Distribution of 1,000 three-shot groups from a simulated rifle with true 1.5 MOA capability (based on 5-shot average). The histogram shows groups ranging from 0.16 MOA to over 3.0 MOA, with the average systematically underestimating the true capability at 1.2 MOA. This demonstrates how small samples create massive variation in measured results even from a perfectly consistent system - your best groups are luck, not capability.
 
 **What you'll notice:**
 
-1. **The best group measures around 0.4 MOA** - That's 72% better than the rifle's true capability!
+1. **The best group measures around 0.2 MOA** - That's 87% better than the rifle's true capability!
 
-2. **The worst group measures around 3.2 MOA** - That's 113% worse!
+2. **The worst group measures around 3.0 MOA** - That's 100% worse!
 
 3. **The average is 1.2 MOA** - Systematically underestimates the true 1.5 MOA
 
@@ -74,12 +74,12 @@ Let's test that. Same rifle (true 1.5 MOA), but now we'll shoot 1,000 five-shot 
 
 ![Comparison of 3-Shot vs 5-Shot Groups](../static/nb01_plot04_five_shot_comparison.png)
 
-**Figure 2:** Comparison of 1,000 five-shot groups (overlaid with three-shot distribution) from the same true 1.5 MOA rifle. While five-shot groups show a tighter distribution than three-shot groups, over half still misrepresent the rifle's true capability by more than 20%. Even with five shots, the best groups are 57% tighter than reality and the worst are 85% worse - demonstrating that single five-shot groups remain unreliable for measuring true performance.
+**Figure 2:** Comparison of 1,000 five-shot groups (overlaid with three-shot distribution) from the same true 1.5 MOA rifle. While five-shot groups show a tighter distribution than three-shot groups, over half still misrepresent the rifle's true capability by more than 20%. Even with five shots, the best groups are 72% tighter than reality and the worst are 114% worse - demonstrating that single five-shot groups remain unreliable for measuring true performance.
 
 **Five-shot groups are better than three-shot, but still:**
 
-- The best group is 57% tighter than true capability
-- The worst group is 85% worse than true capability
+- The best group is 72% tighter than true capability
+- The worst group is 114% worse than true capability
 - Over HALF of all 5-shot groups misrepresent the rifle by more than 20%
 - You'd need to shoot many 5-shot groups and average them to get close to truth
 
@@ -93,7 +93,7 @@ Here's where it gets personal. Let's see if you can tell the difference between 
 
 ![Three Targets from the Same Rifle](../static/nb01_plot05_which_load_better.png)
 
-**Figure 3:** Three five-shot groups all from the SAME rifle with true 1.2 MOA capability, measuring 0.8 MOA, 1.4 MOA, and 1.1 MOA respectively. The first target got lucky, the second got unlucky, and the third was typical. This visual demonstration reveals why you cannot determine if two loads are different based on single small groups - the natural variation between samples is larger than most real load differences.
+**Figure 3:** Three five-shot groups all from the SAME rifle with true 1.2 MOA capability, measuring 1.3 MOA, 1.2 MOA, and 0.9 MOA respectively. All three show natural variation around the true capability, yet they look different enough that you might be tempted to choose one as "better." This visual demonstration reveals why you cannot determine if two loads are different based on single small groups - the natural variation between samples is larger than most real load differences.
 
 **The emotional impact:**
 
@@ -116,13 +116,13 @@ We'll shoot strings of different lengths and see what SD each string calculates.
 
 ![Standard Deviation Illusion by Sample Size](../static/nb01_plot06_sd_illusion_sample_size.png)
 
-**Figure 4:** The perverse nature of standard deviation across different sample sizes, using a true population SD of 15 fps. With 5-shot samples, about 35% show "amazing" SDs under 10 fps purely by luck. Even 10-shot samples produce misleadingly low SDs 18% of the time. Only at 30+ shots does the measured SD reliably approach the true value. This explains why your "perfect" 8 fps SD from 10 shots often fails to repeat - it was statistical luck, not a breakthrough load.
+**Figure 4:** The perverse nature of standard deviation across different sample sizes, using a true population SD of 15 fps. With 5-shot samples, about 22% show "amazing" SDs under 10 fps purely by luck. Even 10-shot samples produce misleadingly low SDs (under 10 fps) about 9% of the time. Only at 30+ shots does the measured SD reliably approach the true value. This explains why your "perfect" low-SD results from small samples often fail to repeat - they were statistical luck, not breakthrough loads.
 
 **The revelation:**
 
 You shoot 10 rounds, get 8 fps SD, and declare you've found a perfect load.
 
-But this simulation shows that a true 15 fps load will produce 8 fps SD about **15-20% of the time** just by random chance with 10-shot samples.
+But this simulation shows that even with a true 15 fps load, small samples produce highly variable SD measurements. A 10-shot sample showing an impressively low SD is rare but possible - and when it happens, you'll mistake random luck for a breakthrough.
 
 **You didn't find a great load. You got lucky with a small sample.**
 

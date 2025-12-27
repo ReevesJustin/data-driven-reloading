@@ -26,7 +26,9 @@ N_SETS = 1000  # Number of times we repeat this experiment
 
 def simulate_one_group(true_moa, shots_per_group):
     """Simulate one group and return its size."""
-    sigma = true_moa * 0.5  # Convert MOA to sigma
+    # TRUE_MOA represents expected 5-shot group size
+    # For 2D normal, E[5-shot ES] ≈ 3.0 * sigma
+    sigma = true_moa / 3.0
 
     # Generate shots from 2D normal distribution
     x = np.random.normal(0, sigma, shots_per_group)

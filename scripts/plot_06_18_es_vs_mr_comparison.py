@@ -27,7 +27,9 @@ def simulate_es_and_mr_progression(true_moa, max_shots, n_trials):
     Simulate how ES and MR change as shot count increases.
     Returns arrays of shot counts, average ES, and average MR.
     """
-    sigma = true_moa * 0.5  # Convert MOA to sigma
+    # TRUE_MOA represents expected 5-shot group size
+    # For 2D normal, E[5-shot ES] ≈ 3.0 * sigma
+    sigma = true_moa / 3.0
 
     shot_counts = range(3, max_shots + 1)
     es_values = []

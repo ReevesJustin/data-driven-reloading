@@ -14,17 +14,19 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 # Set random seed for reproducibility
-np.random.seed(123)  # Different seed for variety
+np.random.seed(108)  # Seed chosen to give representative group sizes
 
 # Simulation parameters
 TRUE_MOA = 1.2  # True rifle capability
 SHOTS_PER_GROUP = 5
-N_GROUPS = 6  # 6 groups to display in 3x2 grid
+N_GROUPS = 3  # 3 groups to display in 1x3 grid
 
 
 def simulate_one_group(true_moa, shots_per_group):
     """Simulate one group and return shot coordinates and group size."""
-    sigma = true_moa * 0.5  # Convert MOA to sigma
+    # TRUE_MOA represents expected 5-shot group size
+    # For 2D normal, E[5-shot ES] ≈ 3.0 * sigma
+    sigma = true_moa / 3.0
 
     # Generate shots from 2D normal distribution
     x = np.random.normal(0, sigma, shots_per_group)
@@ -40,9 +42,8 @@ def simulate_one_group(true_moa, shots_per_group):
     return x, y, max_dist
 
 
-# Create figure with 3x2 subplot grid
-fig, axes = plt.subplots(2, 3, figsize=(15, 10))
-axes = axes.flatten()
+# Create figure with 1x3 subplot grid
+fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 
 # Simulate and plot each group
 group_sizes = []
@@ -93,10 +94,10 @@ max_group_size = np.max(group_sizes)
 
 fig.suptitle(
     f'Which Load Is Better? They\'re ALL THE SAME!\n'
-    f'Six 5-Shot Groups from Identical {TRUE_MOA} MOA Rifle\n'
+    f'Three 5-Shot Groups from Identical {TRUE_MOA} MOA Rifle\n'
     f'Range: {min_group_size:.2f} to {max_group_size:.2f} MOA | '
     f'Mean: {mean_group_size:.2f} MOA | Std: {std_group_size:.2f} MOA',
-    fontsize=15, fontweight='bold', y=0.98
+    fontsize=15, fontweight='bold', y=1.02
 )
 
 # Add explanation text at bottom
