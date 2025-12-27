@@ -167,9 +167,56 @@ Improve ammunition from 0.5 to 0.3 MOA:
 
 The message: **Fix your biggest problem first.** If recoil or technique is your limiting factor, obsessing over ammunition consistency is a waste of time and money.
 
-![Component Quality vs Precision - Diminishing Returns](../static/nb09_plot21_component_quality_vs_precision.png)
+![Component Quality vs Precision - The Pareto Principle](../static/nb09_plot21_component_quality_vs_precision.png)
 
-**Figure 2:** The law of diminishing returns for component upgrades. The curve shows precision improvement (vertical axis) versus cumulative investment (horizontal axis). Upgrading from bulk components to quality components provides massive gains - switching from bulk bullets to match bullets might improve precision by 0.5 MOA for just $0.20/round more. But chasing perfection shows steep diminishing returns: going from match bullets ($0.50 each) to custom bullets ($1.30 each) gains only 0.1 MOA for $0.80 more per round. Similarly, upgrading from a factory barrel ($300) to a quality custom ($700) yields 0.4 MOA improvement, while going to a premium benchrest barrel ($1,200) adds only 0.1 MOA more. The biggest precision gains come from fixing your worst components, not perfecting your best ones.
+**Figure 2:** The Pareto Principle (80/20 rule) applied to precision equipment investment. The top panel shows the classic diminishing returns curve: achieving the first 80% of your system's maximum capability requires roughly 20% of maximum investment (green zone), while chasing the final 20% of capability requires the remaining 80% of investment (red zone). The bottom panel quantifies investment efficiency at each upgrade step—early upgrades (like replacing a budget optic with quality glass) show excellent returns ($10-25 per 1% capability gain), while later upgrades show poor efficiency ($70-180 per 1% gain). The upgrade path demonstrates that premium ammunition tooling ($2,700 for annealers, lab-grade scales, custom dies) follows the same diminishing returns pattern as rifle upgrades, with the final custom build ($10,200 total) representing a massive investment for marginal capability gains.
+
+### Applying the Pareto Principle: Your System, Your Data
+
+The 80/20 rule is powerful, but here's what matters: **shooter + rifle + ammunition = SYSTEM**. There's no universal "best" upgrade path because every system is different.
+
+**The $3,000 Rifle with $500 Optic Problem:**
+
+Many shooters invest heavily in the rifle while skimping on the optic and mount. If your aiming system is the weak link, no amount of rifle upgrades will help. Test your current system first—does your data show the rifle is limiting you, or is it the optic?
+
+**The Ammunition Tooling Trap:**
+
+The same testing methodology from this curriculum applies to equipment decisions. Before buying premium reloading tools (annealer $800, lab-grade scale $600, custom dies $400+), ask yourself: **Does YOUR data show the specific problem that tool solves?**
+
+- Large ES/SD in your current loads? Start with match-quality components (bullets, brass, powder) before buying premium tooling.
+- Still seeing issues with match components? Identify which specific factor: Is it powder metering consistency? Brass prep? Neck tension variation?
+- Don't copy what the pros use—they're solving problems you might not have yet.
+
+**Test to Find YOUR Limiting Factor:**
+
+1. **Shoot 30-50 rounds** to measure your current system capability
+2. **Identify the weakest component** (recoil management, optic, ammunition consistency, technique)
+3. **Upgrade that component ONLY**
+4. **Re-test to quantify the improvement**
+5. **Repeat** with the next weakest component
+
+**Fix Your Biggest Problem First:**
+
+The RSS calculation from earlier means the largest contributor dominates. Based on your testing data:
+
+- Budget optic on great rifle? → Upgrade the optic first
+- Great optic on budget rifle with poor groups? → Work on the rifle or ammunition
+- Large ES/SD in velocity data? → Match ammunition components before premium tools
+- Match ammo still shows ES/SD issues? → Identify the specific component causing variation
+- Good rifle and ammo but inconsistent groups? → Focus on recoil management and technique
+
+**The Bottom Line:**
+
+Equipment choice isn't this curriculum's scope—we teach you to test properly, not which brand to buy. But you should understand **WHY you need something BEFORE spending money on it**.
+
+Testing reveals where YOUR money matters most. Not internet posts. Not professional setups. Not the latest gadget review. YOUR data from YOUR system.
+
+Work with a competent gunsmith to:
+- Diagnose actual limiting factors based on test data
+- Make evidence-based improvements
+- Verify results with proper sample sizes
+
+Don't chase internet claims—chase YOUR data.
 
 **Interactive Element Placeholder:**
 ```python

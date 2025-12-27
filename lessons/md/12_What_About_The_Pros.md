@@ -98,13 +98,15 @@ Statistician Abraham Wald pointed out the flaw: **"You're only seeing the planes
 ### What Top Competitors Actually Use
 
 **Benchrest (short range):**
-- Custom action: $2,000-$4,000
+- Custom action: $1,500+
 - Premium match barrel (replaced every 800-1,500 rounds): $800+
 - Custom stock with return-to-battery rests: $1,000+
 - Match trigger: $300+
 - Premium optic: $2,000+
 - Lot-tested bullets (buy 10,000, test lots, use best): $0.50+ per bullet
-- **Total investment:** $8,000-$15,000+ (plus constant barrel replacement)
+- Wind flags and coaching
+- Constantly monitoring every possible metric
+- **Total investment:** $8,000-$13,000+ (plus constant barrel replacement)
 
 **F-Class (long range):**
 - Similar equipment to benchrest
@@ -121,10 +123,11 @@ Statistician Abraham Wald pointed out the flaw: **"You're only seeing the planes
 
 ### Your Setup (Probably)
 
-- Factory or entry custom rifle: $800-$2,000
+- Factory or entry custom rifle: $800-$2,500
 - Factory barrel
 - Good optic: $500-$1,500
 - Quality components: Standard
+- Typically weigh less
 - **Total investment:** $1,500-$4,000
 
 ### Why This Matters
@@ -157,9 +160,9 @@ Statistician Abraham Wald pointed out the flaw: **"You're only seeing the planes
 
 ### What You Don't See
 
-- They shoot 5,000-10,000 rounds per year
+- They shoot 3,000+ rounds per year
 - They've tested this same rifle/bullet/powder combo in dozens of previous matches and practice sessions
-- Their "ladder test" is confirmation of what they already know from massive accumulated data
+- Their "ladder test" is confirmation of what they already know from massive amounts of accumulated data
 - They have intuitive understanding of their rifle from repetition
 
 **It's not a 10-shot test. It's a 10-shot confirmation test built on 5,000 rounds of experience.**
@@ -209,16 +212,16 @@ Once your ammunition meets these criteria:
 
 **Further load optimization matters very little compared to:**
 - Trigger control
-- Position consistency and stability
+- Position consistency and stability (recoil control)
 - Wind reading ability
 - Mental game and focus
 - Round count (practice)
 
 ### What Top Shooters Actually Do
 
-Many top shooters in PRS, NRL, and even F-Class:
-- Use factory match ammunition (FGMM, Hornady Match, Prime, etc.)
-- Do minimal load development (find safe max, back off 1 grain, done)
+Many shooters in PRS and NRL :
+- Use factory match ammunition (FGMM, Hornady Match, Prime, etc.) then sell the brass
+- Do minimal load development (use a good bullet, find safe max, back off 1 grain, done)
 - Spend 80% of their time practicing fundamentals
 - Spend 20% or less on load development
 
@@ -229,13 +232,13 @@ Many top shooters in PRS, NRL, and even F-Class:
 - His mental game is stronger
 - He has better position discipline
 
-### The Quote That Says It All
+### The Quotes That Say It All
 
 **From David Tubb** (11-time NRA High Power Champion, Hall of Fame):
 
 > "Ammunition quality is important, but past a certain point, you're just polishing the brass while someone else is practicing."
 
-**From Frank Galli** (Sniper's Hide founder, top competitor):
+**From Frank Galli** (Sniper's Hide founder):
 
 > "Load development is important, but it's about 20% of the equation. People spend 80% of their time on the 20% that matters least."
 
@@ -277,11 +280,12 @@ You're shooting PRS. Current ammunition: 1.0 MOA, 14 fps SD. Hits 80% of targets
 **Which option wins you more matches?** Option B, every time.
 
 ### Knowing When to Stop
+Remember, I am talking about statistically valid measurements.  NOT internet claims!
 
 **You're done with load development when:**
 
 1. **Velocity SD < 15-20 fps** (adequate for most applications)
-2. **Precision acceptable for your goals** (< 1.2 MOA for most competition, < 1.5 MOA for most hunting)
+2. **Precision acceptable for your goals** (< 1.0 MOA for many competitions, < 1.5 MOA for most hunting)
 3. **No pressure signs**
 4. **Reliable function**
 
@@ -348,11 +352,11 @@ The GOOD pros use data properly:
 ### Lesson 3: Equipment Appropriate to Goals
 
 Pros match equipment to requirements:
-- Benchrest shooters use bench guns (can't hunt with them)
+- Benchrest shooters use bench guns (don't hunt with them)
 - PRS shooters use practical rifles (can compete and hunt)
 - They don't chase equipment that doesn't serve their goals
 
-**Lesson:** Your $1,500 rifle + $800 optic + good ammunition is MORE than adequate for hunting or local matches. Don't feel inadequate because you don't have $10K in gear.
+**Lesson:** Your $1,500 rifle + $800 optic + good ammunition is MORE than adequate for hunting or local matches. Don't feel inadequate because you don't have $10K in gear.  The greatest dividends are paid in sweat equity as a shooter.  "You can't buy skill."
 
 ### Lesson 4: Practice What Matters Most
 
@@ -464,9 +468,10 @@ If you want to go deeper:
 - *Accuracy and Precision for Long Range Shooting* by Bryan Litz (statistical treatment of precision)
 
 **Online Resources:**
-- Sniper's Hide forums (Frank Galli and community know their stuff)
+- Sniper's Hide forums 
 - Hornady Podcast (episodes on ammunition testing and statistics)
-- Applied Ballistics website (tools and education)
+- Applied Ballistics website tools and education
+- Reloading All Day
 
 **Key Principle:** Any resource that claims you can find nodes with 10 shots or that ladder tests reveal magical charge weights is selling you something. Be skeptical.
 

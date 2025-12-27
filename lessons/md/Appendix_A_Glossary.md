@@ -527,6 +527,46 @@ Cumulative percentages (empirical rule):
 
 ---
 
+### Pareto Principle (80/20 Rule)
+
+**Plain English:** The observation that roughly 80% of results come from 20% of effort—or in precision shooting, that 80% of maximum capability requires about 20% of maximum investment, while the final 20% of capability requires 80% of the investment.
+
+**Named after:** Italian economist Vilfredo Pareto, who observed that 80% of Italy's land was owned by 20% of the population. The principle has been found to apply across many domains.
+
+**In precision equipment:** The biggest improvements come from upgrading your worst components (high return on investment), while chasing perfection shows extreme diminishing returns (low return on investment).
+
+**Example:** Going from a budget optic ($250) to a quality optic ($1,000) might improve your system capability by 20%. But going from a quality optic to an absolute top-tier optic ($3,000) might only improve system capability by 3-5%. Same pattern applies to barrels, bullets, brass, and other components.
+
+**The "$3,000 rifle with $500 optic" problem:** Many shooters violate this principle by investing heavily in one component (rifle) while skimping on another critical component (optic/mount). If the optic is the limiting factor, no amount of rifle upgrades will help.
+
+**The ammunition tooling trap:** The same principle applies to reloading equipment. Before buying premium tools (annealer, lab-grade scale, custom dies = $2,500+), apply the SAME testing methodology from this curriculum. Does YOUR data show the specific problem that tool solves? Don't copy what pros use—test to identify YOUR system's actual limiting factor. The exponential cost increase for minimal capability gains applies to BOTH rifle hardware and ammunition preparation.
+
+**The system approach:** Shooter + rifle + ammunition = SYSTEM. Equipment choice isn't this curriculum's scope, but you should understand WHY you need something before spending money on it. Testing reveals where your money matters most.
+
+**Key insight:** There's no universal "best" upgrade path. Testing your specific system tells you where YOUR limiting factor is, so you can invest money where it actually matters.
+
+**Practical application:**
+1. Test current system (30-50 shots)
+2. Identify weakest component
+3. Upgrade THAT component only
+4. Re-test to quantify improvement
+5. Repeat with next weakest component
+
+**Formula:**
+```
+For many systems:
+~80% of maximum capability ≈ 20% of maximum cost
+~20% of maximum capability ≈ 80% of maximum cost
+
+Diminishing returns curve:
+Investment efficiency = (Δ capability) / (Δ cost)
+As capability → maximum, efficiency → 0
+```
+
+**See:** Lesson 09 - Component Quality and Investment Priorities
+
+---
+
 ### Population
 
 **Plain English:** The complete set of all possible rounds you could make with your load recipe. The "ocean" in the ocean-and-cup analogy.
