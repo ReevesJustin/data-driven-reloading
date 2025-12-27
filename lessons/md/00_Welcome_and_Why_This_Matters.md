@@ -429,7 +429,7 @@ You've read this far. You're clearly the kind of person who wants to understand,
 
 The next notebook will change how you think about reloading testing. Permanently.
 
-We're going to run a simulation: a true 1.5 MOA rifle shooting 3-shot groups, 5-shot groups, and 30-shot groups. You'll watch the same rifle produce everything from 0.6 MOA to 2.5 MOA groups through pure random variation.
+We're going to run a simulation: a true 1.5 MOA rifle shooting 3-shot groups, 5-shot groups, and 30-shot groups. You'll watch the same rifle produce everything from 0.2 MOA to 3.6 MOA groups through pure random variation.
 
 **You won't be able to unsee it.**
 

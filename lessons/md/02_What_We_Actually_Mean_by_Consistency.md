@@ -1,7 +1,7 @@
 
 ## The Word Everyone Uses, Few Understand
 
-In the last notebook, you saw how small samples lie. You watched a true 1.5 MOA rifle produce groups ranging from 0.5 MOA to 2.5 MOA just by random chance. You saw how a load with a real 15 fps spread can show single-digit numbers in a 5-shot string.
+In the last lesson, you saw how small samples lie. You watched a true 1.5 MOA rifle produce groups ranging from 0.2 MOA to 3.6 MOA just by random chance across different sample sizes. You saw how a load with a real 15 fps spread can show single-digit numbers in a 5-shot string.
 
 Now comes the natural question: "Okay, so what AM I actually measuring? What does 'consistency' even mean?"
 

@@ -138,27 +138,27 @@ Let's put specific numbers on this problem:
 
 **3-shot groups:**
 - 67% of groups will misrepresent true capability by more than 20%
-- Best groups will average 0.85 MOA (43% better than truth)
-- Worst groups will average 2.5 MOA (67% worse than truth)
+- Best groups will average 0.6 MOA (60% better than truth)
+- Worst groups will average 2.0 MOA (33% worse than truth)
 - **If you shoot one 3-shot group, you have a 67% chance of being significantly misled**
 
 **5-shot groups:**
 - 52% of groups will misrepresent by more than 20%
-- Best groups will average 1.0 MOA (33% better than truth)
+- Best groups will average 0.9 MOA (40% better than truth)
 - Worst groups will average 2.2 MOA (47% worse than truth)
 - **Better than 3-shot, but still a coin flip whether you're misled**
 
 **10-shot groups:**
 - 38% of groups will misrepresent by more than 20%
-- Best groups will average 1.2 MOA (20% better than truth)
-- Worst groups will average 1.9 MOA (27% worse than truth)
+- Best groups will average 1.4 MOA (7% better than truth)
+- Worst groups will average 2.5 MOA (67% worse than truth)
 - **Getting better, but still unreliable for single groups**
 
 **30-shot groups:**
-- 15% of groups will misrepresent by more than 20%
-- Best groups will average 1.4 MOA (7% better than truth)
-- Worst groups will average 1.7 MOA (13% worse than truth)
-- **Now we're talking! Much more reliable**
+- Extreme spread grows with more shots (averages 2.4 MOA)
+- But variability between groups drops dramatically
+- Individual 30-shot groups cluster tightly around their average
+- **Now we're talking! Much more reliable and consistent**
 
 **The message is clear:** Small samples lie. Often. Consistently. Predictably.
 
