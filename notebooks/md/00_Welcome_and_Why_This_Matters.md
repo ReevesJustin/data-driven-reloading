@@ -50,7 +50,7 @@ Here's the truth that nobody wants to say out loud:
 
 **Most of the "proven methods" circulating in reloading communities are based on sample sizes too small to mean anything. The patterns people see are mostly random noise, not real effects.**
 
-That's not an attack on anyone. We've all done it. The human brain evolved to find patterns—it kept our ancestors alive. But that same pattern-seeking superpower makes us see meaning in random scatter. We shoot five rounds, get lucky, and declare victory. Then we're confused when it doesn't repeat.
+That's not an attack on anyone. We've all done it. The human brain is conditioned to find patterns—it kept our ancestors alive. But that same pattern-seeking superpower makes us see meaning in random scatter. We shoot five rounds, get lucky, and declare victory. Then we're confused when it doesn't repeat.
 
 **This course teaches you to outsmart your own brain.** To test honestly, interpret correctly, and stop wasting resources on false leads.
 

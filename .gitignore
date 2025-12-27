@@ -54,6 +54,7 @@ env.bak/
 venv.bak/
 .opencode
 .claude
+agents/
 
 # Jupyter Notebook
 .ipynb_checkpoints

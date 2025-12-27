@@ -108,9 +108,9 @@ explanation = (
     f'apparent patterns are just randomness!'
 )
 
-fig.text(0.99, 0.02, explanation, fontsize=9,
+fig.text(0.99, 0.02, explanation, fontsize=8.5,
          verticalalignment='bottom', horizontalalignment='right',
-         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1))
 
 # Tight layout
 plt.tight_layout(rect=[0, 0.03, 1, 0.96])

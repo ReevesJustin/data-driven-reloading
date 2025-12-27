@@ -128,8 +128,8 @@ for i, (data, rifle_class) in enumerate(zip(all_data, RIFLE_CLASSES)):
 stats_text += '\nLesson: Don\'t chase unrealistic\ngoals for your equipment class!'
 
 ax2.text(0.98, 0.97, stats_text, transform=ax2.transAxes,
-         fontsize=9, verticalalignment='top', horizontalalignment='right',
-         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5),
+         fontsize=8.5, verticalalignment='top', horizontalalignment='right',
+         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1),
          family='monospace')
 
 # Overall title

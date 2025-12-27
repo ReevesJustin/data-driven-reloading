@@ -139,9 +139,9 @@ explanation_text = (
     f'Use MR, not ES, for reliable precision measurement'
 )
 
-ax.text(0.02, 0.70, explanation_text, transform=ax.transAxes,
-        fontsize=9, verticalalignment='top', horizontalalignment='left',
-        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8),
+ax.text(0.02, 0.50, explanation_text, transform=ax.transAxes,
+        fontsize=8.5, verticalalignment='top', horizontalalignment='left',
+        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1),
         family='monospace')
 
 ax.legend(loc='upper right', fontsize=10, framealpha=0.9)

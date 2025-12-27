@@ -82,34 +82,9 @@ That depends on your statistical power (1 - β). With small samples, power is lo
 
 **The most concise way to remember Type I and Type II errors.** This humorous visualization makes the distinction crystal clear: Type I error is convicting an innocent person (false positive - you said there's a difference when there isn't), while Type II error is letting a guilty person go free (false negative - you failed to detect a real difference). In reloading terms: Type I is thinking your new primer improved SD when it didn't (false alarm), Type II is missing that your new bullet actually does shoot better (missed opportunity).
 
-**Interactive Element Placeholder:**
-```python
-# Interactive: "The Error Tradeoff"
-#
-# Scenario:
-# You're testing two loads that are actually identical (both 15 fps SD)
-# You run 100 tests with different sample sizes
-#
-# User controls:
-# Slider 1: Sample size per load (5, 10, 20, 30, 50 shots)
-# Slider 2: Significance level (0.01, 0.05, 0.10)
-#
-# Run 1000 simulated tests:
-# Display:
-# - Percentage of tests that found "significant difference" (false alarms)
-# - This should match the significance level (α)
-# - Show how sample size doesn't affect false alarm rate
-#
-# Now change scenario: Loads actually differ (12 fps vs 18 fps)
-# Display:
-# - Percentage of tests that detected the difference (power)
-# - Show how sample size dramatically affects power
-# - Show tradeoff: stricter α reduces power for same sample size
-#
-# Aha moment: "Small samples give low power (miss real effects)
-# but don't reduce false alarms. I need large samples, not strict
-# significance levels!"
-```
+![Type I vs Type II Error Tradeoff](../static/nb10_plot25_type_i_ii_error_tradeoff.png)
+
+**Figure 2:** The relationship between sample size, false alarms (Type I errors), and detection power (ability to find real differences) explains why proper sample sizes are essential. Top left: False alarm rates stay constant at ~5% regardless of sample size—that's what α = 0.05 means. Top right: Detection rate (statistical power) increases dramatically with sample size, from ~10% with 5 shots to ~85% with 50 shots when testing loads that differ 15 fps SD vs 10 fps SD. Bottom: Combined view shows the complete picture—with 5 shots you miss 90% of real improvements while still getting 5% false alarms. The critical insight: You can't fix small samples with stricter criteria (like α = 0.01). You need more data. Small samples have terrible power AND normal false alarm rates. Proper sample sizes (30+) give you the power to detect real differences while maintaining acceptable false alarm rates.
 
 > **Key Insight**
 >

@@ -146,9 +146,9 @@ stats_text = (
     f'comparing loads or rifles.'
 )
 
-ax.text(0.98, 0.35, stats_text, transform=ax.transAxes,
-        fontsize=8.5, verticalalignment='top', horizontalalignment='right',
-        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+ax.text(0.98, 0.60, stats_text, transform=ax.transAxes,
+        fontsize=8, verticalalignment='top', horizontalalignment='right',
+        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.85, edgecolor='black', linewidth=1))
 
 # Add note at bottom
 note_text = (

@@ -143,9 +143,9 @@ stats_text = (
     '• Publication: 100+ shots'
 )
 
-ax.text(0.02, 0.98, stats_text, transform=ax.transAxes,
-        fontsize=9, verticalalignment='top', horizontalalignment='left',
-        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+ax.text(0.02, 0.65, stats_text, transform=ax.transAxes,
+        fontsize=8.5, verticalalignment='top', horizontalalignment='left',
+        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1))
 
 # Add note about Type II error
 note_text = (

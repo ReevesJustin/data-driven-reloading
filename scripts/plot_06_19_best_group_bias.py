@@ -113,8 +113,8 @@ stats_text = (
 )
 
 ax.text(0.98, 0.97, stats_text, transform=ax.transAxes,
-        fontsize=10, verticalalignment='top', horizontalalignment='right',
-        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8),
+        fontsize=9, verticalalignment='top', horizontalalignment='right',
+        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1),
         family='monospace')
 
 # Add explanation box at bottom
@@ -127,8 +127,8 @@ explanation = (
 )
 
 ax.text(0.02, 0.02, explanation, transform=ax.transAxes,
-        fontsize=10, verticalalignment='bottom', horizontalalignment='left',
-        bbox=dict(boxstyle='round', facecolor='lightcoral', alpha=0.6),
+        fontsize=9, verticalalignment='bottom', horizontalalignment='left',
+        bbox=dict(boxstyle='round', facecolor='lightcoral', alpha=0.85, edgecolor='darkred', linewidth=1),
         style='italic')
 
 ax.legend(loc='upper left', fontsize=10, framealpha=0.9)

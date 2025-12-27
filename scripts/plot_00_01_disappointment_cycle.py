@@ -18,20 +18,20 @@ from matplotlib.patches import Arc
 # Set random seed for reproducibility
 np.random.seed(42)
 
-# Create the figure
-fig, ax = plt.subplots(figsize=(14, 12))
+# Create the figure - slightly wider for better information layout
+fig, ax = plt.subplots(figsize=(16, 10))
 
 # Define the cycle stages and their positions
-# Circular arrangement with emotional colors
+# Circular arrangement with emotional colors - more compact descriptions
 stages = [
-    ('EXCITEMENT', 'Find amazing group!\n0.5 MOA, 8 fps SD!', 'lightgreen', (0, 3)),
-    ('CONFIDENCE', 'Post online, declare success\nOrder components', 'lime', (2.5, 2.5)),
-    ('CONFUSION', 'Next session: 1.2 MOA, 16 fps SD\n"What changed?"', 'yellow', (3.5, 0)),
-    ('DOUBT', '"Weather? Technique?\nComponents? Scope?"', 'orange', (2.5, -2.5)),
-    ('FRUSTRATION', 'Try again, different results\nNothing makes sense!', 'darkorange', (0, -3)),
-    ('CHASE', 'Change something else\nHoping to recover magic', 'orangered', (-2.5, -2.5)),
-    ('BURNOUT', 'Wasted components, time,\nmoney, confidence', 'red', (-3.5, 0)),
-    ('CYCLE REPEATS', 'New lucky group appears\n→ Back to excitement!', 'lightcoral', (-2.5, 2.5)),
+    ('EXCITEMENT', 'Amazing group!\n0.5 MOA, 8 fps SD', 'lightgreen', (0, 3)),
+    ('CONFIDENCE', 'Post results online\nOrder components', 'lime', (2.5, 2.5)),
+    ('CONFUSION', 'Next: 1.2 MOA, 16 fps SD\nWhat changed?', 'yellow', (3.5, 0)),
+    ('DOUBT', 'Weather? Technique?\nComponents?', 'orange', (2.5, -2.5)),
+    ('FRUSTRATION', 'Try again, still different\nNothing consistent!', 'darkorange', (0, -3)),
+    ('CHASE', 'Change components\nSeek magic again', 'orangered', (-2.5, -2.5)),
+    ('BURNOUT', 'Waste: time, money,\nconfidence', 'red', (-3.5, 0)),
+    ('CYCLE REPEATS', 'New lucky group!\nBack to excitement', 'lightcoral', (-2.5, 2.5)),
 ]
 
 # Draw the cycle
@@ -64,10 +64,10 @@ for i, (title, text, color, pos) in enumerate(stages):
 
     ax.add_patch(box)
 
-    # Add text
-    ax.text(x, y + 0.3, title, fontsize=12, fontweight='bold',
+    # Add text - slightly smaller fonts for cleaner look
+    ax.text(x, y + 0.3, title, fontsize=11, fontweight='bold',
             ha='center', va='center', zorder=11)
-    ax.text(x, y - 0.2, text, fontsize=9,
+    ax.text(x, y - 0.2, text, fontsize=8,
             ha='center', va='center', zorder=11, style='italic')
 
     # Draw arrow to next stage
@@ -105,92 +105,77 @@ for i, (title, text, color, pos) in enumerate(stages):
 
     ax.add_patch(arrow)
 
-# Add central message
+# Add central message - more concise
 central_text = (
     'THE SMALL-SAMPLE TRAP\n'
     '\n'
     'Keeps You Spinning\n'
     '\n'
-    'Break Free With\n'
-    'Proper Sample Sizes'
+    'Break Free With 30+ Shots'
 )
 
-ax.text(0, 0, central_text, fontsize=14, fontweight='bold',
+ax.text(0, 0, central_text, fontsize=13, fontweight='bold',
         ha='center', va='center',
-        bbox=dict(boxstyle='round,pad=0.8', facecolor='wheat',
-                 edgecolor='black', linewidth=3, alpha=0.9),
+        bbox=dict(boxstyle='round,pad=0.7', facecolor='wheat',
+                 edgecolor='black', linewidth=2.5, alpha=0.9),
         zorder=15)
 
-# Add emotional gradient labels around the circle
-ax.text(-5.5, 2, 'HIGH EMOTION', fontsize=11, fontweight='bold',
-        color='green', rotation=90, va='center')
-ax.text(-5.5, -2, 'HIGH EMOTION', fontsize=11, fontweight='bold',
-        color='red', rotation=90, va='center')
+# Remove crowded emotion and timeline labels - let the cycle speak for itself
 
-# Add timeline/experience labels
-ax.text(0, 5, 'Session 1: Lucky!', fontsize=10, fontweight='bold',
-        ha='center', style='italic', color='darkgreen')
-ax.text(3, 3.5, 'Day 2-3: Reality hits', fontsize=10, fontweight='bold',
-        ha='center', style='italic', color='orange')
-ax.text(0, -4.5, 'Weeks later: Still confused', fontsize=10, fontweight='bold',
-        ha='center', style='italic', color='darkred')
-ax.text(-3, 3.5, 'Eventually: New lucky result', fontsize=10, fontweight='bold',
-        ha='center', style='italic', color='purple')
-
-# Set axis limits and properties
-ax.set_xlim([-6, 6])
-ax.set_ylim([-6, 6])
+# Set axis limits and properties - wider layout for side panels
+ax.set_xlim([-9, 9])
+ax.set_ylim([-5, 5])
 ax.set_aspect('equal')
 ax.axis('off')
 
-# Add title
-ax.text(0, 5.7, 'The Disappointment Cycle: Emotional Journey of Chasing False Leads',
-        fontsize=16, fontweight='bold', ha='center', va='bottom')
+# Add title - slightly smaller
+ax.text(0, 4.5, 'The Disappointment Cycle: Chasing False Leads from Small Samples',
+        fontsize=15, fontweight='bold', ha='center', va='bottom')
 
-# Add subtitle
-ax.text(0, -5.7, 'Small samples create lucky results that disappear, leading to endless frustration.\n'
-                 'The cycle repeats because random variation keeps producing new "discoveries".\n'
-                 'ESCAPE: Use 30+ shot samples to see reality instead of random noise.',
-        fontsize=11, ha='center', va='top', style='italic',
-        bbox=dict(boxstyle='round,pad=0.5', facecolor='lightyellow', alpha=0.8))
+# Add subtitle - more concise
+ax.text(0, -4.5, 'Small samples create lucky results that disappear. Random variation produces new "discoveries".\n'
+                 'ESCAPE: Use 30+ shot samples to see reality instead of noise.',
+        fontsize=10, ha='center', va='top', style='italic',
+        bbox=dict(boxstyle='round,pad=0.4', facecolor='lightyellow', alpha=0.8))
 
-# Add statistics box showing the math behind the cycle
-stats_box_text = (
-    'Why the cycle repeats:\n'
+# Combine stats and costs into cleaner side panels
+# Left panel: Why it happens
+stats_text = (
+    'WHY THE CYCLE REPEATS\n'
     '\n'
-    'With small samples (3-5 shots):\n'
-    '• ~10% of groups look "amazing"\n'
-    '• ~10% look "terrible"\n'
-    '• ~80% look "average"\n'
+    'Small samples (3-5 shots):\n'
+    '  10% look amazing\n'
+    '  10% look terrible\n'
+    '  80% look average\n'
     '\n'
-    'We remember & chase the 10%\n'
-    'amazing results, but they\'re\n'
-    'just random luck!\n'
+    'We chase the "amazing"\n'
+    'results - but they\'re just\n'
+    'random luck!\n'
     '\n'
-    'With large samples (30+ shots):\n'
-    '• True performance revealed\n'
-    '• No more lucky flukes\n'
-    '• Cycle broken'
+    'Large samples (30+ shots):\n'
+    '  True performance shown\n'
+    '  No lucky flukes\n'
+    '  Cycle broken'
 )
 
-ax.text(0.98, 0.98, stats_box_text, transform=ax.transAxes,
-        fontsize=9, verticalalignment='top', horizontalalignment='right',
-        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5),
-        family='monospace')
+ax.text(-8, 0, stats_text, fontsize=8.5, verticalalignment='center', horizontalalignment='left',
+        bbox=dict(boxstyle='round,pad=0.5', facecolor='wheat', alpha=0.7, edgecolor='black', linewidth=1))
 
-# Add cost counter
+# Right panel: Cost of the cycle
 cost_text = (
-    'TYPICAL COSTS OF ONE CYCLE:\n'
-    '• Components tried: $50-200\n'
-    '• Time wasted: 10-20 hours\n'
-    '• Confidence lost: Priceless\n'
-    '• Lessons learned: None\n'
-    '  (until you understand statistics)'
+    'COST PER CYCLE\n'
+    '\n'
+    'Components: $50-200\n'
+    'Time: 10-20 hours\n'
+    'Confidence: Priceless\n'
+    '\n'
+    'Lessons learned: None\n'
+    '(until you understand\n'
+    'the statistics)'
 )
 
-ax.text(0.02, 0.98, cost_text, transform=ax.transAxes,
-        fontsize=9, verticalalignment='top', horizontalalignment='left',
-        bbox=dict(boxstyle='round', facecolor='lightcoral', alpha=0.6),
+ax.text(8, 0, cost_text, fontsize=8.5, verticalalignment='center', horizontalalignment='right',
+        bbox=dict(boxstyle='round,pad=0.5', facecolor='lightcoral', alpha=0.7, edgecolor='black', linewidth=1),
         fontweight='bold')
 
 # Tight layout

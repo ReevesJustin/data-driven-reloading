@@ -98,8 +98,8 @@ stats_text = (
 )
 
 ax2.text(0.98, 0.03, stats_text, transform=ax2.transAxes,
-         fontsize=10, verticalalignment='bottom', horizontalalignment='right',
-         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+         fontsize=9, verticalalignment='bottom', horizontalalignment='right',
+         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1))
 
 # Overall title
 fig.suptitle('Chronograph Precision Limits: Cheap Chronograph Can\'t Measure Consistent Loads\n'

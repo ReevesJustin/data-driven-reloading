@@ -108,8 +108,8 @@ for i, (n, prob) in enumerate(zip(sample_sizes, retest_prob)):
     if prob > 0.05:  # Only show if > 5%
         ax2.text(n, expected_total_cost[i] + 5,
                 f'{prob*100:.0f}% retest\nprobability',
-                ha='center', va='bottom', fontsize=9,
-                bbox=dict(boxstyle='round', facecolor='white', alpha=0.7))
+                ha='center', va='bottom', fontsize=8,
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.9, edgecolor='gray', linewidth=0.5))
 
 # Labels and title
 ax2.set_xlabel('Number of Shots', fontsize=12, fontweight='bold')
@@ -139,8 +139,8 @@ stats_text = (
 )
 
 ax2.text(0.98, 0.97, stats_text, transform=ax2.transAxes,
-         fontsize=9, verticalalignment='top', horizontalalignment='right',
-         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+         fontsize=8.5, verticalalignment='top', horizontalalignment='right',
+         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1))
 
 # Tight layout
 plt.tight_layout()

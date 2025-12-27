@@ -57,21 +57,9 @@ When reloaders say "consistency," they usually mean one of three different thing
 
 Most confusion happens because people measure #1 (velocity spread), assume it means #2 (precision), and never check #3 (repeatability).
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: Three sliders
-# Slider 1: Velocity SD (5-25 fps)
-# Slider 2: Precision (0.5-2.0 MOA)
-# Slider 3: Correlation between them (0.0-1.0)
-#
-# Shows two plots:
-# - Velocity distribution
-# - Simulated target with shots
-#
-# Key insight: Velocity SD and group size are related but not the same thing
-# A load can have low SD but poor precision (other factors dominate)
-# Or high SD but good precision at short range (velocity matters less)
-```
+![Three Types of Consistency](../static/nb02_plot26_three_types_of_consistency.png)
+
+**Figure 2:** Three scenarios demonstrate that velocity consistency (SD) and precision (group tightness) are related but NOT the same. Left: Low SD with good precision shows the ideal correlation. Center: Low SD with poor precision proves that velocity control alone doesn't guarantee tight groups—other factors like bullet quality or bedding dominate. Right: High SD with good precision at 100 yards shows that velocity variation matters less at short range but becomes problematic at distance. The critical takeaway: you must measure BOTH velocity SD and on-target precision independently. Never assume one from the other!
 
 > **Key Insight**
 >

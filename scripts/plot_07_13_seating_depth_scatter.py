@@ -146,9 +146,9 @@ explanation = (
     f'Need 20-30+ shots per depth to see reality'
 )
 
-fig.text(0.99, 0.01, explanation, fontsize=9,
+fig.text(0.99, 0.01, explanation, fontsize=8.5,
          verticalalignment='bottom', horizontalalignment='right',
-         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1))
 
 # Tight layout
 plt.tight_layout(rect=[0, 0.04, 1, 0.96])

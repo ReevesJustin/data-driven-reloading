@@ -256,35 +256,9 @@ Improving your trigger control from "okay" to "good":
 
 **Skill improvements have 5x the impact of SD improvements.**
 
-**Interactive Element Placeholder:**
-```python
-# Interactive: "Load vs Skill Impact Calculator"
-#
-# User inputs:
-# Slider 1: Your current precision (0.5 to 2.0 MOA)
-# Slider 2: Your current velocity SD (5 to 25 fps)
-# Slider 3: Typical engagement distance (300 to 1,000 yards)
-# Slider 4: Typical target size (4 to 20 inches)
-#
-# Scenario A: Improve load (reduce SD by 50%, improve precision by 0.2 MOA)
-# - Time cost: 40 hours load development, 300 rounds testing
-# - Display: New hit probability
-#
-# Scenario B: Improve skill (improve precision by 0.3 MOA from better fundamentals)
-# - Time cost: 40 hours practice, 800 rounds
-# - Display: New hit probability
-#
-# Comparison:
-# - Show which scenario improved hit probability more
-# - Show cost in time and rounds
-# - Recommendation: Where to focus effort
-#
-# For most inputs, Scenario B (skill) provides 2-3x more improvement
-# for same time investment
-#
-# Aha moment: "I've been obsessing over load development when practicing
-# my fundamentals would improve my scores WAY more for the same effort!"
-```
+![Load Development vs Skill Development Impact](../static/nb12_plot28_load_vs_skill_impact.png)
+
+**Figure 5:** Comparing the impact of perfecting your load versus improving your shooting skills reveals where effort should be focused. For a typical intermediate shooter (1.2 MOA combined system, 15 fps SD), perfecting the load (Scenario A: reduce SD 50%, improve precision 0.2 MOA) costs $500 and 40 hours. Improving shooting fundamentals (Scenario B: improve precision 0.5 MOA) costs $200 and 20 hours. The results: Scenario A increases hit probability from 40% to 65% (+25%) at 600 yards. Scenario B increases it to 85% (+45%). Return on investment analysis shows skill practice is 3-5x more efficient per dollar and per hour spent. The verdict: Master fundamentals FIRST, develop a "good enough" load (1.0-1.2 MOA, 12-15 fps SD), practice extensively, and ONLY pursue perfect loads if you're consistently shooting 0.5 MOA or better. The pros succeed because they can SHOOT, not because they found the magic load.
 
 ---
 

@@ -91,8 +91,8 @@ stats_text = (
 )
 
 ax1.text(0.98, 0.97, stats_text, transform=ax1.transAxes,
-         fontsize=10, verticalalignment='top', horizontalalignment='right',
-         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+         fontsize=9, verticalalignment='top', horizontalalignment='right',
+         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1))
 
 ax1.legend(loc='upper left', fontsize=10)
 ax1.grid(True, alpha=0.3, linestyle=':', linewidth=0.5)
@@ -195,9 +195,9 @@ explanation = (
     f'Don\'t trust primer comparisons with <30 shots!'
 )
 
-fig.text(0.99, 0.01, explanation, fontsize=9,
+fig.text(0.99, 0.01, explanation, fontsize=8.5,
          verticalalignment='bottom', horizontalalignment='right',
-         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.9, edgecolor='black', linewidth=1))
 
 # Tight layout
 plt.tight_layout(rect=[0, 0.03, 1, 0.96])

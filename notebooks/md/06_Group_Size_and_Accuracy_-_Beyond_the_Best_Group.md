@@ -377,35 +377,9 @@ The load didn't change. The precision didn't change. Wind moved the center.
 
 **Don't blame your load for wind calls.** Separate precision problems from accuracy problems.
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "Precision vs Accuracy"
-#
-# Display: Target with aim point marked
-#
-# User controls:
-# - Slider 1: Precision (0.5 to 2.0 MOA) - controls group tightness
-# - Slider 2: Accuracy offset X (0 to 5 inches)
-# - Slider 3: Accuracy offset Y (0 to 5 inches)
-#
-# Simulation:
-# - Generate 20 shots with specified precision
-# - Offset group center by specified accuracy offsets
-#
-# Display shows:
-# - Shots on target
-# - Group size measurement (precision)
-# - Distance of group center from aim point (accuracy error)
-# - Labels: "Precision: X MOA" and "Accuracy error: Y inches"
-#
-# User can adjust sliders to see:
-# - Tight group, badly off-center (precise but inaccurate)
-# - Scattered group, well-centered (imprecise but accurate)
-# - Tight group, well-centered (precise and accurate - the goal)
-#
-# Aha moment: "I've been blaming my ammo for groups that were off-center
-# due to wind. The group SIZE was fine! It was just SHIFTED."
-```
+![Precision vs Accuracy Four Quadrants](../static/nb06_plot25_precision_vs_accuracy_quadrants.png)
+
+**Figure 4:** The four combinations of precision and accuracy demonstrate that these are independent problems requiring different solutions. High precision with low accuracy (top right) shows tight groups that are off-center—your ammunition is consistent but your zero is wrong or wind shifted the group. Low precision with high accuracy (bottom left) shows scattered shots that average to the aim point—your zero is good but the rifle/ammo has excessive variation. The key insight: precision is like having a rifle that's zeroed but shots scatter (load/rifle quality issue), while accuracy is like having broken sights where everything shifts off target (zero/wind problem). Don't blame your ammunition when the real issue is scope adjustment or environmental conditions!
 
 ### Testing for Precision vs. Testing for Accuracy
 

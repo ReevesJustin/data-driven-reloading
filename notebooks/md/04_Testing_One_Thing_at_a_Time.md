@@ -151,27 +151,9 @@ Plus, you now KNOW:
 
 That's actionable knowledge. The factorial approach gives you 72 loads and no idea why any of them work.
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "Factorial Explosion Calculator"
-#
-# User inputs:
-# - Number of primers to test (1-3)
-# - Number of powders to test (1-4)
-# - Number of charge weights to test (1-6)
-# - Number of seating depths to test (1-4)
-# - Shots per combination (slider: 10-50)
-# - Cost per round ($0.50 - $5.00)
-#
-# Display updates in real-time:
-# - Total combinations
-# - Total rounds needed
-# - Total cost
-# - Hours of shooting time
-# - "Sequential testing" comparison (always shows huge savings)
-#
-# Aha moment: "Holy crap, I was about to waste $2,000 testing everything at once!"
-```
+![Factorial Explosion Visualization](../static/nb04_plot27_factorial_explosion.png)
+
+**Figure 3:** The combinatorial explosion of full factorial testing makes it completely impractical for reloaders. Top: Visual representation of a simple 3×3×3 factorial—27 combinations already. Middle: Comparison showing OFAT (5 charges = 150 rounds, practical for one range session) versus full factorial with 3 primers × 4 powders × 6 charges × 4 seating depths = 21,600 rounds (impossible!). Bottom: Detailed comparison table showing costs and time. The bottom line: Full factorial testing explodes combinatorially. OFAT (One-Factor-At-A-Time) is the only practical approach—test ONE variable at a time with proper sample sizes, then move to the next variable only after you understand the first.
 
 ---
 
