@@ -117,11 +117,15 @@ Mean radius = (0.3 + 0.5 + 0.2 + 0.6 + 0.4) / 5 = **0.4 inches**
 
 **1. It stabilizes with more shots** (unlike extreme spread, which grows)
 
-A true 1.0 MOA rifle measured by mean radius:
-- 5-shot group: MR probably 0.3-0.4 MOA
-- 10-shot group: MR probably 0.35-0.38 MOA
-- 30-shot group: MR probably 0.36-0.37 MOA
-- 50-shot group: MR probably 0.36-0.37 MOA
+| Group Size | MR/ES Ratio | Notes |
+|------------|-------------|--------|
+| 3 shots | 0.428 | Highly variable; ES strongly influenced by outliers |
+| 5 shots | 0.370 | Typical reloading test size; moderate variability |
+| 10 shots | 0.315 | Better stability; recommended for velocity testing |
+| 20 shots | 0.276 | Good convergence; ES becoming more reliable |
+| 30 shots | 0.258 | Curriculum standard; solid statistical foundation |
+| 50 shots | 0.241 | High confidence; diminishing returns |
+| 100 shots | 0.220 | Near-theoretical limit; minimal additional benefit |
 
 Notice: It converges toward the true value instead of growing forever.
 
