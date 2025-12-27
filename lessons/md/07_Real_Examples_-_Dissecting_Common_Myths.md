@@ -257,7 +257,7 @@ Seating depth testing persists because:
 
 **Better approach:**
 
-**Understanding seating depth physics:** While seating depth does affect chamber pressure (longer seating = less case volume = higher pressure), it takes a relatively large change to produce noticeable effects. Small adjustments like 0.005" are often undetectable until sample sizes are larger than commonly tested (30+ shots minimum). The pressure effect is predictable and measurable; the claimed "sweet spot" accuracy improvements are not.
+**Understanding seating depth physics:** While seating depth does affect chamber pressure (longer seating = more case volume, shorter seating = less case volume), it takes a relatively large change to produce noticeable effects. Small adjustments like 0.005" are often undetectable until sample sizes are larger than commonly tested (30+ shots minimum). The pressure effect is predictable and measurable; the claimed "sweet spot" accuracy improvements are not.
 
 **The bullet ogive factor (Bryan Litz research):** Seating depth sensitivity depends heavily on bullet design. **Secant ogive bullets** (common in VLDs) can be more sensitive to seating depth because the ogive-to-leade (throat) transition is abrupt. **Tangent ogive bullets** (traditional hunting designs) are generally more forgiving because they have a gradual transition. **Hybrid ogive bullets** (Bryan Litz's design combining both profiles) retain the ballistic coefficient benefits of secant designs while reducing seating depth sensitivity—this is the problem they were specifically designed to solve. If you're chasing tiny seating depth windows, consider whether switching to hybrid or very tangent ogive bullets would be more effective than endless testing.
 
