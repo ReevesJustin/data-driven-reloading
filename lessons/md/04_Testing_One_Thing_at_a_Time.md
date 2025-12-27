@@ -67,6 +67,7 @@ Same principle with ammunition:
 **Question:** What actually improved your groups?
 
 **Possibility 1:** The powder change did everything. Primers and seating depth made no difference.
+
 **Possibility 2:** The seating depth was the whole story. Powder and primers were irrelevant.
 **Possibility 3:** Federal primers are the magic. The other changes did nothing.
 **Possibility 4:** All three changes were necessary in combination.

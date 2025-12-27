@@ -7,7 +7,7 @@ Now comes the natural question: "Okay, so what AM I actually measuring? What doe
 
 This matters because every reloading forum, every YouTube video, every magazine article throws around "consistency" like we all agree on what it means. We don't. And that confusion is costing you money and sanity.
 
-Here's what usually happens: Someone shoots three tight groups and declares their load "consistent." Another shooter gets 8 fps spread on ten rounds and calls that "consistent." A third person measures case neck tension to 0.001" and claims that's the path to "consistency."
+Here's what usually happens: Someone shoots three tight groups and declares their load "consistent." Another shooter gets 8 fps spread on ten rounds and calls that "consistent." A third person measures case neck interference to 0.001" and claims that's the path to "consistency."
 
 They're all talking about different things.
 

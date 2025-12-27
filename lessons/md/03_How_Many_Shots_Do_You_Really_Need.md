@@ -377,7 +377,7 @@ The hidden costs of inadequate sample sizes:
 
 **Recommendation:**
 - 20-30 shots to verify load is safe and adequate
-- Focus on accuracy at your maximum hunting distance
+- Focus on accuracy at your maximum hunting distance (ensure impacts are centered on your point of aim)
 - Don't obsess over single-digit SD (it doesn't matter at 300 yards for this application)
 
 ### Exception 2: You're Using Factory Ammo
@@ -518,7 +518,7 @@ Here's a testing strategy borrowed from engineering that saves both time and com
 
 **For seating depth testing:**
 - Instead of 0.005" increments, try 0.020" or 0.040" jumps
-- If seating depth truly affects accuracy for your bullet, large jumps should reveal it
+- If seating depth truly affects precision for your bullet, large jumps should reveal it
 - If 0.040" differences show nothing, you can confidently skip testing tiny 0.005" adjustments
 
 **For component testing:**
@@ -594,6 +594,7 @@ In the next notebook, we'll apply these sample size principles to systematic tes
 > - Most online testing uses inadequate samples and gets unreliable results
 > - Sequential testing (one variable per month) makes large samples manageable
 > - 5% of barrel life for load development is smart, not wasteful
+> - If you replace the barrel, you can start by testing your last best load.  Establish a performance baseline to build new knowledge!
 
 ---
 
