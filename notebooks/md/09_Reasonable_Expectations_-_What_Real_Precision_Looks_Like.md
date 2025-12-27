@@ -1,7 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/09_Reasonable_Expectations_-_What_Real_Precision_Looks_Like.md)
-
 Time to complete: 10-15 minutes
 
 # Reasonable Expectations - What Real Precision Looks Like

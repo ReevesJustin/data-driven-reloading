@@ -1,7 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/06_Group_Size_and_Accuracy_-_Beyond_the_Best_Group.md)
-
 Time to complete: 10-15 minutes
 
 # Group Size and Accuracy - Beyond the Best Group

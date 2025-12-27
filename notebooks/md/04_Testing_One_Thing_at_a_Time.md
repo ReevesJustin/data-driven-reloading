@@ -1,7 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/04_Testing_One_Thing_at_a_Time.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/04_Testing_One_Thing_at_a_Time.md)
-
 Time to complete: 10-15 minutes
 
 # Testing One Thing at a Time

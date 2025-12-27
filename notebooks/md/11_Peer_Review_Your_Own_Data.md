@@ -1,7 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/11_Peer_Review_Your_Own_Data.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/11_Peer_Review_Your_Own_Data.md)
-
 Time to complete: 10-15 minutes
 
 # Peer Review Your Own Data

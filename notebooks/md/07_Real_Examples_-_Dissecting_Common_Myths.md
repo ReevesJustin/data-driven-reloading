@@ -1,7 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/07_Real_Examples_-_Dissecting_Common_Myths.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/07_Real_Examples_-_Dissecting_Common_Myths.md)
-
 Time to complete: 10-15 minutes
 
 # Popular Methods Under the Microscope

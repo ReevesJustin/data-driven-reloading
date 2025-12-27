@@ -1,10 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/02_What_We_Actually_Mean_by_Consistency.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/02_What_We_Actually_Mean_by_Consistency.md)
-
-Time to complete: 10-15 minutes
-
-# What We Actually Mean by Consistency
 
 ## The Word Everyone Uses, Few Understand
 

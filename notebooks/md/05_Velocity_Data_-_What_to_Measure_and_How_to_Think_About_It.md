@@ -1,7 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/05_Velocity_Data_-_What_to_Measure_and_How_to_Think_About_It.md)
-
 Time to complete: 10-15 minutes
 
 # Velocity Data - What to Measure and How to Think About It

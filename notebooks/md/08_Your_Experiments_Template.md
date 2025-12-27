@@ -1,7 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/08_Your_Experiments_Template.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/08_Your_Experiments_Template.md)
-
 Time to complete: 15-20 minutes (one-time setup, then reuse forever)
 
 # Your Experiments Template

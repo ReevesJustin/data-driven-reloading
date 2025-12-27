@@ -1,7 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/03_How_Many_Shots_Do_You_Really_Need.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/03_How_Many_Shots_Do_You_Really_Need.md)
-
 Time to complete: 10-15 minutes
 
 # How Many Shots Do You Really Need?

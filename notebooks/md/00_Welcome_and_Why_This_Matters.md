@@ -1,10 +1,3 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ReevesJustin/data-driven-reloading/blob/main/notebooks/00_Welcome_and_Why_This_Matters.md)
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReevesJustin/data-driven-reloading/main?filepath=notebooks/00_Welcome_and_Why_This_Matters.md)
-
-Time to complete: 10-15 minutes
-
-# Welcome and Why This Matters
 
 ## The Reloading Cycle of Hope and Disappointment
 
