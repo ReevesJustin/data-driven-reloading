@@ -125,7 +125,7 @@ Ask yourself: **"Is that the ocean, or just their cup?"**
 
 Almost always, it's the cup. They dipped once, got lucky, and declared they know the ocean.
 
-You've already seen this in Notebook 01. Remember those simulations showing how a true 15 fps load can give you 8 fps in a 10-shot sample just by luck? That's the cup lying about the ocean.
+You've already seen this in Lesson 01. Remember those simulations showing how a true 15 fps load can give you 8 fps in a 10-shot sample just by luck? That's the cup lying about the ocean.
 
 ![The Cup and the Ocean Analogy](../static/nb02_plot08_cup_and_ocean.png)
 
@@ -190,7 +190,7 @@ The second option saves you money long term because you stop chasing ghosts.
 
 ## What Actually Drives Consistency? The Component Hierarchy
 
-Now that we've defined what consistency actually means, let's talk briefly about what creates it. This isn't a deep dive (we'll save that for later notebooks), but you need to understand the basics.
+Now that we've defined what consistency actually means, let's talk briefly about what creates it. This isn't a deep dive (we'll save that for later lessons), but you need to understand the basics.
 
 Your ammunition's consistency comes from a combination of factors. Not all factors matter equally. Here's the hierarchy from most important to least:
 
@@ -311,7 +311,7 @@ In the next notebook, we'll tackle the question everyone asks: "Okay, so how man
 
 ## Coming Up Next
 
-**In Notebook 03**, we'll answer the practical question: How many shots do you actually need to test a load reliably? You'll learn:
+**In Lesson 03**, we'll answer the practical question: How many shots do you actually need to test a load reliably? You'll learn:
 - Why 30 shots is the magic **minimum** for spread measurements
 - Why 10 shots can work for velocity averages but not for consistency
 - How to calculate sample sizes for your specific testing goals

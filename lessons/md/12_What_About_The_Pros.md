@@ -4,7 +4,7 @@ Time to complete: 10-15 minutes
 
 ## The Objection You've Been Thinking
 
-You've made it through 11 notebooks of statistical rigor, honest testing, and myth-busting. You understand sample sizes, confidence intervals, and why small groups lie.
+You've made it through 11 lessons of statistical rigor, honest testing, and myth-busting. You understand sample sizes, confidence intervals, and why small groups lie.
 
 Then you browse a reloading forum or watch a YouTube video. A successful competition shooter explains their load development process. They use ladder tests. They find nodes. They test with 3-shot groups. They do all the things this course said don't work.
 
@@ -424,14 +424,14 @@ Professionals succeed because they shoot more, practice smarter, and focus on wh
 You started this course frustrated by unreliable results and conflicting advice.
 
 You've learned:
-- Why small samples mislead (Notebooks 01-03)
-- How to test properly (Notebooks 04-06)
-- Why common methods fail (Notebook 07)
-- How to use your data (Notebook 08)
-- What realistic expectations are (Notebook 09)
-- When results are real (Notebook 10)
-- How to audit your work (Notebook 11)
-- When to stop optimizing (Notebook 12)
+- Why small samples mislead (Lessons 01-03)
+- How to test properly (Lessons 04-06)
+- Why common methods fail (Lesson 07)
+- How to use your data (Lesson 08)
+- What realistic expectations are (Lesson 09)
+- When results are real (Lesson 10)
+- How to audit your work (Lesson 11)
+- When to stop optimizing (Lesson 12)
 
 **You now know more about statistical testing than 95% of reloaders.**
 

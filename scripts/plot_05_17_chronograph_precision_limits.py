@@ -110,7 +110,7 @@ fig.suptitle('Chronograph Precision Limits: Cheap Chronograph Can\'t Measure Con
 plt.tight_layout()
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb05_plot17_chronograph_precision_limits.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb05_plot17_chronograph_precision_limits.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

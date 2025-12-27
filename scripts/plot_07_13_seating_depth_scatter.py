@@ -154,7 +154,7 @@ fig.text(0.99, 0.01, explanation, fontsize=8.5,
 plt.tight_layout(rect=[0, 0.04, 1, 0.96])
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb07_plot13_seating_depth_scatter.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb07_plot13_seating_depth_scatter.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

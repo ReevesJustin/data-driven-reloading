@@ -71,7 +71,7 @@ Same principle with ammunition:
 **Possibility 3:** Federal primers are the magic. The other changes did nothing.
 **Possibility 4:** All three changes were necessary in combination.
 **Possibility 5:** Two of the three mattered, one was useless.
-**Possibility 6:** You just got lucky and shot better groups today (remember Notebook 01?).
+**Possibility 6:** You just got lucky and shot better groups today (remember Lesson 01?).
 
 **You cannot distinguish between these possibilities without more testing.** And that testing will require you to test the variables separately anyway, so why not start there?
 
@@ -114,7 +114,7 @@ Say you want to test:
 
 **Total combinations:** 2 × 3 × 4 × 3 = **72 different loads**
 
-Now, remember from Notebook 03: you need at least 30 shots per load to measure anything reliably.
+Now, remember from Lesson 03: you need at least 30 shots per load to measure anything reliably.
 
 **Total rounds needed:** 72 × 30 = **2,160 rounds**
 
@@ -192,7 +192,7 @@ Pick exactly one thing to change. Everything else stays the same.
 
 **Step 3: Test Adequately**
 
-Remember Notebook 03? You need:
+Remember Lesson 03? You need:
 - **30 shots minimum** per option for spread (SD) measurements
 - **50+ shots** if you want to compare group sizes reliably
 - **Multiple sessions** if you want to verify repeatability
@@ -459,7 +459,7 @@ This level of environmental control separates guesswork from genuine understandi
 
 ### Mistake 5: "The First Group with Federal Was Amazing, So I Stopped Testing"
 
-**The problem:** Remember Notebook 01? One lucky group proves nothing.
+**The problem:** Remember Lesson 01? One lucky group proves nothing.
 
 **The fix:** Shoot the full planned sample size. Don't stop early because of one good result. That's confirmation bias.
 
@@ -529,7 +529,7 @@ Pick one. Just one. Plan a test:
 3. What will you measure? (Velocity SD? Group size? Both?)
 4. How will you know if there's a real difference?
 
-Write it down. The next notebook will give you the tools to analyze velocity data properly. Then Notebook 06 will handle group size analysis. But the experimental design—testing one thing at a time—starts here.
+Write it down. The next notebook will give you the tools to analyze velocity data properly. Then Lesson 06 will handle group size analysis. But the experimental design—testing one thing at a time—starts here.
 
 > **Key Takeaways**
 > - Changing multiple variables at once creates unsolvable puzzles
@@ -545,7 +545,7 @@ Write it down. The next notebook will give you the tools to analyze velocity dat
 
 ## Coming Up Next
 
-**In Notebook 05: Velocity Data**, you'll learn:
+**In Lesson 05: Velocity Data**, you'll learn:
 - What to measure from your chronograph and why
 - Why SD from small samples is misleading (we'll show the math)
 - How to spot fake "velocity nodes" and "flat spots" in charge ladders

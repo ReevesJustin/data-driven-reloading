@@ -167,7 +167,7 @@ If you shoot enough 30-round groups from the same load, some will have "flyers."
 
 **The question:** How confident am I this isn't random luck?
 
-We covered this in Notebook 10, but it's worth repeating here as a self-audit tool.
+We covered this in Lesson 10, but it's worth repeating here as a self-audit tool.
 
 **The test:**
 If someone offered you a bet—"I'll give you $500 if you can repeat this result next week within 20%, you pay me $500 if you can't"—would you take it?
@@ -651,7 +651,7 @@ You've learned to test honestly, interpret correctly, and audit rigorously. Ther
 
 **"What about the pros? They use different methods. Why don't benchrest champions follow this advice?"**
 
-**In Notebook 12**, we'll tackle:
+**In Lesson 12**, we'll tackle:
 - Why professional methods might not apply to hobbyists
 - The equipment divide (and why it matters)
 - Survivorship bias in success stories

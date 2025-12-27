@@ -182,7 +182,7 @@ ax.text(8, 0, cost_text, fontsize=8.5, verticalalignment='center', horizontalali
 plt.tight_layout()
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb00_plot01_disappointment_cycle.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb00_plot01_disappointment_cycle.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

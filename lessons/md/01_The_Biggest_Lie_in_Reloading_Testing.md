@@ -315,7 +315,7 @@ In the next notebook, we'll define exactly what "consistency" means and introduc
 
 ## Coming Up Next
 
-**In Notebook 02**, we'll answer the fundamental question: What does "consistency" actually mean?
+**In Lesson 02**, we'll answer the fundamental question: What does "consistency" actually mean?
 
 You'll learn:
 - The ocean and cup analogy (population vs sample)

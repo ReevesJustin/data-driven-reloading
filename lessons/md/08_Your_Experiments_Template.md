@@ -5,13 +5,13 @@ Time to complete: 15-20 minutes (one-time setup, then reuse forever)
 ## From Theory to Practice: Tools You'll Actually Use
 
 You've made it this far. You understand:
-- Why small samples lie (Notebook 01)
-- What consistency really means (Notebook 02)
-- How many shots you need (Notebook 03)
-- How to test one variable at a time (Notebook 04)
-- How to analyze velocity data (Notebook 05)
-- How to evaluate group size properly (Notebook 06)
-- How to recognize common myths (Notebook 07)
+- Why small samples lie (Lesson 01)
+- What consistency really means (Lesson 02)
+- How many shots you need (Lesson 03)
+- How to test one variable at a time (Lesson 04)
+- How to analyze velocity data (Lesson 05)
+- How to evaluate group size properly (Lesson 06)
+- How to recognize common myths (Lesson 07)
 
 **Now it's time to put that knowledge to work.**
 
@@ -938,7 +938,7 @@ The next notebook will help you set realistic expectations so you don't chase pe
 
 ## Coming Up Next
 
-**In Notebook 09: Reasonable Expectations**, you'll learn:
+**In Lesson 09: Reasonable Expectations**, you'll learn:
 - What precision is actually achievable (not internet fantasy)
 - The three contributors to dispersion (rifle, shooter, recoil)
 - Why recoil is the biggest disruptor nobody talks about

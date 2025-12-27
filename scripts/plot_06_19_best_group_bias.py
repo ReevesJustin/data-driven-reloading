@@ -138,7 +138,7 @@ ax.grid(True, alpha=0.3, linestyle=':', linewidth=0.5)
 plt.tight_layout()
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb06_plot19_best_group_bias.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb06_plot19_best_group_bias.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

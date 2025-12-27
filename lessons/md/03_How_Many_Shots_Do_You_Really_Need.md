@@ -4,7 +4,7 @@ Time to complete: 10-15 minutes
 
 ## The Question Everyone Asks
 
-You've just finished Notebook 02. You understand the ocean and the cup. You know that small samples lie. You get that you're trying to measure a population (all possible rounds with your recipe) by testing a sample (the rounds you actually shoot).
+You've just finished Lesson 02. You understand the ocean and the cup. You know that small samples lie. You get that you're trying to measure a population (all possible rounds with your recipe) by testing a sample (the rounds you actually shoot).
 
 **Now comes the obvious follow-up question:**
 
@@ -48,7 +48,7 @@ Let me show you exactly why.
 
 ## Why Bigger Samples Are More Trustworthy
 
-Remember the ocean and the cup from Notebook 02? Let's extend that analogy.
+Remember the ocean and the cup from Lesson 02? Let's extend that analogy.
 
 ### The Bigger Cup Principle
 
@@ -213,7 +213,7 @@ Here's the practical guide. Follow the decision tree based on WHAT you're trying
 **Process:**
 1. Load 30 rounds of Load A and 30 rounds of Load B
 2. Shoot them in same session, alternating (to control for barrel heating, environmental conditions, shooter fatigue, etc.)
-3. Use Template A from Notebook 08 to analyze
+3. Use Template A from Lesson 08 to analyze
 4. Trust the verdict
 
 **What differences are real at this sample size:**
@@ -491,7 +491,7 @@ Sounds like a lot? Consider:
 
 ### Sequential Testing
 
-Don't test everything at once. Test one variable at a time (Notebook 04).
+Don't test everything at once. Test one variable at a time (Lesson 04).
 
 **Month 1:** Test primers (60 rounds)
 **Month 2:** Test powders (90 rounds)
@@ -599,7 +599,7 @@ In the next notebook, we'll apply these sample size principles to systematic tes
 
 ## Coming Up Next
 
-**In Notebook 04: Testing One Thing at a Time**, you'll learn:
+**In Lesson 04: Testing One Thing at a Time**, you'll learn:
 - Why changing multiple variables creates unsolvable puzzles
 - The systematic one-at-a-time method that actually builds knowledge
 - How to organize testing so 30+ shots per test is manageable

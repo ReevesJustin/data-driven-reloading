@@ -37,7 +37,7 @@ By the end, you'll understand not just what your chronograph says, but what it a
 
 Let's start with good news: **Average velocity is reliable, even with small samples.**
 
-Remember from Notebook 03 how we discussed that averages stabilize faster than spread? This is where that matters most.
+Remember from Lesson 03 how we discussed that averages stabilize faster than spread? This is where that matters most.
 
 ### Why Average Velocity Matters
 
@@ -592,7 +592,7 @@ Velocity gets you to the target. Precision determines if you hit it. Let's learn
 
 ## Coming Up Next
 
-**In Notebook 06**, we'll tackle precision on target: group size, accuracy metrics, and how to measure what really matters. You'll learn:
+**In Lesson 06**, we'll tackle precision on target: group size, accuracy metrics, and how to measure what really matters. You'll learn:
 - Why extreme spread (group size) is misleading
 - Mean radius: a better way to measure precision
 - The "best group bias" and why your smallest groups lie

@@ -601,7 +601,7 @@ When evaluating whether a result is real:
 
 You now know how to tell when results are real. But there's one more critical skill: **auditing your own work for bias and errors.**
 
-**In Notebook 11**, you'll learn to peer-review your own data:
+**In Lesson 11**, you'll learn to peer-review your own data:
 - 10-question checklist to catch common mistakes
 - Red flag gallery (signs you're fooling yourself)
 - Pre-registration: committing to your analysis plan before seeing data

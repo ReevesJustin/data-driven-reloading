@@ -290,7 +290,7 @@ ax5.text(0.5, 0.5, summary_text,
         family='monospace')
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb12_plot28_load_vs_skill_impact.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb12_plot28_load_vs_skill_impact.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

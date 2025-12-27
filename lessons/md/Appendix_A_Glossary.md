@@ -5,7 +5,7 @@
 This reference guide defines all technical terms used throughout the curriculum. Definitions are written in plain English at an 8th-grade reading level, with supporting formulas provided where applicable.
 
 **Organization:** Alphabetical order
-**Cross-references:** Terms reference the notebooks where they're discussed in detail
+**Cross-references:** Terms reference the lessons where they're discussed in detail
 **Formulas:** Mathematical definitions appear after plain-English explanations
 
 ---
@@ -20,7 +20,7 @@ This reference guide defines all technical terms used throughout the curriculum.
 
 **Key distinction:** You can be precise without being accurate (consistent groups in the wrong place) or accurate without being precise (shots average on target but spread widely).
 
-**See:** Notebook 06 - Group Size and Accuracy
+**See:** Lesson 06 - Group Size and Accuracy
 
 ---
 
@@ -32,7 +32,7 @@ This reference guide defines all technical terms used throughout the curriculum.
 
 **Usage:** Lower alpha means stricter requirements for claiming significance.
 
-**See:** Notebook 10 - When Is A Result Real
+**See:** Lesson 10 - When Is A Result Real
 
 **Formula:**
 ```
@@ -50,9 +50,9 @@ Commonly: α = 0.05 (5% false positive rate)
 
 **The claim:** Some powder charges create "nodes" where harmonics minimize dispersion.
 
-**The reality:** While harmonics exist, the claimed "nodes" from ladder tests are usually just random variation. See Notebook 07 for the debunking.
+**The reality:** While harmonics exist, the claimed "nodes" from ladder tests are usually just random variation. See Lesson 07 for the debunking.
 
-**See:** Notebook 07 - Real Examples (Velocity Nodes section)
+**See:** Lesson 07 - Real Examples (Velocity Nodes section)
 
 ---
 
@@ -67,7 +67,7 @@ Commonly: α = 0.05 (5% false positive rate)
 - **Confirmation bias:** Seeing what you expect instead of what's there
 - **Selection bias:** Cherry-picking data that supports your conclusion
 
-**See:** Notebooks 01, 03, 11
+**See:** Lessons 01, 03, 11
 
 ---
 
@@ -81,7 +81,7 @@ Commonly: α = 0.05 (5% false positive rate)
 
 **Practical impact:** With just 10-15 shots, your average velocity is probably close to the true population mean.
 
-**See:** Notebook 03 - How Many Shots Do You Really Need
+**See:** Lesson 03 - How Many Shots Do You Really Need
 
 ---
 
@@ -95,7 +95,7 @@ Commonly: α = 0.05 (5% false positive rate)
 
 **Precision:** Budget models ±5-10 fps error, quality models ±2-3 fps error
 
-**See:** Notebook 05 - Velocity Data (Chronograph Precision section)
+**See:** Lesson 05 - Velocity Data (Chronograph Precision section)
 
 ---
 
@@ -107,7 +107,7 @@ Commonly: α = 0.05 (5% false positive rate)
 
 **Measurement:** Use a caliper, measure from case head to bullet tip.
 
-**See:** Notebook 07 - Seating Depth section
+**See:** Lesson 07 - Seating Depth section
 
 ---
 
@@ -119,7 +119,7 @@ Commonly: α = 0.05 (5% false positive rate)
 
 **Key insight:** Smaller samples have wider confidence intervals (more uncertainty).
 
-**See:** Notebook 03 - Sample Size sections
+**See:** Lesson 03 - Sample Size sections
 
 **Formula:**
 ```
@@ -148,7 +148,7 @@ CI = x̄ ± (2.045 × 2.74) = x̄ ± 5.6 fps
 
 **Solution:** Test one variable at a time.
 
-**See:** Notebook 04 - Testing One Thing at a Time
+**See:** Lesson 04 - Testing One Thing at a Time
 
 ---
 
@@ -178,7 +178,7 @@ For two samples: df = n₁ + n₂ - 2
 
 **Quality DOPE requires:** Accurate environmental data, proper ranging, consistent ammunition.
 
-**See:** Notebook 04 - Environmental Control section
+**See:** Lesson 04 - Environmental Control section
 
 ---
 
@@ -194,7 +194,7 @@ For two samples: df = n₁ + n₂ - 2
 
 **Better alternative:** Use Standard Deviation (SD) instead.
 
-**See:** Notebook 05 - Velocity Data
+**See:** Lesson 05 - Velocity Data
 
 **Formula:**
 ```
@@ -216,7 +216,7 @@ ES = 2863 - 2835 = 28 fps
 
 **Better alternative:** Use Mean Radius (MR) instead.
 
-**See:** Notebook 06 - Group Size and Accuracy
+**See:** Lesson 06 - Group Size and Accuracy
 
 **Formula:**
 ```
@@ -243,7 +243,7 @@ MOA = (1.2 / 100) × 100 / 1.047 = 1.15 MOA
 
 **Better approach:** Sequential one-variable-at-a-time testing.
 
-**See:** Notebook 04 - Factorial Explosion section
+**See:** Lesson 04 - Factorial Explosion section
 
 **Formula:**
 ```
@@ -265,7 +265,7 @@ At 30 shots each = 720 rounds
 
 **How to reduce:** Use larger sample sizes to increase statistical power.
 
-**See:** Notebook 10 - When Is A Result Real
+**See:** Lesson 10 - When Is A Result Real
 
 ---
 
@@ -277,7 +277,7 @@ At 30 shots each = 720 rounds
 
 **How to reduce:** Use proper sample sizes, set appropriate alpha levels, avoid p-hacking.
 
-**See:** Notebook 10 - When Is A Result Real
+**See:** Lesson 10 - When Is A Result Real
 
 ---
 
@@ -289,7 +289,7 @@ At 30 shots each = 720 rounds
 
 **Why it matters:** Hybrid bullets are less finicky about seating depth than pure secant (VLD) bullets.
 
-**See:** Notebook 07 - Seating Depth section
+**See:** Lesson 07 - Seating Depth section
 
 ---
 
@@ -310,7 +310,7 @@ At 30 shots each = 720 rounds
 
 **Measurement:** Use a comparator or Hornady OAL gauge to measure base-to-ogive length.
 
-**See:** Notebook 07 - Seating Depth testing
+**See:** Lesson 07 - Seating Depth testing
 
 ---
 
@@ -324,7 +324,7 @@ At 30 shots each = 720 rounds
 
 **Why it matters:** Sample means converge quickly to population means (10-15 shots is usually adequate).
 
-**See:** Notebook 05 - Average Velocity section
+**See:** Lesson 05 - Average Velocity section
 
 **Formula:**
 ```
@@ -349,7 +349,7 @@ Mean = (2840 + 2850 + 2845 + 2855) / 4 = 2847.5 fps
 
 **Calculation:** Find the group center (average X and Y positions), measure each shot's distance from center, average those distances.
 
-**See:** Notebook 06 - Mean Radius vs Extreme Spread
+**See:** Lesson 06 - Mean Radius vs Extreme Spread
 
 **Formula:**
 ```
@@ -383,7 +383,7 @@ MR = (0.208 + 0.300 + 0.430) / 3 = 0.313 inches
 
 **Usage:** "This rifle shoots 1 MOA" means groups average about 1 inch at 100 yards, 2 inches at 200 yards, etc.
 
-**See:** Notebook 06 - Group Size measurements
+**See:** Lesson 06 - Group Size measurements
 
 **Formula:**
 ```
@@ -413,7 +413,7 @@ Approximate: MOA ≈ 1.5 MOA
 
 **Example in this curriculum:** We simulate shooting 1,000 three-shot groups from a 1.5 MOA rifle to show how wildly group sizes vary (0.4 to 3.0 MOA) despite consistent underlying capability.
 
-**See:** Notebooks 01, 02, 03 (throughout curriculum)
+**See:** Lessons 01, 02, 03 (throughout curriculum)
 
 **Pseudocode:**
 ```python
@@ -446,7 +446,7 @@ for i in range(num_simulations):
 
 **The reality:** These apparent flat spots are random variation in single-shot-per-charge testing, not real phenomena. Controlled tests show "node" charges perform no better than adjacent charges.
 
-**See:** Notebook 05 - Velocity Node Myth section
+**See:** Lesson 05 - Velocity Node Myth section
 
 ---
 
@@ -462,7 +462,7 @@ for i in range(num_simulations):
 
 **Why it matters:** Many natural phenomena follow normal distributions, including shot-to-shot variation in ammunition.
 
-**See:** Notebook 02 - Ocean and Cup analogy
+**See:** Lesson 02 - Ocean and Cup analogy
 
 **Formula:**
 ```
@@ -492,7 +492,7 @@ Cumulative percentages (empirical rule):
 
 **The problem:** With 3 shots per charge, random variation dominates. Different trials show different "optimal" charges. Recoil management variation exceeds any charge weight effects.
 
-**See:** Notebook 07 - OCW section
+**See:** Lesson 07 - OCW section
 
 ---
 
@@ -505,7 +505,7 @@ Cumulative percentages (empirical rule):
 - **Tangent ogive:** Gradual curve, lower BC, but more forgiving
 - **Hybrid ogive:** Combination design (secant front, tangent rear) balancing BC and forgiveness
 
-**See:** Notebook 07 - Seating Depth section
+**See:** Lesson 07 - Seating Depth section
 
 ---
 
@@ -523,7 +523,7 @@ Cumulative percentages (empirical rule):
 
 **Prevention:** Pre-register your analysis plan before collecting data.
 
-**See:** Notebook 11 - Pre-Registration section
+**See:** Lesson 11 - Pre-Registration section
 
 ---
 
@@ -535,7 +535,7 @@ Cumulative percentages (empirical rule):
 
 **Key concept:** You can never measure the entire population—you can only sample from it.
 
-**See:** Notebook 02 - What We Actually Mean by Consistency
+**See:** Lesson 02 - What We Actually Mean by Consistency
 
 ---
 
@@ -549,7 +549,7 @@ Cumulative percentages (empirical rule):
 
 **Important:** Low p-value doesn't mean the effect is large or important, just that it's unlikely to be random chance.
 
-**See:** Notebook 10 - When Is A Result Real
+**See:** Lesson 10 - When Is A Result Real
 
 **Formula:**
 ```
@@ -576,7 +576,7 @@ Note: p-value does NOT tell you:
 
 **Measurement:** Usually measured as group size (MOA) or mean radius.
 
-**See:** Notebook 06 - Precision vs Accuracy
+**See:** Lesson 06 - Precision vs Accuracy
 
 ---
 
@@ -590,7 +590,7 @@ Note: p-value does NOT tell you:
 
 **Limitation:** Only works at close range where individual bullet holes can be identified. Impractical at distance or with overlapping groups.
 
-**See:** Notebook 06 - Measurement Methods
+**See:** Lesson 06 - Measurement Methods
 
 ---
 
@@ -602,7 +602,7 @@ Note: p-value does NOT tell you:
 
 **Importance:** Results that don't replicate were probably statistical flukes, not real effects.
 
-**See:** Notebook 11 - Replication section
+**See:** Lesson 11 - Replication section
 
 ---
 
@@ -616,7 +616,7 @@ Note: p-value does NOT tell you:
 
 **Key insight:** Sample statistics (like sample SD) estimate population parameters (true SD) with some uncertainty.
 
-**See:** Notebook 02 - What We Actually Mean by Consistency
+**See:** Lesson 02 - What We Actually Mean by Consistency
 
 ---
 
@@ -632,7 +632,7 @@ Note: p-value does NOT tell you:
 - n = 50+: Better for comparing loads
 - n = 100+: Needed for strong claims
 
-**See:** Notebook 03 - How Many Shots Do You Really Need
+**See:** Lesson 03 - How Many Shots Do You Really Need
 
 ---
 
@@ -647,7 +647,7 @@ Note: p-value does NOT tell you:
 
 **Examples:** Berger VLD, Sierra MatchKing (some)
 
-**See:** Notebook 07 - Seating Depth section
+**See:** Lesson 07 - Seating Depth section
 
 ---
 
@@ -659,7 +659,7 @@ Note: p-value does NOT tell you:
 
 **Critical issue:** SD calculated from small samples systematically underestimates the true population SD (optimistic bias).
 
-**See:** Notebook 05 - The Perverse Nature of Standard Deviation
+**See:** Lesson 05 - The Perverse Nature of Standard Deviation
 
 **Formula:**
 ```
@@ -695,7 +695,7 @@ SD = √(125.2 / 4) = √31.3 = 5.6 fps
 
 **Key insight:** This is why larger samples give more precise estimates of the true average.
 
-**See:** Notebook 03 - Confidence Intervals
+**See:** Lesson 03 - Confidence Intervals
 
 **Formula:**
 ```
@@ -726,7 +726,7 @@ of true population mean (at ~68% confidence)
 
 **Typical goal:** 80% power (80% chance of detecting real effect)
 
-**See:** Notebook 10 - Statistical Power section
+**See:** Lesson 10 - Statistical Power section
 
 **Formula:**
 ```
@@ -760,7 +760,7 @@ d = difference you want to detect
 
 **Example:** A 0.5 fps difference in SD might be statistically significant with 100 shots per load but is too small to matter practically.
 
-**See:** Notebook 10 - Significance vs Practical Importance
+**See:** Lesson 10 - Significance vs Practical Importance
 
 ---
 
@@ -770,7 +770,7 @@ d = difference you want to detect
 
 **Example:** 100 shooters try OCW testing. 20 get lucky and post success stories online. 80 get inconclusive results and stay quiet. New shooters see only the 20 successes and think "OCW has a 100% success rate!"
 
-**See:** Notebooks 00, 07, 12
+**See:** Lessons 00, 07, 12
 
 ---
 
@@ -787,7 +787,7 @@ d = difference you want to detect
 
 **Examples:** Most traditional hunting bullets, Sierra MatchKing (some models)
 
-**See:** Notebook 07 - Seating Depth section
+**See:** Lesson 07 - Seating Depth section
 
 ---
 
@@ -801,7 +801,7 @@ d = difference you want to detect
 
 **Testing:** Properly test by acclimating ammunition to target temperature for 60+ minutes before shooting.
 
-**See:** Notebooks 04, 05 - Temperature sections
+**See:** Lessons 04, 05 - Temperature sections
 
 **Formula:**
 ```
@@ -826,7 +826,7 @@ Note: Relationship may not be perfectly linear across extreme ranges
 
 **Result:** Produces a p-value indicating probability the difference is random chance.
 
-**See:** Notebook 10 - Statistical Tests
+**See:** Lesson 10 - Statistical Tests
 
 **Formula:**
 ```
@@ -862,7 +862,7 @@ With df = 58, this t-value gives p < 0.001
 
 **Probability:** Set by your alpha level (commonly 0.05 = 5% chance)
 
-**See:** Notebook 10 - Errors in Testing
+**See:** Lesson 10 - Errors in Testing
 
 ---
 
@@ -874,7 +874,7 @@ With df = 58, this t-value gives p < 0.001
 
 **Probability:** Set by your statistical power (1 - beta). With 80% power, you have 20% chance of Type II error.
 
-**See:** Notebook 10 - Errors in Testing
+**See:** Lesson 10 - Errors in Testing
 
 ---
 
@@ -888,7 +888,7 @@ With df = 58, this t-value gives p < 0.001
 
 **Relationship:** Variance = SD²
 
-**See:** Notebook 05 - Spread measurements
+**See:** Lesson 05 - Spread measurements
 
 **Formula:**
 ```
@@ -916,7 +916,7 @@ Then variance = 15² = 225 fps²
 
 **Common examples:** Berger VLD bullets
 
-**See:** Notebook 07 - Seating Depth testing
+**See:** Lesson 07 - Seating Depth testing
 
 ---
 
@@ -969,17 +969,17 @@ Then variance = 15² = 225 fps²
 
 ---
 
-## Cross-Reference by Notebook
+## Cross-Reference by Lesson
 
-**Notebook 01:** Sample, Population, Bias, Monte Carlo Simulation
-**Notebook 02:** Normal Distribution, Mean, Standard Deviation, Population, Sample
-**Notebook 03:** Sample Size, Confidence Interval, Statistical Power, Standard Error
-**Notebook 04:** Confounded Variables, Factorial Experiment, DOPE, Temperature Sensitivity
-**Notebook 05:** Standard Deviation, Extreme Spread (velocity), Mean, Chronograph, Node
-**Notebook 06:** Mean Radius, Extreme Spread (group), MOA, Precision, Accuracy
-**Notebook 07:** OCW, Node, Ogive types, Jam/Jump, Survivorship Bias
-**Notebook 10:** p-value, Statistical Significance, Type I/II Errors, Statistical Power, t-test
-**Notebook 11:** p-hacking, Replication, Bias, Confirmation Bias
+**Lesson 01:** Sample, Population, Bias, Monte Carlo Simulation
+**Lesson 02:** Normal Distribution, Mean, Standard Deviation, Population, Sample
+**Lesson 03:** Sample Size, Confidence Interval, Statistical Power, Standard Error
+**Lesson 04:** Confounded Variables, Factorial Experiment, DOPE, Temperature Sensitivity
+**Lesson 05:** Standard Deviation, Extreme Spread (velocity), Mean, Chronograph, Node
+**Lesson 06:** Mean Radius, Extreme Spread (group), MOA, Precision, Accuracy
+**Lesson 07:** OCW, Node, Ogive types, Jam/Jump, Survivorship Bias
+**Lesson 10:** p-value, Statistical Significance, Type I/II Errors, Statistical Power, t-test
+**Lesson 11:** p-hacking, Replication, Bias, Confirmation Bias
 
 ---
 
@@ -1019,6 +1019,6 @@ Where: σ = standard deviation, d = difference to detect
 
 ---
 
-**Need more detail?** Each term references the notebook(s) where it's discussed in depth. Use this glossary as a quick reference, then dive into the specific notebooks for complete explanations and examples.
+**Need more detail?** Each term references the notebook(s) where it's discussed in depth. Use this glossary as a quick reference, then dive into the specific lessons for complete explanations and examples.
 
 [Back to Curriculum](../../README.md)

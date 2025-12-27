@@ -102,7 +102,7 @@ fig.suptitle('SD Measurement Illusion: How Sample Size Affects Reliability\n'
 plt.tight_layout(rect=[0, 0, 1, 0.98])
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb01_plot06_sd_illusion_sample_size.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb01_plot06_sd_illusion_sample_size.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

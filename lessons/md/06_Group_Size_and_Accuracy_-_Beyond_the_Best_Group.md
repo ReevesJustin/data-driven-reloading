@@ -497,7 +497,7 @@ You'll ask: "Was that precision (large groups) or accuracy (groups off-center)? 
 
 In the next notebook, we'll apply this honest thinking to real-world examples—dissecting common myths and claims you see online, and learning to spot the red flags of bad testing.
 
-You've learned how to measure velocity honestly (Notebook 05) and precision honestly (this notebook). Now let's use those skills to evaluate claims critically.
+You've learned how to measure velocity honestly (Lesson 05) and precision honestly (this notebook). Now let's use those skills to evaluate claims critically.
 
 > **Key Takeaways**
 > - Extreme spread (traditional group size) grows with sample size; mean radius stabilizes—use MR for honest measurement
@@ -511,7 +511,7 @@ You've learned how to measure velocity honestly (Notebook 05) and precision hone
 
 ## Coming Up Next
 
-**In Notebook 07**, we'll dissect real-world examples of common myths and flawed testing methods. You'll learn:
+**In Lesson 07**, we'll dissect real-world examples of common myths and flawed testing methods. You'll learn:
 - Specific examples of popular methods that fail under scrutiny
 - How to spot red flags in online claims
 - Simulations showing why common approaches mislead

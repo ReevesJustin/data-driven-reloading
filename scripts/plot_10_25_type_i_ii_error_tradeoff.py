@@ -202,7 +202,7 @@ ax3.text(0.5, -0.35, explanation_text, transform=ax3.transAxes,
         family='monospace', fontweight='bold')
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb10_plot25_type_i_ii_error_tradeoff.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb10_plot25_type_i_ii_error_tradeoff.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

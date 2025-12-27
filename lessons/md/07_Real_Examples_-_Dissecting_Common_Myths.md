@@ -91,7 +91,7 @@ OCW is appealing because:
 4. Confirmation bias: When it "works," people remember; when it doesn't, they think they executed it wrong
 5. Small sample sizes mean you never test the result properly to discover it doesn't repeat
 
-**The recoil connection:** The "convergence" patterns people see in OCW tests are primarily driven by **recoil management inconsistency**, not charge weight harmonics. As you'll learn in Notebook 09, recoil-induced dispersion typically contributes 0.3 to 0.8+ MOA to your total system precision—far more than the tiny charge weight differences (0.3 grains) being tested. When you see charges "converging" on target, you're mostly seeing which shots happened to have similar recoil characteristics, not which charges have optimal barrel harmonics. This is the same fundamental problem that plagues ladder tests at distance: **you're measuring your recoil management, not your load quality.**
+**The recoil connection:** The "convergence" patterns people see in OCW tests are primarily driven by **recoil management inconsistency**, not charge weight harmonics. As you'll learn in Lesson 09, recoil-induced dispersion typically contributes 0.3 to 0.8+ MOA to your total system precision—far more than the tiny charge weight differences (0.3 grains) being tested. When you see charges "converging" on target, you're mostly seeing which shots happened to have similar recoil characteristics, not which charges have optimal barrel harmonics. This is the same fundamental problem that plagues ladder tests at distance: **you're measuring your recoil management, not your load quality.**
 
 ### What to Do Instead
 
@@ -120,7 +120,7 @@ Load incrementally increasing charges (e.g., 41.0 to 42.0 grains in 0.1-grain st
 
 ### What the Data Actually Shows
 
-We covered this in Notebook 05, but it bears repeating with visuals:
+We covered this in Lesson 05, but it bears repeating with visuals:
 
 **Interactive Element Placeholder:**
 ```python
@@ -672,7 +672,7 @@ The methods persist because **successes are published and failures are private**
 1. Pick 2-3 charge weights based on desired velocity and safe pressure
 2. Test each with 30-50 rounds (yes, this uses components)
 3. Measure velocity SD and precision (mean radius) for each
-4. Use statistical tests to compare (we'll cover this in Notebook 10)
+4. Use statistical tests to compare (we'll cover this in Lesson 10)
 5. Choose the best performer, or pick the middle charge if they're statistically identical
 6. Verify across 2-3 sessions before committing to large batches
 
@@ -716,7 +716,7 @@ If someone gets great results with a method we've critiqued, that's fine! But wi
 
 Now that you understand which popular methods fail and why, you need tools to test properly.
 
-**In Notebook 08**, we'll provide production-ready templates for:
+**In Lesson 08**, we'll provide production-ready templates for:
 - Two-load comparison (primer swap, bullet change, etc.)
 - Charge weight testing (proper sample sizes)
 - Before/after modification testing

@@ -121,7 +121,7 @@ This is why your amazing 0.5 MOA three-shot group doesn't predict your 30-shot p
 
 **The practical insight:** If recoil dominates precision (70%), then improving ammunition consistency (part of the 30%) has limited impact **unless you first control recoil**. This is exactly why muzzle brakes, suppressors, and added rifle mass often produce bigger precision improvements than endless load development.
 
-**Perspective check:** The confidence interval on a 3-shot SD measurement is enormous (as we learned in earlier notebooks). Similarly, the confidence interval on a 3-5 shot group is huge because recoil variation dominates. You're trying to measure a 30% contributor (rifle+ammo) while ignoring the 70% contributor (recoil) and using a sample size that can't separate them. This is why proper testing requires 30+ shots - you need enough data to average out the recoil variation and actually see the ammunition signal.
+**Perspective check:** The confidence interval on a 3-shot SD measurement is enormous (as we learned in earlier lessons). Similarly, the confidence interval on a 3-5 shot group is huge because recoil variation dominates. You're trying to measure a 30% contributor (rifle+ammo) while ignoring the 70% contributor (recoil) and using a sample size that can't separate them. This is why proper testing requires 30+ shots - you need enough data to average out the recoil variation and actually see the ammunition signal.
 
 ### The Combined Effect: Root Sum Square (RSS)
 
@@ -597,7 +597,7 @@ And that will save you more time, money, and frustration than any miracle load c
 
 ## Coming Up Next
 
-**In Notebook 10**, we'll tackle the critical question: When is a result real vs. just random noise? You'll learn:
+**In Lesson 10**, we'll tackle the critical question: When is a result real vs. just random noise? You'll learn:
 - How to distinguish signal from statistical noise
 - The concept of "false alarms" (thinking you found something when it's just luck)
 - "Missed opportunities" (real differences hidden by variation)

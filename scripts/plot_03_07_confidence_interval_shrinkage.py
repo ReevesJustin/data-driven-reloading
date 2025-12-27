@@ -99,7 +99,7 @@ ax.set_ylim(bottom=0)
 plt.tight_layout()
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb03_plot07_confidence_interval_shrinkage.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb03_plot07_confidence_interval_shrinkage.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

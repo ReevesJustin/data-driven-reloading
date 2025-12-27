@@ -177,7 +177,7 @@ fig.suptitle('Understanding Statistical Errors and Power\nMaking Sense of False 
 plt.tight_layout(rect=[0, 0, 1, 0.99])
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb10_plot11_statistical_power_demo.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb10_plot11_statistical_power_demo.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

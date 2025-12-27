@@ -120,7 +120,7 @@ By the end, you'll understand the statistics **well enough to use them**. You wo
 
 **Think of it like driving a car.** You don't need to understand thermodynamics and internal combustion. You just need to know: gas makes it go, brake makes it stop, and certain sounds mean "take it to a mechanic."
 
-This course teaches you to "drive" statistical testing. The actual math runs in the background (we've built it into the notebooks). You focus on making good decisions.
+This course teaches you to "drive" statistical testing. The actual math runs in the background (we've built it into the lessons). You focus on making good decisions.
 
 ---
 
@@ -144,7 +144,7 @@ But learning statistics from a textbook is boring. Learning it with abstract exa
 
 **Learning it while testing something you care about? That works.**
 
-By Notebook 12, you'll have a better understanding of basic statistics than most college graduates. Not because we lectured you, but because you **did it**. You ran the simulations. You saw the patterns. You tested your own data.
+By Lesson 12, you'll have a better understanding of basic statistics than most college graduates. Not because we lectured you, but because you **did it**. You ran the simulations. You saw the patterns. You tested your own data.
 
 The reloading application is the vehicle. Statistical literacy is the destination.
 
@@ -192,9 +192,9 @@ If you're in the first group, let's go. If you're in the second group, that's ok
 
 ## How This Course Works
 
-**12 interactive notebooks, each 10-15 minutes:**
+**12 interactive lessons, each 10-15 minutes:**
 
-**Phase 1: The Problem (Notebooks 00-03)**
+**Phase 1: The Problem (Lessons 00-03)**
 - You'll see how small samples lie (Not just told. you'll experience it through simulation.)
 - You'll understand why your results don't repeat
 - You'll learn what "consistency" actually means
@@ -202,7 +202,7 @@ If you're in the first group, let's go. If you're in the second group, that's ok
 
 **Emotional journey:** Frustration → Recognition → Hope → Understanding
 
-**Phase 2: The Solution (Notebooks 04-08)**
+**Phase 2: The Solution (Lessons 04-08)**
 - You'll learn systematic testing (One variable at a time)
 - You'll understand velocity data properly (When SD matters, when it doesn't)
 - You'll measure group size honestly (Mean radius vs Extreme Spread)
@@ -210,7 +210,7 @@ If you're in the first group, let's go. If you're in the second group, that's ok
 
 **Emotional journey:** Learning → Application → Critical thinking → Empowerment
 
-**Phase 3: Mastery (Notebooks 09-12)**
+**Phase 3: Mastery (Lessons 09-12)**
 - You'll understand realistic precision expectations for your equipment
 - You'll learn when results are real vs random noise
 - You'll develop self-peer-review skills (Spot your own biases)
@@ -260,7 +260,7 @@ Throughout this course, you'll find **interactive simulations** (Placeholders in
 
 **Test your intuitions:** Before revealing the answer, we'll let you guess. You'll learn more when you're surprised.
 
-**Apply to your data:** By Notebook 08, you'll have templates to analyze your actual range sessions.
+**Apply to your data:** By Lesson 08, you'll have templates to analyze your actual range sessions.
 
 Learning statistics by reading is like learning to swim by reading. You need to get in the water. These simulations are the pool.
 
@@ -307,7 +307,7 @@ Be honest. No one's judging. We've all been there.
 ## The Honest Cost-Benefit Analysis
 
 **What this course costs you:**
-- **Time:** ~2-3 hours to work through all 12 notebooks
+- **Time:** ~2-3 hours to work through all 12 lessons
 - **Mental energy:** Challenging some beliefs you might hold strongly
 - **Future components:** Proper testing uses more ammo upfront (30+ shots per test vs 5-10)
 
@@ -359,44 +359,44 @@ And you'll apply these skills for the rest of your shooting career.
 
 ---
 
-## What You'll Actually Learn (Notebook by Notebook)
+## What You'll Actually Learn (Lesson by Lesson)
 
 Here's the journey ahead:
 
-**Notebook 01: The Biggest Lie in Reloading Testing**
+**Lesson 01: The Biggest Lie in Reloading Testing**
 You'll watch small samples produce wildly varying results from the same rifle. The "lie" is that your 5-shot group represents anything meaningful. Prepare for the scales to fall from your eyes.
 
-**Notebook 02: What We Actually Mean by Consistency**
+**Lesson 02: What We Actually Mean by Consistency**
 Ocean and cup analogy. Population vs sample. The foundation for everything else. Most important concept in the curriculum.
 
-**Notebook 03: How Many Shots Do You Really Need**
+**Lesson 03: How Many Shots Do You Really Need**
 Decision tree: 10 shots for velocity average, 30+ for measuring spread, 50+ for comparing loads. Cost-benefit analysis included.
 
-**Notebook 04: Testing One Thing at a Time**
+**Lesson 04: Testing One Thing at a Time**
 Controlled experiments. Why changing multiple variables creates puzzles with no solution. Factorial explosion demonstration.
 
-**Notebook 05: Velocity Data - What to Measure and How to Think About It**
+**Lesson 05: Velocity Data - What to Measure and How to Think About It**
 Velocity node myth destroyed. When SD actually matters (hint: probably not for your application). Temperature sensitivity matters more.
 
-**Notebook 06: Group Size and Accuracy - Beyond the Best Group**
+**Lesson 06: Group Size and Accuracy - Beyond the Best Group**
 Mean radius vs extreme spread. Best group bias (your smallest groups are 30-40% better than true capability). Precision vs accuracy distinction.
 
-**Notebook 07: Real Examples - Dissecting Common Myths**
+**Lesson 07: Real Examples - Dissecting Common Myths**
 Specific methods evaluated: OCW, ladder tests, brass sorting, primer swaps, tuners. What works, what doesn't, what's oversold.
 
-**Notebook 08: Your Experiments Template**
+**Lesson 08: Your Experiments Template**
 Production-ready tools. Paste your data, get analysis. Two-load comparison, charge weight ladder, before/after modification test.
 
-**Notebook 09: Reasonable Expectations - What Real Precision Looks Like**
+**Lesson 09: Reasonable Expectations - What Real Precision Looks Like**
 Equipment-level benchmarks. Dispersion budget (rifle, shooter, recoil). WEZ: when precision actually matters for your shooting.
 
-**Notebook 10: When Is A Result Real**
+**Lesson 10: When Is A Result Real**
 Statistical significance vs practical significance. "False alarms" and "missed opportunities." The $500 bet heuristic.
 
-**Notebook 11: Peer Review Your Own Data**
+**Lesson 11: Peer Review Your Own Data**
 10-question checklist. Red flag gallery. Pre-registration template. Building scientific integrity.
 
-**Notebook 12: What About The Pros**
+**Lesson 12: What About The Pros**
 Survivorship bias. Equipment divide. Why pro methods might not work for hobbyists. Skill vs load development priority.
 
 **By the end:** You'll be the most statistically literate shooter at your range. And probably in most online forums.
@@ -419,7 +419,7 @@ This course is going to challenge some strongly-held beliefs. I'll debunk method
 
 That's the voice of this course. Not superior, not condescending. I'm a fellow traveler who learned the hard way and want to save you the same journey.
 
-If you see your own mistakes reflected in these notebooks, good. That means you're learning. We all start somewhere.
+If you see your own mistakes reflected in these lessons, good. That means you're learning. We all start somewhere.
 
 ---
 

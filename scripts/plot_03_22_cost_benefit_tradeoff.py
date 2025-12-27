@@ -146,7 +146,7 @@ ax2.text(0.98, 0.97, stats_text, transform=ax2.transAxes,
 plt.tight_layout()
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb03_plot22_cost_benefit_tradeoff.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb03_plot22_cost_benefit_tradeoff.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")

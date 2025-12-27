@@ -103,7 +103,7 @@ fig.text(0.5, 0.02,
 plt.tight_layout(rect=[0, 0.06, 1, 0.96])
 
 # Save the figure
-output_path = Path(__file__).parent.parent / 'notebooks' / 'static' / 'nb05_plot15_sd_illusion.png'
+output_path = Path(__file__).parent.parent / 'lessons' / 'static' / 'nb05_plot15_sd_illusion.png'
 output_path.parent.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Saved: {output_path}")
