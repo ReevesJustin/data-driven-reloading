@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Contribution Sliders - Data-Driven Reloading</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 2.5rem;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #2c5282;
+      margin-bottom: 0.5rem;
+      font-size: 1.75rem;
+    }
+
+    .subtitle {
+      color: #718096;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .sliders-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .slider-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .slider-label {
+      font-weight: 600;
+      color: #2d3748;
+      font-size: 0.95rem;
+    }
+
+    .slider-weight {
+      font-size: 0.85rem;
+      color: #718096;
+      background: #edf2f7;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .slider-value {
+      font-weight: 700;
+      color: #4682b4;
+      font-size: 1.1rem;
+      min-width: 45px;
+      text-align: right;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #4682b4;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      background: #2c5282;
+      transform: scale(1.2);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #4682b4;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    input[type="range"]::-moz-range-thumb:hover {
+      background: #2c5282;
+      transform: scale(1.2);
+    }
+
+    /* Color-code sliders by component */
+    #bulletSlider::-webkit-slider-thumb { background: #e67e22; }
+    #bulletSlider::-moz-range-thumb { background: #e67e22; }
+
+    #powderSlider::-webkit-slider-thumb { background: #8b4513; }
+    #powderSlider::-moz-range-thumb { background: #8b4513; }
+
+    #brassSlider::-webkit-slider-thumb { background: #d4af37; }
+    #brassSlider::-moz-range-thumb { background: #d4af37; }
+
+    #primerSlider::-webkit-slider-thumb { background: #95a5a6; }
+    #primerSlider::-moz-range-thumb { background: #95a5a6; }
+
+    .results-section {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .total-score {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .score-label {
+      font-size: 0.9rem;
+      color: #718096;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .score-value {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2c5282;
+    }
+
+    .score-subtitle {
+      font-size: 0.85rem;
+      color: #a0aec0;
+      margin-top: 0.25rem;
+    }
+
+    .chart-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .chart-title {
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .bar-item {
+      margin-bottom: 0.75rem;
+    }
+
+    .bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .bar-name {
+      font-size: 0.85rem;
+      color: #4a5568;
+      font-weight: 500;
+    }
+
+    .bar-contribution {
+      font-size: 0.85rem;
+      color: #718096;
+      font-weight: 600;
+    }
+
+    .bar-background {
+      height: 24px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 0.5rem;
+    }
+
+    .bar-fill.bullet { background: linear-gradient(90deg, #e67e22, #d35400); }
+    .bar-fill.powder { background: linear-gradient(90deg, #8b4513, #654321); }
+    .bar-fill.brass { background: linear-gradient(90deg, #d4af37, #b8941e); }
+    .bar-fill.primer { background: linear-gradient(90deg, #95a5a6, #7f8c8d); }
+
+    .recommendation-section {
+      background: linear-gradient(135deg, #4682b4, #2c5282);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .recommendation-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .recommendation-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .reset-button {
+      width: 100%;
+      padding: 1rem;
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      color: #2c5282;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 1.5rem;
+    }
+
+    .reset-button:hover {
+      background: #f7fafc;
+      border-color: #cbd5e0;
+    }
+
+    .educational-note {
+      background: #fff5e6;
+      border-left: 4px solid #e67e22;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: #5a4a3a;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .score-value {
+        font-size: 2.5rem;
+      }
+
+      .recommendation-text {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Component Contribution Analysis</h1>
+    <p class="subtitle">
+      Adjust each component's quality to see how it contributes to your total system consistency.
+      Each component is weighted by its real-world impact on ammunition performance.
+    </p>
+
+    <div class="sliders-section">
+      <div class="slider-group">
+        <div class="slider-header">
+          <span class="slider-label">Bullet Quality</span>
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <span class="slider-weight">40% weight</span>
+            <span class="slider-value" id="bulletValue">70</span>
+          </div>
+        </div>
+        <input type="range" id="bulletSlider" min="0" max="100" value="70" step="1">
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-header">
+          <span class="slider-label">Powder Metering</span>
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <span class="slider-weight">30% weight</span>
+            <span class="slider-value" id="powderValue">70</span>
+          </div>
+        </div>
+        <input type="range" id="powderSlider" min="0" max="100" value="70" step="1">
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-header">
+          <span class="slider-label">Brass Consistency</span>
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <span class="slider-weight">20% weight</span>
+            <span class="slider-value" id="brassValue">70</span>
+          </div>
+        </div>
+        <input type="range" id="brassSlider" min="0" max="100" value="70" step="1">
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-header">
+          <span class="slider-label">Primer Consistency</span>
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <span class="slider-weight">10% weight</span>
+            <span class="slider-value" id="primerValue">70</span>
+          </div>
+        </div>
+        <input type="range" id="primerSlider" min="0" max="100" value="70" step="1">
+      </div>
+    </div>
+
+    <div class="results-section">
+      <div class="total-score">
+        <div class="score-label">Total System Consistency</div>
+        <div class="score-value" id="totalScore">70</div>
+        <div class="score-subtitle">out of 100</div>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-title">Actual Contribution to Your System</div>
+
+        <div class="bar-item">
+          <div class="bar-header">
+            <span class="bar-name">Bullet Quality</span>
+            <span class="bar-contribution" id="bulletContribution">28.0</span>
+          </div>
+          <div class="bar-background">
+            <div class="bar-fill bullet" id="bulletBar" style="width: 28%"></div>
+          </div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-header">
+            <span class="bar-name">Powder Metering</span>
+            <span class="bar-contribution" id="powderContribution">21.0</span>
+          </div>
+          <div class="bar-background">
+            <div class="bar-fill powder" id="powderBar" style="width: 21%"></div>
+          </div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-header">
+            <span class="bar-name">Brass Consistency</span>
+            <span class="bar-contribution" id="brassContribution">14.0</span>
+          </div>
+          <div class="bar-background">
+            <div class="bar-fill brass" id="brassBar" style="width: 14%"></div>
+          </div>
+        </div>
+
+        <div class="bar-item">
+          <div class="bar-header">
+            <span class="bar-name">Primer Consistency</span>
+            <span class="bar-contribution" id="primerContribution">7.0</span>
+          </div>
+          <div class="bar-background">
+            <div class="bar-fill primer" id="primerBar" style="width: 7%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recommendation-section">
+      <div class="recommendation-title">Your Biggest Improvement Opportunity</div>
+      <div class="recommendation-text" id="recommendation">
+        Focus on Bullet Quality - it has the highest impact
+      </div>
+    </div>
+
+    <div class="educational-note">
+      <strong>Key Insight:</strong> Notice how bullet quality has 4× the impact of primers? This is why obsessing over
+      brass prep (sorting by weight, trimming to 0.001") yields minimal gains compared to simply choosing better bullets.
+      The numbers don't lie—focus your effort where it matters most.
+    </div>
+
+    <button class="reset-button" id="resetButton">Reset to Defaults (70/70/70/70)</button>
+  </div>
+
+  <script>
+    // Component weights (must sum to 1.0)
+    const WEIGHTS = {
+      bullet: 0.40,
+      powder: 0.30,
+      brass: 0.20,
+      primer: 0.10
+    };
+
+    // Get all DOM elements
+    const sliders = {
+      bullet: document.getElementById('bulletSlider'),
+      powder: document.getElementById('powderSlider'),
+      brass: document.getElementById('brassSlider'),
+      primer: document.getElementById('primerSlider')
+    };
+
+    const values = {
+      bullet: document.getElementById('bulletValue'),
+      powder: document.getElementById('powderValue'),
+      brass: document.getElementById('brassValue'),
+      primer: document.getElementById('primerValue')
+    };
+
+    const contributions = {
+      bullet: document.getElementById('bulletContribution'),
+      powder: document.getElementById('powderContribution'),
+      brass: document.getElementById('brassContribution'),
+      primer: document.getElementById('primerContribution')
+    };
+
+    const bars = {
+      bullet: document.getElementById('bulletBar'),
+      powder: document.getElementById('powderBar'),
+      brass: document.getElementById('brassBar'),
+      primer: document.getElementById('primerBar')
+    };
+
+    const totalScoreElement = document.getElementById('totalScore');
+    const recommendationElement = document.getElementById('recommendation');
+    const resetButton = document.getElementById('resetButton');
+
+    // Component names for display
+    const COMPONENT_NAMES = {
+      bullet: 'Bullet Quality',
+      powder: 'Powder Metering',
+      brass: 'Brass Consistency',
+      primer: 'Primer Consistency'
+    };
+
+    // Calculate total score and update display
+    function updateCalculations() {
+      // Get current slider values
+      const currentValues = {
+        bullet: parseInt(sliders.bullet.value),
+        powder: parseInt(sliders.powder.value),
+        brass: parseInt(sliders.brass.value),
+        primer: parseInt(sliders.primer.value)
+      };
+
+      // Calculate total system consistency (weighted average)
+      const totalScore =
+        (currentValues.bullet * WEIGHTS.bullet) +
+        (currentValues.powder * WEIGHTS.powder) +
+        (currentValues.brass * WEIGHTS.brass) +
+        (currentValues.primer * WEIGHTS.primer);
+
+      // Update total score display
+      totalScoreElement.textContent = totalScore.toFixed(0);
+
+      // Calculate individual contributions (absolute contribution to total)
+      const contributionValues = {
+        bullet: currentValues.bullet * WEIGHTS.bullet,
+        powder: currentValues.powder * WEIGHTS.powder,
+        brass: currentValues.brass * WEIGHTS.brass,
+        primer: currentValues.primer * WEIGHTS.primer
+      };
+
+      // Update displays for each component
+      Object.keys(contributionValues).forEach(component => {
+        // Update value display
+        values[component].textContent = currentValues[component];
+
+        // Update contribution display
+        contributions[component].textContent = contributionValues[component].toFixed(1);
+
+        // Update bar width (as percentage of 100)
+        bars[component].style.width = `${contributionValues[component]}%`;
+      });
+
+      // Find lowest quality component for recommendation
+      let lowestComponent = 'bullet';
+      let lowestValue = currentValues.bullet;
+      let lowestContribution = contributionValues.bullet;
+
+      Object.keys(currentValues).forEach(component => {
+        if (currentValues[component] < lowestValue) {
+          lowestComponent = component;
+          lowestValue = currentValues[component];
+          lowestContribution = contributionValues[component];
+        }
+      });
+
+      // Generate recommendation based on lowest component
+      let recommendationText = '';
+
+      if (lowestValue === 100) {
+        // All maxed out
+        recommendationText = 'Perfect! All components are optimized.';
+      } else if (lowestComponent === 'bullet') {
+        recommendationText = `Focus on ${COMPONENT_NAMES[lowestComponent]} - it has the highest impact (${(WEIGHTS[lowestComponent] * 100).toFixed(0)}% weight)`;
+      } else if (lowestComponent === 'powder') {
+        recommendationText = `Focus on ${COMPONENT_NAMES[lowestComponent]} - second highest impact (${(WEIGHTS[lowestComponent] * 100).toFixed(0)}% weight)`;
+      } else if (lowestComponent === 'brass') {
+        recommendationText = `${COMPONENT_NAMES[lowestComponent]} has limited impact (${(WEIGHTS[lowestComponent] * 100).toFixed(0)}% weight) - consider Bullet or Powder first`;
+      } else if (lowestComponent === 'primer') {
+        recommendationText = `${COMPONENT_NAMES[lowestComponent]} has minimal impact (${(WEIGHTS[lowestComponent] * 100).toFixed(0)}% weight) - focus elsewhere`;
+      }
+
+      recommendationElement.textContent = recommendationText;
+    }
+
+    // Add event listeners to all sliders
+    Object.values(sliders).forEach(slider => {
+      slider.addEventListener('input', updateCalculations);
+    });
+
+    // Reset button
+    resetButton.addEventListener('click', () => {
+      Object.values(sliders).forEach(slider => {
+        slider.value = 70;
+      });
+      updateCalculations();
+    });
+
+    // Initial calculation
+    updateCalculations();
+  </script>
+</body>
+</html>

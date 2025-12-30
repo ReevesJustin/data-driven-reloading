@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- Fonts (using system fonts for performance) -->
+</head>
+<body>
+  <div class="site-wrapper">
+    {% include header.html %}
+
+    <main class="site-content">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </div>
+
+  <!-- Theme toggle script -->
+  <script>
+    // Apply saved theme immediately to prevent flash
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+
+  <!-- Load theme toggle functionality -->
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+</body>
+</html>

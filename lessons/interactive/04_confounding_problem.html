@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Confounding Problem - Data-Driven Reloading</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #8e44ad;
+      margin-bottom: 0.5rem;
+      font-size: 1.75rem;
+    }
+
+    .subtitle {
+      color: #718096;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .phase {
+      display: none;
+    }
+
+    .phase.active {
+      display: block;
+    }
+
+    .baseline-section {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .baseline-label {
+      font-size: 0.95rem;
+      color: #4a5568;
+      margin-bottom: 0.5rem;
+    }
+
+    .baseline-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #c0392b;
+    }
+
+    .variables-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 1rem;
+    }
+
+    .variable-card {
+      background: white;
+      border: 3px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .variable-card:hover {
+      border-color: #cbd5e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .variable-card.selected {
+      border-color: #8e44ad;
+      background: linear-gradient(135deg, #f3e5f5, #e1f5fe);
+    }
+
+    .variable-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .variable-name {
+      font-weight: 600;
+      color: #2d3748;
+      font-size: 1.05rem;
+    }
+
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #cbd5e0;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      transition: all 0.2s;
+    }
+
+    .variable-card.selected .checkbox {
+      background: #8e44ad;
+      border-color: #8e44ad;
+    }
+
+    .checkbox::after {
+      content: '✓';
+      color: white;
+      font-weight: 700;
+      display: none;
+    }
+
+    .variable-card.selected .checkbox::after {
+      display: block;
+    }
+
+    .variable-options {
+      font-size: 0.9rem;
+      color: #718096;
+    }
+
+    .test-btn {
+      width: 100%;
+      padding: 1.25rem;
+      background: linear-gradient(135deg, #8e44ad, #6c3483);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 1rem;
+    }
+
+    .test-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(142, 68, 173, 0.4);
+    }
+
+    .test-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .selection-count {
+      text-align: center;
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .result-section {
+      background: linear-gradient(135deg, #27ae60, #229954);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .result-label {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .result-value {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .result-improvement {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .question-section {
+      background: #fff9e6;
+      border-left: 4px solid #f39c12;
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+    }
+
+    .question-title {
+      font-weight: 700;
+      color: #2c5282;
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+    }
+
+    .answer-option {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .answer-option:hover {
+      border-color: #cbd5e0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .answer-option.selected {
+      border-color: #3498db;
+      background: #ebf8ff;
+    }
+
+    .submit-answer-btn {
+      width: 100%;
+      padding: 1rem;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .submit-answer-btn:hover:not(:disabled) {
+      background: #2980b9;
+    }
+
+    .submit-answer-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .feedback-section {
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .feedback-section.clear {
+      background: linear-gradient(135deg, #d4edda, #c3e6cb);
+      border: 3px solid #28a745;
+    }
+
+    .feedback-section.ambiguous {
+      background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+      border: 3px solid #ffc107;
+    }
+
+    .feedback-section.confused {
+      background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+      border: 3px solid #dc3545;
+    }
+
+    .feedback-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .feedback-section.clear .feedback-title {
+      color: #155724;
+    }
+
+    .feedback-section.ambiguous .feedback-title {
+      color: #856404;
+    }
+
+    .feedback-section.confused .feedback-title {
+      color: #721c24;
+    }
+
+    .feedback-text {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .possibilities-list {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .possibility {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .possibility:last-child {
+      border-bottom: none;
+    }
+
+    .reset-btn {
+      width: 100%;
+      padding: 1rem;
+      background: white;
+      border: 2px solid #cbd5e0;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #4a5568;
+      transition: all 0.2s;
+    }
+
+    .reset-btn:hover {
+      border-color: #a0aec0;
+      background: #f7fafc;
+    }
+
+    .truth-reveal {
+      background: #e8f5e9;
+      border: 2px solid #4caf50;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .truth-title {
+      font-weight: 700;
+      color: #2e7d32;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .truth-detail {
+      color: #1b5e20;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .baseline-value {
+        font-size: 2rem;
+      }
+
+      .result-value {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>The Confounding Problem Simulator</h1>
+    <p class="subtitle">
+      Experience firsthand why changing multiple variables at once makes it impossible to learn anything.
+      Select variables to change, see the results, and try to figure out what actually helped.
+    </p>
+
+    <!-- Phase 1: Setup -->
+    <div id="phase1" class="phase active">
+      <div class="baseline-section">
+        <div class="baseline-label">Your Current Load Performance</div>
+        <div class="baseline-value">1.2 MOA</div>
+      </div>
+
+      <div class="variables-section">
+        <div class="section-title">Select Variables to Change</div>
+
+        <div class="variable-card" data-variable="powder">
+          <div class="variable-header">
+            <span class="variable-name">Powder Type</span>
+            <div class="checkbox"></div>
+          </div>
+          <div class="variable-options">H4350 → Varget</div>
+        </div>
+
+        <div class="variable-card" data-variable="primer">
+          <div class="variable-header">
+            <span class="variable-name">Primer Type</span>
+            <div class="checkbox"></div>
+          </div>
+          <div class="variable-options">CCI BR2 → Federal 210M</div>
+        </div>
+
+        <div class="variable-card" data-variable="seating">
+          <div class="variable-header">
+            <span class="variable-name">Seating Depth</span>
+            <div class="checkbox"></div>
+          </div>
+          <div class="variable-options">0.020" jump → 0.005" jump</div>
+        </div>
+      </div>
+
+      <div class="selection-count" id="selectionCount">
+        Select at least 1 variable to test
+      </div>
+
+      <button class="test-btn" id="runTestBtn" disabled>
+        Run Test at the Range
+      </button>
+    </div>
+
+    <!-- Phase 2: Results -->
+    <div id="phase2" class="phase">
+      <div class="result-section">
+        <div class="result-label">New Load Performance</div>
+        <div class="result-value" id="resultValue">0.7 MOA</div>
+        <div class="result-improvement" id="resultImprovement">
+          42% improvement!
+        </div>
+      </div>
+
+      <div class="question-section">
+        <div class="question-title">Which variable(s) caused the improvement?</div>
+        <div id="answerOptions"></div>
+        <button class="submit-answer-btn" id="submitAnswerBtn" disabled>
+          Submit Answer
+        </button>
+      </div>
+    </div>
+
+    <!-- Phase 3: Feedback -->
+    <div id="phase3" class="phase">
+      <div id="feedbackSection" class="feedback-section">
+        <div class="feedback-title" id="feedbackTitle"></div>
+        <div class="feedback-text" id="feedbackText"></div>
+        <div id="possibilitiesSection"></div>
+        <div id="truthReveal"></div>
+      </div>
+
+      <button class="reset-btn" id="resetBtn">
+        Try Again With Different Variables
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // State
+    let selectedVariables = new Set();
+    let selectedAnswer = null;
+
+    // Variable effects (ground truth - hidden from user initially)
+    const variableEffects = {
+      powder: -0.3,    // Reduces group size by 0.3 MOA
+      primer: 0.0,      // No effect
+      seating: -0.2     // Reduces group size by 0.2 MOA
+    };
+
+    const baseline = 1.2;
+
+    // DOM elements
+    const variableCards = document.querySelectorAll('.variable-card');
+    const selectionCount = document.getElementById('selectionCount');
+    const runTestBtn = document.getElementById('runTestBtn');
+    const submitAnswerBtn = document.getElementById('submitAnswerBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // Phase 1: Variable selection
+    variableCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const variable = card.dataset.variable;
+
+        if (selectedVariables.has(variable)) {
+          selectedVariables.delete(variable);
+          card.classList.remove('selected');
+        } else {
+          selectedVariables.add(variable);
+          card.classList.add('selected');
+        }
+
+        updateSelectionCount();
+      });
+    });
+
+    function updateSelectionCount() {
+      const count = selectedVariables.size;
+
+      if (count === 0) {
+        selectionCount.textContent = 'Select at least 1 variable to test';
+        runTestBtn.disabled = true;
+      } else if (count === 1) {
+        selectionCount.textContent = `1 variable selected - This is the right approach!`;
+        runTestBtn.disabled = false;
+      } else if (count === 2) {
+        selectionCount.textContent = `2 variables selected - You'll have trouble interpreting results`;
+        runTestBtn.disabled = false;
+      } else {
+        selectionCount.textContent = `3 variables selected - Complete confounding!`;
+        runTestBtn.disabled = false;
+      }
+    }
+
+    runTestBtn.addEventListener('click', runTest);
+
+    function runTest() {
+      // Calculate result
+      let improvement = 0;
+      selectedVariables.forEach(variable => {
+        improvement += variableEffects[variable];
+      });
+
+      const newMOA = baseline + improvement;
+      const improvementPct = ((baseline - newMOA) / baseline * 100).toFixed(0);
+
+      document.getElementById('resultValue').textContent = `${newMOA.toFixed(1)} MOA`;
+      document.getElementById('resultImprovement').textContent =
+        newMOA < baseline
+          ? `${improvementPct}% improvement!`
+          : `${Math.abs(improvementPct)}% worse!`;
+
+      // Generate answer options
+      generateAnswerOptions();
+
+      // Move to phase 2
+      showPhase(2);
+    }
+
+    function generateAnswerOptions() {
+      const container = document.getElementById('answerOptions');
+      container.innerHTML = '';
+
+      const variables = Array.from(selectedVariables);
+      const variableNames = {
+        powder: 'Powder change (H4350 → Varget)',
+        primer: 'Primer change (CCI → Federal)',
+        seating: 'Seating depth change (0.020" → 0.005")'
+      };
+
+      if (variables.length === 1) {
+        // Only one option - the variable that was changed
+        const option = createAnswerOption(variables[0], variableNames[variables[0]]);
+        container.appendChild(option);
+      } else if (variables.length === 2) {
+        // Multiple plausible answers
+        const answers = [
+          { id: 'both', text: 'Both variables worked together' },
+          { id: variables[0], text: `Only ${variableNames[variables[0]]}` },
+          { id: variables[1], text: `Only ${variableNames[variables[1]]}` },
+          { id: 'neither', text: 'Neither - just random luck' }
+        ];
+
+        answers.forEach(answer => {
+          const option = createAnswerOption(answer.id, answer.text);
+          container.appendChild(option);
+        });
+      } else {
+        // Complete chaos - many possibilities
+        const answers = [
+          { id: 'all', text: 'All three variables were necessary' },
+          { id: 'powder+primer', text: 'Powder and primer (not seating)' },
+          { id: 'powder+seating', text: 'Powder and seating (not primer)' },
+          { id: 'primer+seating', text: 'Primer and seating (not powder)' },
+          { id: 'powder', text: `Only ${variableNames.powder}` },
+          { id: 'primer', text: `Only ${variableNames.primer}` },
+          { id: 'seating', text: `Only ${variableNames.seating}` },
+          { id: 'luck', text: 'None - just statistical luck' }
+        ];
+
+        answers.forEach(answer => {
+          const option = createAnswerOption(answer.id, answer.text);
+          container.appendChild(option);
+        });
+      }
+    }
+
+    function createAnswerOption(id, text) {
+      const div = document.createElement('div');
+      div.className = 'answer-option';
+      div.dataset.answerId = id;
+      div.textContent = text;
+
+      div.addEventListener('click', () => {
+        document.querySelectorAll('.answer-option').forEach(opt => {
+          opt.classList.remove('selected');
+        });
+        div.classList.add('selected');
+        selectedAnswer = id;
+        submitAnswerBtn.disabled = false;
+      });
+
+      return div;
+    }
+
+    submitAnswerBtn.addEventListener('click', showFeedback);
+
+    function showFeedback() {
+      const variables = Array.from(selectedVariables);
+      const feedbackSection = document.getElementById('feedbackSection');
+      const feedbackTitle = document.getElementById('feedbackTitle');
+      const feedbackText = document.getElementById('feedbackText');
+      const possibilitiesSection = document.getElementById('possibilitiesSection');
+      const truthReveal = document.getElementById('truthReveal');
+
+      // Remove all feedback classes
+      feedbackSection.className = 'feedback-section';
+
+      if (variables.length === 1) {
+        // Clear interpretation
+        feedbackSection.classList.add('clear');
+        feedbackTitle.textContent = '✓ Clear Answer!';
+        feedbackText.innerHTML = `
+          <strong>You changed one variable, so the answer is obvious:</strong> The ${variables[0]} change
+          caused the result. There's no ambiguity, no guessing, no second-guessing.<br><br>
+          This is the power of testing one thing at a time. You now have <strong>definitive knowledge</strong>
+          that you can apply to future loads.
+        `;
+
+        // Show the truth
+        truthReveal.innerHTML = `
+          <div class="truth-title">The Truth</div>
+          <div class="truth-detail">
+            • Powder change: ${variableEffects.powder < 0 ? `Improved by ${Math.abs(variableEffects.powder)} MOA` : 'No effect'}<br>
+            • Primer change: ${variableEffects.primer < 0 ? `Improved by ${Math.abs(variableEffects.primer)} MOA` : 'No effect'}<br>
+            • Seating depth: ${variableEffects.seating < 0 ? `Improved by ${Math.abs(variableEffects.seating)} MOA` : 'No effect'}
+          </div>
+        `;
+
+      } else if (variables.length === 2) {
+        // Ambiguous
+        feedbackSection.classList.add('ambiguous');
+        feedbackTitle.textContent = '⚠️ Multiple Plausible Explanations';
+        feedbackText.innerHTML = `
+          <strong>You changed two variables, so you can't determine causation.</strong><br><br>
+          Your answer might be right... or it might be completely wrong. You'd need to test the variables
+          separately to actually know. Look at all the possibilities:
+        `;
+
+        possibilitiesSection.innerHTML = `
+          <div class="possibilities-list">
+            <div class="possibility">✓ Both variables helped</div>
+            <div class="possibility">✓ Only the first variable helped</div>
+            <div class="possibility">✓ Only the second variable helped</div>
+            <div class="possibility">✓ Neither helped - just statistical luck</div>
+          </div>
+        `;
+
+        truthReveal.innerHTML = `
+          <div class="truth-title">The Truth (What You Couldn't Know)</div>
+          <div class="truth-detail">
+            • Powder: ${variableEffects.powder < 0 ? `Helped (−${Math.abs(variableEffects.powder)} MOA)` : 'No effect'}<br>
+            • Primer: ${variableEffects.primer < 0 ? `Helped (−${Math.abs(variableEffects.primer)} MOA)` : 'No effect'}<br>
+            • Seating: ${variableEffects.seating < 0 ? `Helped (−${Math.abs(variableEffects.seating)} MOA)` : 'No effect'}<br><br>
+            <strong>See the problem?</strong> You had to guess between multiple possibilities because you changed two things at once.
+          </div>
+        `;
+
+      } else {
+        // Complete confusion
+        feedbackSection.classList.add('confused');
+        feedbackTitle.textContent = '❌ Impossible to Interpret';
+        feedbackText.innerHTML = `
+          <strong>You changed three variables, creating complete confounding.</strong><br><br>
+          There are EIGHT different plausible explanations for what you observed. You have absolutely no way
+          to determine which is correct without testing them separately. Look at all these possibilities:
+        `;
+
+        possibilitiesSection.innerHTML = `
+          <div class="possibilities-list">
+            <div class="possibility">1. All three variables helped</div>
+            <div class="possibility">2. Powder + primer helped (not seating)</div>
+            <div class="possibility">3. Powder + seating helped (not primer)</div>
+            <div class="possibility">4. Primer + seating helped (not powder)</div>
+            <div class="possibility">5. Only powder helped</div>
+            <div class="possibility">6. Only primer helped</div>
+            <div class="possibility">7. Only seating helped</div>
+            <div class="possibility">8. None helped - pure statistical luck</div>
+          </div>
+        `;
+
+        truthReveal.innerHTML = `
+          <div class="truth-title">The Truth (What You Wasted Your Time Not Learning)</div>
+          <div class="truth-detail">
+            • Powder: ${variableEffects.powder < 0 ? `Helped (−${Math.abs(variableEffects.powder)} MOA)` : 'No effect'}<br>
+            • Primer: ${variableEffects.primer === 0 ? '<strong>No effect at all</strong>' : `Helped (−${Math.abs(variableEffects.primer)} MOA)`}<br>
+            • Seating: ${variableEffects.seating < 0 ? `Helped (−${Math.abs(variableEffects.seating)} MOA)` : 'No effect'}<br><br>
+            <strong>You wasted primers that did nothing.</strong> You could have learned this with three simple
+            tests: powder alone, primer alone, seating alone. Instead, you learned nothing definitive.
+          </div>
+        `;
+      }
+
+      showPhase(3);
+    }
+
+    resetBtn.addEventListener('click', reset);
+
+    function reset() {
+      selectedVariables.clear();
+      selectedAnswer = null;
+
+      variableCards.forEach(card => card.classList.remove('selected'));
+      updateSelectionCount();
+
+      showPhase(1);
+    }
+
+    function showPhase(phaseNum) {
+      document.querySelectorAll('.phase').forEach(phase => {
+        phase.classList.remove('active');
+      });
+      document.getElementById(`phase${phaseNum}`).classList.add('active');
+    }
+  </script>
+</body>
+</html>

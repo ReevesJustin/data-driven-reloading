@@ -1,0 +1,179 @@
+// Dark mode styles
+// Applied when html has data-theme="dark" attribute
+
+html[data-theme="dark"] {
+  // Background and surfaces
+  background-color: $bg-dark;
+  color: $text-primary-dark;
+
+  body {
+    background-color: $bg-dark;
+    color: $text-primary-dark;
+  }
+
+  // Text colors
+  h1, h2, h3, h4, h5, h6 {
+    color: $text-primary-dark;
+  }
+
+  a {
+    color: $primary-blue-dark;
+
+    &:hover {
+      color: lighten($primary-blue-dark, 10%);
+    }
+  }
+
+  // Surfaces and cards
+  .surface,
+  .card,
+  .stats-section,
+  .interactive-preview {
+    background-color: $surface-dark;
+    border-color: $border-dark;
+  }
+
+  // Header
+  .site-header {
+    background-color: $surface-dark;
+    border-bottom-color: $border-dark;
+  }
+
+  // Navigation
+  .site-nav {
+    a {
+      color: #c9d1d9; // Lighter grey for better contrast in dark mode
+
+      &:hover {
+        color: $text-primary-dark;
+      }
+
+      &.active {
+        color: $primary-blue-dark;
+        background-color: rgba(90, 159, 212, 0.15);
+      }
+    }
+  }
+
+  .sidebar-nav {
+    background-color: $surface-dark;
+    border-color: $border-dark;
+
+    a {
+      color: $text-secondary-dark;
+
+      &:hover {
+        background-color: lighten($surface-dark, 5%);
+        color: $text-primary-dark;
+      }
+
+      &.active {
+        background-color: $primary-dark-dark;
+        color: $text-primary-dark;
+      }
+    }
+  }
+
+  // Footer
+  .site-footer {
+    background-color: $surface-dark;
+    border-top-color: $border-dark;
+    color: $text-secondary-dark;
+  }
+
+  // Code blocks
+  pre,
+  code {
+    background-color: lighten($bg-dark, 3%);
+    border-color: $border-dark;
+  }
+
+  // Tables
+  table {
+    border-color: $border-dark;
+
+    th {
+      background-color: $surface-dark;
+      border-color: $border-dark;
+    }
+
+    td {
+      border-color: $border-dark;
+    }
+
+    tr:hover {
+      background-color: lighten($surface-dark, 3%);
+    }
+  }
+
+  // Blockquotes
+  blockquote {
+    border-left-color: $primary-dark-dark;
+    background-color: lighten($surface-dark, 2%);
+    color: $text-secondary-dark;
+  }
+
+  // Forms
+  input,
+  textarea,
+  select {
+    background-color: $surface-dark;
+    border-color: $border-dark;
+    color: $text-primary-dark;
+
+    &:focus {
+      border-color: $primary-blue-dark;
+    }
+  }
+
+  // Buttons
+  .btn-primary {
+    background-color: $primary-dark-dark;
+    color: $text-primary-dark;
+
+    &:hover {
+      background-color: lighten($primary-dark-dark, 10%);
+    }
+  }
+
+  // Images with white backgrounds (plots)
+  .lesson-content img {
+    border: 1px solid $border-dark;
+    border-radius: $radius-md;
+  }
+
+  // Interactive elements
+  .embed-desktop {
+    iframe {
+      border-color: $border-dark;
+    }
+  }
+
+  // Horizontal rules
+  hr {
+    border-color: $border-dark;
+  }
+
+  // Theme toggle in dark mode
+  .theme-toggle {
+    background-color: $surface-dark;
+    border-color: $border-dark;
+    color: $text-primary-dark;
+
+    &:hover {
+      background-color: $primary-blue-dark;
+      border-color: $primary-blue-dark;
+    }
+  }
+}
+
+// Smooth transition when switching themes
+html,
+body,
+.site-header,
+.site-footer,
+.sidebar-nav,
+.card,
+.surface {
+  transition: background-color $transition-base, color $transition-base, border-color $transition-base;
+}

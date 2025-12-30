@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing Cost Calculator - Data-Driven Reloading</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #c0392b 0%, #e67e22 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #c0392b;
+      margin-bottom: 0.5rem;
+      font-size: 1.75rem;
+    }
+
+    .subtitle {
+      color: #718096;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .inputs-section {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .input-label {
+      font-weight: 600;
+      color: #2d3748;
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .input-value {
+      font-weight: 700;
+      color: #c0392b;
+      font-size: 1.1rem;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #c0392b;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      background: #a93226;
+      transform: scale(1.2);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #c0392b;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    input[type="range"]::-moz-range-thumb:hover {
+      background: #a93226;
+      transform: scale(1.2);
+    }
+
+    .comparison-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .approach-card {
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 3px solid;
+    }
+
+    .approach-card.inadequate {
+      background: linear-gradient(135deg, #fff5f5, #fed7d7);
+      border-color: #fc8181;
+    }
+
+    .approach-card.proper {
+      background: linear-gradient(135deg, #f0fff4, #c6f6d5);
+      border-color: #68d391;
+    }
+
+    .approach-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .approach-title.inadequate {
+      color: #c0392b;
+    }
+
+    .approach-title.proper {
+      color: #27ae60;
+    }
+
+    .cost-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      font-size: 0.95rem;
+    }
+
+    .cost-item:last-child {
+      border-bottom: none;
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+      border-top: 2px solid rgba(0, 0, 0, 0.2);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .cost-label {
+      color: #4a5568;
+    }
+
+    .cost-value {
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .savings-section {
+      background: linear-gradient(135deg, #27ae60, #229954);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .savings-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .savings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .savings-item {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .savings-label {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+    }
+
+    .savings-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+
+    .big-message {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .explanation-box {
+      background: #fff9e6;
+      border-left: 4px solid #f39c12;
+      padding: 1.25rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: #5a4a3a;
+      line-height: 1.6;
+    }
+
+    .explanation-box strong {
+      color: #c0392b;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-section {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .big-message {
+        font-size: 1.25rem;
+      }
+
+      .savings-value {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>The True Cost of Inadequate Testing</h1>
+    <p class="subtitle">
+      Think you're saving money with smaller sample sizes? This calculator reveals the hidden costs
+      of retesting, wasted components, and chasing false leads. You might be surprised.
+    </p>
+
+    <div class="inputs-section">
+      <div class="input-grid">
+        <div class="input-group">
+          <label class="input-label">
+            <span>Cost Per Round</span>
+            <span class="input-value">$<span id="costValue">1.50</span></span>
+          </label>
+          <input type="range" id="costSlider" min="0.5" max="5.0" value="1.5" step="0.1">
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">
+            <span>Current Testing Approach</span>
+            <span class="input-value"><span id="currentSizeValue">10</span> shots</span>
+          </label>
+          <input type="range" id="currentSizeSlider" min="5" max="30" value="10" step="5">
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">
+            <span>Variables to Test Per Year</span>
+            <span class="input-value"><span id="variablesValue">6</span></span>
+          </label>
+          <input type="range" id="variablesSlider" min="4" max="12" value="6" step="1">
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-section">
+      <div class="approach-card inadequate">
+        <div class="approach-title inadequate">
+          ❌ Your Current Approach
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Initial testing rounds</span>
+          <span class="cost-value" id="inadequateInitial">60</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Retests needed (typical)</span>
+          <span class="cost-value" id="inadequateRetests">3</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Rounds wasted on false leads</span>
+          <span class="cost-value" id="inadequateWasted">120</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Total rounds per year</span>
+          <span class="cost-value" id="inadequateTotalRounds">240</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Annual Cost</span>
+          <span class="cost-value" id="inadequateCost">$360</span>
+        </div>
+      </div>
+
+      <div class="approach-card proper">
+        <div class="approach-title proper">
+          ✓ Proper 30-Shot Testing
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Initial testing rounds</span>
+          <span class="cost-value" id="properInitial">180</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Retests needed (rare)</span>
+          <span class="cost-value" id="properRetests">0-1</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Rounds wasted on false leads</span>
+          <span class="cost-value" id="properWasted">0</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Total rounds per year</span>
+          <span class="cost-value" id="properTotalRounds">210</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Annual Cost</span>
+          <span class="cost-value" id="properCost">$315</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="savings-section">
+      <div class="big-message" id="savingsMessage">
+        Proper testing saves you $45 per year
+      </div>
+      <div class="savings-title">YOUR SAVINGS WITH PROPER TESTING</div>
+      <div class="savings-grid">
+        <div class="savings-item">
+          <div class="savings-label">First Year</div>
+          <div class="savings-value" id="savings1Year">$45</div>
+        </div>
+        <div class="savings-item">
+          <div class="savings-label">Over 5 Years</div>
+          <div class="savings-value" id="savings5Years">$225</div>
+        </div>
+        <div class="savings-item">
+          <div class="savings-label">Rounds Saved</div>
+          <div class="savings-value" id="roundsSaved">30</div>
+        </div>
+        <div class="savings-item">
+          <div class="savings-label">Retest Sessions Avoided</div>
+          <div class="savings-value" id="retestsSaved">18</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="explanation-box">
+      <strong>Why inadequate testing costs more:</strong> With small sample sizes, you can't trust
+      your results. You'll retest "just to be sure," chase false leads that looked promising in small
+      samples, and waste components on loads that were never actually better. The hidden costs add up fast:
+      multiple range trips, wasted barrel life, and months of frustration. <strong>Proper testing upfront
+      costs less and gets you to the truth faster.</strong>
+    </div>
+  </div>
+
+  <script>
+    // DOM elements
+    const costSlider = document.getElementById('costSlider');
+    const costValue = document.getElementById('costValue');
+    const currentSizeSlider = document.getElementById('currentSizeSlider');
+    const currentSizeValue = document.getElementById('currentSizeValue');
+    const variablesSlider = document.getElementById('variablesSlider');
+    const variablesValue = document.getElementById('variablesValue');
+
+    // Update display values
+    costSlider.addEventListener('input', () => {
+      costValue.textContent = parseFloat(costSlider.value).toFixed(2);
+      calculate();
+    });
+
+    currentSizeSlider.addEventListener('input', () => {
+      currentSizeValue.textContent = currentSizeSlider.value;
+      calculate();
+    });
+
+    variablesSlider.addEventListener('input', () => {
+      variablesValue.textContent = variablesSlider.value;
+      calculate();
+    });
+
+    function calculate() {
+      const costPerRound = parseFloat(costSlider.value);
+      const currentSize = parseInt(currentSizeSlider.value);
+      const variablesPerYear = parseInt(variablesSlider.value);
+
+      // Inadequate approach calculations
+      // Based on small sample unreliability
+      const retestProbability = currentSize < 15 ? 0.7 : currentSize < 20 ? 0.5 : 0.3;
+      const avgRetests = Math.round(variablesPerYear * retestProbability);
+
+      // False leads: when small samples mislead you into loading batches
+      const falseLeadProbability = currentSize < 15 ? 0.4 : currentSize < 20 ? 0.25 : 0.15;
+      const falseLeads = Math.round(variablesPerYear * falseLeadProbability);
+      const roundsPerFalseLead = 50; // Typical batch loaded based on "good" small sample
+
+      const inadequateInitialRounds = variablesPerYear * currentSize;
+      const inadequateRetestRounds = avgRetests * currentSize;
+      const inadequateWastedRounds = falseLeads * roundsPerFalseLead;
+      const inadequateTotalRounds = inadequateInitialRounds + inadequateRetestRounds + inadequateWastedRounds;
+      const inadequateTotalCost = inadequateTotalRounds * costPerRound;
+
+      // Proper approach (30 shots)
+      const properSize = 30;
+      const properRetestProbability = 0.1; // Very rare
+      const properRetests = Math.round(variablesPerYear * properRetestProbability);
+      const properFalseLeads = 0; // Reliable data = no false leads
+
+      const properInitialRounds = variablesPerYear * properSize;
+      const properRetestRounds = properRetests * properSize;
+      const properWastedRounds = 0;
+      const properTotalRounds = properInitialRounds + properRetestRounds;
+      const properTotalCost = properTotalRounds * costPerRound;
+
+      // Savings
+      const savings1Year = inadequateTotalCost - properTotalCost;
+      const savings5Years = savings1Year * 5;
+      const roundsSaved = inadequateTotalRounds - properTotalRounds;
+      const retestsSaved = (avgRetests * variablesPerYear) - (properRetests * variablesPerYear);
+
+      // Update inadequate approach display
+      document.getElementById('inadequateInitial').textContent = inadequateInitialRounds;
+      document.getElementById('inadequateRetests').textContent = avgRetests;
+      document.getElementById('inadequateWasted').textContent = inadequateWastedRounds;
+      document.getElementById('inadequateTotalRounds').textContent = inadequateTotalRounds;
+      document.getElementById('inadequateCost').textContent = `$${inadequateTotalCost.toFixed(0)}`;
+
+      // Update proper approach display
+      document.getElementById('properInitial').textContent = properInitialRounds;
+      document.getElementById('properRetests').textContent = `${properRetests}`;
+      document.getElementById('properWasted').textContent = properWastedRounds;
+      document.getElementById('properTotalRounds').textContent = properTotalRounds;
+      document.getElementById('properCost').textContent = `$${properTotalCost.toFixed(0)}`;
+
+      // Update savings display
+      const savingsMsg = savings1Year > 0
+        ? `Proper testing saves you $${Math.abs(savings1Year).toFixed(0)} per year`
+        : `Proper testing costs $${Math.abs(savings1Year).toFixed(0)} more upfront`;
+
+      document.getElementById('savingsMessage').textContent = savingsMsg;
+      document.getElementById('savings1Year').textContent = savings1Year > 0
+        ? `$${savings1Year.toFixed(0)}`
+        : `-$${Math.abs(savings1Year).toFixed(0)}`;
+      document.getElementById('savings5Years').textContent = savings5Years > 0
+        ? `$${savings5Years.toFixed(0)}`
+        : `-$${Math.abs(savings5Years).toFixed(0)}`;
+      document.getElementById('roundsSaved').textContent = roundsSaved;
+      document.getElementById('retestsSaved').textContent = retestsSaved;
+    }
+
+    // Initial calculation
+    calculate();
+  </script>
+</body>
+</html>

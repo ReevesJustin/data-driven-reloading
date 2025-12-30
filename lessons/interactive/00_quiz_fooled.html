@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Self-assessment quiz about common reloading testing mistakes">
+    <title>Have You Been Fooled? Quiz - Data-Driven Reloading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c5282;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .intro {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #4682b4;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+
+        .options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .option-btn {
+            flex: 1;
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            background: white;
+            color: #333;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .option-btn:hover {
+            border-color: #4682b4;
+            background: #f0f8ff;
+        }
+
+        .option-btn.selected {
+            background: #4682b4;
+            color: white;
+            border-color: #4682b4;
+        }
+
+        .option-btn.selected.yes {
+            background: #e67e22;
+            border-color: #e67e22;
+        }
+
+        .option-btn.selected.no {
+            background: #27ae60;
+            border-color: #27ae60;
+        }
+
+        #results {
+            margin-top: 30px;
+            padding: 25px;
+            background: #fff8e1;
+            border-radius: 6px;
+            border-left: 4px solid #f39c12;
+            display: none;
+        }
+
+        #results.show {
+            display: block;
+        }
+
+        .score-display {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c5282;
+            margin-bottom: 15px;
+        }
+
+        .feedback {
+            font-size: 1.05em;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .message {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .progress {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .option-btn {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Have You Been Fooled?</h1>
+        <p class="intro">Be honest. No one's judging. We've all been there. Answer these 5 questions about your past reloading testing experiences.</p>
+
+        <div class="progress">
+            <span id="progress-text">Answer all questions to see your results</span>
+        </div>
+
+        <div id="quiz-container"></div>
+
+        <div id="results">
+            <div class="score-display">Your Score: <span id="score-value"></span> / 5</div>
+            <div class="feedback" id="feedback-text"></div>
+            <div class="message">None of these are character flaws. They're natural human pattern-seeking behavior in the face of random variation. This course rewires those instincts.</div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                id: 1,
+                text: "I found a 'magic' charge weight based on 3-5 shot groups"
+            },
+            {
+                id: 2,
+                text: "I changed one component (primer, bullet, brass) and saw immediate improvement in one testing session (5-10 rounds)"
+            },
+            {
+                id: 3,
+                text: "I sorted brass by weight and my groups tightened up"
+            },
+            {
+                id: 4,
+                text: "I found a velocity node by looking for flat spots in a ladder test"
+            },
+            {
+                id: 5,
+                text: "I judge my ammunition by the best group it's ever shot"
+            }
+        ];
+
+        const scoringRubric = {
+            0: "Rare! You've either been very lucky or very disciplined.",
+            1: "You've experienced some common pitfalls—this course will help.",
+            2: "You've experienced some common pitfalls—this course will help.",
+            3: "You're in good company—most reloaders have fallen for these.",
+            4: "You're in good company—most reloaders have fallen for these.",
+            5: "Perfect! You'll recognize yourself in the examples. Prepare for some revelations."
+        };
+
+        let answers = {};
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.text}</div>
+                    <div class="options">
+                        <button class="option-btn" data-question="${question.id}" data-value="yes">Yes</button>
+                        <button class="option-btn" data-question="${question.id}" data-value="no">No</button>
+                    </div>
+                `;
+                container.appendChild(questionDiv);
+            });
+
+            // Add click handlers
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.addEventListener('click', handleAnswer);
+            });
+        }
+
+        function handleAnswer(event) {
+            const questionId = parseInt(event.target.dataset.question);
+            const value = event.target.dataset.value;
+
+            // Store answer
+            answers[questionId] = value;
+
+            // Update button states for this question
+            const questionButtons = document.querySelectorAll(`[data-question="${questionId}"]`);
+            questionButtons.forEach(btn => {
+                btn.classList.remove('selected', 'yes', 'no');
+                if (btn.dataset.value === value) {
+                    btn.classList.add('selected', value);
+                }
+            });
+
+            // Update progress and show results if all answered
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answeredCount = Object.keys(answers).length;
+            const progressText = document.getElementById('progress-text');
+
+            if (answeredCount === questions.length) {
+                progressText.textContent = 'All questions answered!';
+                showResults();
+            } else {
+                progressText.textContent = `${answeredCount} / ${questions.length} answered`;
+            }
+        }
+
+        function showResults() {
+            const yesCount = Object.values(answers).filter(answer => answer === 'yes').length;
+            const resultsDiv = document.getElementById('results');
+            const scoreValue = document.getElementById('score-value');
+            const feedbackText = document.getElementById('feedback-text');
+
+            scoreValue.textContent = yesCount;
+            feedbackText.textContent = scoringRubric[yesCount];
+            resultsDiv.classList.add('show');
+
+            // Smooth scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Initialize quiz on page load
+        renderQuiz();
+    </script>
+</body>
+</html>

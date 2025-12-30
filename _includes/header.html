@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="header-content">
+    <div class="site-branding">
+      <h1 class="site-title">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      </h1>
+      <p class="site-tagline">{{ site.description }}</p>
+    </div>
+
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+      <a href="{{ '/lessons/md/00_Welcome_and_Why_This_Matters.html' | relative_url }}" {% if page.url contains '/lessons/md/' %}class="active"{% endif %}>Curriculum</a>
+      <a href="{{ '/lessons/md/Appendix_A_Glossary.html' | relative_url }}" {% if page.url contains 'Appendix' %}class="active"{% endif %}>Glossary</a>
+      {% include theme-toggle.html %}
+    </nav>
+  </div>
+</header>

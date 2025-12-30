@@ -1,0 +1,347 @@
+// Layout styles
+
+// Site wrapper
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// Header
+.site-header {
+  background-color: $bg-light;
+  border-bottom: 2px solid $border-light;
+  padding: $spacing-sm $spacing-md;
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  box-shadow: $shadow-sm;
+
+  .header-content {
+    max-width: $max-width-content;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary-dark;
+    margin: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary-blue;
+      }
+    }
+  }
+
+  .site-tagline {
+    font-size: 0.875rem;
+    color: $text-secondary-light;
+    margin-top: 2px;
+  }
+}
+
+// Navigation
+.site-nav {
+  display: flex;
+  gap: $spacing-md;
+  align-items: center;
+
+  a {
+    color: $text-secondary-light;
+    font-weight: 500;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $radius-sm;
+    transition: all $transition-fast;
+
+    &:hover {
+      color: $primary-dark;
+      background-color: $surface-light;
+      text-decoration: none;
+    }
+
+    &.active {
+      color: $primary-dark;
+      background-color: lighten($primary-blue, 45%);
+    }
+  }
+}
+
+// Theme toggle button
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid $border-light;
+  border-radius: 50%;
+  background-color: $surface-light;
+  color: $text-primary-light;
+  cursor: pointer;
+  transition: all $transition-fast;
+  margin-left: $spacing-sm;
+
+  &:hover {
+    background-color: $primary-blue;
+    border-color: $primary-blue;
+    color: white;
+    transform: rotate(15deg);
+  }
+
+  &:focus {
+    outline: 2px solid $primary-blue;
+    outline-offset: 2px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sun-icon,
+  .moon-icon {
+    display: none;
+  }
+}
+
+// Main content area
+.site-content {
+  flex: 1;
+  max-width: $max-width-content;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md;
+  width: 100%;
+}
+
+// Lesson layout with sidebar
+.lesson-layout {
+  display: grid;
+  grid-template-columns: $sidebar-width 1fr;
+  gap: $spacing-xl;
+  align-items: start;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Sidebar navigation
+.sidebar-nav {
+  position: sticky;
+  top: calc(#{$header-height} + #{$spacing-md});
+  background-color: $surface-light;
+  border: 1px solid $border-light;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  max-height: calc(100vh - #{$header-height} - #{$spacing-lg} * 2);
+  overflow-y: auto;
+
+  h3 {
+    font-size: 1rem;
+    margin: 0 0 $spacing-sm 0;
+    color: $text-secondary-light;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  .nav-section {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    padding: $spacing-xs $spacing-sm;
+    color: $text-primary-light;
+    border-radius: $radius-sm;
+    font-size: 0.9375rem;
+    transition: all $transition-fast;
+
+    &:hover {
+      background-color: lighten($surface-light, 3%);
+      text-decoration: none;
+    }
+
+    &.active {
+      background-color: $primary-blue;
+      color: white;
+      font-weight: 600;
+    }
+
+    &.completed {
+      &::before {
+        content: '✓';
+        margin-right: $spacing-xs;
+        color: $success-green;
+        font-weight: 700;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    position: static;
+    max-height: none;
+  }
+}
+
+// Lesson content
+.lesson-content {
+  max-width: $max-width-text;
+
+  .lesson-header {
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-md;
+    border-bottom: 2px solid $border-light;
+
+    .lesson-meta {
+      display: flex;
+      gap: $spacing-md;
+      margin-top: $spacing-sm;
+      font-size: 0.875rem;
+      color: $text-secondary-light;
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+      }
+    }
+  }
+
+  img {
+    border-radius: $radius-md;
+    box-shadow: $shadow-md;
+  }
+}
+
+// Lesson navigation (prev/next)
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: $spacing-xl;
+  padding-top: $spacing-lg;
+  border-top: 2px solid $border-light;
+  gap: $spacing-md;
+
+  .nav-link {
+    flex: 1;
+    padding: $spacing-md;
+    background-color: $surface-light;
+    border: 1px solid $border-light;
+    border-radius: $radius-md;
+    text-decoration: none;
+    transition: all $transition-fast;
+
+    &:hover {
+      box-shadow: $shadow-md;
+      border-color: $primary-blue;
+    }
+
+    .nav-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: $text-secondary-light;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .nav-title {
+      color: $primary-dark;
+      font-weight: 600;
+    }
+
+    &.next {
+      text-align: right;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+  }
+}
+
+// Footer
+.site-footer {
+  background-color: $surface-light;
+  border-top: 2px solid $border-light;
+  padding: $spacing-lg $spacing-md;
+  margin-top: auto;
+
+  .footer-content {
+    max-width: $max-width-content;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .footer-text {
+    color: $text-secondary-light;
+    font-size: 0.875rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: $spacing-md;
+
+    a {
+      color: $text-secondary-light;
+      font-size: 0.875rem;
+
+      &:hover {
+        color: $primary-dark;
+      }
+    }
+  }
+}
+
+// Utility classes
+.container {
+  max-width: $max-width-content;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: $spacing-sm; }
+.mt-2 { margin-top: $spacing-md; }
+.mt-3 { margin-top: $spacing-lg; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: $spacing-sm; }
+.mb-2 { margin-bottom: $spacing-md; }
+.mb-3 { margin-bottom: $spacing-lg; }
