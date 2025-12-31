@@ -60,11 +60,11 @@ Think of it as "translating" each group so all the centers align, then overlayin
 
 ![Three separate 5-shot groups at different aiming points on a target, showing tight clusters but at different locations on the paper](../static/300_5x5.jpg)
 
-*Above: Three separate 5-shot groups, each centered on different aiming points. Each group looks tight individually.*
+*Above: Five separate 5-shot groups, each centered on different aiming points. Each group looks relatively tight individually.*
 
 ![The same shots overlaid with centers aligned, showing the combined spread pattern as if all 15 shots were aimed at the same point, revealing the true overall precision](../static/300_5x5_Composite.jpg)
 
-*Above: The same 15 shots combined into a composite group. The computer has "moved" each group so all centers align, showing total spread pattern while preserving each shot's distance from its original aiming point. This reveals your rifle's overall precision across all shots.*
+*Above: The same 25 shots combined into a composite group. The computer has "moved" each group so all centers align, showing total spread pattern while preserving each shot's distance from its original aiming point. This reveals your rifle's overall precision across all shots.*
 
 ### Why This Matters: Real Data
 
@@ -77,7 +77,7 @@ In Lesson 01, we show actual range data that perfectly demonstrates why composit
 
 **The solution**: Composite groups revealed the truth. This rifle shoots around 0.88-0.94 MOA with this load, with a Mean Radius of 0.312" (a more reliable metric than ES, as discussed in Lesson 06).
 
-This wasn't a custom precision rifle. Budget $400 rifle, $300 budget optic, factory chamber, NO modifications - like NONE at all. Yet the individual 5-shot groups varied by more than 2:1. **Small samples consistently lie** and composite groups or aggregate groups reveal the truth.
+This wasn't a custom precision rifle. Budget $400 rifle, $300 budget optic, factory chamber, NO modifications - NONE at all.  Rifle came out of the box, cleaned, mounted optic, zeroed, and shot approximately 100 rounds then shot these groups. Yet the individual 5-shot groups varied by more than 2:1. **Small samples consistently lie** and composite groups or aggregate groups reveal the truth.
 
 For the complete analysis of this data and why small samples are unreliable, see [Lesson 01: Real Data - Confirming the Simulation at the Range](01_The_Biggest_Lie_in_Reloading_Testing.html#real-data-confirming-the-simulation-at-the-range).
 
