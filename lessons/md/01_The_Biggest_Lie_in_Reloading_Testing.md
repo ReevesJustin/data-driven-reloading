@@ -305,7 +305,7 @@ This is exactly what the simulations predicted. Remember Figure 2 showing five-s
 - 20% chance of seeing 0.65-0.7" (thinking the load is mediocre)
 - 60% chance of seeing something in between (confused about what's real)
 
-**None of these single groups tell you the truth.** The 25-shot composite does.
+**None of these single groups tell you the truth.** The 25-shot composite comes much closer to the truth than any of the individual 5-shot groups.  *This was for demonstration purposes to show there is some validity to modeling dispersion with a simulation.
 
 ### This Wasn't Even an Expensive Setup
 
