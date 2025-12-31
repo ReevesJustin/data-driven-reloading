@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Size and Reliability - Data-Driven Reloading</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #2c5282 0%, #4682b4 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #2c5282;
+      margin-bottom: 0.5rem;
+      font-size: 1.75rem;
+    }
+
+    .subtitle {
+      color: #718096;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .controls-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      background: #f7fafc;
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .control-label {
+      font-weight: 600;
+      color: #2d3748;
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .control-value {
+      font-weight: 700;
+      color: #4682b4;
+      font-size: 1.1rem;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #4682b4;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      background: #2c5282;
+      transform: scale(1.2);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #4682b4;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    input[type="range"]::-moz-range-thumb:hover {
+      background: #2c5282;
+      transform: scale(1.2);
+    }
+
+    .trial-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .trial-btn {
+      flex: 1;
+      padding: 0.5rem;
+      border: 2px solid #cbd5e0;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      color: #4a5568;
+    }
+
+    .trial-btn:hover {
+      border-color: #4682b4;
+      color: #2c5282;
+    }
+
+    .trial-btn.active {
+      background: #4682b4;
+      color: white;
+      border-color: #4682b4;
+    }
+
+    .simulate-btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #4682b4, #2c5282);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 2rem;
+    }
+
+    .simulate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(70, 130, 180, 0.4);
+    }
+
+    .simulate-btn:active {
+      transform: translateY(0);
+    }
+
+    .chart-container {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      min-height: 400px;
+      position: relative;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .stats-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #f7fafc, #edf2f7);
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #718096;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #2c5282;
+    }
+
+    .stat-value.good {
+      color: #27ae60;
+    }
+
+    .stat-value.warning {
+      color: #e67e22;
+    }
+
+    .stat-value.bad {
+      color: #c0392b;
+    }
+
+    .insight-box {
+      background: #fff5e6;
+      border-left: 4px solid #e67e22;
+      padding: 1.25rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: #5a4a3a;
+      line-height: 1.6;
+    }
+
+    .insight-box strong {
+      color: #2c5282;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .controls-section {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-value {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sample Size and Reliability Simulator</h1>
+    <p class="subtitle">
+      See how sample size affects the reliability of standard deviation measurements.
+      Watch how larger samples produce more consistent SD estimates that cluster tightly around the true value.
+    </p>
+
+    <div class="controls-section">
+      <div class="control-group">
+        <label class="control-label">
+          <span>True SD</span>
+          <span class="control-value"><span id="trueSdValue">15</span> fps</span>
+        </label>
+        <input type="range" id="trueSdSlider" min="5" max="25" value="15" step="1">
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">
+          <span>Sample Size</span>
+          <span class="control-value"><span id="sampleSizeValue">30</span> shots</span>
+        </label>
+        <input type="range" id="sampleSizeSlider" min="5" max="100" value="30" step="5">
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">
+          <span>Number of Trials</span>
+        </label>
+        <div class="trial-buttons">
+          <button class="trial-btn" data-trials="50">50</button>
+          <button class="trial-btn active" data-trials="100">100</button>
+          <button class="trial-btn" data-trials="500">500</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="simulate-btn" id="simulateBtn">
+      Run Simulation
+    </button>
+
+    <div class="stats-section" id="statsSection" style="display: none;">
+      <div class="stat-card">
+        <div class="stat-label">Within ±5%</div>
+        <div class="stat-value" id="within5Pct">0%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Within ±10%</div>
+        <div class="stat-value" id="within10Pct">0%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Within ±20%</div>
+        <div class="stat-value" id="within20Pct">0%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Average SD</div>
+        <div class="stat-value" id="avgSd">0</div>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="histogramChart"></canvas>
+    </div>
+
+    <div class="insight-box" id="insightBox" style="display: none;">
+      <strong>Key Insight:</strong> <span id="insightText"></span>
+    </div>
+  </div>
+
+  <script>
+    // DOM elements
+    const trueSdSlider = document.getElementById('trueSdSlider');
+    const trueSdValue = document.getElementById('trueSdValue');
+    const sampleSizeSlider = document.getElementById('sampleSizeSlider');
+    const sampleSizeValue = document.getElementById('sampleSizeValue');
+    const trialButtons = document.querySelectorAll('.trial-btn');
+    const simulateBtn = document.getElementById('simulateBtn');
+    const statsSection = document.getElementById('statsSection');
+    const canvas = document.getElementById('histogramChart');
+    const ctx = canvas.getContext('2d');
+    const insightBox = document.getElementById('insightBox');
+    const insightText = document.getElementById('insightText');
+
+    let selectedTrials = 100;
+
+    // Update display values
+    trueSdSlider.addEventListener('input', () => {
+      trueSdValue.textContent = trueSdSlider.value;
+    });
+
+    sampleSizeSlider.addEventListener('input', () => {
+      sampleSizeValue.textContent = sampleSizeSlider.value;
+    });
+
+    // Trial button selection
+    trialButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        trialButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedTrials = parseInt(btn.dataset.trials);
+      });
+    });
+
+    // Generate normally distributed random numbers (Box-Muller transform)
+    function generateNormal(mean, stdDev) {
+      let u1 = Math.random();
+      let u2 = Math.random();
+      let z0 = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
+      return z0 * stdDev + mean;
+    }
+
+    // Calculate sample standard deviation
+    function calculateSD(values) {
+      const n = values.length;
+      const mean = values.reduce((a, b) => a + b, 0) / n;
+      const squaredDiffs = values.map(v => Math.pow(v - mean, 2));
+      const variance = squaredDiffs.reduce((a, b) => a + b, 0) / (n - 1);
+      return Math.sqrt(variance);
+    }
+
+    // Run simulation
+    function runSimulation() {
+      const trueSd = parseInt(trueSdSlider.value);
+      const sampleSize = parseInt(sampleSizeSlider.value);
+      const meanVelocity = 2850; // Arbitrary mean velocity
+
+      // Generate trials
+      const sampleSDs = [];
+      for (let trial = 0; trial < selectedTrials; trial++) {
+        const sample = [];
+        for (let i = 0; i < sampleSize; i++) {
+          sample.push(generateNormal(meanVelocity, trueSd));
+        }
+        sampleSDs.push(calculateSD(sample));
+      }
+
+      // Calculate statistics
+      const avgSd = sampleSDs.reduce((a, b) => a + b, 0) / sampleSDs.length;
+
+      const within5 = sampleSDs.filter(sd =>
+        sd >= trueSd * 0.95 && sd <= trueSd * 1.05
+      ).length;
+      const within10 = sampleSDs.filter(sd =>
+        sd >= trueSd * 0.90 && sd <= trueSd * 1.10
+      ).length;
+      const within20 = sampleSDs.filter(sd =>
+        sd >= trueSd * 0.80 && sd <= trueSd * 1.20
+      ).length;
+
+      const pct5 = (within5 / selectedTrials * 100).toFixed(0);
+      const pct10 = (within10 / selectedTrials * 100).toFixed(0);
+      const pct20 = (within20 / selectedTrials * 100).toFixed(0);
+
+      // Update stats display
+      document.getElementById('within5Pct').textContent = `${pct5}%`;
+      document.getElementById('within10Pct').textContent = `${pct10}%`;
+      document.getElementById('within20Pct').textContent = `${pct20}%`;
+      document.getElementById('avgSd').textContent = avgSd.toFixed(1);
+
+      // Color code the stats
+      const colorStat = (id, value) => {
+        const elem = document.getElementById(id);
+        elem.className = 'stat-value';
+        if (value >= 80) elem.classList.add('good');
+        else if (value >= 50) elem.classList.add('warning');
+        else elem.classList.add('bad');
+      };
+
+      colorStat('within20Pct', pct20);
+      colorStat('within10Pct', pct10);
+      colorStat('within5Pct', pct5);
+
+      // Draw histogram
+      drawHistogram(sampleSDs, trueSd);
+
+      // Show results
+      statsSection.style.display = 'grid';
+      insightBox.style.display = 'block';
+
+      // Generate insight
+      generateInsight(sampleSize, pct10);
+    }
+
+    // Draw histogram
+    function drawHistogram(data, trueSd) {
+      // Set canvas size
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = 350 * dpr;
+      ctx.scale(dpr, dpr);
+
+      const width = rect.width;
+      const height = 350;
+
+      // Clear canvas
+      ctx.clearRect(0, 0, width, height);
+
+      // Create bins
+      const minVal = Math.min(...data);
+      const maxVal = Math.max(...data);
+      const binCount = 20;
+      const binWidth = (maxVal - minVal) / binCount;
+      const bins = new Array(binCount).fill(0);
+
+      data.forEach(val => {
+        const binIndex = Math.min(Math.floor((val - minVal) / binWidth), binCount - 1);
+        bins[binIndex]++;
+      });
+
+      const maxBinCount = Math.max(...bins);
+
+      // Chart dimensions
+      const padding = 50;
+      const chartWidth = width - 2 * padding;
+      const chartHeight = height - 2 * padding;
+
+      // Draw axes
+      ctx.strokeStyle = '#2d3748';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(padding, padding);
+      ctx.lineTo(padding, height - padding);
+      ctx.lineTo(width - padding, height - padding);
+      ctx.stroke();
+
+      // Draw bars
+      const barWidth = chartWidth / binCount;
+      bins.forEach((count, i) => {
+        const barHeight = (count / maxBinCount) * chartHeight;
+        const x = padding + i * barWidth;
+        const y = height - padding - barHeight;
+
+        ctx.fillStyle = '#4682b4';
+        ctx.fillRect(x + 1, y, barWidth - 2, barHeight);
+      });
+
+      // Draw true SD line
+      const trueSdX = padding + ((trueSd - minVal) / (maxVal - minVal)) * chartWidth;
+      ctx.strokeStyle = '#c0392b';
+      ctx.lineWidth = 3;
+      ctx.setLineDash([5, 5]);
+      ctx.beginPath();
+      ctx.moveTo(trueSdX, padding);
+      ctx.lineTo(trueSdX, height - padding);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Label
+      ctx.fillStyle = '#c0392b';
+      ctx.font = 'bold 12px sans-serif';
+      ctx.fillText(`True SD: ${trueSd} fps`, trueSdX + 5, padding + 20);
+
+      // Axis labels
+      ctx.fillStyle = '#2d3748';
+      ctx.font = '11px sans-serif';
+      ctx.textAlign = 'center';
+
+      // X-axis labels
+      ctx.fillText(minVal.toFixed(0), padding, height - padding + 20);
+      ctx.fillText(maxVal.toFixed(0), width - padding, height - padding + 20);
+      ctx.fillText('Sample SD (fps)', width / 2, height - 15);
+
+      // Y-axis label
+      ctx.save();
+      ctx.translate(15, height / 2);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('Frequency', 0, 0);
+      ctx.restore();
+    }
+
+    // Generate insight text
+    function generateInsight(sampleSize, pct10) {
+      let insight = '';
+
+      if (sampleSize < 10) {
+        insight = `With only ${sampleSize} shots, your SD measurements are extremely unreliable. Only ${pct10}% of measurements fall within ±10% of the true value. You're basically measuring random noise!`;
+      } else if (sampleSize < 20) {
+        insight = `With ${sampleSize} shots, your SD measurements are still quite variable. Only ${pct10}% fall within ±10% of truth. You need larger samples for reliable spread measurements.`;
+      } else if (sampleSize < 30) {
+        insight = `With ${sampleSize} shots, you're getting closer to reliable measurements. ${pct10}% fall within ±10% of truth. Just a bit more data would significantly improve reliability.`;
+      } else if (sampleSize < 50) {
+        insight = `With ${sampleSize} shots, your SD measurements are becoming reliable. ${pct10}% fall within ±10% of truth. This is adequate for most load development decisions.`;
+      } else {
+        insight = `With ${sampleSize} shots, your SD measurements are very reliable. ${pct10}% fall within ±10% of truth. You're getting diminishing returns beyond this sample size.`;
+      }
+
+      insightText.textContent = insight;
+    }
+
+    // Simulate button
+    simulateBtn.addEventListener('click', runSimulation);
+
+    // Run initial simulation
+    runSimulation();
+  </script>
+</body>
+</html>

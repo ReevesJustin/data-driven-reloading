@@ -1,0 +1,9 @@
+---
+# Jekyll needs front matter for SCSS files
+---
+
+// Import all partials
+@import "variables";
+@import "base";
+@import "layout";
+@import "dark-mode";

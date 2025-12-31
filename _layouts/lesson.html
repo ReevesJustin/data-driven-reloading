@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="lesson-layout">
+  {% include navigation.html %}
+
+  <article class="lesson-content">
+    <div class="lesson-header">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="lesson-description">{{ page.description }}</p>
+      {% endif %}
+    </div>
+
+    {{ content }}
+
+    <!-- Lesson navigation (Previous/Next) -->
+    <nav class="lesson-nav">
+      {% if page.previous_lesson %}
+      <a href="{{ page.previous_lesson.url | relative_url }}" class="nav-link previous">
+        <div class="nav-label">← Previous</div>
+        <div class="nav-title">{{ page.previous_lesson.title }}</div>
+      </a>
+      {% else %}
+      <div></div>
+      {% endif %}
+
+      {% if page.next_lesson %}
+      <a href="{{ page.next_lesson.url | relative_url }}" class="nav-link next">
+        <div class="nav-label">Next →</div>
+        <div class="nav-title">{{ page.next_lesson.title }}</div>
+      </a>
+      {% endif %}
+    </nav>
+  </article>
+</div>

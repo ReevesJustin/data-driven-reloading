@@ -1,0 +1,49 @@
+# Site settings
+title: "Data-Driven Reloading"
+description: "Stop chasing ghosts. Learn to test handloads the way that actually reveals truth."
+baseurl: "/data-driven-reloading"
+url: "https://reevesjustin.github.io"
+
+# Author
+author:
+  name: "Justin Reeves"
+
+# Build settings
+markdown: kramdown
+theme: null  # Using custom layouts
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Defaults (apply layout to all lesson files)
+defaults:
+  - scope:
+      path: "lessons/md"
+    values:
+      layout: "lesson"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from build
+exclude:
+  - README.md
+  - requirements.txt
+  - scripts/
+  - data/
+  - docs/
+  - templates/
+  - .gitignore
+  - "*.py"
+  - "*.ipynb"

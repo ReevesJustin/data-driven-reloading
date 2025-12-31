@@ -1,0 +1,171 @@
+// Base styles and resets
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  color: $text-primary-light;
+  background-color: $bg-light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-md;
+  color: $primary-dark;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+h6 {
+  font-size: $font-size-h6;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+}
+
+a {
+  color: $primary-blue;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary-dark;
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul, ol {
+  margin-bottom: $spacing-sm;
+  padding-left: $spacing-lg;
+}
+
+li {
+  margin-bottom: $spacing-xs;
+}
+
+// Code
+code {
+  font-family: $font-family-mono;
+  font-size: 0.9em;
+  padding: 2px 6px;
+  background-color: $surface-light;
+  border: 1px solid $border-light;
+  border-radius: $radius-sm;
+}
+
+pre {
+  padding: $spacing-sm;
+  background-color: $surface-light;
+  border: 1px solid $border-light;
+  border-radius: $radius-md;
+  overflow-x: auto;
+  margin-bottom: $spacing-sm;
+
+  code {
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 0.875em;
+  }
+}
+
+// Blockquotes
+blockquote {
+  margin: $spacing-md 0;
+  padding: $spacing-sm $spacing-md;
+  border-left: 4px solid $primary-blue;
+  background-color: $surface-light;
+  font-style: italic;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Horizontal rule
+hr {
+  border: none;
+  border-top: 2px solid $border-light;
+  margin: $spacing-lg 0;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $spacing-md;
+
+  th, td {
+    padding: $spacing-xs $spacing-sm;
+    text-align: left;
+    border: 1px solid $border-light;
+  }
+
+  th {
+    background-color: $surface-light;
+    font-weight: 600;
+  }
+
+  tr:hover {
+    background-color: lighten($surface-light, 2%);
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: $spacing-md auto;
+}
+
+// Strong and emphasis
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+// Selection
+::selection {
+  background-color: rgba($primary-blue, 0.2);
+  color: $text-primary-light;
+}
