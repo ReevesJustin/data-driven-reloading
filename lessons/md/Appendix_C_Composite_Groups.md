@@ -34,15 +34,17 @@ Think of it as "translating" each group so all the centers align, then overlayin
 ## What Composite Groups DO and DON'T Do
 
 **Composite groups help you:**
-✓ Get large sample statistics without destroying target data (shoot 6 groups of 5 instead of 1 group of 30)
-✓ Visualize overall precision across multiple sessions or aiming points
-✓ Preserve individual shot data for accurate measurement
-✓ Achieve the 30+ shot requirement from Lesson 03 without "shooting out the group"
+
+- ✓ Get large sample statistics without destroying target data (shoot 6 groups of 5 instead of 1 group of 30)
+- ✓ Visualize overall precision across multiple sessions or aiming points
+- ✓ Preserve individual shot data for accurate measurement
+- ✓ Achieve the 30+ shot requirement from Lesson 03 without "shooting out the group"
 
 **Composite groups DON'T:**
-✗ Make small samples statistically valid 
-✗ Help you compare different loads unless you create a separate composite for EACH load with equal sample sizes
-✗ Replace proper sample sizes you still need 30+ total shots across all groups combined
+
+- ✗ Make small samples statistically valid 
+- ✗ Help you compare different loads unless you create a separate composite for EACH load with equal sample sizes
+- ✗ Replace proper sample sizes you still need 30+ total shots across all groups combined
 
 **Critical Misconception to Avoid:**
 
