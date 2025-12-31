@@ -46,9 +46,7 @@ There is.
 
 Before we talk about professional training, you deserve to know why this curriculum exists at all.
 
-**This is my gift to the shooting community and to Blake Williams.**
-
-I created this entire curriculum outside Blake's knowledge. When I finished, I offered it to him as a Christmas gift. He emphatically told me "No way!" We had multiple "arguments" about it. Finally, he said, "Just keep it and I'll reference it."
+**This is my gift to the shooting community**
 
 **Why create a free statistics curriculum when professional instruction costs money?**
 
@@ -71,18 +69,6 @@ Now let me introduce you to the person who changed my entire approach to reloadi
 ## Blake Williams: How We Met and Why I Trust Him
 
 I want to introduce you to someone I consider both a friend and a mentor in this field: **Blake Williams**, founder of [Reloading All Day](https://www.reloadingallday.com/).
-
-**But first, let me tell you how we met and why it matters.**
-
-I have degrees in Engineering and Mathematics, Six Sigma certification, TUV Rheinland Machine safety certification, hundreds of hours in adult education credits for automation and controls engineering, machine safety, and a career spanning IT consulting, network engineering, and computer/electrical/electronics engineering. You know, the kind of nerd that reads technical literature for fun on a Friday night! It's embarrassing to admit, but I got far enough to realize I didn't know how to proceed. I put in the work and failed.  I didn't recognize my own personal bias.
-
-You'd think someone with that background would immediately recognize statistical nonsense when they saw it.
-
-**You'd be wrong.**
-
-We are all human and even "Sheldon Cooper" still has human traits. If you don't have a specific background in ballistics and associated training, the interactions aren't always obvious.  I own a small library of internal ballistics, external ballistics, and the experience of hundreds of thousands of rounds fired.  Shooting is something I love, logic and reason don't always mix well with passion.
-
-I started reloading around age 15.  I was driven by a desire to understand ammunition and firearms from a fundamental level. As I got into competitive shooting, I started reloading in volume to feed the unending diet of ammunition competition demands and to satisfy my innate desire to experiment.  My shooting career started with practical pistol, mostly because I prefered the run and gun courses of fire and every rifle I touched seemed to be 'cursed'.
 
 **I wasted tens of thousands of dollars chasing my tail.** (Pun intended.)
 
@@ -158,11 +144,11 @@ That's the kind of intellectual honesty and rigor you need in an instructor.
 
 **What I learned from Blake (and from being wrong):**
 
-Blake and I have had countless discussions and tested theories together. I've been wrong more times than I can count. Sometimes the "obvious answer" isn't the truth. That's the beauty of applying the scientific method. It's an emotionaless process for testing and learning about the world around us.
+Blake and I have had countless discussions. I've been wrong more times than I can count. Sometimes the "obvious answer" isn't the truth. That's the beauty of applying the scientific method. It's an emotionaless process for testing and learning about the world around us.
 
 **The lessons I learned:**
 
-1. **Even expertise in other fields doesn't protect you from statistical fallacies** - My degrees and decades of experience meant nothing when I wanted to believe popular methods worked
+1. **Even expertise in other fields doesn't protect you from statistical fallacies** - My degrees and decades of experience meant nothing when I wanted to believe popular methods worked 
 
 2. **Popular ≠ Effective** - The most discussed methods aren't necessarily the most reliable
 
@@ -184,7 +170,7 @@ Blake and I have had countless discussions and tested theories together. I've be
 
 **What changed in my process:**
 
-After Blake's class, after understanding internal ballistics and applying proper statistical methodology, my load development **simplified dramatically.**
+After Blake's class, armed with an of understanding internal ballistics and applying proper statistical methodology, my load development **simplified dramatically.**
 
 I experimented to identify low-hanging fruit, then built a process that's consistent, repeatable, and reliable.
 
