@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive demonstration of how average velocity converges quickly compared to SD">
+    <title>Average Velocity Convergence - Data-Driven Reloading</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-tertiary: #f9f9f9;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-tertiary: #718096;
+            --border-color: #ddd;
+            --border-light: #e0e0e0;
+            --accent-primary: #4682b4;
+            --accent-dark: #2c5282;
+            --accent-green: #28a745;
+            --accent-green-hover: #218838;
+            --accent-red: #dc3545;
+            --accent-red-hover: #c82333;
+            --accent-orange: #f39c12;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-heavy: rgba(0, 0, 0, 0.3);
+            --chart-bg: #ffffff;
+            --chart-grid: #e0e0e0;
+            --chart-text: #2c3e50;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1a202c;
+                --bg-secondary: #2d3748;
+                --bg-tertiary: #1a1a1a;
+                --text-primary: #e2e8f0;
+                --text-secondary: #cbd5e0;
+                --text-tertiary: #a0aec0;
+                --border-color: #4a5568;
+                --border-light: #2d3748;
+                --accent-primary: #63b3ed;
+                --accent-dark: #4299e1;
+                --accent-green: #48bb78;
+                --accent-green-hover: #38a169;
+                --accent-red: #fc8181;
+                --accent-red-hover: #f56565;
+                --accent-orange: #ed8936;
+                --shadow: rgba(0, 0, 0, 0.3);
+                --shadow-heavy: rgba(0, 0, 0, 0.5);
+                --chart-bg: #2d3748;
+                --chart-grid: #4a5568;
+                --chart-text: #e2e8f0;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        h1 {
+            color: var(--accent-dark);
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .intro {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .controls {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .control-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .control-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--border-color);
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            cursor: pointer;
+            border: none;
+        }
+
+        .value-display {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--accent-primary);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1.05em;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .shoot-btn {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .shoot-btn:hover {
+            background: var(--accent-green-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px var(--shadow);
+        }
+
+        .reset-btn {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        .reset-btn:hover {
+            background: var(--accent-red-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px var(--shadow);
+        }
+
+        .session-info {
+            background: var(--bg-secondary);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            border-left: 4px solid var(--accent-orange);
+            margin-bottom: 25px;
+        }
+
+        .session-stat {
+            display: inline-block;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        .chart-container {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+        }
+
+        canvas {
+            background: var(--chart-bg);
+            border-radius: 4px;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .stats-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .stats-section {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .stats-section h3 {
+            color: var(--accent-dark);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: var(--text-primary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .stat-value.good {
+            color: var(--accent-green);
+        }
+
+        .stat-value.warning {
+            color: var(--accent-orange);
+        }
+
+        .stat-value.bad {
+            color: var(--accent-red);
+        }
+
+        .insight-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-orange);
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: var(--text-primary);
+        }
+
+        .insight-box strong {
+            color: var(--accent-dark);
+        }
+
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .control-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Average Velocity Convergence</h1>
+        <p class="intro">Fire shots one at a time and watch how quickly the running average stabilizes, while SD measurements remain unreliable with small samples. Adjust the true SD to see how scatter changes, but average still converges fast!</p>
+
+        <div class="controls">
+            <div class="control-row">
+                <div class="control-group">
+                    <label>True Population SD: <span class="value-display" id="sdDisplay">15</span> fps</label>
+                    <input type="range" id="sdSlider" min="5" max="25" step="5" value="15">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="shoot-btn" onclick="fireShot()">Fire a Shot</button>
+                <button class="reset-btn" onclick="resetSimulation()">Reset</button>
+            </div>
+        </div>
+
+        <div class="session-info">
+            <span class="session-stat">Shots Fired: <span id="shotCount">0</span></span>
+            <span class="session-stat">Current Average: <span id="currentAvg">--</span></span>
+            <span class="session-stat">Error from True Mean: <span id="errorDisplay">--</span></span>
+        </div>
+
+        <div class="main-content">
+            <div class="chart-container">
+                <canvas id="shotChart"></canvas>
+            </div>
+
+            <div class="stats-container">
+                <div class="stats-section">
+                    <h3>True Values</h3>
+                    <div class="stat-row">
+                        <span class="stat-label">True Mean</span>
+                        <span class="stat-value">2850 fps</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">True SD</span>
+                        <span class="stat-value" id="trueSdValue">15 fps</span>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>Sample Statistics</h3>
+                    <div class="stat-row">
+                        <span class="stat-label">Sample Mean</span>
+                        <span class="stat-value" id="sampleMean">--</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Sample SD</span>
+                        <span class="stat-value" id="sampleSD">--</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Mean Error</span>
+                        <span class="stat-value" id="meanError">--</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">SD Error</span>
+                        <span class="stat-value" id="sdError">--</span>
+                    </div>
+                </div>
+
+                <div class="insight-box" id="insightBox" style="display: none;">
+                    <strong>Insight:</strong> <span id="insightText"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulation constants
+        const TRUE_MEAN = 2850;
+        let TRUE_SD = 15;
+
+        // State
+        let shots = [];
+
+        // Canvas and context
+        const canvas = document.getElementById('shotChart');
+        const ctx = canvas.getContext('2d');
+
+        // UI elements
+        const sdSlider = document.getElementById('sdSlider');
+        const sdDisplay = document.getElementById('sdDisplay');
+
+        // Update SD display
+        sdSlider.addEventListener('input', function() {
+            TRUE_SD = parseInt(this.value);
+            sdDisplay.textContent = TRUE_SD;
+            document.getElementById('trueSdValue').textContent = TRUE_SD + ' fps';
+        });
+
+        // Set up canvas
+        function setupCanvas() {
+            const dpr = window.devicePixelRatio || 1;
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = 400 * dpr;
+            ctx.scale(dpr, dpr);
+        }
+
+        // Generate normal random number (Box-Muller transform)
+        function generateNormal(mean, stdDev) {
+            const u1 = Math.random();
+            const u2 = Math.random();
+            const z0 = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
+            return z0 * stdDev + mean;
+        }
+
+        // Calculate statistics
+        function calculateStats() {
+            const n = shots.length;
+            if (n === 0) return { mean: 0, sd: 0 };
+
+            const mean = shots.reduce((a, b) => a + b, 0) / n;
+            if (n === 1) return { mean, sd: 0 };
+
+            const variance = shots.reduce((sum, shot) => sum + Math.pow(shot - mean, 2), 0) / (n - 1);
+            const sd = Math.sqrt(variance);
+
+            return { mean, sd };
+        }
+
+        // Fire a shot
+        function fireShot() {
+            const shot = generateNormal(TRUE_MEAN, TRUE_SD);
+            shots.push(shot);
+
+            updateStats();
+            drawChart();
+            updateInsight();
+        }
+
+        // Update statistics display
+        function updateStats() {
+            const n = shots.length;
+
+            if (n === 0) {
+                document.getElementById('shotCount').textContent = '0';
+                document.getElementById('currentAvg').textContent = '--';
+                document.getElementById('errorDisplay').textContent = '--';
+                document.getElementById('sampleMean').textContent = '--';
+                document.getElementById('sampleSD').textContent = '--';
+                document.getElementById('meanError').textContent = '--';
+                document.getElementById('sdError').textContent = '--';
+                return;
+            }
+
+            const stats = calculateStats();
+            const meanError = stats.mean - TRUE_MEAN;
+            const sdError = stats.sd - TRUE_SD;
+
+            document.getElementById('shotCount').textContent = n;
+            document.getElementById('currentAvg').textContent = stats.mean.toFixed(1) + ' fps';
+            document.getElementById('errorDisplay').textContent = (meanError >= 0 ? '+' : '') + meanError.toFixed(1) + ' fps';
+            document.getElementById('sampleMean').textContent = stats.mean.toFixed(1) + ' fps';
+            document.getElementById('sampleSD').textContent = (n > 1 ? stats.sd.toFixed(1) + ' fps' : '--');
+
+            // Color code mean error
+            const meanErrorElem = document.getElementById('meanError');
+            meanErrorElem.textContent = (meanError >= 0 ? '+' : '') + meanError.toFixed(1) + ' fps';
+            meanErrorElem.className = 'stat-value';
+            if (Math.abs(meanError) < 5) meanErrorElem.classList.add('good');
+            else if (Math.abs(meanError) < 10) meanErrorElem.classList.add('warning');
+            else meanErrorElem.classList.add('bad');
+
+            // Color code SD error
+            if (n > 1) {
+                const sdErrorElem = document.getElementById('sdError');
+                sdErrorElem.textContent = (sdError >= 0 ? '+' : '') + sdError.toFixed(1) + ' fps';
+                sdErrorElem.className = 'stat-value';
+                const sdErrorPct = Math.abs(sdError) / TRUE_SD * 100;
+                if (sdErrorPct < 10) sdErrorElem.classList.add('good');
+                else if (sdErrorPct < 20) sdErrorElem.classList.add('warning');
+                else sdErrorElem.classList.add('bad');
+            } else {
+                document.getElementById('sdError').textContent = '--';
+            }
+        }
+
+        // Draw the shot chart
+        function drawChart() {
+            const rect = canvas.getBoundingClientRect();
+            const width = rect.width;
+            const height = 400;
+
+            // Get computed styles for theming
+            const styles = getComputedStyle(document.documentElement);
+            const chartBg = styles.getPropertyValue('--chart-bg').trim();
+            const chartGrid = styles.getPropertyValue('--chart-grid').trim();
+            const chartText = styles.getPropertyValue('--chart-text').trim();
+            const accentPrimary = styles.getPropertyValue('--accent-primary').trim();
+            const accentRed = styles.getPropertyValue('--accent-red').trim();
+
+            // Clear canvas
+            ctx.clearRect(0, 0, width, height);
+
+            if (shots.length === 0) {
+                // Draw placeholder text
+                ctx.fillStyle = chartText;
+                ctx.font = '16px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('Fire shots to see how they scatter around the true mean', width / 2, height / 2);
+                return;
+            }
+
+            // Calculate chart bounds
+            const padding = 50;
+            const chartWidth = width - 2 * padding;
+            const chartHeight = height - 2 * padding;
+
+            // Determine Y-axis range (center on true mean, show ±3 SD)
+            const yMin = TRUE_MEAN - (3 * TRUE_SD);
+            const yMax = TRUE_MEAN + (3 * TRUE_SD);
+            const yRange = yMax - yMin;
+
+            // Draw axes
+            ctx.strokeStyle = chartText;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding, padding);
+            ctx.lineTo(padding, height - padding);
+            ctx.lineTo(width - padding, height - padding);
+            ctx.stroke();
+
+            // Draw grid lines and Y-axis labels
+            ctx.strokeStyle = chartGrid;
+            ctx.lineWidth = 1;
+            ctx.font = '11px sans-serif';
+            ctx.fillStyle = chartText;
+            ctx.textAlign = 'right';
+
+            for (let i = 0; i <= 6; i++) {
+                const y = padding + (i / 6) * chartHeight;
+                const value = yMax - (i / 6) * yRange;
+
+                ctx.beginPath();
+                ctx.moveTo(padding, y);
+                ctx.lineTo(width - padding, y);
+                ctx.stroke();
+
+                ctx.fillText(value.toFixed(0), padding - 5, y + 4);
+            }
+
+            // Draw true mean line (dotted)
+            const trueMeanY = padding + ((yMax - TRUE_MEAN) / yRange) * chartHeight;
+            ctx.strokeStyle = accentRed;
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            ctx.moveTo(padding, trueMeanY);
+            ctx.lineTo(width - padding, trueMeanY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Label for true mean
+            ctx.fillStyle = accentRed;
+            ctx.font = 'bold 12px sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(`True Mean: ${TRUE_MEAN} fps`, padding + 10, trueMeanY - 10);
+
+            // Draw running average line
+            if (shots.length > 1) {
+                const stats = calculateStats();
+                const runningAvgY = padding + ((yMax - stats.mean) / yRange) * chartHeight;
+
+                ctx.strokeStyle = accentPrimary;
+                ctx.lineWidth = 2;
+                ctx.setLineDash([2, 2]);
+                ctx.beginPath();
+                ctx.moveTo(padding, runningAvgY);
+                ctx.lineTo(width - padding, runningAvgY);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Label for running average
+                ctx.fillStyle = accentPrimary;
+                ctx.font = 'bold 11px sans-serif';
+                ctx.textAlign = 'right';
+                ctx.fillText(`Sample Avg: ${stats.mean.toFixed(1)} fps`, width - padding - 10, runningAvgY + 15);
+            }
+
+            // Draw individual shots
+            const maxShots = Math.max(30, shots.length);
+
+            ctx.fillStyle = accentPrimary;
+            ctx.strokeStyle = accentPrimary;
+            ctx.lineWidth = 2;
+
+            for (let i = 0; i < shots.length; i++) {
+                const x = padding + (i / maxShots) * chartWidth;
+                const y = padding + ((yMax - shots[i]) / yRange) * chartHeight;
+
+                // Draw point
+                ctx.beginPath();
+                ctx.arc(x, y, 5, 0, 2 * Math.PI);
+                ctx.fill();
+
+                // Draw line from shot to mean
+                ctx.globalAlpha = 0.3;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(x, trueMeanY);
+                ctx.stroke();
+                ctx.globalAlpha = 1.0;
+            }
+
+            // X-axis label
+            ctx.fillStyle = chartText;
+            ctx.font = '12px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('Shot Number', width / 2, height - 15);
+
+            // Y-axis label
+            ctx.save();
+            ctx.translate(15, height / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillText('Velocity (fps)', 0, 0);
+            ctx.restore();
+
+            // X-axis tick labels
+            ctx.font = '11px sans-serif';
+            const tickInterval = Math.max(1, Math.floor(maxShots / 10));
+            for (let i = 0; i <= Math.min(10, maxShots); i += tickInterval) {
+                const x = padding + (i / maxShots) * chartWidth;
+                ctx.fillText(i, x, height - padding + 20);
+            }
+        }
+
+        // Update insight text
+        function updateInsight() {
+            const n = shots.length;
+            const insightBox = document.getElementById('insightBox');
+            const insightText = document.getElementById('insightText');
+
+            if (n === 0) {
+                insightBox.style.display = 'none';
+                return;
+            }
+
+            insightBox.style.display = 'block';
+
+            const stats = calculateStats();
+            const meanError = Math.abs(stats.mean - TRUE_MEAN);
+            const sdError = n > 1 ? Math.abs(stats.sd - TRUE_SD) : 0;
+
+            if (n < 5) {
+                insightText.textContent = `After ${n} shot${n > 1 ? 's' : ''}, both average and SD are bouncing. Watch how average stabilizes faster!`;
+            } else if (n < 10) {
+                insightText.textContent = `After ${n} shots, the average is settling (±${meanError.toFixed(1)} fps from truth), but SD is still unreliable (${n > 1 ? '±' + sdError.toFixed(1) + ' fps off' : 'uncertain'}).`;
+            } else if (n < 15) {
+                insightText.textContent = `After ${n} shots, your average is quite stable (±${meanError.toFixed(1)} fps), good enough for trajectory! But SD still varies significantly.`;
+            } else if (n < 30) {
+                insightText.textContent = `After ${n} shots, average is very reliable (±${meanError.toFixed(1)} fps). SD is getting better but still needs more data for confidence.`;
+            } else {
+                insightText.textContent = `After ${n} shots, you've got excellent average precision (±${meanError.toFixed(1)} fps) and SD is finally stabilizing. Notice how average converged WAY faster!`;
+            }
+        }
+
+        // Reset simulation
+        function resetSimulation() {
+            shots = [];
+            updateStats();
+            drawChart();
+            document.getElementById('insightBox').style.display = 'none';
+        }
+
+        // Initialize
+        setupCanvas();
+        drawChart();
+
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                setupCanvas();
+                drawChart();
+            }, 250);
+        });
+    </script>
+</body>
+</html>

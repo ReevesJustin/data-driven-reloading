@@ -78,26 +78,9 @@ But that same 10-shot sample might show 8 fps SD when the true SD is actually 15
 - Using it as a proxy for consistency (that's what SD measures, not average)
 - Comparing single-session averages from different days (environmentals change)
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "Average Velocity Convergence"
-#
-# Setup: True population mean = 2850 fps, SD = 15 fps
-#
-# User controls:
-# - Button: "Fire a shot" (adds one random shot from population)
-# - Running display: Current sample average
-# - Plot: Running average vs. shot number
-# - True population average shown as horizontal line
-#
-# Display:
-# - Watch average bounce around early (shots 1-5)
-# - See it settle down quickly (shots 6-15)
-# - After 10 shots, usually within 5-10 fps of truth
-# - Compare to SD convergence (much slower)
-#
-# Aha moment: "Average gets reliable fast! SD takes forever to stabilize."
-```
+**[➡️ Launch Average Velocity Convergence Simulator (Opens in New Tab)](../interactive/05_velocity_convergence.html){:target="_blank"}**
+
+Fire shots one at a time and watch how the running average quickly stabilizes compared to SD. Adjust the true SD to see how individual shots scatter, but notice how the average converges fast regardless!
 
 > **Key Insight**
 >
