@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your total system precision using RSS and identify your biggest improvement opportunity">
+    <title>Dispersion Budget Calculator - Data-Driven Reloading</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-tertiary: #f9f9f9;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-tertiary: #718096;
+            --border-color: #ddd;
+            --border-light: #e0e0e0;
+            --accent-primary: #4682b4;
+            --accent-dark: #2c5282;
+            --accent-green: #28a745;
+            --accent-yellow: #f39c12;
+            --accent-orange: #e67e22;
+            --accent-red: #dc3545;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --card-bg: #ffffff;
+            --input-bg: #ffffff;
+            --input-border: #ddd;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1a202c;
+                --bg-secondary: #2d3748;
+                --bg-tertiary: #1a1a1a;
+                --text-primary: #e2e8f0;
+                --text-secondary: #cbd5e0;
+                --text-tertiary: #a0aec0;
+                --border-color: #4a5568;
+                --border-light: #2d3748;
+                --accent-primary: #63b3ed;
+                --accent-dark: #4299e1;
+                --accent-green: #48bb78;
+                --accent-yellow: #ecc94b;
+                --accent-orange: #ed8936;
+                --accent-red: #fc8181;
+                --shadow: rgba(0, 0, 0, 0.3);
+                --card-bg: #2d3748;
+                --input-bg: #1a202c;
+                --input-border: #4a5568;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        h1 {
+            color: var(--accent-dark);
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .intro {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .sliders-section {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .slider-group {
+            margin-bottom: 25px;
+        }
+
+        .slider-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .slider-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1em;
+        }
+
+        .slider-value {
+            font-weight: bold;
+            color: var(--accent-primary);
+            font-size: 1.2em;
+            font-family: 'Courier New', monospace;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--input-border);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            cursor: pointer;
+            border: none;
+        }
+
+        .test-improvement {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .test-btn {
+            padding: 8px 16px;
+            background: var(--accent-green);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .test-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .improvement-result {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .results-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .chart-container {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+        }
+
+        .chart-container h3 {
+            color: var(--accent-dark);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        canvas {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .total-precision {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .total-precision h2 {
+            color: var(--accent-dark);
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .total-value {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--accent-primary);
+            font-family: 'Courier New', monospace;
+            margin-bottom: 10px;
+        }
+
+        .rss-formula {
+            font-size: 0.9em;
+            color: var(--text-tertiary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .recommendation {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-orange);
+            margin-bottom: 25px;
+        }
+
+        .recommendation h3 {
+            color: var(--accent-dark);
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .recommendation p {
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .recommendation p:last-child {
+            margin-bottom: 0;
+        }
+
+        .recommendation strong {
+            color: var(--accent-dark);
+        }
+
+        .biggest-contributor {
+            display: inline-block;
+            padding: 5px 12px;
+            background: var(--accent-red);
+            color: white;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            .results-section {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .total-value {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Dispersion Budget Calculator</h1>
+        <p class="intro">Adjust the sliders below to match your system. See how the three factors combine using Root Sum Square (RSS) to create your total precision. Discover which factor is limiting you most and where improvements will have the biggest impact.</p>
+
+        <div class="sliders-section">
+            <div class="slider-group">
+                <div class="slider-header">
+                    <span class="slider-label">Rifle + Ammunition</span>
+                    <span class="slider-value"><span id="rifleValue">0.6</span> MOA</span>
+                </div>
+                <input type="range" id="rifleSlider" min="0.3" max="2.0" step="0.1" value="0.6" oninput="calculate()">
+                <div class="test-improvement">
+                    <button class="test-btn" onclick="testImprovement('rifle')">Test 50% Improvement</button>
+                    <span class="improvement-result" id="rifleImprovement"></span>
+                </div>
+            </div>
+
+            <div class="slider-group">
+                <div class="slider-header">
+                    <span class="slider-label">Shooter Technique</span>
+                    <span class="slider-value"><span id="shooterValue">0.4</span> MOA</span>
+                </div>
+                <input type="range" id="shooterSlider" min="0.1" max="1.5" step="0.1" value="0.4" oninput="calculate()">
+                <div class="test-improvement">
+                    <button class="test-btn" onclick="testImprovement('shooter')">Test 50% Improvement</button>
+                    <span class="improvement-result" id="shooterImprovement"></span>
+                </div>
+            </div>
+
+            <div class="slider-group">
+                <div class="slider-header">
+                    <span class="slider-label">Recoil Management</span>
+                    <span class="slider-value"><span id="recoilValue">0.8</span> MOA</span>
+                </div>
+                <input type="range" id="recoilSlider" min="0.1" max="2.0" step="0.1" value="0.8" oninput="calculate()">
+                <div class="test-improvement">
+                    <button class="test-btn" onclick="testImprovement('recoil')">Test 50% Improvement</button>
+                    <span class="improvement-result" id="recoilImprovement"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="total-precision">
+            <h2>Total System Precision</h2>
+            <div class="total-value" id="totalPrecision">1.09</div>
+            <div class="rss-formula" id="formula">√(0.6² + 0.4² + 0.8²) = 1.09 MOA</div>
+        </div>
+
+        <div class="results-section">
+            <div class="chart-container">
+                <h3>Contribution Percentages</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h3>Component Comparison</h3>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+
+        <div class="recommendation" id="recommendation">
+            <!-- Filled by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Get elements
+        const rifleSlider = document.getElementById('rifleSlider');
+        const shooterSlider = document.getElementById('shooterSlider');
+        const recoilSlider = document.getElementById('recoilSlider');
+
+        const rifleValue = document.getElementById('rifleValue');
+        const shooterValue = document.getElementById('shooterValue');
+        const recoilValue = document.getElementById('recoilValue');
+
+        const pieCanvas = document.getElementById('pieChart');
+        const barCanvas = document.getElementById('barChart');
+        const pieCtx = pieCanvas.getContext('2d');
+        const barCtx = barCanvas.getContext('2d');
+
+        // Set canvas sizes
+        pieCanvas.width = 300;
+        pieCanvas.height = 300;
+        barCanvas.width = 300;
+        barCanvas.height = 300;
+
+        // Update value displays
+        rifleSlider.addEventListener('input', () => {
+            rifleValue.textContent = rifleSlider.value;
+        });
+        shooterSlider.addEventListener('input', () => {
+            shooterValue.textContent = shooterSlider.value;
+        });
+        recoilSlider.addEventListener('input', () => {
+            recoilValue.textContent = recoilSlider.value;
+        });
+
+        // Calculate RSS
+        function calculateRSS(rifle, shooter, recoil) {
+            return Math.sqrt(rifle * rifle + shooter * shooter + recoil * recoil);
+        }
+
+        // Main calculation
+        function calculate() {
+            const rifle = parseFloat(rifleSlider.value);
+            const shooter = parseFloat(shooterSlider.value);
+            const recoil = parseFloat(recoilSlider.value);
+
+            const total = calculateRSS(rifle, shooter, recoil);
+
+            // Update display
+            document.getElementById('totalPrecision').textContent = total.toFixed(2);
+            document.getElementById('formula').textContent =
+                `√(${rifle.toFixed(1)}² + ${shooter.toFixed(1)}² + ${recoil.toFixed(1)}²) = ${total.toFixed(2)} MOA`;
+
+            // Calculate contributions (squared values represent contribution)
+            const rifleContrib = rifle * rifle;
+            const shooterContrib = shooter * shooter;
+            const recoilContrib = recoil * recoil;
+            const totalContrib = rifleContrib + shooterContrib + recoilContrib;
+
+            const riflePct = (rifleContrib / totalContrib) * 100;
+            const shooterPct = (shooterContrib / totalContrib) * 100;
+            const recoilPct = (recoilContrib / totalContrib) * 100;
+
+            // Draw charts
+            drawPieChart(riflePct, shooterPct, recoilPct);
+            drawBarChart(rifle, shooter, recoil);
+
+            // Generate recommendation
+            generateRecommendation(rifle, shooter, recoil, riflePct, shooterPct, recoilPct, total);
+
+            // Clear improvement results
+            document.getElementById('rifleImprovement').textContent = '';
+            document.getElementById('shooterImprovement').textContent = '';
+            document.getElementById('recoilImprovement').textContent = '';
+        }
+
+        // Draw pie chart
+        function drawPieChart(riflePct, shooterPct, recoilPct) {
+            const styles = getComputedStyle(document.documentElement);
+            const isDark = styles.getPropertyValue('--bg-primary').trim() === '#1a202c';
+
+            const colors = {
+                rifle: isDark ? '#63b3ed' : '#4682b4',
+                shooter: isDark ? '#48bb78' : '#28a745',
+                recoil: isDark ? '#fc8181' : '#dc3545'
+            };
+            const textColor = styles.getPropertyValue('--text-primary').trim();
+
+            pieCtx.clearRect(0, 0, pieCanvas.width, pieCanvas.height);
+
+            const centerX = pieCanvas.width / 2;
+            const centerY = pieCanvas.height / 2;
+            const radius = 100;
+
+            let currentAngle = -Math.PI / 2;
+
+            // Rifle
+            const rifleAngle = (riflePct / 100) * 2 * Math.PI;
+            pieCtx.fillStyle = colors.rifle;
+            pieCtx.beginPath();
+            pieCtx.moveTo(centerX, centerY);
+            pieCtx.arc(centerX, centerY, radius, currentAngle, currentAngle + rifleAngle);
+            pieCtx.closePath();
+            pieCtx.fill();
+            currentAngle += rifleAngle;
+
+            // Shooter
+            const shooterAngle = (shooterPct / 100) * 2 * Math.PI;
+            pieCtx.fillStyle = colors.shooter;
+            pieCtx.beginPath();
+            pieCtx.moveTo(centerX, centerY);
+            pieCtx.arc(centerX, centerY, radius, currentAngle, currentAngle + shooterAngle);
+            pieCtx.closePath();
+            pieCtx.fill();
+            currentAngle += shooterAngle;
+
+            // Recoil
+            const recoilAngle = (recoilPct / 100) * 2 * Math.PI;
+            pieCtx.fillStyle = colors.recoil;
+            pieCtx.beginPath();
+            pieCtx.moveTo(centerX, centerY);
+            pieCtx.arc(centerX, centerY, radius, currentAngle, currentAngle + recoilAngle);
+            pieCtx.closePath();
+            pieCtx.fill();
+
+            // Legend
+            pieCtx.font = 'bold 12px sans-serif';
+            pieCtx.textAlign = 'left';
+
+            pieCtx.fillStyle = colors.rifle;
+            pieCtx.fillRect(20, 220, 15, 15);
+            pieCtx.fillStyle = textColor;
+            pieCtx.fillText(`Rifle ${riflePct.toFixed(0)}%`, 40, 232);
+
+            pieCtx.fillStyle = colors.shooter;
+            pieCtx.fillRect(20, 245, 15, 15);
+            pieCtx.fillStyle = textColor;
+            pieCtx.fillText(`Shooter ${shooterPct.toFixed(0)}%`, 40, 257);
+
+            pieCtx.fillStyle = colors.recoil;
+            pieCtx.fillRect(20, 270, 15, 15);
+            pieCtx.fillStyle = textColor;
+            pieCtx.fillText(`Recoil ${recoilPct.toFixed(0)}%`, 40, 282);
+        }
+
+        // Draw bar chart
+        function drawBarChart(rifle, shooter, recoil) {
+            const styles = getComputedStyle(document.documentElement);
+            const isDark = styles.getPropertyValue('--bg-primary').trim() === '#1a202c';
+
+            const colors = {
+                rifle: isDark ? '#63b3ed' : '#4682b4',
+                shooter: isDark ? '#48bb78' : '#28a745',
+                recoil: isDark ? '#fc8181' : '#dc3545'
+            };
+            const textColor = styles.getPropertyValue('--text-primary').trim();
+            const gridColor = styles.getPropertyValue('--border-light').trim();
+
+            barCtx.clearRect(0, 0, barCanvas.width, barCanvas.height);
+
+            const padding = 40;
+            const chartWidth = barCanvas.width - 2 * padding;
+            const chartHeight = barCanvas.height - 2 * padding;
+
+            const maxValue = Math.max(rifle, shooter, recoil, 0.5);
+            const scale = chartHeight / maxValue;
+
+            // Draw grid
+            barCtx.strokeStyle = gridColor;
+            barCtx.lineWidth = 1;
+            for (let i = 0; i <= 4; i++) {
+                const y = padding + (i / 4) * chartHeight;
+                barCtx.beginPath();
+                barCtx.moveTo(padding, y);
+                barCtx.lineTo(barCanvas.width - padding, y);
+                barCtx.stroke();
+
+                // Y-axis labels
+                const value = maxValue - (i / 4) * maxValue;
+                barCtx.fillStyle = textColor;
+                barCtx.font = '10px sans-serif';
+                barCtx.textAlign = 'right';
+                barCtx.fillText(value.toFixed(1), padding - 5, y + 3);
+            }
+
+            // Draw bars
+            const barWidth = chartWidth / 4;
+            const values = [rifle, shooter, recoil];
+            const labels = ['Rifle', 'Shooter', 'Recoil'];
+            const barColors = [colors.rifle, colors.shooter, colors.recoil];
+
+            for (let i = 0; i < 3; i++) {
+                const x = padding + (i + 0.5) * barWidth;
+                const barHeight = values[i] * scale;
+                const y = barCanvas.height - padding - barHeight;
+
+                barCtx.fillStyle = barColors[i];
+                barCtx.fillRect(x - barWidth / 3, y, barWidth * 0.6, barHeight);
+
+                // Value labels
+                barCtx.fillStyle = textColor;
+                barCtx.font = 'bold 12px sans-serif';
+                barCtx.textAlign = 'center';
+                barCtx.fillText(values[i].toFixed(1), x, y - 5);
+
+                // X-axis labels
+                barCtx.font = '11px sans-serif';
+                barCtx.fillText(labels[i], x, barCanvas.height - padding + 20);
+            }
+
+            // Y-axis label
+            barCtx.save();
+            barCtx.translate(15, barCanvas.height / 2);
+            barCtx.rotate(-Math.PI / 2);
+            barCtx.fillStyle = textColor;
+            barCtx.font = '11px sans-serif';
+            barCtx.textAlign = 'center';
+            barCtx.fillText('MOA', 0, 0);
+            barCtx.restore();
+        }
+
+        // Generate recommendation
+        function generateRecommendation(rifle, shooter, recoil, riflePct, shooterPct, recoilPct, total) {
+            const recDiv = document.getElementById('recommendation');
+
+            let biggest = 'rifle';
+            let biggestValue = rifle;
+            let biggestPct = riflePct;
+
+            if (shooter > biggestValue) {
+                biggest = 'shooter';
+                biggestValue = shooter;
+                biggestPct = shooterPct;
+            }
+            if (recoil > biggestValue) {
+                biggest = 'recoil';
+                biggestValue = recoil;
+                biggestPct = recoilPct;
+            }
+
+            const biggestLabel = biggest === 'rifle' ? 'Rifle + Ammunition' :
+                                biggest === 'shooter' ? 'Shooter Technique' : 'Recoil Management';
+
+            let html = '<h3>Your Biggest Improvement Opportunity</h3>';
+            html += `<p><span class="biggest-contributor">${biggestLabel}</span> is your largest contributor at <strong>${biggestValue.toFixed(1)} MOA (${biggestPct.toFixed(0)}% of total)</strong>.</p>`;
+
+            // Specific recommendations
+            if (biggest === 'rifle') {
+                html += '<p><strong>Focus on:</strong> Better ammunition components (bullets, brass, powder consistency), improved barrel quality, better bedding, or upgrading your optic/mount system. Test systematically to identify which specific component is limiting you.</p>';
+            } else if (biggest === 'shooter') {
+                html += '<p><strong>Focus on:</strong> Improving fundamentals - trigger control, position consistency, natural point of aim, breathing control. Consider getting coaching or instruction. Practice dry fire drills. More range time will help more than better components.</p>';
+            } else {
+                html += '<p><strong>Focus on:</strong> Recoil management - consider a muzzle brake or suppressor, add weight to your rifle, work on position and letting the rifle recoil naturally. This is often the fastest and cheapest improvement available. Bryan Litz\'s research suggests 70% of precision comes from recoil/mass interaction!</p>';
+            }
+
+            // Calculate potential improvement
+            const improved = biggestValue * 0.5;
+            let newTotal;
+            if (biggest === 'rifle') newTotal = calculateRSS(improved, shooter, recoil);
+            else if (biggest === 'shooter') newTotal = calculateRSS(rifle, improved, recoil);
+            else newTotal = calculateRSS(rifle, shooter, improved);
+
+            const improvement = total - newTotal;
+
+            html += `<p><strong>Potential Impact:</strong> Improving ${biggestLabel} by 50% (to ${improved.toFixed(1)} MOA) would reduce total system precision from <strong>${total.toFixed(2)} MOA to ${newTotal.toFixed(2)} MOA</strong> - a <strong>${improvement.toFixed(2)} MOA improvement</strong>.</p>`;
+
+            // Warn about diminishing returns
+            const smallest = Math.min(rifle, shooter, recoil);
+            if (smallest < biggestValue * 0.5) {
+                html += '<p style="color: var(--accent-orange);"><strong>Note:</strong> One of your components is already quite good. Improving it further would show diminishing returns. Focus on your biggest problem first!</p>';
+            }
+
+            recDiv.innerHTML = html;
+        }
+
+        // Test improvement
+        function testImprovement(component) {
+            const rifle = parseFloat(rifleSlider.value);
+            const shooter = parseFloat(shooterSlider.value);
+            const recoil = parseFloat(recoilSlider.value);
+            const currentTotal = calculateRSS(rifle, shooter, recoil);
+
+            let newTotal;
+            let originalValue;
+
+            if (component === 'rifle') {
+                originalValue = rifle;
+                newTotal = calculateRSS(rifle * 0.5, shooter, recoil);
+                document.getElementById('rifleImprovement').textContent =
+                    `${currentTotal.toFixed(2)} → ${newTotal.toFixed(2)} MOA (${(currentTotal - newTotal).toFixed(2)} MOA improvement)`;
+            } else if (component === 'shooter') {
+                originalValue = shooter;
+                newTotal = calculateRSS(rifle, shooter * 0.5, recoil);
+                document.getElementById('shooterImprovement').textContent =
+                    `${currentTotal.toFixed(2)} → ${newTotal.toFixed(2)} MOA (${(currentTotal - newTotal).toFixed(2)} MOA improvement)`;
+            } else {
+                originalValue = recoil;
+                newTotal = calculateRSS(rifle, shooter, recoil * 0.5);
+                document.getElementById('recoilImprovement').textContent =
+                    `${currentTotal.toFixed(2)} → ${newTotal.toFixed(2)} MOA (${(currentTotal - newTotal).toFixed(2)} MOA improvement)`;
+            }
+        }
+
+        // Initial calculation
+        calculate();
+    </script>
+</body>
+</html>

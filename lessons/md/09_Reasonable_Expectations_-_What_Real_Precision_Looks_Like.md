@@ -230,29 +230,9 @@ The lesson for reloaders: **Know which part of the curve you're on.** Getting fr
 
 Choose your target performance level based on what you actually need, not what impresses people on the internet.
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "Your Dispersion Budget Calculator"
-#
-# Three sliders:
-# Slider 1: Rifle + Ammunition precision (0.3 to 2.0 MOA)
-# Slider 2: Shooter technique contribution (0.2 to 1.5 MOA)
-# Slider 3: Recoil management contribution (0.2 to 2.0 MOA)
-#
-# Display:
-# - Visual pie chart showing contribution percentages
-# - Total system precision (RSS calculation)
-# - Bar chart showing each component's contribution
-# - Text recommendation: "Your biggest improvement opportunity is: [factor]"
-#
-# Additional feature:
-# - "Test improvement" button for each slider
-# - Shows before/after total when you reduce that component by 50%
-# - Demonstrates diminishing returns from improving small contributors
-#
-# Aha moment: "I've been spending hundreds on ammunition components
-# when my recoil management is limiting me to 1.2 MOA anyway!"
-```
+**[➡️ Launch Your Dispersion Budget Calculator (Opens in New Tab)](../interactive/09_dispersion_calculator.html){:target="_blank"}**
+
+Adjust the three sliders to match YOUR system. See how rifle/ammunition, shooter technique, and recoil combine using RSS. Discover which factor is limiting you most and where improvements will have the biggest impact. Test 50% improvements on each component to see diminishing returns in action!
 
 > **Key Insight**
 >
