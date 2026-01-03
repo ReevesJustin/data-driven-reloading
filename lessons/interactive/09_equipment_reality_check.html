@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check if your rifle's performance matches expectations for its equipment level">
+    <title>Equipment Level Reality Check - Data-Driven Reloading</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-tertiary: #f9f9f9;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-tertiary: #718096;
+            --border-color: #ddd;
+            --border-light: #e0e0e0;
+            --accent-primary: #4682b4;
+            --accent-dark: #2c5282;
+            --accent-green: #28a745;
+            --accent-yellow: #f39c12;
+            --accent-orange: #e67e22;
+            --accent-red: #dc3545;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --card-bg: #ffffff;
+            --input-bg: #ffffff;
+            --input-border: #ddd;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1a202c;
+                --bg-secondary: #2d3748;
+                --bg-tertiary: #1a1a1a;
+                --text-primary: #e2e8f0;
+                --text-secondary: #cbd5e0;
+                --text-tertiary: #a0aec0;
+                --border-color: #4a5568;
+                --border-light: #2d3748;
+                --accent-primary: #63b3ed;
+                --accent-dark: #4299e1;
+                --accent-green: #48bb78;
+                --accent-yellow: #ecc94b;
+                --accent-orange: #ed8936;
+                --accent-red: #fc8181;
+                --shadow: rgba(0, 0, 0, 0.3);
+                --card-bg: #2d3748;
+                --input-bg: #1a202c;
+                --input-border: #4a5568;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        h1 {
+            color: var(--accent-dark);
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .intro {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .input-section {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-size: 0.95em;
+        }
+
+        .input-group select,
+        .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--input-border);
+            border-radius: 6px;
+            font-size: 1em;
+            background: var(--input-bg);
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .input-group select:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        .input-group select {
+            cursor: pointer;
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .input-hint {
+            font-size: 0.85em;
+            color: var(--text-tertiary);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .analyze-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-dark));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 25px;
+        }
+
+        .analyze-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .results-section {
+            display: none;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            border: 2px solid var(--border-color);
+        }
+
+        .stat-label {
+            font-size: 0.85em;
+            color: var(--text-tertiary);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--accent-primary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .chart-container {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            margin-bottom: 25px;
+        }
+
+        .chart-container h3 {
+            color: var(--accent-dark);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        canvas {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .verdict {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .verdict.excellent {
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .verdict.good {
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .verdict.warning {
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .verdict.alert {
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .verdict h3 {
+            color: var(--accent-dark);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .verdict p {
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .verdict p:last-child {
+            margin-bottom: 0;
+        }
+
+        .verdict strong {
+            color: var(--accent-dark);
+        }
+
+        .verdict-label {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .verdict-label.excellent {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .verdict-label.good {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .verdict-label.warning {
+            background: var(--accent-orange);
+            color: white;
+        }
+
+        .verdict-label.alert {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Equipment Level Reality Check</h1>
+        <p class="intro">Enter your group sizes and equipment level to see if your rifle's performance matches expectations. This helps you understand whether your results are typical, better than expected, or below expected—and what to do about it.</p>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="equipmentLevel">Your Equipment Level</label>
+                <select id="equipmentLevel">
+                    <option value="factory">Entry Factory Rifle + Factory Ammo (1.5-2.0 MOA)</option>
+                    <option value="factoryHandloads" selected>Quality Factory Rifle + Good Handloads (0.8-1.2 MOA)</option>
+                    <option value="custom">Custom Match Setup + Exceptional Handloads (0.5-0.8 MOA)</option>
+                    <option value="benchrest">Full Benchrest Competition (0.2-0.3 MOA)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="groupSizes">Your Group Sizes (MOA)</label>
+                <textarea id="groupSizes" placeholder="Enter your group sizes, one per line or separated by commas:
+1.1
+0.9
+1.2
+1.0
+0.8
+
+Or: 1.1, 0.9, 1.2, 1.0, 0.8"></textarea>
+                <div class="input-hint">Enter at least 5 groups. More is better! These should be aggregated groups (30+ shots) or multiple smaller groups.</div>
+            </div>
+        </div>
+
+        <button class="analyze-btn" onclick="analyze()">Analyze My Results</button>
+
+        <div class="results-section" id="results">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Your Average</div>
+                    <div class="stat-value" id="yourAverage">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Expected Range</div>
+                    <div class="stat-value" id="expectedRange">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Sample Size</div>
+                    <div class="stat-value" id="sampleSize">--</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Your Results vs. Expected Distribution</h3>
+                <canvas id="distributionChart"></canvas>
+            </div>
+
+            <div class="verdict" id="verdict">
+                <!-- Filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Equipment level benchmarks
+        const benchmarks = {
+            factory: {
+                mean: 1.75,
+                min: 1.5,
+                max: 2.0,
+                label: 'Entry Factory Rifle + Factory Ammo'
+            },
+            factoryHandloads: {
+                mean: 1.0,
+                min: 0.8,
+                max: 1.2,
+                label: 'Quality Factory Rifle + Good Handloads'
+            },
+            custom: {
+                mean: 0.65,
+                min: 0.5,
+                max: 0.8,
+                label: 'Custom Match Setup + Exceptional Handloads'
+            },
+            benchrest: {
+                mean: 0.25,
+                min: 0.15,
+                max: 0.4,
+                label: 'Full Benchrest Competition'
+            }
+        };
+
+        const canvas = document.getElementById('distributionChart');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 700;
+        canvas.height = 300;
+
+        function analyze() {
+            const level = document.getElementById('equipmentLevel').value;
+            const input = document.getElementById('groupSizes').value;
+
+            // Parse group sizes
+            const groups = input
+                .replace(/,/g, '\n')
+                .split('\n')
+                .map(line => line.trim())
+                .filter(line => line.length > 0)
+                .map(line => parseFloat(line))
+                .filter(val => !isNaN(val) && val > 0);
+
+            if (groups.length < 3) {
+                alert('Please enter at least 3 group sizes for meaningful analysis.');
+                return;
+            }
+
+            // Calculate statistics
+            const average = groups.reduce((a, b) => a + b, 0) / groups.length;
+            const benchmark = benchmarks[level];
+
+            // Update stats display
+            document.getElementById('yourAverage').textContent = average.toFixed(2) + ' MOA';
+            document.getElementById('expectedRange').textContent =
+                benchmark.min.toFixed(1) + '-' + benchmark.max.toFixed(1) + ' MOA';
+            document.getElementById('sampleSize').textContent = groups.length + ' groups';
+
+            // Draw chart
+            drawDistribution(groups, average, benchmark);
+
+            // Generate verdict
+            generateVerdict(average, benchmark, groups.length);
+
+            // Show results
+            document.getElementById('results').classList.add('show');
+        }
+
+        function drawDistribution(groups, average, benchmark) {
+            const styles = getComputedStyle(document.documentElement);
+            const isDark = styles.getPropertyValue('--bg-primary').trim() === '#1a202c';
+
+            const textColor = styles.getPropertyValue('--text-primary').trim();
+            const gridColor = styles.getPropertyValue('--border-light').trim();
+            const yourColor = isDark ? '#63b3ed' : '#4682b4';
+            const expectedColor = isDark ? '#48bb78' : '#28a745';
+            const benchmarkFill = isDark ? 'rgba(72, 187, 120, 0.2)' : 'rgba(40, 167, 69, 0.2)';
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const padding = 50;
+            const chartWidth = canvas.width - 2 * padding;
+            const chartHeight = canvas.height - 2 * padding;
+
+            // Determine X-axis range
+            const allValues = [...groups, benchmark.min, benchmark.max];
+            const minValue = Math.min(...allValues) * 0.8;
+            const maxValue = Math.max(...allValues) * 1.2;
+            const range = maxValue - minValue;
+
+            // Draw axes
+            ctx.strokeStyle = textColor;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding, padding);
+            ctx.lineTo(padding, canvas.height - padding);
+            ctx.lineTo(canvas.width - padding, canvas.height - padding);
+            ctx.stroke();
+
+            // Draw grid
+            ctx.strokeStyle = gridColor;
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const x = padding + (i / 5) * chartWidth;
+                ctx.beginPath();
+                ctx.moveTo(x, padding);
+                ctx.lineTo(x, canvas.height - padding);
+                ctx.stroke();
+
+                // X-axis labels
+                const value = minValue + (i / 5) * range;
+                ctx.fillStyle = textColor;
+                ctx.font = '11px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(value.toFixed(1), x, canvas.height - padding + 20);
+            }
+
+            // Draw expected range (shaded area)
+            const benchMinX = padding + ((benchmark.min - minValue) / range) * chartWidth;
+            const benchMaxX = padding + ((benchmark.max - minValue) / range) * chartWidth;
+            ctx.fillStyle = benchmarkFill;
+            ctx.fillRect(benchMinX, padding, benchMaxX - benchMinX, chartHeight);
+
+            // Draw expected range boundaries
+            ctx.strokeStyle = expectedColor;
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            ctx.moveTo(benchMinX, padding);
+            ctx.lineTo(benchMinX, canvas.height - padding);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(benchMaxX, padding);
+            ctx.lineTo(benchMaxX, canvas.height - padding);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Draw expected mean
+            const benchMeanX = padding + ((benchmark.mean - minValue) / range) * chartWidth;
+            ctx.strokeStyle = expectedColor;
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(benchMeanX, padding);
+            ctx.lineTo(benchMeanX, canvas.height - padding);
+            ctx.stroke();
+
+            // Label expected mean
+            ctx.fillStyle = expectedColor;
+            ctx.font = 'bold 11px sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('Expected: ' + benchmark.mean.toFixed(2), benchMeanX + 5, padding + 20);
+
+            // Draw your data points
+            const dotY = canvas.height - padding - chartHeight / 2;
+            groups.forEach(group => {
+                const x = padding + ((group - minValue) / range) * chartWidth;
+                ctx.fillStyle = yourColor;
+                ctx.beginPath();
+                ctx.arc(x, dotY, 5, 0, 2 * Math.PI);
+                ctx.fill();
+            });
+
+            // Draw your average
+            const avgX = padding + ((average - minValue) / range) * chartWidth;
+            ctx.strokeStyle = yourColor;
+            ctx.lineWidth = 3;
+            ctx.setLineDash([3, 3]);
+            ctx.beginPath();
+            ctx.moveTo(avgX, padding);
+            ctx.lineTo(avgX, canvas.height - padding);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Label your average
+            ctx.fillStyle = yourColor;
+            ctx.font = 'bold 11px sans-serif';
+            ctx.textAlign = 'right';
+            ctx.fillText('Your Avg: ' + average.toFixed(2), avgX - 5, padding + 40);
+
+            // X-axis label
+            ctx.fillStyle = textColor;
+            ctx.font = '12px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('Group Size (MOA)', canvas.width / 2, canvas.height - 10);
+
+            // Legend
+            ctx.fillStyle = expectedColor;
+            ctx.fillRect(padding, padding + 50, 15, 15);
+            ctx.fillStyle = textColor;
+            ctx.font = '11px sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('Expected Range', padding + 20, padding + 62);
+
+            ctx.fillStyle = yourColor;
+            ctx.fillRect(padding, padding + 70, 15, 15);
+            ctx.fillStyle = textColor;
+            ctx.fillText('Your Results', padding + 20, padding + 82);
+        }
+
+        function generateVerdict(average, benchmark, sampleSize) {
+            const verdictDiv = document.getElementById('verdict');
+
+            // Calculate how far from expected
+            const expectedMean = benchmark.mean;
+            const expectedRange = benchmark.max - benchmark.min;
+            const deviation = average - expectedMean;
+            const deviationPct = (deviation / expectedMean) * 100;
+
+            let verdictClass = '';
+            let verdictLabel = '';
+            let html = '';
+
+            // Determine verdict
+            if (average < benchmark.min) {
+                // Better than expected
+                verdictClass = 'excellent';
+                verdictLabel = 'Better Than Expected!';
+                html += `<span class="verdict-label ${verdictClass}">${verdictLabel}</span>`;
+                html += `<p>Your average of <strong>${average.toFixed(2)} MOA</strong> is <strong>better</strong> than the typical range for ${benchmark.label}.</p>`;
+
+                if (sampleSize < 10) {
+                    html += `<p><strong>Important:</strong> You've only tested ${sampleSize} groups. This could be:</p>`;
+                    html += `<ul style="margin-left: 20px; margin-top: 10px;">`;
+                    html += `<li>High end of normal variation (you got lucky with these groups)</li>`;
+                    html += `<li>Truly exceptional performance from your system</li>`;
+                    html += `</ul>`;
+                    html += `<p style="margin-top: 10px;"><strong>Recommendation:</strong> Test more groups (20-30 total) to confirm this performance is consistent. If it holds up, congratulations—your system is performing exceptionally well!</p>`;
+                } else {
+                    html += `<p><strong>Excellent!</strong> With ${sampleSize} groups tested, this performance appears consistent. Your rifle/ammunition combination is performing at the top end of its class, or you have exceptional fundamentals, or both.</p>`;
+                    html += `<p><strong>Keep doing what you're doing!</strong> You've achieved excellent results for your equipment level.</p>`;
+                }
+            } else if (average <= benchmark.max) {
+                // Within expected range
+                verdictClass = 'good';
+                verdictLabel = 'Typical Performance';
+                html += `<span class="verdict-label ${verdictClass}">${verdictLabel}</span>`;
+                html += `<p>Your average of <strong>${average.toFixed(2)} MOA</strong> falls within the expected range for ${benchmark.label} (${benchmark.min.toFixed(1)}-${benchmark.max.toFixed(1)} MOA).</p>`;
+
+                if (average < expectedMean) {
+                    html += `<p>You're on the <strong>better side</strong> of the expected range. This is good performance for your equipment level.</p>`;
+                } else {
+                    html += `<p>You're on the <strong>higher side</strong> of the expected range, but still within normal variation.</p>`;
+                }
+
+                html += `<p><strong>This is normal and expected.</strong> Your system is performing as it should. Don't feel inadequate comparing to internet claims of much tighter groups—they're often from different equipment, cherry-picked results, or small sample sizes.</p>`;
+
+                if (average > expectedMean + (expectedRange * 0.25)) {
+                    html += `<p><strong>Potential improvements:</strong> Since you're toward the upper end of the range, focus on fundamentals (position, trigger control, recoil management) before chasing ammunition improvements.</p>`;
+                }
+            } else {
+                // Below expected
+                const percentBelow = ((average - benchmark.max) / benchmark.max * 100).toFixed(0);
+                verdictClass = 'warning';
+                verdictLabel = 'Below Expected';
+                html += `<span class="verdict-label ${verdictClass}">${verdictLabel}</span>`;
+                html += `<p>Your average of <strong>${average.toFixed(2)} MOA</strong> is <strong>${percentBelow}% larger</strong> than the expected maximum for ${benchmark.label}.</p>`;
+
+                html += `<p><strong>Likely issues to investigate:</strong></p>`;
+                html += `<ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">`;
+                html += `<li><strong>Shooter fundamentals:</strong> Inconsistent position, trigger control, or recoil management (most common issue)</li>`;
+                html += `<li><strong>Ammunition consistency:</strong> Check SD/ES, try match-grade components or factory match ammo</li>`;
+                html += `<li><strong>Optic/mounting:</strong> Loose scope mounts, poor quality optic, parallax not adjusted</li>`;
+                html += `<li><strong>Bedding/action:</strong> Stock bedding issues, action screws not properly torqued</li>`;
+                html += `<li><strong>Barrel/crown:</strong> Damage to crown, barrel fouling, throat erosion</li>`;
+                html += `</ul>`;
+
+                html += `<p style="margin-top: 15px;"><strong>Start here:</strong> Have an experienced shooter test your rifle with quality ammunition. If they get similar results, it's the rifle/ammunition. If they shoot better, work on your fundamentals first.</p>`;
+            }
+
+            verdictDiv.className = `verdict ${verdictClass}`;
+            verdictDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

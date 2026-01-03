@@ -6,7 +6,7 @@ Time to complete: 10-15 minutes
 
 You've learned how to test properly. You understand sample sizes, controlled experiments, and statistical thinking. You've got the templates to analyze your data honestly.
 
-Here's the question that stops people cold: "I did everything right—50 shots, proper testing, good statistics. My groups average 0.9 MOA. But I keep seeing people online claim 0.3 MOA with similar equipment. What am I doing wrong?"
+Here's the question that stops people cold: "I did everything right; 50 shots, proper testing, good statistics. My groups average 0.9 MOA. But I keep seeing people online claim 0.3 MOA with similar equipment. What am I doing wrong?"
 
 Usually? Nothing.
 
@@ -48,7 +48,7 @@ This is the precision your rifle and ammunition can deliver when everything else
 - Average factory rifle + good handloads: **0.8 to 1.2 MOA**
 - Factory rifle + factory ammunition: **1.0 to 2.0 MOA**
 
-Notice these aren't single numbers—they're ranges. Even the best equipment has variation. A true 0.5 MOA rifle won't shoot 0.5 MOA groups every time. It'll average around that over many groups.
+Notice these aren't single numbers-they're ranges. Even the best equipment has variation. A true 0.5 MOA rifle won't shoot 0.5 MOA groups every time. It'll average around that over many groups.
 
 ### 2. Shooter Fundamentals: Your Technique
 
@@ -261,7 +261,7 @@ Let's get brutally honest about what different equipment levels can actually del
 
 At 100 yards, this is 1.5 to 2.0 inch groups (aggregated, not best-of-five).
 
-**A note on "Sub-MOA Guarantees":** By now, your eyebrows should raise concerning factory claims of sub-MOA guarantees with no qualifiers. Statistically, if you shoot enough 3-5 shot groups, you'll eventually get one that's sub-MOA—even from a rifle that averages 1.5-2.0 MOA. This practice has created unrealistic expectations across the industry. When manufacturers say "sub-MOA guarantee," they typically mean "we'll shoot groups until we get one sub-MOA" or "3-shot groups with match ammo under ideal conditions." This isn't dishonest per se, but it's not the same as "this rifle averages sub-MOA with 30+ shot aggregates using hunting ammunition." Understanding sample size bias makes you immune to this marketing strategy.
+**A note on "Sub-MOA Guarantees":** By now, your eyebrows should raise concerning factory claims of sub-MOA guarantees with no qualifiers. Statistically, if you shoot enough 3-5 shot groups, you'll eventually get one that's sub-MOA, even from a rifle that averages 1.5-2.0 MOA. This practice has created unrealistic expectations across the industry. When manufacturers say "sub-MOA guarantee," they typically mean "we'll shoot groups until we get one sub-MOA" or "3-shot groups with match ammo under ideal conditions." This isn't dishonest per se, but it's not the same as "this rifle averages sub-MOA with 30+ shot aggregates using hunting ammunition." Understanding sample size bias makes you immune to this marketing strategy.
 
 **What limits you:**
 - Factory barrel quality (standard chamber, less uniformity than custom)
@@ -302,7 +302,7 @@ At 100 yards, this is 0.8 to 1.2 inch groups (aggregated).
 - F-Class at 600 yards: Entry level, good enough to work on shooter fundamentals
 - 1,000+ yard precision: Capable with expert skill
 
-**This is where most serious shooters live.** If this describes your equipment, chasing 0.5 MOA is probably fighting your barrel, chamber, and functional optimizations - not your loading technique.
+**This is where most serious shooters live.** If this describes your equipment, chasing 0.5 MOA is probably fighting your barrel, chamber, and functional optimizations; not your loading technique.
 
 ### Custom Match Rifle + Exceptional Handloads
 
@@ -332,34 +332,13 @@ At 100 yards, this is 0.5 to 0.8 inch groups (aggregated).
 
 
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "Equipment Level Reality Check"
-#
-# Dropdown menu: Select your equipment level
-# - Entry Factory
-# - Quality Factory + Handloads
-# - Custom Match Setup
-# - Benchrest Competition
-#
-# Input: Your recent group sizes (paste list of numbers)
-#
-# Analysis displays:
-# - Your average vs. expected average for that equipment level
-# - Distribution plot: your groups vs. expected range
-# - Verdict: "Your results are typical / better than expected / below expected"
-# - If below expected: "Check fundamentals / Check ammunition consistency / Check bedding and mechanics"
-# - If better than expected: "You're either at the high end of normal variation,
-#   or you need more sample size to trust this."
-#
-# Aha moment: "My 1.1 MOA with factory rifle + handloads is actually GOOD,
-# not a failure. Those 0.5 MOA claims I keep seeing are either lies, different
-# equipment, or small-sample illusions."
-```
+**[➡️ Launch Equipment Level Reality Check (Opens in New Tab)](../interactive/09_equipment_reality_check.html){:target="_blank"}**
+
+Enter your recent group sizes and select your equipment level. See if your performance is typical, better than expected, or below expected for your setup. Get specific recommendations based on where you fall in the distribution. Stop comparing yourself to internet claims and understand what YOUR equipment can realistically deliver!
 
 **Important:** These are statistical generalizations. Your specific rifle may perform better or worse depending on numerous factors (barrel quality, bedding, scope mounting, ammunition consistency, shooter skill). The only way to know YOUR system's true capability is to test it properly with 30+ shot aggregates and consistent shooting conditions.
 
-Modern factory rifles from quality manufacturers (Tikka, Bergara, Seekins, etc.) increasingly deliver performance that overlaps with entry-level custom rifles, especially in hunting-weight configurations. Don't assume your rifle's capability based on price—test it.
+Modern factory rifles from quality manufacturers (Tikka, Bergara, Seekins, etc.) increasingly deliver performance that overlaps with entry-level custom rifles, especially in hunting-weight configurations. Don't assume your rifle's capability based on price. Test it.
 
 ### The Uncomfortable Question: "But What About Those 0.3 MOA Claims?"
 
@@ -380,7 +359,7 @@ Which brings us to the most important question...
 
 ## WEZ: Does Your Precision Actually Matter?
 
-WEZ stands for **Weapon Employment Zone**—a military concept that's incredibly useful for reloaders. It answers a simple question:
+WEZ stands for **Weapon Employment Zone**, a military concept that's incredibly useful for reloaders. It answers a simple question:
 
 **"What's the probability I'll hit my target given my system's precision?"**
 
@@ -430,45 +409,41 @@ You can compare different scenarios:
 - Same target at different distances
 - The real-world impact of improving from 1.0 MOA to 0.7 MOA for YOUR specific application
 
-Now that you understand how standard deviation and mean radius characterize your rifle's performance, use this calculator to experiment with different scenarios. If you've completed 30+ shot tests with your rifle system and calculated mean radius, you now have a reliable measure of your system's true capability—plug that number into the calculator for accurate hit probability predictions. Then figure out where your time, money, and effort will have the biggest impact—measured in dollars spent per percentage point of hit probability gained. This is how you make evidence-based decisions about equipment upgrades instead of chasing internet claims.
+Now that you understand how standard deviation and mean radius characterize your rifle's performance, use this calculator to experiment with different scenarios. If you've completed 30+ shot tests with your rifle system and calculated mean radius, you now have a reliable measure of your system's true capability.  Plug that number into the calculator for accurate hit probability predictions. Then figure out where your time, money, and effort will have the biggest impact—measured in dollars spent per percentage point of hit probability gained. This is how you make evidence-based decisions about equipment upgrades instead of chasing internet claims.
 
 ### The Message
 
 **Chase precision where it matters. Accept limits where it doesn't.**
 
-If you're shooting deer-sized game inside 400 yards, a 1.0 MOA system is more than adequate. Spending hundreds or thousands of dollars and dozens of hours trying to get from 1.0 to 0.6 MOA improves your hit probability by maybe 2%.
+If you're shooting deer sized game inside 400 yards, a 1.0 MOA system is more than adequate. Spending hundreds or thousands of dollars and dozens of hours trying to get from 1.0 to 0.6 MOA improves your hit probability by maybe 2%.
 
 If you're competing at 1,000 yards on small tagets, every 0.1 MOA improvement is worth fighting for.
 
 **Know your goals. Build to those goals. Stop when you're good enough.**
 
-**Interactive Element Placeholder:**
-```python
-# Interactive widget: "Hit Probability Calculator"
-#
-# Inputs:
-# Slider 1: System precision (0.3 to 2.0 MOA)
-# Slider 2: Target size (4 to 20 inches)
-# Slider 3: Distance (100 to 1200 yards)
-#
-# Display:
-# - Visualization: target circle with shot dispersion overlay
-# - Hit probability percentage (large, bold)
-# - Comparison: "vs. 0.5 MOA better system: +X% hit probability"
-# - Verdict: "This improvement is negligible / moderate / significant"
-#
-# User can adjust sliders and watch hit probability change
-# See that small targets at long range are sensitive to precision
-# See that large targets at close range are very forgiving
-#
-# Additional feature:
-# - "What precision do I need for 95% hits?" calculator
-# - User inputs target and distance
-# - Returns required system precision
-#
-# Aha moment: "I need 0.7 MOA for my goals. I have 0.9 MOA.
-# Getting to 0.7 requires $2,000 in upgrades. Is 3% more hits worth $2,000?"
-```
+**[➡️ Launch OpenWEZ Hit Probability Calculator (Opens in New Tab)](https://reevesjustin.github.io/OpenWEZ/){:target="_blank"}**
+
+Use the OpenWEZ calculator to answer critical questions about YOUR system and YOUR goals:
+
+**Experiment 1: Does Your Current Precision Matter?**
+- Enter your system precision (use mean radius from your 30+ shot testing)
+- Enter your typical target size (deer vitals = 8", steel plate = 10-12", etc.)
+- Enter your typical distance (300 yards? 600 yards? 1000 yards?)
+- Check the hit probability. If it's 95%+, you're already good enough!
+
+**Experiment 2: Is An Upgrade Worth It?**
+- Run the calculation with your current precision (example: 0.9 MOA)
+- Note the hit probability
+- Re-run with improved precision (example: 0.6 MOA after $2,000 in upgrades)
+- Compare the difference. Is 3-5% more hits worth the cost?
+
+**Experiment 3: What Precision Do You ACTUALLY Need?**
+- Enter your target size and distance
+- Adjust the precision slider until you hit 90-95% probability
+- That's your required precision. Compare it to what you have.
+- Now you know if you need to improve, or if you're chasing diminishing returns.
+
+**Aha moment:** "I need 0.7 MOA for 95% hits on my typical targets. I have 0.9 MOA. Getting to 0.7 requires $2,000 in upgrades. The improvement is only 4% more hits. Not worth it—I'll focus on wind reading instead!"
 
 > **Critical Takeaway**
 >
