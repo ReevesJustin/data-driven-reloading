@@ -218,6 +218,18 @@ Work with a competent gunsmith to:
 
 Don't chase internet claims—chase YOUR data.
 
+### The Pareto Principle Applied to Skill: Why Top Competitors Work So Hard
+
+If you've ever doubted the dedication of top-level competitors in any sport, consider this perspective: In a match with 30+ shooters, placing 6th (top 20%) means you've achieved the accessible 80% of performance gains—the "low-hanging fruit" that comes from good fundamentals, decent equipment, and consistent practice.
+
+Think about how much time, effort, and resources you invested to reach that level. Now consider that moving from 6th place to the podium (top 10%) requires *exponentially more* of everything. That final 20% improvement in performance demands the remaining 80% of total effort—more trigger time, more expensive equipment, refinements, more coaching, more travel to competitions, more physical conditioning, more mental preparation, more recovery between sessions.
+
+This is why professional athletes train full-time. The difference between "very good" and "world-class" isn't just talent—it's the willingness to invest massive resources for incremental gains that most people can't justify.
+
+The lesson for reloaders: **Know which part of the curve you're on.** Getting from 1.5 MOA to 0.9 MOA might take $500 and 40 hours of work. Getting from 0.9 MOA to 0.5 MOA might take $3,000 and 200 hours. Going from 0.5 MOA to 0.3 MOA? That's where you start questioning your life choices.
+
+Choose your target performance level based on what you actually need, not what impresses people on the internet.
+
 **Interactive Element Placeholder:**
 ```python
 # Interactive widget: "Your Dispersion Budget Calculator"
@@ -427,6 +439,18 @@ Same systems, but now you're shooting a 10-inch steel plate at 800 yards.
 **The improvement: 11 percentage points.**
 
 Now we're talking! At longer ranges on smaller targets, precision actually matters.
+
+### Calculate Your Own Hit Probabilities
+
+Want to run these calculations for your specific setup? The **[OpenWEZ calculator](https://reevesjustin.github.io/OpenWEZ/)** lets you input your rifle's precision, target size, and distance to see your actual hit probability. It's a practical tool for answering the question: "Is my current system good enough for what I'm trying to do?"
+
+You can compare different scenarios:
+- Your current rifle vs. a potential upgrade
+- Different target sizes at the same distance
+- Same target at different distances
+- The real-world impact of improving from 1.0 MOA to 0.7 MOA for YOUR specific application
+
+Now that you understand how standard deviation and mean radius characterize your rifle's performance, use this calculator to experiment with different scenarios. If you've completed 30+ shot tests with your rifle system and calculated mean radius, you now have a reliable measure of your system's true capability—plug that number into the calculator for accurate hit probability predictions. Then figure out where your time, money, and effort will have the biggest impact—measured in dollars spent per percentage point of hit probability gained. This is how you make evidence-based decisions about equipment upgrades instead of chasing internet claims.
 
 ### The Message
 
