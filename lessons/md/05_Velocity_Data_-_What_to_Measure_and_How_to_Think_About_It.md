@@ -253,6 +253,10 @@ The same calculation applies to any cartridge. For a .223 Remington with 23.0 gr
 
 Smaller capacity cartridges are MORE sensitive to charge weight variations (higher fps/gr ratio), making scale precision even more important.
 
+**[➡️ Launch Charge Weight Sensitivity Calculator (Opens in New Tab)](../interactive/05_charge_weight_calculator.html){:target="_blank"}**
+
+Calculate how YOUR powder scale tolerance affects YOUR velocity SD. Enter your charge weight, velocity, and scale precision to see exactly how much your powder charges contribute to measured SD—and whether upgrading your scale would actually help!
+
 ---
 
 ## The Great Velocity Node Myth: Your Brain Playing Tricks

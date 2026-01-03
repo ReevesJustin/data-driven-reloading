@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate how powder scale tolerance affects velocity SD">
+    <title>Charge Weight Sensitivity Calculator - Data-Driven Reloading</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-tertiary: #f9f9f9;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-tertiary: #718096;
+            --border-color: #ddd;
+            --border-light: #e0e0e0;
+            --accent-primary: #4682b4;
+            --accent-dark: #2c5282;
+            --accent-green: #28a745;
+            --accent-yellow: #f39c12;
+            --accent-orange: #e67e22;
+            --accent-red: #dc3545;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --card-bg: #ffffff;
+            --input-bg: #ffffff;
+            --input-border: #ddd;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1a202c;
+                --bg-secondary: #2d3748;
+                --bg-tertiary: #1a1a1a;
+                --text-primary: #e2e8f0;
+                --text-secondary: #cbd5e0;
+                --text-tertiary: #a0aec0;
+                --border-color: #4a5568;
+                --border-light: #2d3748;
+                --accent-primary: #63b3ed;
+                --accent-dark: #4299e1;
+                --accent-green: #48bb78;
+                --accent-yellow: #ecc94b;
+                --accent-orange: #ed8936;
+                --accent-red: #fc8181;
+                --shadow: rgba(0, 0, 0, 0.3);
+                --card-bg: #2d3748;
+                --input-bg: #1a202c;
+                --input-border: #4a5568;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        h1 {
+            color: var(--accent-dark);
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .intro {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .input-section {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-size: 0.95em;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--input-border);
+            border-radius: 6px;
+            font-size: 1em;
+            background: var(--input-bg);
+            color: var(--text-primary);
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        .input-group select {
+            cursor: pointer;
+        }
+
+        .input-hint {
+            font-size: 0.85em;
+            color: var(--text-tertiary);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .results-section {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .results-section h2 {
+            color: var(--accent-dark);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .result-value {
+            font-weight: bold;
+            color: var(--text-primary);
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+
+        .result-value.highlight {
+            color: var(--accent-primary);
+            font-size: 1.3em;
+        }
+
+        .interpretation {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border: 2px solid var(--border-color);
+        }
+
+        .interpretation h3 {
+            color: var(--accent-dark);
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .interpretation p {
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .interpretation p:last-child {
+            margin-bottom: 0;
+        }
+
+        .recommendation {
+            background: var(--bg-secondary);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .recommendation.warning {
+            border-left-color: var(--accent-orange);
+        }
+
+        .recommendation.alert {
+            border-left-color: var(--accent-red);
+        }
+
+        .recommendation strong {
+            color: var(--accent-dark);
+        }
+
+        .examples {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .examples h3 {
+            color: var(--accent-dark);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .example-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 5px 5px 5px 0;
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .example-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .result-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .example-btn {
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Charge Weight Sensitivity Calculator</h1>
+        <p class="intro">Calculate how your powder scale's tolerance contributes to velocity standard deviation. Understanding this helps you decide when upgrading your scale will actually improve your ammunition consistency.</p>
+
+        <div class="examples">
+            <h3>Quick Examples</h3>
+            <button class="example-btn" onclick="loadExample('creedmoor')">6.5 Creedmoor</button>
+            <button class="example-btn" onclick="loadExample('223')">223 Remington</button>
+            <button class="example-btn" onclick="loadExample('308')">308 Winchester</button>
+            <button class="example-btn" onclick="loadExample('magnum')">300 Win Mag</button>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="chargeWeight">Charge Weight (grains)</label>
+                <input type="number" id="chargeWeight" step="0.1" min="0" value="41.5" oninput="calculate()">
+                <div class="input-hint">Your typical powder charge in grains</div>
+            </div>
+
+            <div class="input-group">
+                <label for="velocity">Average Velocity (fps)</label>
+                <input type="number" id="velocity" step="1" min="0" value="2720" oninput="calculate()">
+                <div class="input-hint">Measured average velocity over 10+ shots</div>
+            </div>
+
+            <div class="input-group">
+                <label for="scaleTolerance">Powder Scale Tolerance</label>
+                <select id="scaleTolerance" onchange="calculate()">
+                    <option value="0.2">±0.2 grains (beam scale, basic digital)</option>
+                    <option value="0.1" selected>±0.1 grains (good beam scale, mid-range digital)</option>
+                    <option value="0.02">±0.02 grains (quality digital scale)</option>
+                    <option value="0.01">±0.01 grains (high-end analytical scale)</option>
+                </select>
+                <div class="input-hint">Check your scale's specifications or manual</div>
+            </div>
+        </div>
+
+        <div class="results-section" id="results">
+            <h2>Calculated Results</h2>
+
+            <div class="result-row">
+                <span class="result-label">Velocity per Grain of Powder</span>
+                <span class="result-value" id="fpsPerGrain">--</span>
+            </div>
+
+            <div class="result-row">
+                <span class="result-label">Velocity Variation per Scale Increment</span>
+                <span class="result-value" id="fpsPerIncrement">--</span>
+            </div>
+
+            <div class="result-row">
+                <span class="result-label">Total Velocity Spread (2× tolerance)</span>
+                <span class="result-value highlight" id="totalSpread">--</span>
+            </div>
+
+            <div class="result-row">
+                <span class="result-label">Approximate SD Contribution</span>
+                <span class="result-value highlight" id="sdContribution">--</span>
+            </div>
+
+            <div class="interpretation" id="interpretation">
+                <!-- Filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Example configurations
+        const examples = {
+            creedmoor: {
+                charge: 41.5,
+                velocity: 2720,
+                name: '6.5 Creedmoor (H4350, 140gr)'
+            },
+            223: {
+                charge: 23.0,
+                velocity: 2800,
+                name: '223 Remington (Varget, 55gr)'
+            },
+            308: {
+                charge: 44.0,
+                velocity: 2650,
+                name: '308 Winchester (Varget, 168gr)'
+            },
+            magnum: {
+                charge: 75.0,
+                velocity: 2950,
+                name: '300 Win Mag (H1000, 200gr)'
+            }
+        };
+
+        function loadExample(type) {
+            const ex = examples[type];
+            document.getElementById('chargeWeight').value = ex.charge;
+            document.getElementById('velocity').value = ex.velocity;
+            calculate();
+        }
+
+        function calculate() {
+            const chargeWeight = parseFloat(document.getElementById('chargeWeight').value);
+            const velocity = parseFloat(document.getElementById('velocity').value);
+            const scaleTolerance = parseFloat(document.getElementById('scaleTolerance').value);
+
+            if (!chargeWeight || !velocity || chargeWeight <= 0 || velocity <= 0) {
+                return;
+            }
+
+            // Calculate fps per grain
+            const fpsPerGrain = velocity / chargeWeight;
+
+            // Calculate fps per scale increment
+            const fpsPerIncrement = fpsPerGrain * scaleTolerance;
+
+            // Total spread is 2× tolerance (from min to max)
+            const totalSpread = fpsPerIncrement * 2;
+
+            // Approximate SD contribution (spread / 4 is rough estimate for uniform distribution)
+            const sdContribution = totalSpread / 3.46; // For uniform distribution, SD ≈ range / 3.46
+
+            // Update display
+            document.getElementById('fpsPerGrain').textContent = fpsPerGrain.toFixed(1) + ' fps/gr';
+            document.getElementById('fpsPerIncrement').textContent = '±' + fpsPerIncrement.toFixed(1) + ' fps';
+            document.getElementById('totalSpread').textContent = totalSpread.toFixed(1) + ' fps';
+            document.getElementById('sdContribution').textContent = '~' + sdContribution.toFixed(1) + ' fps';
+
+            // Generate interpretation
+            generateInterpretation(sdContribution, totalSpread, scaleTolerance, fpsPerGrain);
+        }
+
+        function generateInterpretation(sdContribution, totalSpread, scaleTolerance, fpsPerGrain) {
+            const interpretDiv = document.getElementById('interpretation');
+            let html = '<h3>What This Means</h3>';
+
+            html += '<p>Your powder scale tolerance of <strong>±' + scaleTolerance + ' grains</strong> ';
+            html += 'contributes approximately <strong>' + sdContribution.toFixed(1) + ' fps</strong> to your total measured SD.</p>';
+
+            // Add recommendation based on SD contribution
+            let recommendation = '';
+            let recClass = 'recommendation';
+
+            if (sdContribution < 3) {
+                recClass += ' recommendation';
+                recommendation = '<strong>Excellent:</strong> Your scale precision is very good. Charge weight variation is contributing minimally to your SD. Other factors (bullets, primers, brass) likely dominate your velocity spread.';
+            } else if (sdContribution < 5) {
+                recClass += ' recommendation';
+                recommendation = '<strong>Good:</strong> Your scale is adequate for most applications. Charge weight contributes modestly to SD. Consider upgrading only if you\'re already controlling other variables well and shooting at extreme distances.';
+            } else if (sdContribution < 8) {
+                recClass += ' warning';
+                recommendation = '<strong>Moderate Impact:</strong> Charge weight variation is a significant contributor to your SD (' + sdContribution.toFixed(1) + ' fps). If you\'re measuring 12-15 fps SD total, roughly ' + Math.round((sdContribution / 12) * 100) + '% may be from powder charges. Upgrading to a ±0.02gr scale could reduce SD by ' + (sdContribution * 0.7).toFixed(1) + ' fps.';
+            } else if (sdContribution < 12) {
+                recClass += ' alert';
+                recommendation = '<strong>High Impact:</strong> Charge weight variation is a major contributor to your SD. With ' + sdContribution.toFixed(1) + ' fps from powder alone, you cannot achieve single-digit SD with this scale. Consider upgrading to ±0.02gr precision (quality digital) to reduce this contribution to ~2-3 fps.';
+            } else {
+                recClass += ' alert';
+                recommendation = '<strong>Critical Issue:</strong> Your scale tolerance is dominating velocity SD (' + sdContribution.toFixed(1) + ' fps contribution). This makes load development nearly impossible. Strongly consider upgrading to a quality digital scale (±0.02gr) as your first priority.';
+            }
+
+            html += '<div class="' + recClass + '">' + recommendation + '</div>';
+
+            // Add context about other cartridges
+            html += '<p style="margin-top: 15px;"><strong>Note:</strong> Smaller capacity cartridges have higher fps/grain ratios (' + fpsPerGrain.toFixed(1) + ' fps/gr for your load), making them MORE sensitive to charge weight variations. Larger magnum cartridges are typically less sensitive.</p>';
+
+            interpretDiv.innerHTML = html;
+        }
+
+        // Calculate on page load
+        calculate();
+    </script>
+</body>
+</html>
